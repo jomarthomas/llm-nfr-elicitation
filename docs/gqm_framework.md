@@ -1,0 +1,1 @@
+# Detailed documentation of GQM framework and metrics
