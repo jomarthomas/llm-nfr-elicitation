@@ -1,22 +1,53 @@
-### **Leveraging Large Language Models for Automating Non-Functional Requirements Elicitation in Software Engineering: Enhancing Efficiency and Coverage**
+# **Comparative Study of Large Language Models for Automating Non-Functional Requirements (NFR) Elicitation**
 
-#### **Project Overview**
-This project explores how Large Language Models (LLMs) can be leveraged to automate the generation of Non-Functional Requirements (NFRs) from Functional Requirements (FRs). The goal is to improve the efficiency, coverage, and quality of NFR elicitation in software engineering projects.
+## 🚀 Project Overview
 
-The project integrates **ISO 25010**—a quality model for product quality evaluation—to ensure a standardized approach for assessing the generated requirements. Additionally, the study will include a **comparison of multiple LLMs**, each tested at **three different temperature settings**, to evaluate how model variability impacts the quality of the generated NFRs.
+This project explores how **Large Language Models (LLMs)** can automate the **elicitation of Non-Functional Requirements (NFRs) from Functional Requirements (FRs)** to improve efficiency, coverage, and quality in software engineering.
 
-As part of this research, we will also **develop and propose a prompting technique** specifically tailored for the elicitation of NFRs. This will involve iterative refinements based on empirical testing and evaluations.
+We compare multiple **LLMs** at **three temperature settings** to assess how model variability impacts NFR quality. The project follows **ISO 25010** standards for requirement evaluation and introduces a **tailored prompting technique** for better NFR extraction.
 
-#### **Repository Includes:**
-- **Preprocessing scripts** to prepare datasets.
-- **JavaScript-based pipeline** for generating NFRs using LLMs.
-- **Full-stack prototype** with a ReactJS frontend and a NodeJS backend.
-- **Evaluation framework**, implementing metrics based on ISO 25010 to assess clarity, relevance, and coverage of generated NFRs.
-- **Benchmarking experiments** comparing multiple LLMs with different temperature settings.
+---
 
-#### **Key Features:**
-- **Automated NFR Elicitation:** Generates NFRs based on FR inputs using LLMs.
-- **Full-Stack Prototype:** Provides a user-friendly interface for FR-to-NFR generation.
-- **Evaluation Framework:** Uses ISO 25010 quality attributes to validate generated NFRs.
-- **Scalable JavaScript Implementation:** Built entirely using JavaScript for seamless development.
-- **LLM Benchmarking:** Compares different models and temperature settings to optimize performance.
+## 📂 Repository Structure
+- 🛠 **Preprocessing Scripts** – Prepare datasets for training and evaluation.
+- 🔗 **Deno-based Pipeline** – Automates NFR generation with LLMs.
+- 🎨 **Full-Stack Prototype** – **ReactJS frontend + Deno backend** for interactive NFR generation.
+- 📊 **Evaluation Framework** – Uses **ISO 25010 metrics** to assess clarity, relevance, and coverage.
+- 🏆 **Benchmarking Experiments** – Compares different **LLMs and temperature settings**.
+
+---
+
+## ⚡ Key Features
+
+### 🔍 Automated NFR Elicitation
+- Extracts **NFRs** from **FR inputs** using LLMs.
+- Implements a **custom prompting technique** for better accuracy.
+
+### 📊 LLM Benchmarking
+- Evaluates different models at multiple **temperature settings**.
+- Measures **accuracy, consistency, and interpretability**.
+
+**Tested LLMs:**
+  - **GPT-4**
+  - **Claude**
+  - **Gemini**
+  - **LLaMA**
+  - **DeepSeek R1**
+
+### ✅ Evaluation Framework
+- Uses **ISO 25010 quality attributes** to validate NFRs:
+  - **Clarity** – Are the NFRs well-defined and unambiguous?
+  - **Relevance** – Are they appropriate within the FR context?
+  - **Coverage** – Do they address critical concerns?
+
+### 🖥️ Full-Stack Prototype
+- **Frontend:** Interactive **ReactJS UI** for real-time NFR generation.
+- **Backend:** **Deno API** for LLM processing and storage.
+- **Visualization:** Compare outputs from different models.
+
+### ⚙️ Deno-Powered Implementation
+- **Native TypeScript support** for improved type safety.
+- **Built-in testing framework** for validating LLM responses.
+- **Secure and modern runtime** for efficient execution.
+
+---
