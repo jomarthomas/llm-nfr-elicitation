@@ -43,6 +43,7 @@ Metrics:
 User Satisfaction Score: Stakeholder feedback on a Likert scale (1 = Very dissatisfied, 5 = Very satisfied).
 Adoption Rate: Percentage of generated NFRs accepted without significant modifications.
 Evaluation Methodology
+
 Baseline Comparison:
 
 Use a predefined set of FRs with manually curated NFRs as a baseline.

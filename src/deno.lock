@@ -1,0 +1,15 @@
+{
+  "version": "4",
+  "specifiers": {
+    "npm:papa@*": "0.0.0",
+    "npm:papaparse@*": "5.5.2"
+  },
+  "npm": {
+    "papa@0.0.0": {
+      "integrity": "sha512-JfyAGKUiMKJBpq6CCAZySM62hInMXVUWe1N5KudZqfC9GhpqByLCWNCd4Ab21xMf1HiWkDV52S8VC6ceC3/CEA=="
+    },
+    "papaparse@5.5.2": {
+      "integrity": "sha512-PZXg8UuAc4PcVwLosEEDYjPyfWnTEhOrUfdv+3Bx+NuAb+5NhDmXzg5fHWmdCh1mP5p7JAZfFr3IMQfcntNAdA=="
+    }
+  }
+}
