@@ -2,6 +2,6 @@
 **/.DS_Store
 
 src/.env
-src/.local.env
+src/.env.dev
 src/node_modules
 src/package*

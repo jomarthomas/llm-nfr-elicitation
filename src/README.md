@@ -40,10 +40,16 @@ All the data required to run the program will be included in the `src/data` dire
 - `FR_NFR.tsv`: This is a labeled list of NFRs and FRs. [Original source](https://data.mendeley.com/datasets/4ysx9fyzv4/1) is available in `.xlsx` format but after a round of data cleansing, which removed all empty values and un-wanted columns, `.xlsx` is exported as `.tsv` to make it easier to ingest through the pipeline. Using [Papaparse](https://www.papaparse.com/), we import the `.tsv` and filter NFRs and FRs into a list of strings.
 - Maybe https://github.com/poonkuzhali/LLMs_RequirementsClassification?tab=readme-ov-file
 
+### Env Variables
+#### How to get a google API key: [Refer this](https://ai.google.dev/gemini-api/docs/api-key)
+
+- Make a new file `.env.dev` in the `./src` directory.
+- Add the keys from `.env.sample` file to the new file
+- Update the keys with the actual API key value.
+
 ## TODO
 
 - [x] A new prompt with iso to extract NFRs
-
 
 ## Questions
 - [ ] Whats the aim? why do we need frontend
