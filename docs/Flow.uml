@@ -1,0 +1,51 @@
+@startuml
+skinparam rectangle<<behavior>> {
+    roundCorner 25
+}
+
+sprite $bProcess jar:archimate/business-process
+sprite $aService jar:archimate/application-service
+sprite $aComponent jar:archimate/application-component
+
+' Business Process Layer
+rectangle "Functional Requirements" as FR <<$bProcess>><<behavior>> #Business
+rectangle "Query Processing" as QP <<$bProcess>><<behavior>> #Business
+rectangle "Validation" as Validation <<$bProcess>><<behavior>> #Business
+rectangle "Comparison" as Comparison <<$bProcess>><<behavior>> #Business
+
+FR *-down- QP
+QP *-down- Validation
+Validation *-down- Comparison
+
+QP -right->> Validation
+Validation -right->> Comparison
+
+' Application Services
+rectangle "LLM Service" as LLMService <<$aService>><<behavior>> #Application
+rectangle "OpenAI" as OpenAI <<$aService>><<behavior>> #Application
+rectangle "Anthropic" as Anthropic <<$aService>><<behavior>> #Application
+rectangle "Gemini" as Gemini <<$aService>><<behavior>> #Application
+
+LLMService -up-> QP
+OpenAI -up-> LLMService
+Anthropic -up-> LLMService
+Gemini -up-> LLMService
+
+' Application Components
+rectangle "API Gateway" as API <<$aComponent>> #Application
+rectangle "Metrics Storage" as Metrics <<$aComponent>> #Application
+
+API .up.|> LLMService
+Metrics .up.|> Comparison
+
+legend left
+LLM Evaluation Pipeline
+====
+<$bProcess> : Business Process
+====
+<$aService> : Application Service
+====
+<$aComponent> : Application Component
+endlegend
+
+@enduml

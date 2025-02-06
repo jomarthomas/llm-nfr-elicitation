@@ -1,0 +1,112 @@
+[
+  {
+    "functionalRequirement": "A Data Publishing User shall have a view of all their published datasets.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system shall provide a complete and accurate view of all published datasets to authorized users.",
+        "justification": "The requirement ensures the system provides a complete and accurate view of published datasets for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The user interface shall be intuitive and allow efficient filtering and navigation of published datasets.",
+        "justification": "A user-friendly interface is needed to navigate and filter published datasets."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The system architecture should be modular and easily extensible to accommodate future dataset additions and modifications.",
+        "justification": "The system needs to be easily maintained to accommodate future changes and additions to published datasets."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall offer functionalities for users to mark debts as settled (e.g., by cash payment) and update balances accordingly.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must accurately reflect and update balances after a debt is marked as settled.",
+        "justification": "The requirement directly relates to the core functionality of the system, ensuring debts can be marked as settled and balances updated."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system should update balances in real-time or within an acceptable timeframe after a debt is marked as settled.",
+        "justification": "The system needs to process settling debts and balance updates quickly to avoid delays and user frustration."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement secure mechanisms to prevent fraudulent transactions and unauthorized access to balance data.",
+        "justification": "Marking debts as settled and updating balances involves financial transactions, requiring robust security measures to prevent unauthorized access or manipulation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system's user interface should provide clear instructions and guidance for marking debts as settled.",
+        "justification": "Users need a simple and intuitive interface to mark debts as settled, which should be easy to understand and use."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System must show any task that is completed in the task list.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "User interface should present completed tasks clearly and concisely.",
+        "justification": "The requirement focuses on the user's ability to see completed tasks."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "System should have a modular structure to allow for easy addition of completed task display features.",
+        "justification": "The system needs to be modified to add display functionality for completed tasks."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Administrative staff in the ward shall be able to update the beds-available list with recently vacated beds.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system shall accurately reflect updates to the bed availability list upon bed vacancy.",
+        "justification": "Ensuring the system allows administrative staff to accurately and completely update the bed availability list is fundamental to the FR."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system's UI for updating bed availability shall be intuitive and straightforward.",
+        "justification": "Ease of use for administrative staff is crucial for efficient data updates."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall update the bed availability list within 5 seconds of a bed being vacated.",
+        "justification": "The system needs to update the list promptly to avoid delays in bed allocation."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The system's code for updating the bed availability list shall be modular and easily understandable.",
+        "justification": "Future modifications and maintenance of the system may require updates to the bed availability list function."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall offer a wide range of functions for calculations, data analysis, and manipulation (e.g., SUM, AVERAGE, VLOOKUP).",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system's functionality must be comprehensive and accurate for calculation, analysis and manipulation.",
+        "justification": "The requirement explicitly describes the desired functionality (calculations, data analysis, manipulation)."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must provide efficient calculation and analysis capabilities for reasonable response time and resource utilization.",
+        "justification": "Calculations and data analysis require appropriate performance.  The system must handle a large dataset."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must provide clear, intuitive ways for users to utilize calculation, analysis, and manipulation tools.  Error handling is important.",
+        "justification": "The system needs to be usable by end users.  This includes clearly defined steps for data input and expected output."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The system's design must allow for easy modification, maintenance, and testing of new calculation functions.",
+        "justification": "The system will likely need modification as new calculation functions are added or improved."
+      }
+    ]
+  }
+]
