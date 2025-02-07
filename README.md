@@ -28,11 +28,11 @@ We compare multiple **LLMs** at **three temperature settings** to assess how mod
 - Measures **accuracy, consistency, and interpretability**.
 
 **Tested LLMs:**
-  - **GPT-4**
+  - **GPT**
   - **Claude**
   - **Gemini**
   - **LLaMA**
-  - **DeepSeek R1**
+  - **DeepSeek**
 
 ### ✅ Evaluation Framework
 - Uses **ISO 25010 quality attributes** to validate NFRs:
