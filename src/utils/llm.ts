@@ -3,6 +3,7 @@ import { generatePrompt, nfrSchema } from "./Promt.ts";
 import { ChatAnthropic } from "npm:@langchain/anthropic";
 import { BaseMessage } from "npm:@langchain/core/messages";
 import { ChatGoogleGenerativeAI } from "npm:@langchain/google-genai";
+import { Logger } from "./logger.ts";
 
 interface StructuredLLMOutput {
   raw: BaseMessage;
@@ -33,11 +34,16 @@ export class OpenAIHandler extends LLMHandler<ChatOpenAI> {
   }
 
   async query(input: string): Promise<StructuredLLMOutput> {
-    const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
-      includeRaw: true,
-      name: "nfrSchema",
-    });
-    return await structuredLLM.invoke(generatePrompt(input));
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
+        includeRaw: true,
+        name: "nfrSchema",
+      });
+      return await structuredLLM.invoke(generatePrompt(input));
+    } catch (error) {
+      Logger.error("OpenAIHandler query failed", error);
+      throw new Error("Failed to query OpenAI model");
+    }
   }
 }
 
@@ -58,11 +64,16 @@ export class AnthropicHandler extends LLMHandler<ChatAnthropic> {
   }
 
   async query(input: string): Promise<StructuredLLMOutput> {
-    const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
-      includeRaw: true,
-      name: "nfrSchema",
-    });
-    return await structuredLLM.invoke(generatePrompt(input));
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
+        includeRaw: true,
+        name: "nfrSchema",
+      });
+      return await structuredLLM.invoke(generatePrompt(input));
+    } catch (error) {
+      Logger.error("AnthropicHandler query failed", error);
+      throw new Error("Failed to query Anthropic model");
+    }
   }
 }
 
@@ -81,10 +92,15 @@ export class GeminiHandler extends LLMHandler<ChatGoogleGenerativeAI> {
   }
 
   async query(input: string): Promise<StructuredLLMOutput> {
-    const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
-      includeRaw: true,
-      name: "nfrSchema",
-    });
-    return await structuredLLM.invoke(generatePrompt(input));
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
+        includeRaw: true,
+        name: "nfrSchema",
+      });
+      return await structuredLLM.invoke(generatePrompt(input));
+    } catch (error) {
+      Logger.error("GeminiHandler query failed", error);
+      throw new Error("Failed to query Gemini model");
+    }
   }
 }
