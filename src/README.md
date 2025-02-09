@@ -47,6 +47,9 @@ All the data required to run the program will be included in the `src/data` dire
 - Add the keys from `.env.sample` file to the new file
 - Update the keys with the actual API key value.
 
+## Run Tests
+Use `deno task test` and tests from `./src/main.test.ts` will be ran.
+
 ## TODO
 
 - [x] A new prompt with iso to extract NFRs
