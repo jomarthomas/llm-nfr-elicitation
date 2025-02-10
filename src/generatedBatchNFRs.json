@@ -1,0 +1,274 @@
+[
+  {
+    "raw": {
+      "functionalRequirement": "All text elements in the user interfaces shall be presented in the selected language.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Functional Suitability",
+          "requirement": "Language support",
+          "justification": "Ensuring the system presents text in the correct language is crucial for user experience and meeting the requirement's core function."
+        },
+        {
+          "attribute": "Usability",
+          "requirement": "Localized UI",
+          "justification": "Presenting text in the selected language improves the user experience and reduces frustration."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "All text elements in the user interfaces shall be presented in the selected language.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Functional Suitability",
+          "requirement": "Language support",
+          "justification": "Ensuring the system presents text in the correct language is crucial for user experience and meeting the requirement's core function."
+        },
+        {
+          "attribute": "Usability",
+          "requirement": "Localized UI",
+          "justification": "Presenting text in the selected language improves the user experience and reduces frustration."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "The system shall support the English language.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Functional Suitability",
+          "requirement": "English language support",
+          "justification": "Supporting English is a core requirement, ensuring the system functions as expected for English users."
+        },
+        {
+          "attribute": "Compatibility",
+          "requirement": "English language compatibility",
+          "justification": "Supporting English ensures compatibility with the English language standard."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "The system shall support the English language.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Functional Suitability",
+          "requirement": "English language support",
+          "justification": "Supporting English is a core requirement, ensuring the system functions as expected for English users."
+        },
+        {
+          "attribute": "Compatibility",
+          "requirement": "English language compatibility",
+          "justification": "Supporting English ensures compatibility with the English language standard."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "The system shall support Dutch as a user interface language.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Functional Suitability",
+          "requirement": "Dutch language support",
+          "justification": "Supporting Dutch is a core requirement, ensuring the system functions as expected for Dutch users."
+        },
+        {
+          "attribute": "Compatibility",
+          "requirement": "Dutch language compatibility",
+          "justification": "Supporting Dutch ensures compatibility with the Dutch language standard."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "The system shall support Dutch as a user interface language.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Functional Suitability",
+          "requirement": "Dutch language support",
+          "justification": "Supporting Dutch is a core requirement, ensuring the system functions as expected for Dutch users."
+        },
+        {
+          "attribute": "Compatibility",
+          "requirement": "Dutch language compatibility",
+          "justification": "Supporting Dutch ensures compatibility with the Dutch language standard."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "Sub-apps and their launchers shall be added to the main app by a qualified programmer.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Maintainability",
+          "requirement": "Maintainable sub-app integration",
+          "justification": "Adding sub-apps requires a clear and maintainable process."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "Sub-apps and their launchers shall be added to the main app by a qualified programmer.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Maintainability",
+          "requirement": "Maintainable sub-app integration",
+          "justification": "Adding sub-apps requires a clear and maintainable process."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "Sub-apps and their launchers in the main app shall be deleted by a qualified programmer.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Maintainability",
+          "requirement": "Maintainable sub-app removal",
+          "justification": "Deleting sub-apps requires a clear and maintainable process."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "Sub-apps and their launchers in the main app shall be deleted by a qualified programmer.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Maintainability",
+          "requirement": "Maintainable sub-app removal",
+          "justification": "Deleting sub-apps requires a clear and maintainable process."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "System shall be able to change the colors used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI colors",
+          "justification": "Customization of colors improves user experience."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "System shall be able to change the colors used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI colors",
+          "justification": "Customization of colors improves user experience."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "System shall be able to change the fonts used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI fonts",
+          "justification": "Customization of fonts improves user experience."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "System shall be able to change the fonts used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI fonts",
+          "justification": "Customization of fonts improves user experience."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "System shall be able to change the icons used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI icons",
+          "justification": "Customization of icons improves user experience."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "System shall be able to change the icons used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI icons",
+          "justification": "Customization of icons improves user experience."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "System shall be able to change the buttons used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI buttons",
+          "justification": "Customization of buttons improves user experience."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "System shall be able to change the buttons used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI buttons",
+          "justification": "Customization of buttons improves user experience."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "System shall be able to change the background used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI backgrounds",
+          "justification": "Customization of backgrounds improves user experience."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "System shall be able to change the background used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI backgrounds",
+          "justification": "Customization of backgrounds improves user experience."
+        }
+      ]
+    }
+  },
+  {
+    "raw": {
+      "functionalRequirement": "System shall be able to change the text elements used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI text elements",
+          "justification": "Customization of text elements improves user experience."
+        }
+      ]
+    },
+    "parsed": {
+      "functionalRequirement": "System shall be able to change the text elements used in the user interfaces of the sub-apps and main application, excluding external resources.",
+      "identifiedNFRs": [
+        {
+          "attribute": "Usability",
+          "requirement": "Customizable UI text elements",
+          "justification": "Customization of text elements improves user experience."
+        }
+      ]
+    }
+  }
+]

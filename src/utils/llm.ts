@@ -1,9 +1,15 @@
 import { ChatOpenAI } from "npm:@langchain/openai";
-import { generatePrompt, nfrSchema } from "./Promt.ts";
+import {
+  generateBatchPrompt,
+  generatePrompt,
+  nfrBatchSchema,
+  nfrSchema,
+} from "./prompt.ts";
 import { ChatAnthropic } from "npm:@langchain/anthropic";
 import { BaseMessage } from "npm:@langchain/core/messages";
 import { ChatGoogleGenerativeAI } from "npm:@langchain/google-genai";
 import { Logger } from "./logger.ts";
+import { z } from "npm:zod";
 
 interface StructuredLLMOutput {
   raw: BaseMessage;
@@ -17,6 +23,7 @@ abstract class LLMHandler<
   constructor(protected model: TModel) {}
 
   abstract query(input: string): Promise<StructuredLLMOutput>;
+  abstract batchQuery(inputs: string): Promise<StructuredLLMOutput[]>;
 }
 
 // OpenAI Handler
@@ -44,6 +51,10 @@ export class OpenAIHandler extends LLMHandler<ChatOpenAI> {
       Logger.error("OpenAIHandler query failed", error);
       throw new Error("Failed to query OpenAI model");
     }
+  }
+
+  async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
+    return [];
   }
 }
 
@@ -75,6 +86,10 @@ export class AnthropicHandler extends LLMHandler<ChatAnthropic> {
       throw new Error("Failed to query Anthropic model");
     }
   }
+
+  async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
+    return [];
+  }
 }
 
 // Gemini Handler
@@ -98,6 +113,20 @@ export class GeminiHandler extends LLMHandler<ChatGoogleGenerativeAI> {
         name: "nfrSchema",
       });
       return await structuredLLM.invoke(generatePrompt(input));
+    } catch (error) {
+      Logger.error("GeminiHandler query failed", error);
+      throw new Error("Failed to query Gemini model");
+    }
+  }
+
+  async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
+      const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
+      return results.items.map((result: any) => ({
+        raw: result,
+        parsed: nfrSchema.parse(result),
+      }));
     } catch (error) {
       Logger.error("GeminiHandler query failed", error);
       throw new Error("Failed to query Gemini model");

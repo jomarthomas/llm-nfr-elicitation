@@ -1,7 +1,7 @@
 import Papa from "npm:papaparse";
 import { assertEquals } from "https://deno.land/std@0.114.0/testing/asserts.ts";
 import { GeminiHandler } from "./utils/llm.ts";
-import { nfrSchema } from "./utils/Promt.ts";
+import { nfrSchema } from "./utils/prompt.ts";
 
 const text = await Deno.readTextFile("./data/FR_NFR.tsv");
 const parsed = Papa.parse(text, { delimiter: "\t", header: false }).data;
