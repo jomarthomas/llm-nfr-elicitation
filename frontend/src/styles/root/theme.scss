@@ -1,0 +1,27 @@
+:root {
+	--foreground: #404040;
+	--background: #ffffff;
+
+	--font-size: 16px;
+	--line-height: 1.2rem;
+	--font-weight-bold: 800;
+	--font-weight-normal: 500;
+	--font-weight-medium: 600;
+	--font-family: 'Inter', serif;
+
+	--t-crp-foreground: #404040;
+	--t-crp-background-hover: #eaecee;
+	--t-crp-border: #d0d7de;
+	--t-crp-border-hover: #ccced1;
+	--t-crp-elevation-shadow: 0px 2px 4px 0px #00000040;
+	--t-crp-light-border: #0c0c0c;
+	--t-crp-button-bg: #1e8c93;
+	--t-crp-disabled-background-color: #eaecee;
+	--t-crp-disabled-color: #a3a3a3;
+	--t-crp-disabled-border: #eaecee;
+
+	--elevation-1: #f6f8fa;
+	--t-crp-box-shadow: #1f23280a 0px 1px 0px 0px, #ffffff40 0px 1px 0px 0px inset;
+	--t-crp-elevation-shadow: #8c959f33 0px 8px 24px 0px;
+	--t-crp-select-downArrow: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+}
