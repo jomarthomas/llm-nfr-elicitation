@@ -1,0 +1,18 @@
+- Ability to share model with external entities
+- Common model sharing requirements
+- Business to business model sharing requirements
+- Consumer (B2C) model sharing requirements
+- Information management requirements
+- Common data management requirements
+- Smart Grid data management requirements
+- Non-Smart Grid data management requirements
+- Joint Smart Grid and Non-Smart Grid data requirements
+- Architectural requirements
+- Smart Grid architectural requirements
+- Application architectural requirements
+- Business unit architectural requirements
+- Project architectural requirements
+- Persistent data store architectural requirements
+- Persistent data store requirements with collocated smart grid and non-smart grid data
+- Use of localized data stores
+- Use of centralized data stores

@@ -1,0 +1,24 @@
+- REQ-1: The format for service information description is defined.
+- REQ-2: The interaction protocol between Web Server-SR, SR-mediator is defined.
+- REQ-3: Resource provisioning, delegation and reservation policies are in place.
+- REQ-4: There is an established norm that any resource failure will be reported.
+- REQ-5: The interaction protocol between Web Server-SR, SR-mediator is defined.
+- REQ-6: Malicious requests are detected and rejected.
+- REQ-7: Web servers have already replicated necessary content.
+- REQ-8: Both anticipated and unanticipated user requests (traffic) are considered.
+- REQ-9: The format of the initiation request is defined.
+- REQ-10: The format of service requirements is defined.
+- REQ-11: Mediator-SR, mediator-PR, mediator-PA interaction protocols are defined.
+- REQ-12: Mediator works in conjunction with the PA to establish negotiation.
+- REQ-13: Interaction protocols between PAs are identified.
+- REQ-14: Malicious requests are identified and acted upon.
+- REQ-15: There are existing policies for long-term peering arrangement.
+- REQ-16: There is procedure to perform short-term negotiation.
+- REQ-17: Negotiation is established between selected CDN peers.
+- REQ-18: Primary CDN has already acquired sufficient external resources.
+- REQ-19: Malicious requests are identified and acted upon.
+- REQ-20: Functional policies are identified and deployed.
+- REQ-21: Effective content delivery is ensured through SLA satisfaction.
+- REQ-22: Policies identifying the consequences of SLA violation are defined.
+- REQ-23: Policies are in place to perform renegotiation for problem resolution.
+- REQ-24: Administrative policies are deployed for operations in a peering arrangement

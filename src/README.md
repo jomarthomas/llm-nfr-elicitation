@@ -71,8 +71,7 @@ Use `deno task test` and tests from `./src/main.test.ts` will be ran.
   - We can adopt the method of using index or lexicon to denote the sub-categories of NFR to save on token count.
 - [Large Language Model for Vulnerability Detection: Emerging Results and Future Directions](https://arxiv.org/abs/2401.15468)
   - Talks about which prompting technique helps better in identifying categories. We are have already using the approach of including project information(ISO standard definition) and we can explore how adding role descriptions and [In-Context Learning](https://www.prompthub.us/blog/in-context-learning-guide) to make the prompt better.
-  - Uses metrics like Accuracy, Precision, Recall, F1,
-  and F0.5 to 
+  - Uses metrics like Accuracy, Precision, Recall, F1, and F0.5 to compare outputs
 
 #### Maybe?
 - [Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences](https://dl.acm.org/doi/pdf/10.1145/3654777.3676450)

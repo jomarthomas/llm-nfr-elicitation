@@ -1,0 +1,25 @@
+- AUTO Issued CU2 will be responsible for the design and developing of GOG that will provide Catalogue, Main Database (MDB) and final data.(in the sense of statistically equivalent to the final mission data) data without the use GASS telemetry, GIBIS or the main ESAC database Parent: DPAC-CU2-S-FUN-320
+- MAN Issued GOG will be fully integrated in the Gaia Simulator project. That is, it will use as other the other simulators the Gaia Simu library and the Gaia Tools library
+- MAN Issued For source generation GOG has 2 main options available: Universe Model from GaiaSimu or a Object Input Catalogue
+- MAN Issued GOG has a source by source processing mechanism
+- MAN Issued GOG must consider noise effects. For noise generation those effects should be user-selectable (they can be added or not and the values should be given by users).We classify noises in two groups: 1. Instrumental noises: noises that come from observation process such as:on board detection and tracking or observation dead-time 2. reduction noise: noise added to the data when removing instrumental noise
+- MAN Issue GOG I/O Catalogue format is driven by [AD3] . Main Data base format is defined in [AD1]
+- MAN Issued GOG must give the same result for identical input configuration parameters
+- MAN Issued GOG initialisation Module should be able to read information of the input sources. Options are to use the Universe Model or a provided user sources Parent: DPAC-CU2-S-FUN-380
+- MAN Issued The GOG catalogue module must include information on the universe model: * Galaxy model * SkyBackGroung model * Extinction Law model * DMS model Parent: DPAC-CU2-S-FUN-380
+- MAN Issued GOG initialisation module must include information on the instrument model: * The selected scanning law * Dead time. * Noise models (including detection noise) Parent: DPAC-CU2-S-FUN-380
+- MAN Issued The GOG catalogue module must include information on the reduction model: * Instrument effects substraction node bias substraction noises PPE residuals noise * Scientific content extraction noise substraction of close sources second FoV contamination noise backgound substraction. Parent: DPAC-CU2-S-FUN-380
+- MAN Issued GOG initialisation module will define the output specification output parameters (spectrum RPBP/RVS, astrometry, Vr, physical parameters and flags) epoch and/or combined number of epochs Parent: DPAC-CU2-S-FUN-380
+- MAN Issued Determine for epoch data the astrometric parameter (with instrumental and reduction er-rors): transit times and field angles in each CCD mean transit time and field angle for the transit.Gate activation and signal loss due to window cutoff must be taken into account
+- MAN Issued Determine the epoch data photometry (with instrumental and reduction errors): G mag (for each CCD and average for the transit), GRP, GBP, GRVS . Gate activation and signal loss due to window cutoff must be taken into account
+- MAN Issued Determine the epoch radial velocity (with instrumental and reduction errors)
+- MAN Issued Determine the epoch flags
+- MAN Issued Determine the epoch physical parameters (Av, Teff, logg, FeH)
+- MAN Issued * Compute the astrometric combined data using all previous transits: * Compute parallax and proper motion errors * Determine de covariance matrix * Determine estimated errors for the astrometric parameters at the mean epoch
+- MAN Issued Determine the combined data photometry: mean G, GRP, GBP, GRVS
+- MAN Issued Determine the mean radial velocity
+- MAN Issued Determine the final flags (variability, non-single star.)
+- MAN Issued Determine the mean physical parameters (classification, Av, Teff , logg, FeH)
+- MAN Issued Noise consideration on: * Flux noise (Poisson noise, total detection noise,...) * CCD combination noise for (RVS) * Wavelength calibration * Multi-transit combination noise (only for combined data)should be added
+- MAN Issued The universe catalog output data of the simulation has to follow the universe model ICD document.Note: GaiaSimu library will allow to write and read this format
+- MAN Issued GOG output should be driven by the MDB data model.The output will be used to distribute extracts to the DPC’s Parent: DPAC-CU2-S-FUN-340,DPAC-CU2-S-FUN-360

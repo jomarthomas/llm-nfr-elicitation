@@ -1,0 +1,13 @@
+REQ-1: The user can split only once document at a time.
+REQ-2: The compression of the output files requires pdf version 1.5 or above.
+REQ-3: The number of digits that can be used for the unique [FILENUMBER] prefix must be 10 or less.
+REQ-1: pages number in the page selection must be comprehended.
+REQ-2: The compression of the output files requires pdf version 1.5 or above.
+REQ-1: The user can mix only 2 documents at a time (not more or less).
+REQ-1: The compression of the output files requires pdf version 1.5 or above.
+REQ-2: The number of digits that can be used for the unique [FILENUMBER] prefix must be 10 or less.
+REQ-1: The compression of the output files requires pdf version 1.5 or above.
+REQ-2: The user can manipulate only 1 document at a time (not more).
+REQ-1: Operation system on the computer system.
+REQ-1: Log level must not be OFF (in the Settings panel) in order to work this function.
+REQ-1: Restart PDFsam application to be the changes applied

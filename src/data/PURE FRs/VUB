@@ -1,0 +1,31 @@
+- Log in to the system from the internet: accessing the system from outside the VUB-network
+- Log in to the system via the VUB-network: accessing the system whilst using the VUB-Network
+- Register for an account: requesting access to the system (become a Member)
+- Log off: Log off the system
+- Change password: A user who has forgotten his/her password, can request a new one
+- Search for publications: searching for publications in the system
+- View the results of a Search: view of the results of a publication search
+- View publication details: view details of a selected publication
+- View detailed information for multiple publications: detailed view of multiple publications
+- Download a single publication: downloading the full text of a publication
+- Download multiple publications: downloading the full text of multiple publications
+- Consult publication references: consult the references cited in a publication resulting from a search done on the system
+- Consult references for multiple publications: consult the references cited in all the publications resulting from a search done on the system
+- Display the full text of a publication: obtain a copy of the full text of a publication resulting from a search done on the system
+- View details of a reference: view details of a selected reference cited in a publication resulting from a search done on the system
+- Export the references cited in a publication (BIB format): download the references cited in a publication in bib format
+- Export the references cited in a publication (RIS format): download the references cited in a publication in RIS format
+- View authors: view information about an author of a publication in the system
+- Editing personal data: editing personal data
+- Access to your own publications: access directly to your own publications
+- Edit your own publications: possibility to modify information of your own publications by a Publisher
+- Upload publications: add a publication to the system
+- Search users: searching users in the system
+- Edit user settings: Select a system user (Members, Publishers, Moderators) and change his settings
+- Create User: create a new user
+- Delete User: delete an existing user
+- Create Group: create a new group
+- Search Group: select a group from a list in order to view the group details
+- Delete Group: delete an existing group in the system
+- Edit group settings: Select a system group and change its settings
+- Edit system configuration settings: access the configuration panel in order to change the system configuration settingshere are a total of 31 Functional Requirements listed in the SRS.

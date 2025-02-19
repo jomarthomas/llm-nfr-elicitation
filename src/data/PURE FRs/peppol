@@ -1,0 +1,11 @@
+- Create standard representation of European criteria of qualitative selection and exclusion
+- Application for VCD account
+- Initialization of VCD Request
+- Arrangement of VCD instance
+- Compilation of VCD instance
+- Authentication to VCD viewing system
+- Advanced VCD creation service
+- VCD re-compilation service
+- Mandate contracting authority
+- The VCD system MUST provide a functionality and an interface that enables contracting authorities to retrieve the  attestation from the storage.
+- The VCD system MUST ensure that the attestation that is requested by the contracting authority is still valid at the time of awarding or when the Call for Tender is closed

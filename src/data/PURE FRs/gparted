@@ -1,0 +1,24 @@
+- Boot Menu: After booting your computer with GParted Live, this is the first screen you see.
+- Select Keymap: The keymap is the layout of symbols on your keyboard.
+- Language Selection Menu: A list of a wide variety of supported languages is displayed.
+- GParted Desktop: On the desktop you can find all the program’s functions.
+- GParted Main Window: From this window you can perform all the actions supported by GParted.
+- Refresh Connected Devices: From GParted>Refresh Devices you can refresh the list of the connected devices in the system.
+- Undo & Apply: Every time you perform an operation, it goes in pending mode.
+- View Device Information: You can view the selected device’s information by clicking View>Device Information.
+- Create Partition Table: Clicking on Device>Create Partition Table lets you create the drive’s partition table.
+- Create a New Partition: To create a new partition, first select the desired hard disk or other device, from the drop down menu on the right.
+- Delete a Partition: Select the partition you want to delete.
+- Resize or Move a Partition: Select the partition you want to resize or move.
+- Copy Partition: Select the partition you would like to copy.
+- Paste Partition: With this action you can paste the copied partition to unallocated space of the same drive, another drive in its entirety, or to unallocated space of another drive.
+- Format Partition: After you have created a partition (regardless of formatting it or not) you can format it to the file system you like.
+- Unmount Partition: If you have mounted a partition to a specific mount point, you can unmount it by clicking on Partition>Unmount.
+- Manage Flags: Selecting a partition and then clicking on Partition>Manage Flags, brings up a dialog window with flags and checkboxes.
+- Check and Repair File System: Selecting a partition and then clicking on Partition>Check, sends in pending mode the check and repair partition errors operation.
+- Label Partition: Selecting a partition and then clicking on Partition>Label, opens a dialog window asking you to name your partition.
+- Take a Screenshot of the Desktop or an Active Window: Clicking on Screenshot on the desktop, opens a dialog window which informs you that after clicking Yes, a cross-pointer appears and you select the window you want to print-screen.
+- Terminal & Mount Partitions and Save Screenshots to a Device: Apart from the main GParted window, you can also launch a command line utility by clicking on Terminal.
+- Information: Clicking on Info brings up a dialog window, on which you can select the List of packages or Windows Information.
+- Screen Resolution Changer: Clicking on Screen resolution brings up a window with monitor resolution options.
+- Date and Time: Date and time is displayed on the desktop’s taskbar.

@@ -1,0 +1,35 @@
+- The ELSS must capture all data necessary for recording the fishing activities undertaken by a UK fishing vessel.
+- The ELSS must output the data as an XML file for transmission to the UK fisheries administrations’ ERS system.
+- The ELSS data must be validated against the UK XML/XSD before transmission from the fishing vessel.
+- The ELSS data must be transmitted at the required times set out below in Section 2.5.1.
+- Each ELSS data transmission will be acknowledged by a return message from the UK fisheries administrations’ ERS system.
+- The ELSS must provide data capture screens for the entry of the logbook, transhipment and landing declaration data that is required to be transmitted to the UK fisheries administrations’ ERS system.
+- The ELSS must use English (UK) localizations for all UK Electronic Logbook features.
+- All dates and times must be UTC.
+- The ELSS must provide the ability to print out the ELSS logbook data (including landing declarations) using an onboard printer.
+- Additionally a formatted electronic print file may be generated out of the ELSS.
+- The ELSS must provide a means so that electronic print files are protected so that they cannot be modified in any way once generated and distributed.
+- The ELSS must provide Electronic Logbook data for transmission to the UK fisheries administrations’ ERS system in accordance with the frequency requirements defined below (Section 5.1).
+- The ELSS should at least be able to transmit data via email, either by being included in a packaged solution with an email system or by linking with an existing on-board email service.
+- Data is required to be emailed as an xml document attached to an email with a standard Subject header and sent to the email address of the UK fisheries administrations’ ERS system.
+- The subject header must consist of a character string containing ‘ERS – ‘ prefixed to the contents of the GBRRN attribute of the Electronic Logbook data being transmitted.
+- The xml document file name should be based upon the GBRRN attribute defined in the UK XML/XSD.
+- All xml documents attached to emails to the UK fisheries administrations’ ERS system must be encrypted using PGP.
+- The ELSS must permit the Master of the vessel to generate formatted data for transmission to the UK fisheries administrations’ ERS system.
+- The ELSS must provide facilities to capture and deliver for transmission corrections to previously successfully transmitted data.
+- Data corrections must not be transmitted piecemeal; the entire report containing one or more corrected items must be transmitted.
+- The ELSS must only permit correction messages to be generated and sent for reports sent during a current trip up to the submission of the End of Fishing report for that voyage.
+- The ELSS must provide facilities to transmit deletions to previously transmitted data.
+- The ELSS must only permit deletion messages to be generated and sent for reports sent during a current trip up to the End of Fishing report for that voyage.
+- The ELSS must be able to receive acknowledgement (RET) messages transmitted from the UK fisheries administrations’ ERS system.
+- The ELSS must match each acknowledgement message with the appropriate transmitted data operation, deletion or correction report.
+- The ELSS must be able to confirm that a transmission has been successfully acknowledged or display any error message should the ELSS receive a negative acknowledgement message.
+- Prior to registering a product for approval, a test address for all test email transmissions and test logon details to the UK fisheries administrations’ ERS system will be provided on request.
+- This test facility must be used to send test transmissions to establish that the communications between the vessel and the UK fisheries administrations’ ERS system are fully operational.
+- ELSS must retain all logbook reports and any corrections on the system at least until the end of each trip, i.e. on submission of the electronic landing declaration or of a transhipment report.
+- Any ELSS software updates must not impact upon the ELSS’s ability to meet the requirements set out in this document and other test documentation.
+- ELSS security and access controls such that one username/password must be provided for the owner of each vessel.
+- The owner is then able to set up subsidiary users such as the master of the vessel with their own username and password.
+- The username is required to be recorded in each report completed and in each transmission made; the person who has entered the data is required to “sign” the Electronic Logbook data stating that they are aware of the responsibilities/liabilities they are committing to in completing and / or transmitting a report.
+- Each copy of the ELSS installed must be provided with a unique (internal?) number that is automatically entered into each transmission to identify the instance of the ELSS from which the report has been transmitted.
+- ELSS must only be supplied for use at sea and loaded onto an onboard system and is not to be provided for onshore use by agents or representatives
