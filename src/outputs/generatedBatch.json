@@ -1,0 +1,87 @@
+[
+  {
+    "functionalRequirement": "In the Facebook settings menu, the system shall allow the user to delete their saved username and password for Facebook.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system should allow users to delete their saved credentials completely and securely.",
+        "justification": "The requirement directly relates to the system's ability to perform a specific function as per user needs."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The deletion process should be accurate and complete, ensuring no remnants of the credentials remain in the system.",
+        "justification": "The requirement directly relates to the system's ability to perform a specific function as per user needs."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that the deletion process is secure and prevents unauthorized access to the deleted credentials.",
+        "justification": "The requirement involves handling sensitive data (passwords)."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that the deletion process does not compromise the integrity of other user data.",
+        "justification": "The requirement involves handling sensitive data (passwords)."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall request a deposit of Rs. 5000 upon entry of valid customer information and update it temporarily in the customer database.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system should update the customer database within 1 second of the deposit request.",
+        "justification": "The requirement involves handling transactions and data updates."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system should use less than 10% CPU resources during the deposit process.",
+        "justification": "The requirement involves handling transactions and data updates."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure the accuracy and integrity of the deposit amount and database updates.",
+        "justification": "The requirement involves handling financial transactions."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must protect the financial transaction data during processing.",
+        "justification": "The requirement involves handling financial transactions."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall generate reports on storage consumption by financial contact.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system should generate reports within 5 seconds for each financial contact.",
+        "justification": "The requirement involves generating reports."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system should use less than 20% CPU resources during report generation.",
+        "justification": "The requirement involves generating reports."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system should accurately reflect the storage consumption for each financial contact.",
+        "justification": "The requirement involves generating reports."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall be able to generate a series of multiple-choice fraction questions that form a cohesive storyline to introduce a specific topic.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system should generate a complete set of questions for the given topic.",
+        "justification": "The requirement involves generating questions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system should generate correct and accurate fraction questions.",
+        "justification": "The requirement involves generating questions."
+      }
+    ]
+  }
+]

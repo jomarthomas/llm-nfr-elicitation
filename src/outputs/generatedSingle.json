@@ -1,0 +1,55 @@
+{
+  "functionalRequirement": "System shall be able to perform distance calculations and access geo-location information for the user, sites, and nearby sites.",
+  "identifiedNFRs": [
+    {
+      "attribute": "Functional Suitability",
+      "requirement": "Functional Completeness: The system must accurately calculate distances between user, sites, and nearby sites.  The system must support all required geo-location data types (e.g., latitude, longitude).",
+      "justification": "The FR requires the system to perform distance calculations and access geo-location information, which are core functional aspects."
+    },
+    {
+      "attribute": "Functional Suitability",
+      "requirement": "Functional Correctness: The system must calculate distances with a precision of 0.01 meters.  The system must correctly identify and access geo-location data for all valid inputs.  The system must provide accurate results within 100 milliseconds of input.",
+      "justification": "The FR requires the system to perform distance calculations and access geo-location information, which are core functional aspects."
+    },
+    {
+      "attribute": "Performance Efficiency",
+      "requirement": "Time Behavior: The system must calculate distances between user, sites, and nearby sites in less than 100 milliseconds for any valid input. The system must retrieve geo-location information for sites within 200 milliseconds.",
+      "justification": "The FR implies the need for timely access to geo-location information and distance calculations."
+    },
+    {
+      "attribute": "Performance Efficiency",
+      "requirement": "Resource Utilization: The system's CPU usage during distance calculations must not exceed 80%. The system's memory usage must not exceed 50% during geo-location data retrieval.",
+      "justification": "The FR implies the need for timely access to geo-location information and distance calculations."
+    },
+    {
+      "attribute": "Compatibility",
+      "requirement": "Co-existence: The system must operate concurrently with other applications without impacting their performance or functionality.  The system must not interfere with any other geo-location services.",
+      "justification": "The system needs to interact with external geo-location services, requiring compatibility."
+    },
+    {
+      "attribute": "Compatibility",
+      "requirement": "Interoperability: The system must be able to exchange geo-location data with other systems using standard formats (e.g., GeoJSON).",
+      "justification": "The system needs to interact with external geo-location services, requiring compatibility."
+    },
+    {
+      "attribute": "Reliability",
+      "requirement": "Faultlessness: The system must calculate distances and access geo-location information without errors for 99.9% of requests.",
+      "justification": "The FR requires the system to provide consistent and accurate results."
+    },
+    {
+      "attribute": "Reliability",
+      "requirement": "Availability: The system must be available for use 99.99% of the time.",
+      "justification": "The FR requires the system to provide consistent and accurate results."
+    },
+    {
+      "attribute": "Security",
+      "requirement": "Confidentiality: The system must protect user's geo-location data from unauthorized access.",
+      "justification": "Geo-location data may contain sensitive information, requiring security measures."
+    },
+    {
+      "attribute": "Safety",
+      "requirement": "Operational constraint: The system must not cause any harm to the user's device during operation.",
+      "justification": "The system should not cause any harm or danger."
+    }
+  ]
+}

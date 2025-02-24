@@ -1,27 +1,60 @@
 import { z } from "npm:zod";
 
 const promptAccessories = {
-  batchStart: `Given a list of Functional Requirements (FR), return a list of JSON objects identifying all the relevant Non-Functional Requirements (NFRs) based on the FR's characteristics.`,
+  batchStart: `You are given a list of Functional Requirements (FR), return a list of JSON objects identifying all the relevant Non-Functional Requirements (NFRs), that aligns with the standard, based on the FR's characteristics. `,
   batchEnd: `Given list of functional requirements: {Given_FR}`,
-  singleStart: `Given a Functional Requirement (FR), return a JSON object identifying all the relevant Non-Functional Requirements (NFRs) based on the FR's characteristics.`,
+  singleStart: `You are given a Functional Requirement (FR), return a JSON object identifying all the relevant Non-Functional Requirements (NFRs), that aligns with the standard, based on the FR's characteristics. `,
   singleEnd: `Given functional requirement: {Given_FR}
 `,
 };
 
+
+// - NFRs should be: specific, measurable, verifiable and unambiguous. 
+// - NFRs must be technically specific enough for developers to implement and test against. They should provide clear, measurable criteria that leave no room for interpretation.
+
+// Good Technical NFR Example:
+// "The system must process user authentication requests within 200 milliseconds under a load of 10,000 concurrent users, with a maximum memory usage of 2GB"12
+
+// Poor Technical NFR Example:
+// "The system should be fast and efficient"
+
+// For each Category, you can give multiple NFRs if you think the NFR can fit in multiple sub categories.
+// For example: A FR can give 2 NFRs based on Functional Suitability, one for Functional Completeness and Functional Correctness. 
+// To denote the sub category, you can use the format: "<subcategory>: <NFR>" in the "requirement" field. Each of the subcategory item should be its own separate item.
+
+
 const prompt = `
-Task:
+You are an expert requirement engineer and you are well versed with the ISO/IEC 25010:2023(E), Systems and software Quality Requirements and Evaluation-Product quality model
 {Start}
 
-NFR Categories & Definitions:
-Functional Suitability - Ensures the system meets stated and implied needs. Includes completeness, correctness, and appropriateness.
-Performance Efficiency - Ensures the system operates within required time, resource, and capacity constraints. Includes time behavior, resource utilization, and scalability.
-Compatibility - Ensures the system works well with other components or environments. Includes interoperability and co-existence.
-Usability - Ensures ease of use and user experience. Includes learnability, operability, and user error protection.
-Reliability - Ensures the system remains operational over time. Includes fault tolerance, recoverability, and availability.
-Security - Ensures data protection and resistance to malicious actions. Includes confidentiality, integrity, authentication, and non-repudiation.
-Maintainability - Ensures the system can be efficiently modified and tested. Includes modularity, modifiability, and testability.
-Scalability & Flexibility - Ensures the system can adapt to increased load or environmental changes. Includes adaptability and scalability.
-Safety - Ensures the system prevents harm to users, data, or the environment. Includes fail-safe mechanisms and risk identification.
+For each applicable attribute, specify:
+- What is being measured
+- Which specific metrics apply
+- Quantifiable success criteria
+- Testing/verification method
+
+
+Each NFR must include:
+- Clear numerical metrics
+- Time constraints where applicable
+- Specific testing conditions
+- Resource constraints
+- Performance boundaries
+
+Avoid vague terms like:
+- 'user-friendly'
+- 'secure'
+- 'efficient'
+- 'robust'
+- 'appropriate'
+
+For each Category, you can give multiple NFRs if you think the NFR can fit in multiple sub categories.
+For example: A FR can give 2 NFRs based on Functional Suitability, one for Functional Completeness and Functional Correctness. 
+To denote the sub category, you can use the format: "<subcategory>: <NFR>" in the "requirement" field. 
+*Each of the subcategory item should be its own separate item.*
+
+Here's the gist of ISO/IEC 25010:2023(E) for your reference:
+${Deno.readTextFileSync("./data/prompt tests/WithSubDefinitions")}
 
 {End}
 `;
@@ -42,7 +75,7 @@ export const nfrSchema = z.object({
             "Reliability",
             "Security",
             "Maintainability",
-            "Scalability & Flexibility",
+            "Flexibility",
             "Safety",
           ])
           .describe("The identified NFR category."),

@@ -1,0 +1,184 @@
+1. Functional Suitability: Capability of a product to provide functions that meet stated and implied needs of intended users when it is used under specified conditions.
+1.1 Functional Completeness: Capability of a product to provide a set of functions that covers all the specified tasks and intended users' objectives
+Measure: What proportion of the specified functions has been implemented?
+1.2 Functional Correctness: Capability of a product to provide accurate results when used by intended users
+Measure: What proportion of functions provides the correct results?
+Note: Precision is one of the attributes of correctness.
+Example: In case of the products requiring high precision such as scientific software, the product can provide precise results with the needed degree as well as accurate results.
+1.3 Functional Appropriateness: Capability of a product to provide functions that facilitate the accomplishment of specified tasks and objectives
+Measure: Functional appropriateness of usage objective: What proportion of the functions required by the user provides appropriate outcome to achieve a specific usage objective?
+Measure: Functional appropriateness of system: What proportion of the functions required by the users to achieve their objectives provides appropriate outcome?
+Example: A product provides the necessary and sufficient steps to complete a task, excluding any unnecessary steps.
+
+2. Performance Efficiency: Capability of a product to perform its functions within specified time and throughput parameters and be efficient in the use of resources under specified conditions
+Note: Resources can be CPU, memory, storage, and network devices.
+Note: Resources can include other software products, the software and hardware configuration of the system, energy, and materials (e.g. print paper, storage media).
+2.1 Time Behavior: Capability of a product to perform its specified function under specified conditions so that the response time and throughput rates meet the requirements
+Measure: Mean response time: How long is the mean time taken by the system to respond to a user task or system task?
+Measure: Response time adequacy: How well does the system response time meet the specified target?
+Measure: Mean turnaround time: What is the mean time taken for completion of a job or an asynchronous process?
+Measure: Turnaround time adequacy: How well does the turnaround time meet the specified targets?
+Measure: Mean throughput: What is the mean number of jobs completed per unit time?
+2.2 Resource Utilization: Capability of a product to use no more than the specified amount of resources to perform its function under specified conditions
+Measure: Mean memory utilization: How much of memory is used to execute a given set of tasks compared to the available memory?
+Measure: Mean I/O devices utilization: How much of I/O device busy time is used to perform a given set of tasks compared to the I/O operation time?
+Measure: Bandwidth utilization: What proportion of the available bandwidth is utilized to perform a given set of tasks?
+2.3 Capacity: Capability of a product to meet requirements for the maximum limits of a product parameter
+Measure: Transaction processing capacity: How many transactions can be processed per unit time?
+Measure: User access capacity: How many users can access the system simultaneously at a certain time?
+Measure: User access increase adequacy: How many users can be added successfully per unit time?
+Note: Parameters can include the number of items that can be stored, the number of concurrent users, the communication bandwidth, the throughput of transactions, and the size of a database.
+
+3. Compatibility: Capability of a product to exchange information with other products, and/or to perform its required functions while sharing the same common environment and resources
+3.1 Co-existence: Capability of a product to perform its required functions efficiently while sharing a common environment and resources with other products, without detrimental impact on any other product
+Measure: Co-existence with other products: What proportion of specified software products can share the environment with this software product without adverse impact on their quality characteristics or functionality?
+Measure: Data formats exchangeability: What proportion of the specified data formats is exchangeable with other software or systems?
+Measure: Data exchange protocol sufficiency: What proportion of the specified data exchange protocols is supported?
+Measure: External interface adequacy: What proportion of the specified external interfaces (interfaces with other software and systems) is functional?
+3.2 Interoperability: Capability of a product to exchange information with other products and mutually use the information that has been exchanged
+Measure: Data formats exchangeability: What proportion of the specified data formats is exchangeable with other software or systems?
+Measure: Data exchange protocol sufficiency: What proportion of the specified data exchange protocols is supported?
+Measure: External interface adequacy: What proportion of the specified external interfaces (interfaces with other software and systems) is functional?
+Note: Information is meaningful data; and information exchange includes transformation of data for exchange.
+
+4. Interaction Capability: Capability of a product to be interacted with by specified users to exchange information between a user and a system via the user interface to complete the intended task
+Note: Interaction capability in the product quality model and its sub-characteristics focus on a set of attributes that enable interaction by users (or operators) to complete specific tasks in a variety of contexts of use. On the other hand, usability as defined in the quality-in-use model (ISO/IEC 25019) comprehensively focuses on outcomes of use to determine whether tasks are achieved by users with effectiveness, efficiency and satisfaction in a specific context of use.
+Note: Interaction capability is a prerequisite for usability.
+Note: Interaction itself is defined in ISO TR 25060 as “exchange of information between a user and an interactive system via the user interface”.
+4.1 Appropriateness Recognizability: Capability of a product to be recognized by users as appropriate for their needs
+Measure: Description completeness: What proportion of usage scenarios is described in the product description or user documents?
+Measure: Demonstration coverage: What proportion of tasks has demonstration features for users to recognize the appropriateness?
+Measure: Entry point self-descriptiveness: What proportion of the commonly used landing pages on a website explains the purpose of the website?
+Note: Appropriateness recognizability depends on the ability to recognize the appropriateness of the product functions from initial impressions of the product or system and/or any associated documentation.
+Note: The information can be provided by the product to assist users in making decisions about the adoption, acquisition, or use of products prior to the start of full-scale use, through demonstrations, tutorials, documentation or, for a website, the information on the home page.
+4.2 Learnability: Capability of a product to have specified users learn to use specified product functions within a specified amount of time
+Measure: User guidance completeness: What proportion of functions is explained in sufficient detail in user documentation and/or help facility to enable the user to apply the functions?
+Measure: Entry fields defaults: What proportion of entry fields that could have default values are automatically filled with default values?
+Measure: Error messages understandability: What proportion of the error messages state the reason why the error occurred and how to resolve it?
+Measure: Self-explanatory user interface: What proportion of information elements and steps presented to the user enable common tasks to be completed by a first-time user without prior study or training or seeking external assistance?
+4.3 Operability: Capability of a product to have functions and attributes that make it easy to operate and control
+Measure: Operational consistency: To what extent do interactive tasks have a behaviour and appearance that is consistent both within the task and across similar tasks?
+Measure: Message clarity: What proportion of messages from a system conveys the right outcome or instructions to the user?
+Measure: Functional customizability: What proportion of functions and operational procedures can a user customize for his convenience?
+Measure: User interface customizability: What proportion of user interface elements can be customized in appearance?
+Measure: Monitoring capability: What proportion of function states can be monitored during operation?
+Measure: Undo capability: What proportion of tasks that has a significant consequence provides an option for re-confirmation or undo capability?
+Measure: Understandable categorization of information: To what extent does the software organize information in categories that are familiar to the intended users and convenient for their tasks?
+Measure: Appearance consistency: What proportion of user interfaces with similar items has a similar appearance?
+Measure: Input device support: To what extent can tasks be initiated by all appropriate input modalities (such as keyboard, mouse or voice)?
+Note: Operability is related to controllability, user error robustness and conformity with user expectations as defined in ISO 9241-110. It is also related to the effectiveness and efficiency of physical interface devices (e.g. mouse, touch pen).
+4.4 User Error Protection: capability of a product to prevent operation errors
+Measure: Avoidance of user operation error: What portion of user actions and inputs are protected against causing any system malfunction?
+Measure: User entry error correction: To what extent does the system provide a suggested correct value for detected user entry errors with an identifiable cause?
+Measure: User error recoverability: What proportion of user errors can be corrected or recovered by the system?
+4.5 User Engagement: Capability of a product to present functions and information in an inviting and motivating manner encouraging continued interaction
+Note: This refers to properties of the product that increase the pleasure and satisfaction of the user, such as harmonious colour, intuitive user interface and friendly voice guidance.
+4.6 Inclusivity: capability of a product to be utilised by people of various backgrounds
+Note: Backgrounds include (and are not limited to) people of various ages, abilities, cultures, ethnicities, languages, genders, economic situations, education, geographical locations and life situations.
+4.7 User Assistance: capability of a product to be used by people with the widest range of characteristics and capabilities to achieve specified goals in a specified context of use
+Note: The range of capabilities includes language differences and disabilities associated with age, sight, hearing, use of hands, arms and legs, etc.
+EXAMPLE: A system that can interact with users using multiple input/output methods, such as voice, gaze, and touch, in addition to visual display, in order to accommodate differences in vision, hearing, and body parts that can be moved, or changes in these areas.
+4.8 Self-descriptiveness: Capability of a product to present appropriate information, where needed by the user, to make its capabilities and use immediately obvious to the user without excessive interactions with a product or other resources
+Note: Other resources include user documentation, help desks, other users and other sources of assistance.
+EXAMPLE: Instructions for user operation are divided and displayed or talked through step-by-step interactively at the helpful timing of operation, in order to help users understand easily what is going on with the system/software and to prevent users from becoming confused by receiving too many instructions at once.
+
+5. Reliability: Capability of a product to perform specified functions under specified conditions for a specified period of time without interruptions and failures
+5.1 Faultlessness: Capability of a product to perform specified functions without fault under normal operation
+Measure: Fault correction: What proportion of detected reliability-related faults has been corrected?
+Measure: Mean time between failure (MTBF): What is the MTBF during the system/software operation?
+Measure: Failure rate: What is the average number of failures during a defined period?
+Note: The concept of faultlessness can also be applied to other quality characteristics to indicate the degree to which they meet required needs under normal operation.
+5.2 Availability: Capability of a product to be operational and accessible when required for use
+Measure: System availability: For what proportion of the scheduled system operational time is the system actually available?
+Measure: Mean down time: How long does the system stay unavailable when a failure occurs?
+Note: Externally, availability can be assessed by the proportion of total time during which the system, product or component is in an up state. Availability is therefore a combination of faultlessness (which governs the frequency of failure), fault tolerance (5.3) and recoverability (5.4) (which governs the length of down time following each failure).
+Note: Failover or duplication of systems can be applied to support availability.
+5.3 Fault Tolerance: Capability of a product to operate as intended despite the presence of hardware or software faults
+Measure: Failure avoidance: What proportion of fault patterns has been brought under control to avoid critical and serious failures?
+Measure: Redundancy of components: What proportion of system components is installed redundantly to avoid system failure?
+Measure: Mean fault notification time: How quickly does the system report the occurrence of faults?
+5.4 Recoverability: Capability of a product in the event of an interruption or a failure to recover the data directly affected and re-establish the desired state of the system
+Measure: Mean recovery time: How long does it take for the software/system to recover from failure?
+Measure: Backup data completeness: What proportion of data items is backed up regularly?
+Note: The length of the unavailable period following a failure, during which a product is not available at the same level of use as before the failure, is determined by its recoverability. However, the recoverability of a product depends on the recoverability of the computer system on which the product operates or a subset of its functions.
+
+6. Security: Capability of a product to protect information and data so that persons or other products have the degree of data access appropriate to their types and levels of authorization, and to defend against attack patterns by malicious actors
+Note: As well as data stored in or by a product or system, security also applies to data in transmission
+6.1 Confidentiality: Capability of a product to ensure that data are accessible only to those authorized to have access
+Measure: Access controllability: What proportion of confidential data items are protected from unauthorized accesses?
+Measure: Data encryption correctness: How correctly is the encryption/ decryption of data items implemented as stated in the requirement specification?
+Measure: Strength of cryptographic algorithms: What proportion of cryptographic algorithms has been well-vetted?
+6.2 Integrity: Capability of a product to ensure that the state of its system and data are protected from unauthorized modification or deletion either by malicious action or computer error
+Measure: Data integrity: To what extent is the data corruption or modification by unauthorized access prevented?
+Measure: Internal data corruption prevention: To what extent are the available prevention methods for data corruption implemented?
+Measure: Buffer overflow prevention: What portion of memory accesses with user input in software modules has been done bounds checking for preventing buffer overflow?
+6.3 Non-repudiation: Capability of a product to prove that actions or events have taken place, so that the events or actions cannot be repudiated later
+Measure: Digital signature usage: What proportion of events requiring non-repudiation is processed using digital signature?
+6.4 Accountability: Capability of a product to enable actions of an entity to be traced uniquely to the entity
+Measure: User audit trail completeness: How complete is the audit trail concerning the user access to the system or data?
+Measure: System log retention: For what percent of the required retention period is the system log retained in stable storage?
+6.5 Authenticity: Capability of a product to prove that the identity of a subject or resource is the one claimed
+Measure: Authentication mechanism sufficiency: How well does the system authenticate the identity of a subject?
+6.6 Resistance: Capability of a product to sustain operations while under attack from a malicious actor
+Measure: Authentication rules conformity: What proportion of the required authentication rules is established?
+
+7. Maintainability: Capability of a product to be modified by the intended maintainers with effectiveness and efficiency
+7.1 Modularity: Capability of a product to limit changes to one component from affecting other components
+Measure: Coupling of components: How strongly are the components independent and how many components are free from impacts from changes to other components in a system or computer program?
+Measure: Cyclomatic complexity adequacy: How many software modules have acceptable cyclomatic complexity?
+Note: Modularity implies that the product is composed of discrete modules or components with cohesive content and minimal coupling to other modules or components.
+7.2 Reusability: Capability of a product to be used as assets in more than one system, or in building other assets
+Measure: Reusability of assets: How many assets in a system can be reusable?
+Measure: Coding rules conformity: How many modules conform to required coding rules?
+7.3 Analysability: Capability of a product to be effectively and efficiently assessed regarding the impact of an intended change to one or more of its parts, to diagnose it for deficiencies or causes of failures, or to identify parts to be modified
+Measure: System log completeness: To what extent does the system record its operations in logs so that they are to be traceable?
+Measure: Diagnosis function effectiveness: What proportion of the diagnosis functions meets the requirements of causal analysis?
+Measure: Diagnosis function sufficiency: What proportion of the required diagnosis functions has been implemented?
+Note: Implementation can include providing mechanisms for the product to analyse its own faults and providing reports prior to a failure or other event.
+7.4 Modifiability: Capability of a product to be effectively and efficiently modified without introducing defects or degrading existing product quality
+Measure: Modification efficiency: How efficiently are the modifications made compared to the expected time?
+Measure: Modification correctness: What proportion of modifications has been implemented correctly?
+Measure: Modification capability: To what extent are the required modifications made within a specified duration?
+Note: Implementation includes coding, designing, documenting and verifying changes.
+Note: Modularity (7.1) and analysability (7.3) can influence modifiability.
+Note: Modifiability is a combination of changeability and stability.
+7.5 Testability: Capability of a product to enable an objective and feasible test to be designed and performed to determine whether a requirement is met
+Measure: Test function completeness: How completely are test functions and facilities implemented?
+Measure: Autonomous testability How independently can the software be tested?
+Measure: Test restartability: How easily can the operation test be carried out from the restart point after maintenance?
+
+8. Flexibility: Capability of a product to be adapted to changes in its requirements, contexts of use, or system environment
+8.1 Adaptability: Capability of a product to be effectively and efficiently adapted for or transferred to different hardware, software or other operational or usage environments
+Measure: Hardware environmental adaptability: Is software or system capable enough to adapt itself to different hardware environment?
+Measure: System software environmental adaptability: Is software or system capable enough to adapt itself to different system software environment?
+Measure: Operational environment adaptability: Is software or system capable enough to adapt itself to different operational environment?
+Note: Adaptations include those carried out by specialized support staff, and those carried out by business or operational staff, or end users.
+Note: Other quality sub-characteristics, typically such as inclusivity (4.6) and user assistance (4.7), can be collaboratively applied to improve adaptability and flexibility (3.8).
+Such differences or changes in the context of use can include, for example, the following cases:
+— when using the system initially unintended circumstances, e.g. underwater or in outer space;
+— when using the system in limited operation mode with less energy supplies or no communication network connectivity due to an accident or a disaster;
+— when initially unintended types of users are involved or influenced.
+8.2 Scalability: Capability of a product to handle growing or shrinking workloads or to adapt its capacity (2.3) to handle variability
+8.3 Installability: Capability of a product to be effectively and efficiently installed successfully and/or uninstalled in a specified environment
+Measure: Installation time efficiency: How efficient is the actual installation time compared to expected time?
+Measure: Ease of installation: Can users or maintainers customize the installation procedure for their convenience?
+Note: If the product is to be installed by an end user, installability can affect the resulting functional appropriateness (1.3) and operability (4.3).
+8.4 Replaceability: Capability of a product to replace another specified product for the same purpose in the same environment
+Measure: Usage similarity: What proportion of user functions of the replaced product can be performed without any additional learning or workaround?
+Measure: Product quality equivalence: What proportion of the quality measures is satisfied after replacing previous software product by this one?
+Measure: Functional inclusiveness: Can the similar functions easily be used after replacing previous software product by this one?
+Measure: Data reusability/import capability: Can the same data be used after replacing previous software product by this one?
+Note: The replaceability of a new version of a software product is important to the user when upgrading.
+Note: Replaceability can include attributes of both installability (8.3) and adaptability (8.1). The concept has been introduced as a sub-characteristic of its own because of its importance.
+Note: Replaceability reduces lock-in risks, so that other software products can be used in place of the present one, for example by the use of standardized file formats.
+
+9. Safety: Capability of a product under defined conditions to avoid a state in which human life, health, property, or the environment is endangered
+9.1 Operational constraint: Capability of a product to constrain its operation to within safe parameters or states when encountering operational hazard
+EXAMPLE: A constraint that prevents an airplane from entering a stall condition caused by environmental conditions or pilot error.
+EXAMPLE: A constraint that limits the amount of radiation released by a radiology device to a safe threshold regardless of the operator input.
+9.2 Risk Identification: Capability of a product to identify a course of events or operations that can expose life, property or environment to unacceptable risk
+9.3 Fail Safe: capability of a product to automatically place itself in a safe operating mode, or to revert to a safe condition in the event of a failure
+EXAMPLE: A traffic light that reverts to blinking red in all directions when normal operation fails.
+9.4 Hazard warning: Capability of a product to provide warnings of unacceptable risks to operations or internal controls so that they can react in sufficient time to sustain safe operations
+EXAMPLE: A pedestrian traffic light gives a warning sign, such as showing the remaining seconds, before reverting from green to yellow or red.
+9.5 Safe Integration: Capability of a product to maintain safety (9) during and after integration with one or more components
