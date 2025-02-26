@@ -23,41 +23,47 @@ const promptAccessories = {
 // To denote the sub category, you can use the format: "<subcategory>: <NFR>" in the "requirement" field. Each of the subcategory item should be its own separate item.
 
 
+// const prompt = `
+// You are an expert requirement engineer and you are well versed with the ISO/IEC 25010:2023(E), Systems and software Quality Requirements and Evaluation-Product quality model
+// {Start}
+
+// For each applicable attribute, specify:
+// - What is being measured
+// - Which specific metrics apply
+// - Quantifiable success criteria
+// - Testing/verification method
+
+
+// Each NFR must include:
+// - Clear numerical metrics
+// - Time constraints where applicable
+// - Specific testing conditions
+// - Resource constraints
+// - Performance boundaries
+
+// Avoid vague terms like:
+// - 'user-friendly'
+// - 'secure'
+// - 'efficient'
+// - 'robust'
+// - 'appropriate'
+
+// For each Category, you can give multiple NFRs if you think the NFR can fit in multiple sub categories.
+// For example: A FR can give 2 NFRs based on Functional Suitability, one for Functional Completeness and Functional Correctness. 
+// To denote the sub category, you can use the format: "<subcategory>: <NFR>" in the "requirement" field. 
+// *Each of the subcategory item should be its own separate item.*
+
+// Here's the gist of ISO/IEC 25010:2023(E) for your reference:
+// ${Deno.readTextFileSync("./data/prompt tests/WithSubDefinitions")}
+
+// {End}
+
+// `;
+
 const prompt = `
-You are an expert requirement engineer and you are well versed with the ISO/IEC 25010:2023(E), Systems and software Quality Requirements and Evaluation-Product quality model
-{Start}
-
-For each applicable attribute, specify:
-- What is being measured
-- Which specific metrics apply
-- Quantifiable success criteria
-- Testing/verification method
-
-
-Each NFR must include:
-- Clear numerical metrics
-- Time constraints where applicable
-- Specific testing conditions
-- Resource constraints
-- Performance boundaries
-
-Avoid vague terms like:
-- 'user-friendly'
-- 'secure'
-- 'efficient'
-- 'robust'
-- 'appropriate'
-
-For each Category, you can give multiple NFRs if you think the NFR can fit in multiple sub categories.
-For example: A FR can give 2 NFRs based on Functional Suitability, one for Functional Completeness and Functional Correctness. 
-To denote the sub category, you can use the format: "<subcategory>: <NFR>" in the "requirement" field. 
-*Each of the subcategory item should be its own separate item.*
-
-Here's the gist of ISO/IEC 25010:2023(E) for your reference:
-${Deno.readTextFileSync("./data/prompt tests/WithSubDefinitions")}
-
-{End}
-`;
+${Deno.readTextFileSync("./data/prompt tests/Advanced")}
+{Given_FR}
+`
 
 export const nfrSchema = z.object({
   functionalRequirement: z

@@ -9,6 +9,7 @@ import { ChatAnthropic } from "npm:@langchain/anthropic";
 import { BaseMessage } from "npm:@langchain/core/messages";
 import { ChatGoogleGenerativeAI } from "npm:@langchain/google-genai";
 import { Logger } from "./logger.ts";
+import { ChatTogetherAI } from "npm:@langchain/community/chat_models/togetherai";
 
 interface StructuredLLMOutput {
   raw: BaseMessage;
@@ -17,7 +18,11 @@ interface StructuredLLMOutput {
 
 // Define the abstract LLM Handler
 abstract class LLMHandler<
-  TModel extends ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI
+  TModel extends
+    | ChatOpenAI
+    | ChatAnthropic
+    | ChatGoogleGenerativeAI
+    | ChatTogetherAI
 > {
   constructor(protected model: TModel) {}
 
@@ -53,7 +58,17 @@ export class OpenAIHandler extends LLMHandler<ChatOpenAI> {
   }
 
   async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
-    return [];
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
+      const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
+      return results.items.map((result: any) => ({
+        raw: result,
+        parsed: nfrSchema.parse(result),
+      }));
+    } catch (error) {
+      Logger.error("OpenAIHandler query failed", error);
+      throw new Error("Failed to query OpenAI model");
+    }
   }
 }
 
@@ -129,6 +144,48 @@ export class GeminiHandler extends LLMHandler<ChatGoogleGenerativeAI> {
     } catch (error) {
       Logger.error("GeminiHandler query failed", error);
       throw new Error("Failed to query Gemini model");
+    }
+  }
+}
+
+// Gemini Handler
+export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
+  constructor({
+    apiKey,
+    temperature,
+    modelName,
+  }: {
+    apiKey: string;
+    temperature: number;
+    modelName: string;
+  }) {
+    super(new ChatTogetherAI({ apiKey, model: modelName, temperature }));
+  }
+
+  async query(input: string): Promise<StructuredLLMOutput> {
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
+        includeRaw: true,
+        name: "nfrSchema",
+      });
+      return await structuredLLM.invoke(generatePrompt(input));
+    } catch (error) {
+      Logger.error(`${this.model.name}-Handler query failed`, error);
+      throw new Error(`Failed to query ${this.model.name} model`);
+    }
+  }
+
+  async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
+      const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
+      return results.items.map((result: any) => ({
+        raw: result,
+        parsed: nfrSchema.parse(result),
+      }));
+    } catch (error) {
+      Logger.error(`${this.model.name}-Handler query failed`, error);
+      throw new Error(`Failed to query ${this.model.name} model`);
     }
   }
 }

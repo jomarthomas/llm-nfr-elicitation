@@ -1,5 +1,5 @@
 import Papa from "npm:papaparse";
-import { GeminiHandler } from "./utils/llm.ts";
+import { GeminiHandler, OpenAIHandler, TogetherAIHandler } from "./utils/llm.ts";
 import { generatePrompt } from "./utils/prompt.ts";
 
 if (import.meta.main) {
@@ -8,21 +8,15 @@ if (import.meta.main) {
     (item: string[]) => item[0]
   ) as string[];
 
-  // const FR = parsed
-  //   .filter((item: string[]) => item[1] === "FR")
-  //   .map((item: string[]) => item[0])
-  //   .slice(0, 1000) as string[];
+  // const gemini = new GeminiHandler({
+  //   apiKey: Deno.env.get("GOOGLE_API_KEY") ?? "",
+  //   modelName: "gemini-1.5-pro",
+  //   temperature: 0.1,
+  // });
 
-  const gemini = new GeminiHandler({
-    apiKey: Deno.env.get("GOOGLE_API_KEY") ?? "",
-    modelName: "gemini-1.5-flash-8b",
-    temperature: 0.4,
-  });
-
-  const inputs = JSON.stringify(FR);
-  console.log(inputs)
+  // const inputs = JSON.stringify(FR);
   // Deno.writeTextFileSync(
-  //   "./outputs/generatedBatch.json",
+  //   "./LLMOutputs/gemini-1.5-pro/temp0.4.json",
   //   JSON.stringify(
   //     (await gemini.batchQuery(inputs)).map((item) => item.parsed),
   //     null,
@@ -30,10 +24,41 @@ if (import.meta.main) {
   //   )
   // );
 
-  // const randomItem = FR[Math.floor(Math.random() * FR.length)];
-  // console.log((await gemini.query(randomItem)).parsed);
+  // const openai = new OpenAIHandler({
+  //   apiKey: Deno.env.get("OPENAI_API_KEY") ?? "",
+  //   modelName: "gpt-4o-mini",
+  //   temperature: 0.4,
+  // });
+
+  // const inputs = JSON.stringify(FR);
+  // // console.log(await openai.query(inputs))
+  // const output = await openai.batchQuery(inputs);
+  // console.log(output);
   // Deno.writeTextFileSync(
-  //   "./outputs/generatedSingle.json",
-  //   JSON.stringify((await gemini.query(randomItem)).parsed, null, 2)
+  //   "./LLMOutputs/gpt-4o-mini.json",
+  //   JSON.stringify(
+  //     output.map((item) => item.parsed),
+  //     null,
+  //     2
+  //   )
+  // );
+
+  const deepseek = new TogetherAIHandler({
+    apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
+    modelName: "deepseek-ai/DeepSeek-R1",
+    temperature: 0.4,
+  });
+
+  const inputs = JSON.stringify(FR);
+  console.log(await deepseek.query(inputs))
+  // const output = await deepseek.batchQuery(inputs);
+  // console.log(output);
+  // Deno.writeTextFileSync(
+  //   "./LLMOutputs/DeepSeek-R1.json",
+  //   JSON.stringify(
+  //     output.map((item) => item.parsed),
+  //     null,
+  //     2
+  //   )
   // );
 }
