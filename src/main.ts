@@ -28,6 +28,10 @@ async function batchedCalls({
   fileName: string;
 }) {
   console.log(`Starting LLM ${model.modelName}`);
+  // We are batching these calls because some models like Gemini can
+  // process all the 34 NFRs along with the long, advanced prompt in one go
+  // but other models quickly hits the ceiling and crashes after 8 minutes
+  // while also using up the credits. So its better we chunk the NFRs
   for (let i = FRStart; i < FREnd; i += batchSize) {
     console.log(`⇒ Starting batch: ${i}`);
     const batch = FR.slice(i, i + batchSize);
@@ -54,9 +58,15 @@ async function combineOutputs(filePrefix: string) {
       files.push(dirEntry.name);
     }
   }
-
+  files.sort((a, b) => {
+    const getNumber = (fileName: string) => {
+      const match = fileName.match(/-(\d+)\.json$/);
+      return match ? parseInt(match[1], 10) : 0;
+    };
+    return getNumber(a) - getNumber(b);
+  });
   const combinedOutput = [];
-  for (const file of files) {
+  for await (const file of files) {
     const content = await Deno.readTextFile(join(dir, file));
     const jsonContent = JSON.parse(content);
     combinedOutput.push(...jsonContent);
@@ -99,15 +109,15 @@ if (import.meta.main) {
   //   temperature: 0.4,
   // });
 
-  const claude = new AnthropicHandler({
-    apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
-    modelName: "claude-3-7-sonnet-20250219",
-    temperature: 0.4,
-  });
+  // const claude = new AnthropicHandler({
+  //   apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
+  //   modelName: "claude-3-7-sonnet-20250219",
+  //   temperature: 0.4,
+  // });
 
-  await batchedCalls({
-    model: claude,
-    batchSize: 2,
-    fileName: "claude-3-7-sonnet",
-  });
+  // await batchedCalls({
+  //   model: claude,
+  //   batchSize: 2,
+  //   fileName: "claude-3-7-sonnet",
+  // });
 }
