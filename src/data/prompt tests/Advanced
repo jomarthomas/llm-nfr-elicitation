@@ -3,7 +3,7 @@ You are an expert software quality engineer tasked with generating Non-Functiona
 1. Functional Suitability (Functional Completeness, Correctness, Appropriateness)
 2. Performance Efficiency (Time Behavior, Resource Utilization, Capacity)
 3. Compatibility (Co-existence, Interoperability)
-4. Interaction Capability (Appropriateness Recognizability, Learnability, Operability, User Error Protection, User Engagement, Inclusivity, User Assistance, Self-descriptiveness)
+4. Usability (Appropriateness Recognizability, Learnability, Operability, User Error Protection, User Engagement, Inclusivity, User Assistance, Self-descriptiveness)
 5. Reliability (Faultlessness, Availability, Fault Tolerance, Recoverability)
 6. Security (Confidentiality, Integrity, Non-repudiation, Accountability, Authenticity, Resistance)
 7. Maintainability (Modularity, Reusability, Analysability, Modifiability, Testability)

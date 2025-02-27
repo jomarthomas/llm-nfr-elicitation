@@ -1,0 +1,25 @@
+[ERROR] undefined-Handler query failed [
+  {
+    "received": "Interaction Capability",
+    "code": "invalid_enum_value",
+    "options": [
+      "Functional Suitability",
+      "Performance Efficiency",
+      "Compatibility",
+      "Usability",
+      "Reliability",
+      "Security",
+      "Maintainability",
+      "Flexibility",
+      "Safety"
+    ],
+    "path": [
+      "items",
+      3,
+      "identifiedNFRs",
+      1,
+      "attribute"
+    ],
+    "message": "Invalid enum value. Expected 'Functional Suitability' | 'Performance Efficiency' | 'Compatibility' | 'Usability' | 'Reliability' | 'Security' | 'Maintainability' | 'Flexibility' | 'Safety', received 'Interaction Capability'"
+  }
+]

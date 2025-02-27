@@ -1,0 +1,152 @@
+[
+  {
+    "functionalRequirement": "In the Facebook settings menu, the system shall allow the user to delete their saved username and password for Facebook.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide a clear and accessible option in the settings menu to delete saved Facebook credentials.",
+        "justification": "The FR requires a functional option for users to manage their Facebook credentials, ensuring the feature is fully implemented."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the deletion of Facebook credentials is permanent and irreversible once confirmed by the user.",
+        "justification": "The FR implies that the deletion should be effective and irreversible to maintain user trust and security."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide clear and concise instructions for the user to delete their Facebook credentials, with a confirmation step to prevent accidental deletion.",
+        "justification": "The FR involves a user action that could have significant consequences, so the process should be intuitive and safe."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must display a warning message before the user confirms the deletion of their Facebook credentials, asking for confirmation to prevent accidental deletion.",
+        "justification": "The FR involves a critical action that should not be performed accidentally, thus requiring user confirmation."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that the deletion of Facebook credentials is performed securely, with no residual data left in the system.",
+        "justification": "The FR involves sensitive user data, and the deletion process must ensure that no traces remain to protect user privacy."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall request a deposit of Rs. 5000 upon entry of valid customer information and update it temporarily in the customer database.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must validate the customer information before requesting the deposit and update the database with the temporary deposit status.",
+        "justification": "The FR requires the system to handle customer information and deposit requests accurately and completely."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the deposit amount is Rs. 5000 and that the database is updated with the correct temporary status.",
+        "justification": "The FR specifies a specific amount and a temporary update, which must be handled correctly."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process the deposit request and update the database within 5 seconds of receiving valid customer information.",
+        "justification": "The FR involves a financial transaction, which should be processed quickly to maintain user satisfaction."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that the deposit transaction is logged and auditable, with a unique transaction ID for each deposit.",
+        "justification": "The FR involves financial transactions, which require strong integrity and auditability to prevent fraud."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must handle any database connection issues gracefully, providing a clear error message to the user and retrying the transaction up to 3 times.",
+        "justification": "The FR involves critical financial operations, and the system should be resilient to database issues."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall generate reports on storage consumption by financial contact.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate comprehensive reports that include total storage consumption, storage usage by financial contact, and any relevant trends over time.",
+        "justification": "The FR requires the system to provide detailed and useful information about storage consumption."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the reports are accurate and up-to-date, reflecting the current state of storage consumption.",
+        "justification": "The FR implies that the reports should be reliable and accurate for decision-making."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate the storage consumption report within 10 seconds for datasets up to 10,000 financial contacts.",
+        "justification": "The FR involves generating reports, which should be done quickly to be useful for real-time monitoring."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must provide an intuitive interface for users to request and view storage consumption reports, with clear visualizations and filters.",
+        "justification": "The FR involves user interaction, and the interface should be user-friendly to facilitate easy access to the reports."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Testability: The system must provide unit tests and integration tests for the report generation logic, ensuring that the reports are accurate and consistent.",
+        "justification": "The FR involves complex data processing, and thorough testing is necessary to ensure the reports are reliable."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall be able to generate a series of multiple-choice fraction questions that form a cohesive storyline to introduce a specific topic.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate a series of at least 10 multiple-choice fraction questions that form a coherent and engaging storyline to introduce the specific topic.",
+        "justification": "The FR requires a complete and engaging set of questions to effectively introduce the topic."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that all generated questions are mathematically accurate and that the correct answers are clearly defined.",
+        "justification": "The FR involves educational content, and the questions must be correct to ensure learning effectiveness."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide clear and concise instructions for each question, ensuring that users understand the context and the required actions.",
+        "justification": "The FR involves user interaction, and the questions should be easy to understand to facilitate learning."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must present the questions in an engaging and interactive format, with visual aids and feedback for correct and incorrect answers.",
+        "justification": "The FR involves educational content, and the presentation should be engaging to maintain user interest."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Scalability: The system must be able to generate additional sets of questions for different topics and difficulty levels, with minimal configuration changes.",
+        "justification": "The FR involves generating questions for a specific topic, and the system should be flexible to support other topics and levels."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall display a confirmation popup after the user fills out the form and clicks the submit button, saving the information to the database for further processing.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display a confirmation popup that clearly indicates the successful submission of the form and the saving of information to the database.",
+        "justification": "The FR requires a confirmation message to inform the user of the successful submission."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the form data is saved to the database accurately and that the confirmation popup reflects the actual status of the submission.",
+        "justification": "The FR implies that the form data should be saved correctly, and the user should be informed of the actual status."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and user-friendly confirmation popup that is easy to understand and dismiss.",
+        "justification": "The FR involves user interaction, and the confirmation popup should be intuitive to use."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must prevent the form from being submitted multiple times by disabling the submit button after the first click and re-enabling it only after the confirmation popup is dismissed.",
+        "justification": "The FR involves a form submission, and the system should prevent accidental multiple submissions."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must ensure that the form submission and confirmation popup are available 99.9% of the time, with a maximum response time of 2 seconds for the popup to appear.",
+        "justification": "The FR involves a critical user interaction, and the system should be highly available and responsive."
+      }
+    ]
+  }
+]

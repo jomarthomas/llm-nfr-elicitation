@@ -1,0 +1,152 @@
+[
+  {
+    "functionalRequirement": "User shall be able to share files, screen share, conduct group screen sharing, and send contacts.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all specified sharing features (file sharing, screen sharing, group screen sharing, contact sharing) for 100% of intended use cases.",
+        "justification": "The FR requires comprehensive sharing capabilities, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must initiate file transfers and screen sharing sessions in less than 2 seconds for up to 10 concurrent users.",
+        "justification": "The FR involves real-time collaboration, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an intuitive interface for sharing files, screens, and contacts, with clear and consistent button labels (e.g., 'Share File', 'Start Screen Sharing') across all platforms.",
+        "justification": "The FR requires user interaction with sharing features, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must recover from network interruptions or disconnections within 30 seconds, allowing users to resume sharing activities without significant data loss.",
+        "justification": "The FR assumes continuous sharing capabilities, necessitating robust fault tolerance."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all shared files and screen sharing data using end-to-end encryption (e.g., AES-256) to prevent unauthorized access.",
+        "justification": "The FR involves sharing potentially sensitive data, requiring protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to sign up and validate credentials, leading to access to the Snap camera screen.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must validate user credentials correctly for 99.9% of valid sign-up attempts, allowing authorized access to the Snap camera screen.",
+        "justification": "The FR implies the need for accurate credential validation, ensuring only authorized users access the Snap camera screen."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 20 MB of memory to process sign-up requests and credential validation for a single user.",
+        "justification": "Efficient resource use is critical for scalability, given the FR's focus on handling multiple user sign-ups."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide a clear and concise sign-up process, with fewer than 5 steps required to complete registration and access the Snap camera screen.",
+        "justification": "The FR requires user interaction with the sign-up process, which should be easy to learn and use for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process sign-up requests and validate credentials for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to the sign-up process, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must store user credentials securely using a salted hashing algorithm (e.g., bcrypt) to prevent unauthorized modification or access.",
+        "justification": "The FR involves storing sensitive user credentials, requiring protection against unauthorized modification or access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall provide an interface for Application Administrators to reset user passwords.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support password reset functionality for 100% of user accounts, allowing Application Administrators to reset passwords as needed.",
+        "justification": "The FR requires comprehensive password reset capabilities, necessitating full coverage of this core functional aspect."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process password reset requests in less than 1 second for up to 100 concurrent requests.",
+        "justification": "The FR involves administrative tasks, requiring timely responses for efficiency."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an intuitive interface for Application Administrators to reset user passwords, with clear and consistent button labels (e.g., 'Reset Password') across all platforms.",
+        "justification": "The FR requires administrative interaction with the password reset feature, which should be easy to operate for Application Administrators."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must prevent brute-force password reset attempts by limiting the number of attempts to 5 within a 1-hour period.",
+        "justification": "The FR assumes secure password reset capabilities, necessitating robust fault tolerance against unauthorized access attempts."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must verify the identity of Application Administrators using multi-factor authentication (e.g., username, password, and email verification) before allowing password reset actions.",
+        "justification": "The FR involves sensitive administrative actions, requiring verification of administrator identity to prevent unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall be able to perform distance calculations and access geo-location information for the user, sites, and nearby sites.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must accurately calculate distances between user, sites, and nearby sites using all required geo-location data types (e.g., latitude, longitude) for 100% of specified use cases.",
+        "justification": "The FR requires comprehensive distance calculation capabilities, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must calculate distances between user, sites, and nearby sites in less than 100 milliseconds for up to 1,000 concurrent requests.",
+        "justification": "The FR involves real-time access to geo-location data and calculations, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear API or interface for accessing distance calculations and geo-location data, with consistent parameter naming (e.g., lat, lon) across all endpoints.",
+        "justification": "The FR requires interaction with geo-location data, which should be easy to operate for developers or users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to perform distance calculations and geo-location retrievals for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to geo-location services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user geo-location data using TLS 1.3 during transmission.",
+        "justification": "The FR involves accessing user location, which is sensitive data requiring protection."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide comprehensive information on requirements and services for 100% of specified use cases, allowing prospective applicants to make informed decisions.",
+        "justification": "The FR requires comprehensive information provision, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 30 MB of memory to process information requests and service selections for a single user.",
+        "justification": "Efficient resource use is critical for scalability, given the FR's focus on handling multiple user requests."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide a clear and concise interface for researching requirements and selecting services, with fewer than 5 steps required to complete the process.",
+        "justification": "The FR requires user interaction with the research and selection process, which should be easy to learn and use for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must recover from errors or exceptions within 10 seconds, allowing users to resume the research and selection process without significant data loss.",
+        "justification": "The FR assumes continuous access to information and services, necessitating robust fault tolerance."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure the accuracy and integrity of provided information, using data validation and verification mechanisms to prevent unauthorized modification or tampering.",
+        "justification": "The FR involves providing critical information to users, requiring protection against unauthorized modification or tampering."
+      }
+    ]
+  }
+]

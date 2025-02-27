@@ -26,6 +26,7 @@ abstract class LLMHandler<
 > {
   constructor(protected model: TModel) {}
 
+  abstract health(): Promise<any>;
   abstract query(input: string): Promise<StructuredLLMOutput>;
   abstract batchQuery(inputs: string): Promise<StructuredLLMOutput[]>;
 }
@@ -42,6 +43,18 @@ export class OpenAIHandler extends LLMHandler<ChatOpenAI> {
     modelName: string;
   }) {
     super(new ChatOpenAI({ openAIApiKey: apiKey, modelName, temperature }));
+  }
+
+  async health(): Promise<any> {
+    try {
+      const response = await this.model.invoke([
+        ["human", "This is a health check"],
+      ]);
+      return response;
+    } catch (error) {
+      Logger.error("OpenAIHandler health check failed", error);
+      return "Health check failed";
+    }
   }
 
   async query(input: string): Promise<StructuredLLMOutput> {
@@ -88,6 +101,18 @@ export class AnthropicHandler extends LLMHandler<ChatAnthropic> {
     );
   }
 
+  async health(): Promise<any> {
+    try {
+      const response = await this.model.invoke([
+        ["human", "This is a health check"],
+      ]);
+      return response;
+    } catch (error) {
+      Logger.error("OpenAIHandler health check failed", error);
+      return "Health check failed";
+    }
+  }
+
   async query(input: string): Promise<StructuredLLMOutput> {
     try {
       const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
@@ -118,6 +143,18 @@ export class GeminiHandler extends LLMHandler<ChatGoogleGenerativeAI> {
     modelName: string;
   }) {
     super(new ChatGoogleGenerativeAI({ apiKey, modelName, temperature }));
+  }
+
+  async health(): Promise<any> {
+    try {
+      const response = await this.model.invoke([
+        ["human", "This is a health check"],
+      ]);
+      return response;
+    } catch (error) {
+      Logger.error("OpenAIHandler health check failed", error);
+      return "Health check failed";
+    }
   }
 
   async query(input: string): Promise<StructuredLLMOutput> {
@@ -162,6 +199,18 @@ export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
     super(new ChatTogetherAI({ apiKey, model: modelName, temperature }));
   }
 
+  async health(): Promise<any> {
+    try {
+      const response = await this.model.invoke([
+        ["human", "This is a health check"],
+      ]);
+      return response;
+    } catch (error) {
+      Logger.error("OpenAIHandler health check failed", error);
+      return "Health check failed";
+    }
+  }
+
   async query(input: string): Promise<StructuredLLMOutput> {
     try {
       const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
@@ -178,10 +227,12 @@ export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
   async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
     try {
       const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
-      const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
+      const results = await structuredLLM.invoke(`
+          *DO NOT INCLUDE ANYTHING ELSE APART FROM A VALID JSON. DO NOT RESPOND WITH JSON INSIDE A MARKDOWN STRING. DO NOT INCLUDE BACKTICKS. RESPONSE SHOULD START WITH A OPEN CURLY BRACKET AND END WITH A CLOSED CURLY BRACKET AND IT SHOULD BE VALID JSON THAT CAN BE PARSED. WHILE PARSING THE OUTPUT WITH ZOD, THERE SHOULDN'T BE ANY ERRORS AT ALL. YOU SHOULD RETURN THE ARRAY INSIDE AN OBJECT WITH THE KEY "items"* 
+        ${generateBatchPrompt(inputs)}`);
       return results.items.map((result: any) => ({
         raw: result,
-        parsed: nfrSchema.parse(result),
+        parsed: result,
       }));
     } catch (error) {
       Logger.error(`${this.model.name}-Handler query failed`, error);

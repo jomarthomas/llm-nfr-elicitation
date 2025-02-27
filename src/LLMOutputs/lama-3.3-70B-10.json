@@ -1,0 +1,127 @@
+[
+  {
+    "functionalRequirement": "For any systematic action, such as disputes aging process, a case activity will be generated, and the user who initiated the dispute case must be notified upon next logon.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate case activities for 100% of systematic actions, including disputes aging process, and notify the initiating user upon next logon.",
+        "justification": "The FR requires the system to generate case activities and notify users, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate case activities and notify users within 500 milliseconds of the systematic action completion.",
+        "justification": "The FR involves real-time generation of case activities and notifications, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must be able to recover from failures and ensure that case activities are generated and users are notified correctly for 99.9% of systematic actions.",
+        "justification": "The FR assumes continuous and reliable operation, necessitating high fault tolerance."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must verify the identity of the user initiating the dispute case and ensure that only authorized users can generate case activities.",
+        "justification": "The FR involves user-initiated actions, which require authentication and authorization to prevent unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall read initialization data to derive definitions of heating and cooling units.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately derive definitions of heating and cooling units from initialization data for 100% of valid inputs.",
+        "justification": "The FR requires the system to read initialization data and derive definitions, necessitating precise and correct processing."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 20 MB of memory to process initialization data and derive definitions of heating and cooling units.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on processing initialization data."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Faultlessness: The system must be able to process initialization data and derive definitions of heating and cooling units without errors for 99.99% of valid inputs.",
+        "justification": "The FR assumes reliable operation, necessitating high faultlessness."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for easy modification of initialization data and definitions of heating and cooling units, with a maximum modification time of 2 hours.",
+        "justification": "The FR involves processing initialization data, which may require modifications, necessitating easy modifiability."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The website shall provide forms for certificates so users can request certificates online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The website must provide forms for certificates that cover 100% of the required certificate types.",
+        "justification": "The FR requires the website to provide forms for certificates, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Appropriateness Recognizability: The website must provide clear and concise instructions for requesting certificates online, with a minimum user satisfaction rating of 90%.",
+        "justification": "The FR involves user interaction with the website, which should be easy to use and understand."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The website must process certificate requests within 2 seconds of submission.",
+        "justification": "The FR involves real-time processing of certificate requests, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The website must encrypt user data submitted for certificate requests using TLS 1.3.",
+        "justification": "The FR involves sensitive user data, which requires protection."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to manage privacy settings such as who can view their profile, connections, and sharing data with third parties.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately implement user privacy settings for 100% of valid inputs.",
+        "justification": "The FR requires the system to manage user privacy settings, necessitating precise and correct processing."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for managing privacy settings, with a minimum user satisfaction rating of 90%.",
+        "justification": "The FR involves user interaction with the system, which should be easy to use and understand."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that user privacy settings are not modified without explicit user consent.",
+        "justification": "The FR involves sensitive user data, which requires protection and integrity."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to manage user privacy settings for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to user privacy settings, necessitating high availability."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall set over temperature values to prevent temperature deviations beyond 3 degrees Fahrenheit.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must set over temperature values for 100% of temperature-controlled units.",
+        "justification": "The FR requires the system to set over temperature values, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must set over temperature values within 100 milliseconds of temperature deviations exceeding 3 degrees Fahrenheit.",
+        "justification": "The FR involves real-time monitoring and control of temperature deviations, requiring timely responses for effectiveness."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must be able to recover from failures and ensure that over temperature values are set correctly for 99.9% of temperature-controlled units.",
+        "justification": "The FR assumes continuous and reliable operation, necessitating high fault tolerance."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The system must prevent temperature deviations beyond 3 degrees Fahrenheit to ensure safe operation of temperature-controlled units.",
+        "justification": "The FR involves safety-critical temperature control, which requires strict operational constraints to prevent accidents."
+      }
+    ]
+  }
+]

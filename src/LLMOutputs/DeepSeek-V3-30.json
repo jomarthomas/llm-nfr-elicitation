@@ -1,0 +1,97 @@
+[
+  {
+    "functionalRequirement": "A surface app page shall provide a customer with all customer system functionality.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The surface app page must include 100% of the customer system functionalities as defined in the system requirements.",
+        "justification": "The FR explicitly states that the page must provide all customer system functionality, necessitating full coverage."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The surface app page must allow users to access all functionalities with no more than 3 clicks from the main interface.",
+        "justification": "The FR implies ease of access to all functionalities, requiring efficient navigation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The surface app page must include confirmation dialogs for actions that cannot be undone, such as deleting data or canceling subscriptions.",
+        "justification": "The FR involves providing all functionalities, which may include critical actions requiring user error protection."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The surface app page must load all functionalities within 2 seconds for 95% of users under normal network conditions.",
+        "justification": "The FR requires providing all functionalities, necessitating fast loading times for usability."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall display information and settings related to the required setting based on user input.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must display the correct information and settings for 100% of valid user inputs.",
+        "justification": "The FR requires accurate display of information and settings based on user input."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Self-descriptiveness: The system must provide clear labels and tooltips for all displayed information and settings to ensure users understand their purpose.",
+        "justification": "The FR involves displaying information and settings, which should be self-explanatory for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must display the required information and settings within 500 milliseconds of receiving user input.",
+        "justification": "The FR requires real-time display of information based on user input, necessitating quick response times."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to display information and settings for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to information and settings, requiring high availability."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "If the validation fails, system shall prompt \"Wrong OTP\".",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must display the \"Wrong OTP\" prompt for 100% of failed OTP validation attempts.",
+        "justification": "The FR explicitly requires the system to prompt this message on validation failure."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must allow users to retry OTP entry at least 3 times before locking the account temporarily.",
+        "justification": "The FR involves handling validation failure, requiring protection against user errors."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Resistance: The system must prevent brute force attacks by locking the account after 3 failed OTP attempts for 5 minutes.",
+        "justification": "The FR involves OTP validation, which requires protection against security threats."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Information on remaining job posting time and CV access shall be reportable.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate reports containing all required information on remaining job posting time and CV access for 100% of specified use cases.",
+        "justification": "The FR requires the system to provide reportable information, necessitating full coverage."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate reports within 5 seconds for up to 1,000 concurrent requests.",
+        "justification": "The FR involves generating reports, which should be timely for usability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an intuitive interface for generating and exporting reports in multiple formats (e.g., PDF, CSV).",
+        "justification": "The FR involves report generation, requiring ease of use for users."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that CV access information is only visible to authorized users and encrypted during transmission.",
+        "justification": "The FR involves sensitive CV data, requiring protection against unauthorized access."
+      }
+    ]
+  }
+]
