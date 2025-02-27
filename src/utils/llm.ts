@@ -292,52 +292,65 @@ export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
 }
 
 // Grok Handler
-// export class GrokAIHandler extends LLMHandler<ChatXAI> {
-//   constructor({
-//     apiKey,
-//     temperature,
-//     modelName,
-//   }: {
-//     apiKey: string;
-//     temperature: number;
-//     modelName: string;
-//   }) {
-//     super(new ChatXAI({ apiKey, model: modelName, temperature }), modelName);
-//   }
+export class GrokAIHandler extends LLMHandler<ChatOpenAI> {
+  constructor({
+    apiKey,
+    temperature,
+    modelName,
+  }: {
+    apiKey: string;
+    temperature: number;
+    modelName: string;
+  }) {
+    super(
+      new ChatOpenAI({
+        openAIApiKey: apiKey,
+        modelName,
+        temperature,
+        configuration: {
+          baseURL: "https://api.x.ai/v1",
+        },
+      }),
+      modelName
+    );
+  }
 
-//   async health(): Promise<any> {
-//     try {
-//       const response = await this.model.invoke([
-//         ["human", "This is a health check"],
-//       ]);
-//       return response;
-//     } catch (error) {
-//       Logger.error("OpenAIHandler health check failed", error);
-//       return "Health check failed";
-//     }
-//   }
+  async health(): Promise<any> {
+    try {
+      const response = await this.model.invoke([
+        ["human", "This is a health check"],
+      ]);
+      return response;
+    } catch (error) {
+      Logger.error("OpenAIHandler health check failed", error);
+      return "Health check failed";
+    }
+  }
 
-//   async query(input: string): Promise<StructuredLLMOutput> {
-//     try {
-//       const structuredLLM = this.model.withStructuredOutput(nfrSchema);
-//       return await structuredLLM.invoke(generatePrompt(input));
-//     } catch (error) {
-//       Logger.error("OpenAIHandler query failed", error);
-//       throw new Error("Failed to query OpenAI model");
-//     }
-//   }
+  async query(input: string): Promise<StructuredLLMOutput> {
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrSchema, {
+        includeRaw: true,
+        name: "nfrSchema",
+      });
+      return await structuredLLM.invoke(generatePrompt(input));
+    } catch (error) {
+      Logger.error("OpenAIHandler query failed", error);
+      throw new Error("Failed to query OpenAI model");
+    }
+  }
 
-//   async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
-//     try {
-//       const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
-//       const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
-//       return results.items.map((result: any) => ({
-//         raw: result,
-//         parsed: nfrSchema.parse(result),
-//       }));
-//     } catch (error) {
-//       Logger.error("OpenAIHandler query failed", error);
-//       throw new Error("Failed to query OpenAI model");
-//     }
-//   }
-// }
+  async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
+      const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
+      return results.items.map((result: any) => ({
+        raw: result,
+        parsed: nfrSchema.parse(result),
+      }));
+    } catch (error) {
+      Logger.error("OpenAIHandler query failed", error);
+      throw new Error("Failed to query OpenAI model");
+    }
+  }
+}

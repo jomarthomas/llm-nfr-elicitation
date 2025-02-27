@@ -1,0 +1,127 @@
+[
+  {
+    "functionalRequirement": "System shall provide an interface for Application Administrators to reset user passwords.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication for administrator password reset actions, requiring at least two verification methods (e.g., admin credentials + temporary 2FA code).",
+        "justification": "Ensures only authorized administrators can reset passwords, preventing unauthorized access."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Accountability: Log all password reset actions with timestamp, administrator ID, and user affected, retaining logs for a minimum of 180 days.",
+        "justification": "Provides a comprehensive audit trail for security monitoring and potential investigations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Implement password reset workflow with clear validation rules, including mandatory complexity checks and prevention of reusing last 5 passwords.",
+        "justification": "Guides administrators through a secure and controlled password reset process."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: Ensure password reset functionality can be completed within 5 minutes, with automatic system rollback if the process fails midway.",
+        "justification": "Minimizes disruption and ensures administrators can quickly resolve user access issues."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall be able to perform distance calculations and access geo-location information for the user, sites, and nearby sites.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Complete distance calculations within 100 milliseconds for up to 1,000 concurrent requests.",
+        "justification": "Ensures rapid response times for geo-location and distance-related queries."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: Limit memory consumption to 50 MB per geo-location data processing request.",
+        "justification": "Optimizes system resources during distance and location calculations."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Encrypt all geo-location data transmissions using TLS 1.3 with AES-256 encryption.",
+        "justification": "Protects sensitive location information during data transfer."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: Maintain distance calculation accuracy within 1 meter for 99.9% of valid inputs.",
+        "justification": "Ensures precise and reliable geo-location and distance information."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: Provide a clear, intuitive navigation flow with maximum 3 clicks to access service requirements and selection interface.",
+        "justification": "Simplifies the process for prospective applicants to find and select services."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: Implement context-sensitive help tooltips for each service selection step, accessible via a '?' icon.",
+        "justification": "Provides guidance to users during the service research and selection process."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: Support responsive design compatible with minimum 95% of modern web browsers (Chrome, Firefox, Safari, Edge) and screen sizes.",
+        "justification": "Ensures accessibility across different devices and browser platforms."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Load service requirements and selection interface within 2 seconds for 99% of user interactions.",
+        "justification": "Provides a responsive and efficient user experience during service research."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall allow staff members to develop staff reports for publication and distribution.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: Provide a drag-and-drop interface for report content management with auto-save functionality every 3 minutes.",
+        "justification": "Enhances ease of use and prevents data loss during report creation."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: Design report creation system with plug-in architecture supporting at least 5 different report template types.",
+        "justification": "Allows for future extensibility and customization of report generation."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.9% uptime for report creation and distribution systems during business hours.",
+        "justification": "Ensures consistent access to report development tools."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Implement version control for all reports, tracking changes with author, timestamp, and ability to restore previous versions.",
+        "justification": "Provides accountability and traceability for report modifications."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be guided to a login page after successfully registering, where they can enter their credentials to access the application.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement mandatory multi-factor authentication with options including SMS, email, or authenticator app verification.",
+        "justification": "Enhances login security beyond basic username and password."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Provide clear password entry guidelines, including minimum 12-character length, complexity requirements, and real-time strength meter.",
+        "justification": "Guides users in creating strong, secure credentials."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Redirect to login page within 500 milliseconds after successful registration.",
+        "justification": "Ensures a smooth, immediate transition to login after registration."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain login system availability of 99.99% with automatic failover mechanisms.",
+        "justification": "Prevents login interruptions and ensures consistent access to the application."
+      }
+    ]
+  }
+]

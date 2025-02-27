@@ -1,0 +1,47 @@
+[
+  {
+    "functionalRequirement": "If the validation fails, system shall prompt \"Wrong OTP\".",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must display the OTP error message in a clear, readable font with high contrast (minimum WCAG 2.1 AA color contrast ratio of 4.5:1) within 0.5 seconds of validation failure.",
+        "justification": "Ensures users can quickly and clearly understand the reason for OTP validation failure."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must log each OTP validation attempt, capturing timestamp, user ID, and result (success/failure) with immutable audit trail.",
+        "justification": "Provides security tracking for authentication attempts and potential fraud detection."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must allow a maximum of 3 consecutive OTP validation attempts before temporarily blocking the user account for 15 minutes.",
+        "justification": "Prevents brute force attacks while maintaining user accessibility."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Information on remaining job posting time and CV access shall be reportable",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide 100% accurate reporting of remaining job posting time and CV access status for all active job postings.",
+        "justification": "Ensures comprehensive and reliable reporting of critical job application information."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate reports on job posting time and CV access within 2 seconds for queries involving up to 500 concurrent job postings.",
+        "justification": "Provides timely access to important job application tracking information."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The reporting interface must display remaining job posting time in a clear, human-readable format (e.g., \"2 days, 5 hours remaining\") with countdown timer.",
+        "justification": "Helps users easily understand and track job posting deadlines."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: The reporting system must support export of job posting and CV access reports in at least three standard formats (CSV, PDF, XML) for further analysis.",
+        "justification": "Enables flexible data extraction and analysis of job posting information."
+      }
+    ]
+  }
+]

@@ -1,0 +1,127 @@
+[
+  {
+    "functionalRequirement": "For any systematic action, such as disputes aging process, a case activity will be generated, and the user who initiated the dispute case must be notified upon next logon.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate and track case activities for 100% of systematic actions related to dispute processes.",
+        "justification": "Ensures comprehensive logging and tracking of all dispute-related activities"
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The notification system must have 99.9% uptime to ensure users are consistently informed about case activities.",
+        "justification": "Critical for maintaining user awareness of dispute status"
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The notification mechanism must clearly display the case activity details, including case number, status, and relevant actions.",
+        "justification": "Provides clear communication to users about their dispute process"
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Notification content must be encrypted and only accessible to the authenticated user who initiated the dispute.",
+        "justification": "Protects sensitive information related to dispute cases"
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall read initialization data to derive definitions of heating and cooling units.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately interpret 100% of initialization data for heating and cooling unit definitions.",
+        "justification": "Ensures precise interpretation of critical system configuration data"
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The initialization data reading process must complete within 500 milliseconds for complex unit configurations.",
+        "justification": "Minimizes system startup time and ensures quick configuration"
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must have a fallback mechanism to use default unit definitions if initialization data is corrupted or unreadable.",
+        "justification": "Prevents system failure due to configuration data issues"
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: The system must log all initialization data reading processes with detailed error and success messages for troubleshooting.",
+        "justification": "Supports easy diagnosis of configuration-related issues"
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The website shall provide forms for certificates so users can request certificates online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The certificate request form must have a clear, intuitive interface with maximum 5 steps to complete a request.",
+        "justification": "Ensures users can easily navigate and complete certificate requests"
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all required certificate types with unique, specific request forms.",
+        "justification": "Provides comprehensive coverage of certificate request needs"
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The certificate request form must implement multi-factor authentication to verify user identity before submission.",
+        "justification": "Prevents unauthorized certificate requests"
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The certificate request form must load within 2 seconds and submit within 3 seconds under normal network conditions.",
+        "justification": "Ensures responsive and efficient user experience"
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to manage privacy settings such as who can view their profile, connections, and sharing data with third parties.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All privacy settings must be encrypted at rest and in transit using AES-256 encryption.",
+        "justification": "Protects sensitive user privacy configuration data"
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: Privacy settings interface must provide clear, granular controls with real-time preview of visibility changes.",
+        "justification": "Enables users to easily understand and modify their privacy preferences"
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support privacy controls for at least 5 different visibility levels (e.g., public, friends only, specific groups, connections, private).",
+        "justification": "Provides comprehensive privacy management options"
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must maintain a 30-day history of privacy setting changes with ability to revert to previous configurations.",
+        "justification": "Allows users to track and restore previous privacy settings"
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall set over temperature values to prevent temperature deviations beyond 3 degrees Fahrenheit.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must automatically trigger an alert if temperature deviations exceed the 3-degree Fahrenheit threshold.",
+        "justification": "Ensures immediate notification of potential temperature control issues"
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Temperature monitoring and deviation detection must occur with a maximum latency of 100 milliseconds.",
+        "justification": "Provides real-time temperature control and monitoring"
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The temperature control system must have a manual override mechanism for emergency temperature adjustments.",
+        "justification": "Provides critical safety control in exceptional circumstances"
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: Temperature measurements must be accurate within ±0.5 degrees Fahrenheit of the actual temperature.",
+        "justification": "Ensures precise temperature monitoring and control"
+      }
+    ]
+  }
+]

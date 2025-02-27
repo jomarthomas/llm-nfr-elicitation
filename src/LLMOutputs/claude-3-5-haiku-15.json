@@ -1,0 +1,122 @@
+[
+  {
+    "functionalRequirement": "System shall show the first lines of news articles based on the titles on the title screen.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must load and display article previews within 2 seconds for up to 20 concurrent news titles.",
+        "justification": "Quick loading of article previews is crucial for user engagement and information accessibility."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must provide a consistent and readable preview format with truncated text that maintains readability and context.",
+        "justification": "Ensuring clear and concise article previews enhances user understanding and interaction."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The system must support fetching article previews from multiple news sources with standardized data formats.",
+        "justification": "Enables flexible integration with various news content providers and APIs."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication with at least two verification methods (password + SMS or email verification).",
+        "justification": "Ensures secure account creation and prevents unauthorized access."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "User Error Protection: Enforce password complexity requirements including minimum 12 characters, mix of uppercase, lowercase, numbers, and special characters.",
+        "justification": "Protects user accounts from weak password vulnerabilities."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Provide real-time validation for all input fields with clear, immediate error messages for incorrect data formats.",
+        "justification": "Helps users correct input errors during account creation process."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.9% uptime for account creation and verification processes.",
+        "justification": "Ensures users can create accounts consistently without service interruptions."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to import and manage various data formats like images, videos, and audio files within presentations.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: Support importing and processing media files up to 2GB in size with memory usage not exceeding 500MB per file.",
+        "justification": "Ensures efficient handling of large media files in presentations."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: Support at least 10 common media file formats including JPEG, PNG, MP4, AVI, MP3, WAV, and provide clear error handling for unsupported formats.",
+        "justification": "Enables flexible media import across different file types and sources."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: Provide a drag-and-drop interface for media file import with preview capabilities for all supported file types.",
+        "justification": "Simplifies the process of adding media to presentations for users."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: Design media import and management as a pluggable module with clear separation of concerns for different file type handlers.",
+        "justification": "Allows easy extension of file format support and future improvements."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to set the price, quantity, upload pictures, and add details when listing an item.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Implement server-side validation to prevent price manipulation and ensure listed prices are within predefined reasonable ranges.",
+        "justification": "Protects against fraudulent or incorrect pricing."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Provide real-time input validation with clear guidance for price, quantity, and required details fields.",
+        "justification": "Helps users correctly input item listing information."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Complete item listing process, including image upload, within 5 seconds for files up to 10MB.",
+        "justification": "Ensures a smooth and responsive item listing experience."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: Allow dynamic addition of custom fields for item details beyond standard attributes.",
+        "justification": "Provides flexibility for different types of item listings."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Doctors shall be able to log in to check patient information, answer patient queries, perform daily activities, set reminders, and communicate with their staff.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Encrypt all patient information using AES-256 encryption, both at rest and in transit.",
+        "justification": "Protects sensitive patient data from unauthorized access."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.99% uptime for the medical communication and information system.",
+        "justification": "Critical for continuous patient care and medical operations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: Provide context-sensitive help and quick access to user guides within the system interface.",
+        "justification": "Supports doctors in efficiently using the system's features."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement role-based access control with multi-factor authentication and automatic session timeout after 30 minutes of inactivity.",
+        "justification": "Ensures secure access and protects patient information."
+      }
+    ]
+  }
+]

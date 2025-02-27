@@ -109,15 +109,18 @@ if (import.meta.main) {
   //   temperature: 0.4,
   // });
 
-  // const claude = new AnthropicHandler({
-  //   apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
-  //   modelName: "claude-3-7-sonnet-20250219",
-  //   temperature: 0.4,
-  // });
+  const claude = new AnthropicHandler({
+    apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
+    modelName: "claude-3-5-haiku-20241022",
+    temperature: 0.4,
+  });
 
-  // await batchedCalls({
-  //   model: claude,
-  //   batchSize: 2,
-  //   fileName: "claude-3-7-sonnet",
-  // });
+  await batchedCalls({
+    model: claude,
+    batchSize: 5,
+    FRStart: 22,
+    fileName: "claude-3-5-haiku",
+  });
+
+  await combineOutputs("claude-3-5-haiku");
 }

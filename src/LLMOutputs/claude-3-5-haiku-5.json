@@ -1,0 +1,132 @@
+[
+  {
+    "functionalRequirement": "User will choose from options including searching for their issue, chatting with customer support, asking the community, emailing customer support, or calling customer support.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "The support interface must provide clear, intuitive navigation between different support channels with consistent visual design and less than 2 clicks to access any support option.",
+        "justification": "Multiple support channels require a user-friendly interface that minimizes cognitive load and navigation complexity."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Each support channel must include a brief, clear description of expected response times and typical use cases to guide user selection.",
+        "justification": "Users need contextual guidance to choose the most appropriate support method for their specific issue."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The support channel selection interface must load within 500 milliseconds and support concurrent access for at least 1,000 simultaneous users.",
+        "justification": "Rapid interface responsiveness is crucial for user satisfaction in a multi-channel support system."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must maintain a 99.9% uptime across all support channels, with automatic failover mechanisms if any single channel becomes unavailable.",
+        "justification": "Continuous availability of support channels is critical for user trust and problem resolution."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall be able to grant edit permissions for assets to departmental administrators, inventory users, faculty users, and university users based on their department affiliation and authorization level.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "The permission system must implement role-based access control (RBAC) with multi-factor authentication for all administrative and edit-level permissions.",
+        "justification": "Granular access control is essential to prevent unauthorized modifications to assets."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All permission changes must be logged with a detailed audit trail including user ID, timestamp, asset modified, and type of modification.",
+        "justification": "Comprehensive logging ensures accountability and enables tracking of potential unauthorized access."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The permission management system must support dynamic role definition and easy reconfiguration of user permissions without requiring system redeployment.",
+        "justification": "Flexible permission management allows for organizational changes without significant system modifications."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The permission verification process must complete within 50 milliseconds and maintain 99.99% accuracy in permission assignments.",
+        "justification": "Quick and accurate permission verification is crucial for system responsiveness and security."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Texts sent to that number will be sent to the API, then the system will reply to the user with the answer as another text message.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The text message processing system must handle and respond to incoming messages within 2 seconds, supporting a minimum of 100 concurrent message transactions.",
+        "justification": "Real-time messaging requires low-latency message processing and high concurrency."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All text messages must be encrypted in transit using TLS 1.3, with message content anonymized in logs to protect user privacy.",
+        "justification": "Protecting user communication and personal information is critical in messaging systems."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The messaging system must maintain 99.95% message delivery reliability, with automatic retry mechanisms for failed message transmissions.",
+        "justification": "High reliability ensures users can consistently send and receive messages."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The API must support multiple text message formats and be compatible with at least three major telecommunications carriers' messaging protocols.",
+        "justification": "Broad compatibility ensures the system can handle diverse messaging environments."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "After adding a transportation route, the user shall be able to retrieve transportation requests from other users.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Route request retrieval must complete within 500 milliseconds for up to 1,000 concurrent user requests, with response times scaling linearly with increased data volume.",
+        "justification": "Efficient data retrieval is crucial for a responsive transportation request system."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The route request interface must provide clear filtering and sorting options, allowing users to search requests by multiple criteria such as date, location, and user ratings.",
+        "justification": "Intuitive search capabilities enhance user experience in finding relevant transportation requests."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "User personal information in transportation requests must be partially anonymized, showing only necessary details for route matching.",
+        "justification": "Protecting user privacy while maintaining functional request sharing."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The transportation request system must maintain 99.99% data integrity, with automatic data backup and recovery mechanisms.",
+        "justification": "Ensuring consistent and reliable access to transportation request information."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The Disputes System shall allow users to create charge back requests, prompting for required information and resulting in printed notifications sent to merchants if proof of disputed transactions is not provided.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The chargeback request process must capture 100% of mandatory transaction dispute information with clear validation rules for each required field.",
+        "justification": "Comprehensive information collection is critical for processing dispute requests."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All chargeback request data must be encrypted at rest using AES-256, with access limited to authorized financial personnel.",
+        "justification": "Protecting sensitive financial dispute information from unauthorized access."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The disputes system must maintain a 99.99% uptime and provide automatic error recovery for incomplete or failed chargeback submissions.",
+        "justification": "Ensuring consistent availability for critical financial dispute processes."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The chargeback request interface must provide clear, step-by-step guidance with inline help text and error messages that explain exactly what information is missing or incorrect.",
+        "justification": "Guiding users through a complex financial dispute process with clear instructions."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The system must support easy configuration of dispute workflow rules and notification templates without requiring code changes.",
+        "justification": "Flexibility to adapt the dispute process to changing business or regulatory requirements."
+      }
+    ]
+  }
+]

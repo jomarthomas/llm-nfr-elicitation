@@ -1,0 +1,122 @@
+[
+  {
+    "functionalRequirement": "In the Facebook settings menu, the system shall allow the user to delete their saved username and password for Facebook.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must securely erase stored Facebook credentials using a cryptographically secure deletion method that overwrites the data at least 3 times to prevent recovery.",
+        "justification": "Ensures complete and secure removal of sensitive login credentials from the system."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide a clear warning dialog that explains the consequences of deleting saved credentials and require explicit user confirmation before deletion.",
+        "justification": "Prevents accidental data loss and provides user transparency about the action."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must log the credential deletion event with a timestamp and user ID for audit purposes, without storing the actual credentials.",
+        "justification": "Maintains a record of important account management actions for security tracking."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall request a deposit of Rs. 5000 upon entry of valid customer information and update it temporarily in the customer database.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must implement end-to-end encryption for all financial transaction data using AES-256 encryption during transmission and storage.",
+        "justification": "Protects sensitive financial information from unauthorized access or tampering."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The deposit processing and database update must complete within 2 seconds for 99% of transactions.",
+        "justification": "Ensures quick and responsive handling of financial transactions."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The deposit system must maintain 99.99% uptime during business hours with automatic failover mechanisms.",
+        "justification": "Critical for financial transactions to be consistently accessible."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication for all deposit transactions, requiring at least two independent verification methods.",
+        "justification": "Prevents unauthorized financial transactions and verifies customer identity."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall generate reports on storage consumption by financial contact.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The report generation process must consume no more than 500 MB of memory and utilize less than 30% of CPU resources.",
+        "justification": "Ensures efficient resource management during report generation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: Reports must include clear, color-coded visualizations of storage consumption with tooltips explaining each data point.",
+        "justification": "Enhances user understanding of complex storage consumption data."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: The report generation module must support modular export formats including PDF, CSV, and XML with consistent data representation.",
+        "justification": "Allows for easy analysis and integration with other systems."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The reporting system must support dynamic filtering and custom time range selection for storage consumption data.",
+        "justification": "Provides flexibility in report generation and data analysis."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall be able to generate a series of multiple-choice fraction questions that form a cohesive storyline to introduce a specific topic.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The question generation interface must provide clear instructions and a consistent layout for each question type.",
+        "justification": "Ensures users can easily understand and interact with the question generation system."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate at least 5 interconnected multiple-choice questions with a coherent narrative structure for each topic.",
+        "justification": "Ensures comprehensive and contextual question generation."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Question generation must complete within 500 milliseconds for a set of 5 multiple-choice questions.",
+        "justification": "Provides quick and responsive question generation for educational purposes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The question generation system must use a plug-in architecture that allows easy addition of new question types and topics.",
+        "justification": "Enables future expansion and modification of the question generation capabilities."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall display a confirmation popup after the user fills out the form and clicks the submit button, saving the information to the database for further processing.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The confirmation popup must clearly display all submitted form data for user review before final submission.",
+        "justification": "Allows users to verify information and prevent accidental submissions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The form submission and database save process must complete within 1 second for 99% of submissions.",
+        "justification": "Ensures quick and responsive form processing."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: All form data must be validated against predefined rules and sanitized to prevent injection attacks before database storage.",
+        "justification": "Protects the system from malicious input and ensures data quality."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: Implement an automatic retry mechanism with exponential backoff for failed form submissions, with a maximum of 3 retry attempts.",
+        "justification": "Ensures robust handling of potential temporary system failures during form submission."
+      }
+    ]
+  }
+]
