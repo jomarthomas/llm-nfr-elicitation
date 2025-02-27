@@ -4,23 +4,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Security",
-        "requirement": "Authenticity: Implement multi-factor authentication for administrator password reset actions, requiring at least two verification methods (e.g., admin credentials + temporary 2FA code).",
-        "justification": "Ensures only authorized administrators can reset passwords, preventing unauthorized access."
+        "requirement": "Authenticity: Administrators must authenticate using multi-factor authentication (MFA) before accessing the password reset interface.",
+        "justification": "Ensures only authorized administrators can perform sensitive password reset operations."
       },
       {
         "attribute": "Security",
-        "requirement": "Accountability: Log all password reset actions with timestamp, administrator ID, and user affected, retaining logs for a minimum of 180 days.",
-        "justification": "Provides a comprehensive audit trail for security monitoring and potential investigations."
+        "requirement": "Accountability: The system must log all password reset actions with timestamp, administrator ID, and affected user account, retaining logs for a minimum of 180 days.",
+        "justification": "Provides an audit trail for tracking and investigating potential misuse of administrative privileges."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: Implement password reset workflow with clear validation rules, including mandatory complexity checks and prevention of reusing last 5 passwords.",
-        "justification": "Guides administrators through a secure and controlled password reset process."
+        "requirement": "User Error Protection: The password reset interface must enforce strong password validation rules, including minimum 12-character length, complexity requirements, and prevention of password reuse for the last 5 historical passwords.",
+        "justification": "Helps administrators maintain account security while providing clear guidance on password creation."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Recoverability: Ensure password reset functionality can be completed within 5 minutes, with automatic system rollback if the process fails midway.",
-        "justification": "Minimizes disruption and ensures administrators can quickly resolve user access issues."
+        "requirement": "Recoverability: The system must provide a mechanism to notify the user via email or secure notification when their password is reset by an administrator.",
+        "justification": "Ensures users are immediately aware of unauthorized password changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The password reset functionality must be implemented as a separate, configurable module that can be updated or replaced without affecting other system components.",
+        "justification": "Allows for future enhancements and security updates with minimal system disruption."
       }
     ]
   },
@@ -28,99 +33,29 @@
     "functionalRequirement": "System shall be able to perform distance calculations and access geo-location information for the user, sites, and nearby sites.",
     "identifiedNFRs": [
       {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete distance calculations within 100 milliseconds for up to 1,000 concurrent requests.",
-        "justification": "Ensures rapid response times for geo-location and distance-related queries."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Resource Utilization: Limit memory consumption to 50 MB per geo-location data processing request.",
-        "justification": "Optimizes system resources during distance and location calculations."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Confidentiality: Encrypt all geo-location data transmissions using TLS 1.3 with AES-256 encryption.",
-        "justification": "Protects sensitive location information during data transfer."
-      },
-      {
         "attribute": "Functional Suitability",
-        "requirement": "Functional Correctness: Maintain distance calculation accuracy within 1 meter for 99.9% of valid inputs.",
-        "justification": "Ensures precise and reliable geo-location and distance information."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Usability",
-        "requirement": "Learnability: Provide a clear, intuitive navigation flow with maximum 3 clicks to access service requirements and selection interface.",
-        "justification": "Simplifies the process for prospective applicants to find and select services."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Assistance: Implement context-sensitive help tooltips for each service selection step, accessible via a '?' icon.",
-        "justification": "Provides guidance to users during the service research and selection process."
-      },
-      {
-        "attribute": "Compatibility",
-        "requirement": "Interoperability: Support responsive design compatible with minimum 95% of modern web browsers (Chrome, Firefox, Safari, Edge) and screen sizes.",
-        "justification": "Ensures accessibility across different devices and browser platforms."
+        "requirement": "Functional Completeness: The system must accurately calculate distances between user, sites, and nearby sites using all required geo-location data types (e.g., latitude, longitude) for 100% of specified use cases.",
+        "justification": "The FR requires the system to perform distance calculations and access geo-location information, necessitating full coverage of these core functional aspects."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Load service requirements and selection interface within 2 seconds for 99% of user interactions.",
-        "justification": "Provides a responsive and efficient user experience during service research."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "System shall allow staff members to develop staff reports for publication and distribution.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Usability",
-        "requirement": "Operability: Provide a drag-and-drop interface for report content management with auto-save functionality every 3 minutes.",
-        "justification": "Enhances ease of use and prevents data loss during report creation."
-      },
-      {
-        "attribute": "Maintainability",
-        "requirement": "Modularity: Design report creation system with plug-in architecture supporting at least 5 different report template types.",
-        "justification": "Allows for future extensibility and customization of report generation."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.9% uptime for report creation and distribution systems during business hours.",
-        "justification": "Ensures consistent access to report development tools."
+        "requirement": "Time Behavior: The system must calculate distances between user, sites, and nearby sites in less than 100 milliseconds for up to 1,000 concurrent requests.",
+        "justification": "The FR involves real-time access to geo-location data and calculations, requiring timely responses for usability."
       },
       {
         "attribute": "Security",
-        "requirement": "Integrity: Implement version control for all reports, tracking changes with author, timestamp, and ability to restore previous versions.",
-        "justification": "Provides accountability and traceability for report modifications."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "User shall be guided to a login page after successfully registering, where they can enter their credentials to access the application.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Security",
-        "requirement": "Authenticity: Implement mandatory multi-factor authentication with options including SMS, email, or authenticator app verification.",
-        "justification": "Enhances login security beyond basic username and password."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: Provide clear password entry guidelines, including minimum 12-character length, complexity requirements, and real-time strength meter.",
-        "justification": "Guides users in creating strong, secure credentials."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Redirect to login page within 500 milliseconds after successful registration.",
-        "justification": "Ensures a smooth, immediate transition to login after registration."
+        "requirement": "Confidentiality: The system must encrypt user geo-location data using TLS 1.3 during transmission and at rest using AES-256 encryption.",
+        "justification": "Protects sensitive location data from unauthorized access or interception."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: Maintain login system availability of 99.99% with automatic failover mechanisms.",
-        "justification": "Prevents login interruptions and ensures consistent access to the application."
+        "requirement": "Availability: The geo-location and distance calculation service must be available for 99.95% of operational time, with automatic failover mechanisms.",
+        "justification": "Ensures consistent access to critical location-based functionality."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The system must provide clear error messages and guidance when geo-location data is incomplete, invalid, or cannot be processed.",
+        "justification": "Helps users understand and resolve issues with location-based services."
       }
     ]
   }

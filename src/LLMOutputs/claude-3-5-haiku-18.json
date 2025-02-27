@@ -1,0 +1,82 @@
+[
+  {
+    "functionalRequirement": "User shall be able to set the price, quantity, upload pictures, and add details when listing an item.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all item listing components including price input, quantity selection, picture upload, and detailed description for 100% of item types.",
+        "justification": "Ensures comprehensive coverage of all specified item listing features"
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Picture uploads must complete within 5 seconds for images up to 10MB in size, with support for concurrent uploads of up to 5 images simultaneously.",
+        "justification": "Addresses the need for efficient media upload during item listing process"
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Implement validation rules that prevent invalid price entries (e.g., negative prices, non-numeric characters) and enforce minimum/maximum price ranges.",
+        "justification": "Helps users input correct information and prevents potential listing errors"
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: Provide inline help tooltips and clear error messages for each item listing field to guide users through the listing process.",
+        "justification": "Enhances user understanding and reduces potential confusion during item listing"
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Implement server-side validation to sanitize and validate all user-provided listing details to prevent injection attacks or malicious content.",
+        "justification": "Protects the platform from potential security vulnerabilities in user-generated content"
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: Support multiple image formats (JPEG, PNG, WebP) and ensure compatibility with standard web and mobile image upload interfaces.",
+        "justification": "Ensures flexible image upload across different devices and platforms"
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: Design the item listing feature with separate, loosely coupled components for price, quantity, image, and description inputs to facilitate future modifications.",
+        "justification": "Allows for easier updates and modifications to individual listing components"
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Doctors shall be able to log in to check patient information, answer patient queries, perform daily activities, set reminders, and communicate with their staff.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication with mandatory two-factor authentication using time-based one-time passwords (TOTP).",
+        "justification": "Ensures secure access to sensitive patient information"
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Encrypt all patient information using AES-256 encryption both at rest and in transit, with strict access controls based on user roles.",
+        "justification": "Protects sensitive medical information from unauthorized access"
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.99% system uptime with automatic failover and redundant server infrastructure to ensure continuous access to patient information.",
+        "justification": "Critical for healthcare professionals who need constant access to patient data"
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Patient information retrieval must complete within 2 seconds for comprehensive patient records, supporting up to 100 concurrent user sessions.",
+        "justification": "Ensures quick access to critical patient information during medical consultations"
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: Provide context-sensitive help, clear navigation, and intuitive interface design with role-based dashboards tailored to medical staff workflows.",
+        "justification": "Supports efficient navigation and task completion for medical professionals"
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: Implement comprehensive logging of all system interactions with patient data, including user actions, access times, and modification details.",
+        "justification": "Supports audit trails and system troubleshooting for healthcare compliance"
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: Design the system to easily integrate with various Electronic Health Record (EHR) systems and support future medical communication protocol standards.",
+        "justification": "Ensures long-term compatibility and extensibility of the medical communication platform"
+      }
+    ]
+  }
+]

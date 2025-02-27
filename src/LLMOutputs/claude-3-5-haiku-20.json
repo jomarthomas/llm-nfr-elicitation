@@ -4,28 +4,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: File sharing and screen sharing operations must complete within 5 seconds for files up to 100 MB, with less than 200ms latency for screen sharing.",
-        "justification": "Ensures quick and responsive file and screen sharing functionality for user satisfaction."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Confidentiality: All shared files and screen content must be encrypted using AES-256 during transmission and at rest.",
-        "justification": "Protects sensitive information during file and screen sharing operations."
+        "requirement": "Time Behavior: File and screen sharing operations must complete within 5 seconds for files up to 100 MB, with less than 500ms latency for screen sharing updates.",
+        "justification": "Ensures smooth and responsive file and screen sharing experiences across different file sizes and sharing scenarios."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must support automatic resumption of interrupted file transfers and maintain session integrity during screen sharing.",
-        "justification": "Ensures reliable file sharing and screen sharing experiences under varying network conditions."
+        "requirement": "Fault Tolerance: The system must support resumable file transfers and automatically retry screen sharing connections up to 3 times in case of network interruptions.",
+        "justification": "Provides resilience for file sharing and screen sharing features to handle potential network instabilities."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All shared files and screen sharing sessions must be encrypted end-to-end using AES-256 encryption.",
+        "justification": "Protects sensitive information during file and contact sharing to prevent unauthorized access."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: Implement file size limits (max 1 GB), file type restrictions, and clear error messages for unsupported sharing attempts.",
-        "justification": "Provides guidance and prevents user errors during file and contact sharing."
+        "requirement": "User Error Protection: The system must provide clear error messages for failed file transfers, with specific guidance on potential resolution steps.",
+        "justification": "Helps users understand and potentially resolve issues during file and contact sharing processes."
       },
       {
         "attribute": "Compatibility",
-        "requirement": "Interoperability: Support file sharing across multiple device types (Windows, macOS, iOS, Android) with consistent functionality.",
-        "justification": "Ensures the sharing feature works seamlessly across different platforms."
+        "requirement": "Interoperability: The file sharing and screen sharing features must be compatible with at least 3 major operating systems (Windows, macOS, Linux) and support common file formats across platforms.",
+        "justification": "Ensures broad accessibility and consistent functionality across different user environments."
       }
     ]
   },
@@ -34,118 +34,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Security",
-        "requirement": "Authentication: Implement multi-factor authentication with at least two verification methods (password + SMS/email code).",
-        "justification": "Enhances security during user sign-up and credential validation process."
+        "requirement": "Authentication: Implement multi-factor authentication with at least two verification methods (e.g., password + SMS code or biometric).",
+        "justification": "Enhances account security during the sign-up and credential validation process."
       },
       {
         "attribute": "Usability",
-        "requirement": "Learnability: Provide clear, step-by-step guidance during sign-up process with inline validation and helpful error messages.",
-        "justification": "Simplifies the user registration process and reduces friction."
+        "requirement": "User Error Protection: Provide real-time password strength feedback during account creation, requiring a minimum of 12 characters with mixed character types.",
+        "justification": "Guides users to create strong, secure credentials while improving the sign-up experience."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.99% uptime for the authentication and credential validation system.",
-        "justification": "Ensures users can consistently access the sign-up and login functionality."
+        "requirement": "Availability: Maintain a 99.9% uptime for the authentication and credential validation system.",
+        "justification": "Ensures users can consistently access the Snap camera screen without prolonged login interruptions."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete credential validation and screen access within 2 seconds for 95% of login attempts.",
-        "justification": "Provides a responsive login experience for users."
+        "requirement": "Time Behavior: Complete credential validation and Snap camera screen access within 2 seconds of successful authentication.",
+        "justification": "Provides a quick and responsive login experience for users."
       },
       {
         "attribute": "Security",
-        "requirement": "Password Policy: Enforce strong password requirements (minimum 12 characters, mix of uppercase, lowercase, numbers, and special characters).",
-        "justification": "Ensures robust credential security during user registration."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "System shall provide an interface for Application Administrators to reset user passwords.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Security",
-        "requirement": "Authenticity: Implement role-based access control (RBAC) with multi-factor authentication for administrator password reset actions.",
-        "justification": "Ensures only authorized administrators can reset user passwords."
-      },
-      {
-        "attribute": "Maintainability",
-        "requirement": "Analysability: Log all password reset attempts with timestamp, administrator ID, and user affected for audit purposes.",
-        "justification": "Provides traceability and helps in monitoring administrative actions."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Assistance: Provide clear audit trail and confirmation mechanisms for each password reset action.",
-        "justification": "Helps administrators understand and verify password reset operations."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Recoverability: Implement a mechanism to revert password reset actions within 5 minutes of execution.",
-        "justification": "Allows correction of unintended password reset actions."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete password reset process within 3 seconds for 99% of reset attempts.",
-        "justification": "Ensures quick and efficient administrative password management."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "System shall be able to perform distance calculations and access geo-location information for the user, sites, and nearby sites.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must accurately calculate distances between user, sites, and nearby sites using all required geo-location data types (e.g., latitude, longitude) for 100% of specified use cases.",
-        "justification": "The FR requires the system to perform distance calculations and access geo-location information, necessitating full coverage of these core functional aspects."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The system must calculate distances between user, sites, and nearby sites in less than 100 milliseconds for up to 1,000 concurrent requests.",
-        "justification": "Ensures timely responses for geo-location data processing."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Confidentiality: Encrypt user geo-location data using TLS 1.3 during transmission and anonymize stored location data.",
-        "justification": "Protects sensitive user location information."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.95% uptime for geo-location services and distance calculation functionality.",
-        "justification": "Ensures consistent access to location-based services."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "Operability: Provide clear, consistent API documentation for geo-location and distance calculation interfaces.",
-        "justification": "Facilitates easy integration and use of location services."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Usability",
-        "requirement": "User Engagement: Implement an intuitive search and filtering mechanism with relevance-based ranking of services and applications.",
-        "justification": "Enhances user experience in finding and selecting appropriate services."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Load service and application information within 2 seconds, with search results displayed in less than 500 milliseconds.",
-        "justification": "Ensures responsive and quick access to service information."
-      },
-      {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: Provide comprehensive information for 100% of listed services, including requirements, eligibility, and application process.",
-        "justification": "Ensures applicants have full access to necessary information for decision-making."
-      },
-      {
-        "attribute": "Compatibility",
-        "requirement": "Interoperability: Support responsive design for seamless access across desktop, tablet, and mobile devices.",
-        "justification": "Allows applicants to research and select services from any device."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Assistance: Implement contextual help, tooltips, and guided navigation for service selection process.",
-        "justification": "Provides support to users during service research and selection."
+        "requirement": "Confidentiality: Store user credentials using salted bcrypt hashing with a minimum work factor of 12.",
+        "justification": "Protects user credentials from potential security breaches through advanced password storage techniques."
       }
     ]
   }

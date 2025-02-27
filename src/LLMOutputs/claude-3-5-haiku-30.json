@@ -1,0 +1,72 @@
+[
+  {
+    "functionalRequirement": "A surface app page shall provide a customer with all customer system functionality.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The surface app page must expose 100% of customer system features with no hidden or inaccessible functionality.",
+        "justification": "The FR specifies providing ALL customer system functionality in a single page, requiring comprehensive feature coverage."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Interface Comprehensiveness: The surface app page must organize all system functionalities into logically grouped, easily navigable sections with clear labeling and intuitive layout.",
+        "justification": "With multiple functionalities on a single page, clear organization and navigation are critical for user understanding."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The surface app page must implement context-sensitive help tooltips for each functionality to guide users and prevent incorrect interactions.",
+        "justification": "Comprehensive functionality increases complexity, necessitating built-in user guidance mechanisms."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The surface app page must load and render all system functionalities within 2 seconds, even with complex feature sets.",
+        "justification": "A page containing all system functionalities requires optimized loading to maintain user engagement."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The surface app page's code must be structured using component-based architecture, allowing independent updates to individual functionalities without affecting the entire page.",
+        "justification": "With comprehensive functionality, a modular design ensures easier future modifications and feature additions."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The surface app page must support responsive design, maintaining full functionality across desktop, tablet, and mobile device screen sizes.",
+        "justification": "Comprehensive functionality requires consistent user experience across different device types."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall display information and settings related to the required setting based on user input.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately display 100% of relevant settings and information matching the specific user input context.",
+        "justification": "The FR requires precise mapping of user input to corresponding system settings and information."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear validation and error messages if user input does not match any available settings, with suggestions for correct input.",
+        "justification": "Dynamic setting display requires robust handling of potentially incorrect or mismatched user inputs."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must retrieve and display related settings within 500 milliseconds of user input submission.",
+        "justification": "Real-time setting display requires minimal latency to maintain responsive user experience."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must verify user permissions before displaying sensitive settings, implementing role-based access control for setting visibility.",
+        "justification": "Different settings may require different access levels, necessitating secure, context-aware display mechanisms."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Self-descriptiveness: Each displayed setting must include a brief, clear explanation of its purpose and potential impact when modified.",
+        "justification": "Complex settings require contextual information to help users understand their function and consequences."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: The system must log all user setting retrieval attempts with timestamp, user ID, and input parameters for auditing and troubleshooting purposes.",
+        "justification": "Tracking setting access helps in understanding user behavior and diagnosing potential system issues."
+      }
+    ]
+  }
+]

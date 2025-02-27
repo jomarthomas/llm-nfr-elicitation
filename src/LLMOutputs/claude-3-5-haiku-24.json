@@ -1,0 +1,72 @@
+[
+  {
+    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "The system must provide a clear, intuitive navigation interface for requirements research with no more than 3 clicks to access any service or application information.",
+        "justification": "Ensures ease of use for prospective applicants who may not be familiar with the system."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must support responsive design to be fully functional on desktop, tablet, and mobile devices with screen sizes ranging from 320px to 1920px width.",
+        "justification": "Enables access for applicants using various devices and screen sizes."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must load service and application information pages within 2 seconds for 95% of user requests, with a maximum page load time of 3 seconds.",
+        "justification": "Prevents user frustration and ensures quick access to critical information."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement HTTPS encryption and protect against common web vulnerabilities (OWASP Top 10) for all information research and selection processes.",
+        "justification": "Protects applicant data and ensures secure browsing of system information."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The system must be compatible with the latest versions of Chrome, Firefox, Safari, and Edge browsers, supporting at least 99% of current web standards.",
+        "justification": "Ensures widespread accessibility across different web browsers."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must maintain 99.9% uptime during peak application research and selection periods, with automatic error logging and recovery mechanisms.",
+        "justification": "Provides consistent availability for prospective applicants accessing system information."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow staff members to develop staff reports for publication and distribution.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "The report creation interface must provide a guided workflow with clear instructions, tooltips, and contextual help for each report section.",
+        "justification": "Supports staff in efficiently creating comprehensive reports."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The report generation system must use a modular architecture that allows easy addition of new report templates and modification of existing templates without changing core system code.",
+        "justification": "Enables flexible updates to reporting capabilities without extensive redevelopment."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must generate and save reports within 5 seconds for documents up to 50 pages long, supporting concurrent report creation by at least 10 staff members simultaneously.",
+        "justification": "Ensures efficient report creation and prevents performance bottlenecks."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement role-based access control (RBAC) to restrict report creation, editing, and distribution based on staff member permissions.",
+        "justification": "Protects sensitive information and ensures only authorized personnel can create and distribute reports."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must automatically save report drafts every 2 minutes and provide a comprehensive version control system to track all report modifications.",
+        "justification": "Prevents data loss and provides accountability for report changes."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The report generation system must support export to PDF, DOCX, and HTML formats, ensuring full formatting preservation across different document types.",
+        "justification": "Enables flexible report distribution and consumption across various platforms."
+      }
+    ]
+  }
+]

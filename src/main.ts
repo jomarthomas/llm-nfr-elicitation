@@ -4,6 +4,7 @@ import {
   OpenAIHandler,
   TogetherAIHandler,
   AnthropicHandler,
+  GrokAIHandler,
 } from "./utils/llm.ts";
 import { join } from "https://deno.land/std/path/mod.ts";
 
@@ -71,6 +72,22 @@ async function combineOutputs(filePrefix: string) {
     const jsonContent = JSON.parse(content);
     combinedOutput.push(...jsonContent);
   }
+  // const seen = new Set();
+  // const duplicates: { functionalRequirement: string; file: string }[] = [];
+
+  // for (const file of files) {
+  //   const content = await Deno.readTextFile(join(dir, file));
+  //   const jsonContent = JSON.parse(content);
+  //   jsonContent.forEach((item: { functionalRequirement: string }) => {
+  //     if (seen.has(item.functionalRequirement)) {
+  //       duplicates.push({ ...item, file });
+  //     } else {
+  //       seen.add(item.functionalRequirement);
+  //     }
+  //   });
+  // }
+
+  // console.log("Duplicates:", duplicates);
 
   await Deno.writeTextFile(
     join(dir, `${filePrefix}.json`),
@@ -109,18 +126,23 @@ if (import.meta.main) {
   //   temperature: 0.4,
   // });
 
-  const claude = new AnthropicHandler({
-    apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
-    modelName: "claude-3-5-haiku-20241022",
+  // const claude = new AnthropicHandler({
+  //   apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
+  //   modelName: "claude-3-5-haiku-20241022",
+  //   temperature: 0.4,
+  // });
+
+  const grok = new GrokAIHandler({
+    apiKey: Deno.env.get("GROK_API_KEY") ?? "",
+    modelName: "grok-2-1212",
     temperature: 0.4,
   });
 
   await batchedCalls({
-    model: claude,
-    batchSize: 5,
-    FRStart: 22,
-    fileName: "claude-3-5-haiku",
+    model: grok,
+    batchSize: 4,
+    fileName: "grok-2",
   });
 
-  await combineOutputs("claude-3-5-haiku");
+  await combineOutputs("grok-2");
 }

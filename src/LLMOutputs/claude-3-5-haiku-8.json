@@ -1,0 +1,77 @@
+[
+  {
+    "functionalRequirement": "After adding a transportation route, the user shall be able to retrieve transportation requests from other users.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must retrieve 100% of transportation requests associated with the added route, including all relevant request details.",
+        "justification": "Ensures full coverage of request retrieval functionality after route addition."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Transportation requests must be retrieved within 2 seconds for routes with up to 50 concurrent requests.",
+        "justification": "Provides responsive user experience when fetching transportation requests."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The request retrieval feature must be operational 99.9% of the time during peak usage hours.",
+        "justification": "Ensures consistent access to transportation request information."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: User transportation requests must be encrypted during transmission using TLS 1.3 with AES-256 encryption.",
+        "justification": "Protects sensitive user transportation request information from unauthorized access."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages if no requests are found or if retrieval fails, with guidance on potential resolution steps.",
+        "justification": "Helps users understand and potentially resolve issues with request retrieval."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The transportation request retrieval system must support standard data exchange formats (JSON, XML) for integration with other transportation platforms.",
+        "justification": "Enables potential future integrations and data sharing capabilities."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The Disputes System shall allow users to create charge back requests, prompting for required information and resulting in printed notifications sent to merchants if proof of disputed transactions is not provided.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must capture 100% of required chargeback request information with mandatory field validation.",
+        "justification": "Ensures all necessary details are collected for a complete chargeback request."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide real-time validation of input fields, with clear, specific error messages for incomplete or incorrect information.",
+        "justification": "Guides users in providing accurate and complete chargeback request details."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The chargeback request creation process must be completed within 3 minutes, including information input and notification generation.",
+        "justification": "Provides an efficient process for users to submit dispute requests."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All chargeback request data must be encrypted at rest using AES-256 and in transit using TLS 1.3.",
+        "justification": "Protects sensitive financial dispute information from unauthorized access."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must maintain a complete audit log of all chargeback requests, with ability to restore or reconstruct request details within 1 hour of any system failure.",
+        "justification": "Ensures data integrity and traceability of dispute processes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: The system must generate comprehensive logs tracking each step of the chargeback request process, including timestamps, user actions, and system responses.",
+        "justification": "Facilitates system monitoring, troubleshooting, and potential process improvements."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The notification generation system must support customizable merchant communication templates and multiple notification channels (print, email, API).",
+        "justification": "Allows for future expansion of notification methods and merchant communication."
+      }
+    ]
+  }
+]

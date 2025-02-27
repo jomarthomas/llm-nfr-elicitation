@@ -1,0 +1,52 @@
+[
+  {
+    "functionalRequirement": "System shall set over temperature values to prevent temperature deviations beyond 3 degrees Fahrenheit.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The system must implement automatic shutdown or warning mechanisms if temperature exceeds the 3-degree Fahrenheit deviation threshold.",
+        "justification": "Prevents potential equipment damage or safety risks from temperature fluctuations."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must maintain temperature monitoring accuracy within ±0.5 degrees Fahrenheit under varying environmental conditions.",
+        "justification": "Ensures precise temperature control and deviation detection."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Temperature monitoring and deviation detection must occur with a maximum latency of 100 milliseconds.",
+        "justification": "Rapid response is critical for preventing temperature-related issues."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must log all temperature override attempts with user credentials and timestamp.",
+        "justification": "Provides accountability for temperature control interventions."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall show the first lines of news articles based on the titles on the title screen.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: News article preview lines must load within 2 seconds for up to 10 concurrent article titles.",
+        "justification": "Ensures quick and responsive display of news previews."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Implement graceful handling for articles with no preview text, displaying a default 'No preview available' message.",
+        "justification": "Provides clear user feedback for incomplete article information."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The system must support retrieving preview text from at least three different news source APIs or RSS feeds.",
+        "justification": "Ensures flexibility in news content sourcing."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: Preview text must accurately represent the first 100 characters of the article content, preserving full words.",
+        "justification": "Provides meaningful and coherent article previews."
+      }
+    ]
+  }
+]

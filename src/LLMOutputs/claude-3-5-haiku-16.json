@@ -1,0 +1,77 @@
+[
+  {
+    "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support capturing and validating all required personal details (name, gender, password, mobile number, location) for account creation with 100% field coverage.",
+        "justification": "Ensures all specified personal information can be fully entered during account registration process."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication during account creation, requiring email or SMS verification of the mobile number provided.",
+        "justification": "Verifies the legitimacy of the user and protects against fraudulent account creation."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Encrypt all personal details using AES-256 encryption at rest and in transit, with no plain-text storage of sensitive information.",
+        "justification": "Protects user's personal information from unauthorized access or data breaches."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Implement real-time validation with clear, specific error messages for each input field (e.g., password strength requirements, valid mobile number format).",
+        "justification": "Guides users through account creation process and prevents incorrect data entry."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.9% uptime for the account creation service, with automatic failover and retry mechanisms.",
+        "justification": "Ensures users can create accounts consistently without service interruptions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Complete the entire account creation process in less than 2 minutes, with individual field validations occurring in under 500 milliseconds.",
+        "justification": "Provides a quick and responsive account registration experience."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to import and manage various data formats like images, videos, and audio files within presentations.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: Support import and management of at least 10 standard file formats for images (JPEG, PNG, GIF, TIFF), videos (MP4, AVI, MOV), and audio files (MP3, WAV, FLAC).",
+        "justification": "Ensures comprehensive support for various media file types in presentations."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Process and load media files within 3 seconds for files up to 100 MB in size, with a maximum of 1-second preview generation.",
+        "justification": "Provides responsive file handling and quick media preview capabilities."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: Limit memory consumption to 500 MB for processing and rendering multiple media files simultaneously.",
+        "justification": "Ensures efficient system resource management during media file handling."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: Provide a drag-and-drop interface for file import with clear visual feedback on upload status and progress.",
+        "justification": "Simplifies the process of importing and managing media files in presentations."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: Ensure compatibility with major presentation software (Microsoft PowerPoint, Google Slides, Apple Keynote) for imported media files.",
+        "justification": "Allows seamless use of imported media across different presentation platforms."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: Implement automatic file format conversion and error recovery for corrupted or incompatible media files.",
+        "justification": "Provides resilience against potential file import issues and format limitations."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Perform virus and malware scanning on all imported media files before allowing them into the presentation.",
+        "justification": "Protects the system and user from potential security threats through file imports."
+      }
+    ]
+  }
+]

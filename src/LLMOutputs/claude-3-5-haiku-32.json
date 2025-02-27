@@ -9,13 +9,13 @@
       },
       {
         "attribute": "Security",
-        "requirement": "Authenticity: The system must log each OTP validation attempt, capturing timestamp, user ID, and result (success/failure) with immutable audit trail.",
-        "justification": "Provides security tracking for authentication attempts and potential fraud detection."
+        "requirement": "Authenticity: The system must limit OTP validation attempts to a maximum of 3 consecutive tries before temporarily blocking the account for 15 minutes.",
+        "justification": "Prevents brute force attacks and protects user accounts from unauthorized access attempts."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must allow a maximum of 3 consecutive OTP validation attempts before temporarily blocking the user account for 15 minutes.",
-        "justification": "Prevents brute force attacks while maintaining user accessibility."
+        "requirement": "Fault Tolerance: The system must log all OTP validation failures with timestamp, user ID, and error type for security audit purposes.",
+        "justification": "Enables tracking and investigation of potential security incidents or system anomalies."
       }
     ]
   },
@@ -25,22 +25,27 @@
       {
         "attribute": "Functional Suitability",
         "requirement": "Functional Completeness: The system must provide 100% accurate reporting of remaining job posting time and CV access status for all active job postings.",
-        "justification": "Ensures comprehensive and reliable reporting of critical job application information."
+        "justification": "Ensures comprehensive and reliable reporting of critical job posting information."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The system must generate reports on job posting time and CV access within 2 seconds for queries involving up to 500 concurrent job postings.",
-        "justification": "Provides timely access to important job application tracking information."
+        "requirement": "Time Behavior: The system must generate reports on job posting time and CV access within 2 seconds for up to 100 concurrent report requests.",
+        "justification": "Provides timely access to important job posting information without significant delay."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Assistance: The reporting interface must display remaining job posting time in a clear, human-readable format (e.g., \"2 days, 5 hours remaining\") with countdown timer.",
-        "justification": "Helps users easily understand and track job posting deadlines."
+        "requirement": "User Assistance: The system must display remaining job posting time in a human-readable format (e.g., 'X days, Y hours remaining') with clear visual indicators of time progression.",
+        "justification": "Helps users easily understand and interpret the remaining time for job postings."
       },
       {
         "attribute": "Maintainability",
-        "requirement": "Analysability: The reporting system must support export of job posting and CV access reports in at least three standard formats (CSV, PDF, XML) for further analysis.",
-        "justification": "Enables flexible data extraction and analysis of job posting information."
+        "requirement": "Modularity: The reporting feature must be implemented as a separate, independent module with well-defined interfaces for future enhancements or integrations.",
+        "justification": "Allows for easier future modifications and extensions of the reporting functionality."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The job posting and CV access reports must be exportable in standard formats (CSV, JSON, PDF) to enable integration with external systems.",
+        "justification": "Facilitates data sharing and compatibility with other job management or reporting tools."
       }
     ]
   }

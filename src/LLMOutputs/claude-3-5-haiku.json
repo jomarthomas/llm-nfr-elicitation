@@ -4,18 +4,23 @@
     "identifiedNFRs": [
       {
         "attribute": "Security",
-        "requirement": "Confidentiality: The system must securely erase stored Facebook credentials using a cryptographically secure deletion method that overwrites the data at least 3 times to prevent recovery.",
-        "justification": "Ensures complete and secure removal of sensitive login credentials from the system."
+        "requirement": "Confidentiality: The system must securely delete stored Facebook credentials using a cryptographically secure overwrite method that ensures no residual data remains.",
+        "justification": "Protecting user credentials requires complete and secure removal of sensitive login information."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: The system must provide a clear warning dialog that explains the consequences of deleting saved credentials and require explicit user confirmation before deletion.",
-        "justification": "Prevents accidental data loss and provides user transparency about the action."
+        "requirement": "User Error Protection: The system must provide a clear confirmation dialog with two-factor authentication before permanently deleting Facebook login credentials.",
+        "justification": "Preventing accidental deletion of login information protects user from unintended data loss."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Recoverability: The system must log the credential deletion event with a timestamp and user ID for audit purposes, without storing the actual credentials.",
-        "justification": "Maintains a record of important account management actions for security tracking."
+        "requirement": "Recoverability: The system must maintain a secure, encrypted log of credential deletion attempts for audit purposes, without storing the actual credentials.",
+        "justification": "Tracking deletion events ensures accountability and provides a mechanism for investigating potential unauthorized access."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The credential deletion feature must be implemented as a standalone, easily updatable module that can be modified without affecting other system settings.",
+        "justification": "Ensures flexibility in managing authentication-related features independently."
       }
     ]
   },
@@ -24,23 +29,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Security",
-        "requirement": "Integrity: The system must implement end-to-end encryption for all financial transaction data using AES-256 encryption during transmission and storage.",
-        "justification": "Protects sensitive financial information from unauthorized access or tampering."
+        "requirement": "Integrity: The system must implement end-to-end encryption for the temporary storage of deposit information, using AES-256 encryption with key rotation every 24 hours.",
+        "justification": "Protecting financial transaction data requires robust encryption to prevent unauthorized access or tampering."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The deposit processing and database update must complete within 2 seconds for 99% of transactions.",
-        "justification": "Ensures quick and responsive handling of financial transactions."
+        "requirement": "Time Behavior: The deposit processing and database update must complete within 2 seconds for 99% of transactions, with a maximum latency of 5 seconds.",
+        "justification": "Financial transactions require quick and responsive system performance to ensure a smooth user experience."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: The deposit system must maintain 99.99% uptime during business hours with automatic failover mechanisms.",
-        "justification": "Critical for financial transactions to be consistently accessible."
+        "requirement": "Availability: The deposit processing system must maintain 99.99% uptime, with automatic failover mechanisms to prevent transaction interruptions.",
+        "justification": "Financial operations demand high reliability to ensure customers can complete their deposits without system downtime."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must validate the entire deposit process, including customer information verification, amount confirmation, and temporary database update for 100% of deposit attempts.",
+        "justification": "Ensuring complete and accurate processing of financial transactions is critical for system reliability."
       },
       {
         "attribute": "Security",
-        "requirement": "Authenticity: Implement multi-factor authentication for all deposit transactions, requiring at least two independent verification methods.",
-        "justification": "Prevents unauthorized financial transactions and verifies customer identity."
+        "requirement": "Accountability: The system must generate a unique, immutable transaction ID for each deposit attempt, logging all details including timestamp, customer ID, and processing status.",
+        "justification": "Maintaining a comprehensive audit trail is essential for financial transactions to ensure traceability and compliance."
       }
     ]
   },
@@ -48,24 +58,34 @@
     "functionalRequirement": "The system shall generate reports on storage consumption by financial contact.",
     "identifiedNFRs": [
       {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate comprehensive storage consumption reports that include 100% of relevant financial contact data points.",
+        "justification": "Ensures the report generation covers all necessary information for complete storage analysis."
+      },
+      {
         "attribute": "Performance Efficiency",
-        "requirement": "Resource Utilization: The report generation process must consume no more than 500 MB of memory and utilize less than 30% of CPU resources.",
-        "justification": "Ensures efficient resource management during report generation."
+        "requirement": "Time Behavior: Reports must be generated within 5 seconds for financial contacts with up to 10,000 storage entries.",
+        "justification": "Provides a reasonable response time for generating storage consumption reports."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Assistance: Reports must include clear, color-coded visualizations of storage consumption with tooltips explaining each data point.",
+        "requirement": "User Assistance: Reports must include clear legends, color-coded visualizations, and tooltips explaining storage consumption metrics.",
         "justification": "Enhances user understanding of complex storage consumption data."
       },
       {
-        "attribute": "Maintainability",
-        "requirement": "Analysability: The report generation module must support modular export formats including PDF, CSV, and XML with consistent data representation.",
-        "justification": "Allows for easy analysis and integration with other systems."
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must maintain a 99.9% data accuracy rate in storage consumption reporting, with automatic error logging and recovery mechanisms.",
+        "justification": "Ensures reliable and trustworthy reporting of storage consumption data."
       },
       {
-        "attribute": "Flexibility",
-        "requirement": "Adaptability: The reporting system must support dynamic filtering and custom time range selection for storage consumption data.",
-        "justification": "Provides flexibility in report generation and data analysis."
+        "attribute": "Security",
+        "requirement": "Confidentiality: All financial contact storage reports must be encrypted at rest and in transit using AES-256 encryption.",
+        "justification": "Protects sensitive financial contact information during report generation and storage."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: Reports must be generated in standardized formats (PDF, CSV) with consistent structure for easy analysis and integration.",
+        "justification": "Facilitates further data analysis and system interoperability."
       }
     ]
   },
@@ -73,24 +93,34 @@
     "functionalRequirement": "The system shall be able to generate a series of multiple-choice fraction questions that form a cohesive storyline to introduce a specific topic.",
     "identifiedNFRs": [
       {
-        "attribute": "Usability",
-        "requirement": "Learnability: The question generation interface must provide clear instructions and a consistent layout for each question type.",
-        "justification": "Ensures users can easily understand and interact with the question generation system."
-      },
-      {
         "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must generate at least 5 interconnected multiple-choice questions with a coherent narrative structure for each topic.",
-        "justification": "Ensures comprehensive and contextual question generation."
+        "requirement": "Functional Correctness: The system must generate mathematically accurate fraction questions with 100% computational precision.",
+        "justification": "Ensures the educational content is mathematically sound and error-free."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Question generation must complete within 500 milliseconds for a set of 5 multiple-choice questions.",
-        "justification": "Provides quick and responsive question generation for educational purposes."
+        "requirement": "Time Behavior: Question series generation must complete within 2 seconds for a set of 10 multiple-choice fraction questions.",
+        "justification": "Provides quick question generation to maintain user engagement."
       },
       {
-        "attribute": "Maintainability",
-        "requirement": "Modularity: The question generation system must use a plug-in architecture that allows easy addition of new question types and topics.",
-        "justification": "Enables future expansion and modification of the question generation capabilities."
+        "attribute": "Usability",
+        "requirement": "Learnability: Questions must progressively increase in difficulty and maintain a clear, coherent narrative structure.",
+        "justification": "Supports effective learning progression and maintains student interest."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide immediate, constructive feedback for incorrect answers, explaining the correct solution.",
+        "justification": "Enhances learning experience by guiding students through their mistakes."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Faultlessness: The question generation algorithm must maintain a 99.5% reliability rate in creating logically connected and mathematically correct question series.",
+        "justification": "Ensures consistent and high-quality educational content generation."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The system must support dynamic topic selection and difficulty level adjustment for question series generation.",
+        "justification": "Allows customization of educational content for different learning needs."
       }
     ]
   },
@@ -98,24 +128,34 @@
     "functionalRequirement": "System shall display a confirmation popup after the user fills out the form and clicks the submit button, saving the information to the database for further processing.",
     "identifiedNFRs": [
       {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must capture and save 100% of form data fields for all valid form submissions without data loss.",
+        "justification": "Ensures that all user-entered information is completely and accurately preserved for further processing."
+      },
+      {
         "attribute": "Usability",
-        "requirement": "User Error Protection: The confirmation popup must clearly display all submitted form data for user review before final submission.",
-        "justification": "Allows users to verify information and prevent accidental submissions."
+        "requirement": "User Error Protection: The confirmation popup must clearly display a unique submission reference number and provide a summary of submitted information to allow users to verify their input.",
+        "justification": "Helps users confirm their submission and provides reassurance about the successful data capture."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The form submission and database save process must complete within 1 second for 99% of submissions.",
-        "justification": "Ensures quick and responsive form processing."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Integrity: All form data must be validated against predefined rules and sanitized to prevent injection attacks before database storage.",
-        "justification": "Protects the system from malicious input and ensures data quality."
+        "requirement": "Time Behavior: The confirmation popup must appear within 500 milliseconds of form submission, with database saving completed in less than 2 seconds.",
+        "justification": "Ensures a responsive user experience during form submission and data processing."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Recoverability: Implement an automatic retry mechanism with exponential backoff for failed form submissions, with a maximum of 3 retry attempts.",
-        "justification": "Ensures robust handling of potential temporary system failures during form submission."
+        "requirement": "Recoverability: The system must implement a retry mechanism that allows resubmission of form data in case of initial submission failure, with a maximum of 3 automatic retry attempts.",
+        "justification": "Provides resilience in case of temporary network or database connection issues."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All form data must be encrypted during transmission and at rest using AES-256 encryption.",
+        "justification": "Protects sensitive user information during storage and transmission."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The form submission and confirmation process must be implemented as a separate, reusable module with clear interface definitions.",
+        "justification": "Allows for easier future modifications and potential reuse across different form types."
       }
     ]
   },
@@ -124,23 +164,33 @@
     "identifiedNFRs": [
       {
         "attribute": "Usability",
-        "requirement": "The support interface must provide clear, intuitive navigation between different support channels with consistent visual design and less than 2 clicks to access any support option.",
-        "justification": "Multiple support channels require a user-friendly interface that minimizes cognitive load and navigation complexity."
+        "requirement": "Operability: The support channel selection interface must be intuitive, with clear icons and text descriptions for each support option, requiring no more than 2 clicks to access the chosen support method.",
+        "justification": "Ensures easy navigation and quick access to desired support channels."
       },
       {
         "attribute": "Usability",
-        "requirement": "Each support channel must include a brief, clear description of expected response times and typical use cases to guide user selection.",
-        "justification": "Users need contextual guidance to choose the most appropriate support method for their specific issue."
+        "requirement": "User Engagement: The support options must include a visual indicator of expected response time for each channel (e.g., chat - immediate, email - 24 hours, community - variable).",
+        "justification": "Helps users make informed decisions about which support channel to use based on their urgency."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The support channel selection system must be compatible with at least three major web browsers (Chrome, Firefox, Safari) and responsive across desktop and mobile devices.",
+        "justification": "Ensures accessibility across different platforms and devices."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The support channel system must allow for easy addition of new support channels with minimal system reconfiguration.",
+        "justification": "Provides flexibility to expand support options in the future."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "The support channel selection interface must load within 500 milliseconds and support concurrent access for at least 1,000 simultaneous users.",
-        "justification": "Rapid interface responsiveness is crucial for user satisfaction in a multi-channel support system."
+        "requirement": "Time Behavior: The support channel selection interface must load within 1 second and provide real-time availability status for each support option.",
+        "justification": "Ensures a responsive and informative user experience when seeking support."
       },
       {
         "attribute": "Reliability",
-        "requirement": "The system must maintain a 99.9% uptime across all support channels, with automatic failover mechanisms if any single channel becomes unavailable.",
-        "justification": "Continuous availability of support channels is critical for user trust and problem resolution."
+        "requirement": "Availability: The support channel selection system must be available 99.9% of the time, with clear fallback options if primary channels are unavailable.",
+        "justification": "Ensures users can always access support resources when needed."
       }
     ]
   },
@@ -149,23 +199,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Security",
-        "requirement": "The permission system must implement role-based access control (RBAC) with multi-factor authentication for all administrative and edit-level permissions.",
-        "justification": "Granular access control is essential to prevent unauthorized modifications to assets."
+        "requirement": "Authentication: The system must implement multi-factor authentication for all user roles with edit permissions, requiring at least two of: password, biometric, or hardware token.",
+        "justification": "Ensures secure access control for sensitive asset editing capabilities across different user types."
       },
       {
         "attribute": "Security",
-        "requirement": "All permission changes must be logged with a detailed audit trail including user ID, timestamp, asset modified, and type of modification.",
-        "justification": "Comprehensive logging ensures accountability and enables tracking of potential unauthorized access."
-      },
-      {
-        "attribute": "Maintainability",
-        "requirement": "The permission management system must support dynamic role definition and easy reconfiguration of user permissions without requiring system redeployment.",
-        "justification": "Flexible permission management allows for organizational changes without significant system modifications."
+        "requirement": "Access Control: The system must implement role-based access control (RBAC) with granular permission levels that can be precisely configured for each user type and department affiliation.",
+        "justification": "Supports the requirement to differentiate edit permissions based on user roles and departmental associations."
       },
       {
         "attribute": "Reliability",
-        "requirement": "The permission verification process must complete within 50 milliseconds and maintain 99.99% accuracy in permission assignments.",
-        "justification": "Quick and accurate permission verification is crucial for system responsiveness and security."
+        "requirement": "Fault Tolerance: The system must maintain a comprehensive audit log of all permission changes, including user ID, timestamp, and specific permission modifications.",
+        "justification": "Provides accountability and traceability for permission-related actions across different user types."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The permission management system must allow dynamic updates to user roles and permissions without requiring application downtime.",
+        "justification": "Enables flexible management of user access rights as organizational structures change."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support 100% of defined user roles (departmental administrators, inventory users, faculty users, university users) with distinct permission granularity.",
+        "justification": "Ensures comprehensive coverage of all specified user types in the permission granting process."
       }
     ]
   },
@@ -174,23 +229,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Performance Efficiency",
-        "requirement": "The text message processing system must handle and respond to incoming messages within 2 seconds, supporting a minimum of 100 concurrent message transactions.",
-        "justification": "Real-time messaging requires low-latency message processing and high concurrency."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "All text messages must be encrypted in transit using TLS 1.3, with message content anonymized in logs to protect user privacy.",
-        "justification": "Protecting user communication and personal information is critical in messaging systems."
+        "requirement": "Time Behavior: The system must process and respond to text message API requests within 2 seconds for 99% of incoming messages.",
+        "justification": "Ensures rapid message processing and response for real-time communication."
       },
       {
         "attribute": "Reliability",
-        "requirement": "The messaging system must maintain 99.95% message delivery reliability, with automatic retry mechanisms for failed message transmissions.",
-        "justification": "High reliability ensures users can consistently send and receive messages."
+        "requirement": "Availability: The text messaging API must maintain 99.9% uptime with automatic failover mechanisms.",
+        "justification": "Guarantees consistent message transmission and reception capabilities."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All text messages must be encrypted in transit using TLS 1.3 with end-to-end encryption.",
+        "justification": "Protects sensitive communication between the user and the system."
       },
       {
         "attribute": "Compatibility",
-        "requirement": "The API must support multiple text message formats and be compatible with at least three major telecommunications carriers' messaging protocols.",
-        "justification": "Broad compatibility ensures the system can handle diverse messaging environments."
+        "requirement": "Interoperability: The system must support multiple SMS gateway protocols and be able to integrate with at least three major telecommunications providers.",
+        "justification": "Ensures flexibility in message routing and delivery across different communication platforms."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Implement automatic message validation to prevent processing of malformed or excessively long text messages, with clear error feedback to the user.",
+        "justification": "Provides a robust user experience by handling potential input errors gracefully."
       }
     ]
   },
@@ -198,24 +258,34 @@
     "functionalRequirement": "After adding a transportation route, the user shall be able to retrieve transportation requests from other users.",
     "identifiedNFRs": [
       {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must retrieve 100% of transportation requests associated with the added route, including all relevant request details.",
+        "justification": "Ensures full coverage of request retrieval functionality after route addition."
+      },
+      {
         "attribute": "Performance Efficiency",
-        "requirement": "Route request retrieval must complete within 500 milliseconds for up to 1,000 concurrent user requests, with response times scaling linearly with increased data volume.",
-        "justification": "Efficient data retrieval is crucial for a responsive transportation request system."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "The route request interface must provide clear filtering and sorting options, allowing users to search requests by multiple criteria such as date, location, and user ratings.",
-        "justification": "Intuitive search capabilities enhance user experience in finding relevant transportation requests."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "User personal information in transportation requests must be partially anonymized, showing only necessary details for route matching.",
-        "justification": "Protecting user privacy while maintaining functional request sharing."
+        "requirement": "Time Behavior: Transportation requests must be retrieved within 2 seconds for routes with up to 50 concurrent requests.",
+        "justification": "Provides responsive user experience when fetching transportation requests."
       },
       {
         "attribute": "Reliability",
-        "requirement": "The transportation request system must maintain 99.99% data integrity, with automatic data backup and recovery mechanisms.",
-        "justification": "Ensuring consistent and reliable access to transportation request information."
+        "requirement": "Availability: The request retrieval feature must be operational 99.9% of the time during peak usage hours.",
+        "justification": "Ensures consistent access to transportation request information."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: User transportation requests must be encrypted during transmission using TLS 1.3 with AES-256 encryption.",
+        "justification": "Protects sensitive user transportation request information from unauthorized access."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages if no requests are found or if retrieval fails, with guidance on potential resolution steps.",
+        "justification": "Helps users understand and potentially resolve issues with request retrieval."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The transportation request retrieval system must support standard data exchange formats (JSON, XML) for integration with other transportation platforms.",
+        "justification": "Enables potential future integrations and data sharing capabilities."
       }
     ]
   },
@@ -224,28 +294,38 @@
     "identifiedNFRs": [
       {
         "attribute": "Functional Suitability",
-        "requirement": "The chargeback request process must capture 100% of mandatory transaction dispute information with clear validation rules for each required field.",
-        "justification": "Comprehensive information collection is critical for processing dispute requests."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "All chargeback request data must be encrypted at rest using AES-256, with access limited to authorized financial personnel.",
-        "justification": "Protecting sensitive financial dispute information from unauthorized access."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "The disputes system must maintain a 99.99% uptime and provide automatic error recovery for incomplete or failed chargeback submissions.",
-        "justification": "Ensuring consistent availability for critical financial dispute processes."
+        "requirement": "Functional Completeness: The system must capture 100% of required chargeback request information with mandatory field validation.",
+        "justification": "Ensures all necessary details are collected for a complete chargeback request."
       },
       {
         "attribute": "Usability",
-        "requirement": "The chargeback request interface must provide clear, step-by-step guidance with inline help text and error messages that explain exactly what information is missing or incorrect.",
-        "justification": "Guiding users through a complex financial dispute process with clear instructions."
+        "requirement": "User Error Protection: The system must provide real-time validation of input fields, with clear, specific error messages for incomplete or incorrect information.",
+        "justification": "Guides users in providing accurate and complete chargeback request details."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The chargeback request creation process must be completed within 3 minutes, including information input and notification generation.",
+        "justification": "Provides an efficient process for users to submit dispute requests."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All chargeback request data must be encrypted at rest using AES-256 and in transit using TLS 1.3.",
+        "justification": "Protects sensitive financial dispute information from unauthorized access."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must maintain a complete audit log of all chargeback requests, with ability to restore or reconstruct request details within 1 hour of any system failure.",
+        "justification": "Ensures data integrity and traceability of dispute processes."
       },
       {
         "attribute": "Maintainability",
-        "requirement": "The system must support easy configuration of dispute workflow rules and notification templates without requiring code changes.",
-        "justification": "Flexibility to adapt the dispute process to changing business or regulatory requirements."
+        "requirement": "Analysability: The system must generate comprehensive logs tracking each step of the chargeback request process, including timestamps, user actions, and system responses.",
+        "justification": "Facilitates system monitoring, troubleshooting, and potential process improvements."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The notification generation system must support customizable merchant communication templates and multiple notification channels (print, email, API).",
+        "justification": "Allows for future expansion of notification methods and merchant communication."
       }
     ]
   },
@@ -254,23 +334,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must generate and track case activities for 100% of systematic actions related to dispute processes.",
-        "justification": "Ensures comprehensive logging and tracking of all dispute-related activities"
+        "requirement": "Functional Completeness: The system must generate and track case activities for 100% of systematic actions related to dispute processing.",
+        "justification": "Ensures comprehensive logging of all dispute-related systematic actions"
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: The notification system must have 99.9% uptime to ensure users are consistently informed about case activities.",
-        "justification": "Critical for maintaining user awareness of dispute status"
+        "requirement": "Availability: The notification system must have 99.9% uptime to ensure users receive dispute case updates reliably.",
+        "justification": "Critical for maintaining consistent communication about dispute case status"
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: The notification mechanism must clearly display the case activity details, including case number, status, and relevant actions.",
-        "justification": "Provides clear communication to users about their dispute process"
+        "requirement": "User Engagement: The notification mechanism must clearly display the dispute case details, including case ID, status, and action taken, in a user-friendly format.",
+        "justification": "Provides clear and actionable information to the user upon login"
       },
       {
         "attribute": "Security",
-        "requirement": "Confidentiality: Notification content must be encrypted and only accessible to the authenticated user who initiated the dispute.",
-        "justification": "Protects sensitive information related to dispute cases"
+        "requirement": "Confidentiality: Notification content must be encrypted and only accessible to the authorized user who initiated the dispute case.",
+        "justification": "Protects sensitive dispute-related information from unauthorized access"
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Notifications must be generated and queued for display within 5 seconds of case activity creation.",
+        "justification": "Ensures timely communication of case updates to the user"
       }
     ]
   },
@@ -280,22 +365,27 @@
       {
         "attribute": "Functional Suitability",
         "requirement": "Functional Correctness: The system must accurately interpret 100% of initialization data for heating and cooling unit definitions.",
-        "justification": "Ensures precise interpretation of critical system configuration data"
+        "justification": "Ensures precise derivation of unit specifications from initialization data"
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The initialization data reading process must complete within 500 milliseconds for complex unit configurations.",
-        "justification": "Minimizes system startup time and ensures quick configuration"
+        "requirement": "Time Behavior: Initialization data reading and unit definition derivation must complete within 2 seconds for standard configuration sets.",
+        "justification": "Provides efficient processing of initialization data for quick system startup"
       },
       {
         "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must have a fallback mechanism to use default unit definitions if initialization data is corrupted or unreadable.",
-        "justification": "Prevents system failure due to configuration data issues"
+        "requirement": "Fault Tolerance: The system must handle incomplete or partially corrupted initialization data by providing clear error messages and fallback to default configurations.",
+        "justification": "Ensures system stability when encountering imperfect initialization data"
       },
       {
         "attribute": "Maintainability",
-        "requirement": "Analysability: The system must log all initialization data reading processes with detailed error and success messages for troubleshooting.",
-        "justification": "Supports easy diagnosis of configuration-related issues"
+        "requirement": "Modularity: The initialization data parsing mechanism must be designed as a separate, configurable module that can be easily updated or replaced.",
+        "justification": "Allows for flexible modifications to data interpretation logic"
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The system must support multiple standard initialization data formats (XML, JSON, CSV) for heating and cooling unit definitions.",
+        "justification": "Enables integration with various data sources and configuration systems"
       }
     ]
   },
@@ -303,24 +393,34 @@
     "functionalRequirement": "The website shall provide forms for certificates so users can request certificates online.",
     "identifiedNFRs": [
       {
-        "attribute": "Usability",
-        "requirement": "Learnability: The certificate request form must have a clear, intuitive interface with maximum 5 steps to complete a request.",
-        "justification": "Ensures users can easily navigate and complete certificate requests"
-      },
-      {
         "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must support all required certificate types with unique, specific request forms.",
-        "justification": "Provides comprehensive coverage of certificate request needs"
+        "requirement": "Functional Completeness: The system must support all standard certificate request types with comprehensive form fields covering 100% of required information for each certificate category.",
+        "justification": "Ensures the certificate request functionality is complete and covers all necessary input requirements."
       },
       {
-        "attribute": "Security",
-        "requirement": "Authenticity: The certificate request form must implement multi-factor authentication to verify user identity before submission.",
-        "justification": "Prevents unauthorized certificate requests"
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must implement real-time form validation with clear, specific error messages for each input field, preventing submission of incomplete or incorrect certificate request information.",
+        "justification": "Helps users accurately complete certificate request forms by providing immediate, constructive guidance."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The certificate request form must load within 2 seconds and submit within 3 seconds under normal network conditions.",
-        "justification": "Ensures responsive and efficient user experience"
+        "requirement": "Time Behavior: Certificate request forms must load within 2 seconds and submit responses within 3 seconds for 99% of requests.",
+        "justification": "Ensures responsive and efficient user experience during certificate request process."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All certificate request form data must be encrypted using TLS 1.3 during transmission and at rest using AES-256 encryption.",
+        "justification": "Protects sensitive personal information submitted during certificate requests."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The certificate request system must maintain 99.9% uptime during business hours (8am-8pm, 7 days a week).",
+        "justification": "Ensures consistent accessibility for users needing to submit certificate requests."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The certificate request form system must support easy addition or modification of form fields through a configuration interface without requiring code changes.",
+        "justification": "Allows flexible updates to certificate request processes as requirements evolve."
       }
     ]
   },
@@ -328,24 +428,34 @@
     "functionalRequirement": "User shall be able to manage privacy settings such as who can view their profile, connections, and sharing data with third parties.",
     "identifiedNFRs": [
       {
-        "attribute": "Security",
-        "requirement": "Confidentiality: All privacy settings must be encrypted at rest and in transit using AES-256 encryption.",
-        "justification": "Protects sensitive user privacy configuration data"
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The privacy settings interface must provide granular control options for profile visibility, connection sharing, and third-party data sharing for all user account types.",
+        "justification": "Ensures comprehensive privacy management capabilities for users."
       },
       {
         "attribute": "Usability",
-        "requirement": "Operability: Privacy settings interface must provide clear, granular controls with real-time preview of visibility changes.",
-        "justification": "Enables users to easily understand and modify their privacy preferences"
+        "requirement": "User Engagement: Privacy settings must be presented with clear, simple language and visual icons representing different privacy levels, with a one-click reset to default privacy settings.",
+        "justification": "Makes privacy management intuitive and user-friendly."
       },
       {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must support privacy controls for at least 5 different visibility levels (e.g., public, friends only, specific groups, connections, private).",
-        "justification": "Provides comprehensive privacy management options"
+        "attribute": "Security",
+        "requirement": "Confidentiality: Privacy settings changes must be logged with timestamp and IP address, with mandatory two-factor authentication for critical privacy modifications.",
+        "justification": "Protects users from unauthorized changes to their privacy settings."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Recoverability: The system must maintain a 30-day history of privacy setting changes with ability to revert to previous configurations.",
-        "justification": "Allows users to track and restore previous privacy settings"
+        "requirement": "Faultlessness: Privacy settings must be immediately and consistently applied across all platform features within 100 milliseconds of modification.",
+        "justification": "Ensures immediate and accurate implementation of user privacy preferences."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The privacy settings system must support future privacy regulation compliance with minimal system modifications.",
+        "justification": "Allows the platform to quickly adapt to changing privacy laws and user expectations."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: Privacy settings must be compatible with major identity and access management standards (OAuth 2.0, OpenID Connect) for consistent cross-platform privacy control.",
+        "justification": "Enables seamless privacy management across different platforms and services."
       }
     ]
   },
@@ -353,24 +463,24 @@
     "functionalRequirement": "System shall set over temperature values to prevent temperature deviations beyond 3 degrees Fahrenheit.",
     "identifiedNFRs": [
       {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The system must implement automatic shutdown or warning mechanisms if temperature exceeds the 3-degree Fahrenheit deviation threshold.",
+        "justification": "Prevents potential equipment damage or safety risks from temperature fluctuations."
+      },
+      {
         "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must automatically trigger an alert if temperature deviations exceed the 3-degree Fahrenheit threshold.",
-        "justification": "Ensures immediate notification of potential temperature control issues"
+        "requirement": "Fault Tolerance: The system must maintain temperature monitoring accuracy within ±0.5 degrees Fahrenheit under varying environmental conditions.",
+        "justification": "Ensures precise temperature control and deviation detection."
       },
       {
         "attribute": "Performance Efficiency",
         "requirement": "Time Behavior: Temperature monitoring and deviation detection must occur with a maximum latency of 100 milliseconds.",
-        "justification": "Provides real-time temperature control and monitoring"
+        "justification": "Rapid response is critical for preventing temperature-related issues."
       },
       {
-        "attribute": "Safety",
-        "requirement": "Operational Constraint: The temperature control system must have a manual override mechanism for emergency temperature adjustments.",
-        "justification": "Provides critical safety control in exceptional circumstances"
-      },
-      {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Correctness: Temperature measurements must be accurate within ±0.5 degrees Fahrenheit of the actual temperature.",
-        "justification": "Ensures precise temperature monitoring and control"
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must log all temperature override attempts with user credentials and timestamp.",
+        "justification": "Provides accountability for temperature control interventions."
       }
     ]
   },
@@ -379,18 +489,23 @@
     "identifiedNFRs": [
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The system must load and display article previews within 2 seconds for up to 20 concurrent news titles.",
-        "justification": "Quick loading of article previews is crucial for user engagement and information accessibility."
+        "requirement": "Time Behavior: News article preview lines must load within 2 seconds for up to 10 concurrent article titles.",
+        "justification": "Ensures quick and responsive display of news previews."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Engagement: The system must provide a consistent and readable preview format with truncated text that maintains readability and context.",
-        "justification": "Ensuring clear and concise article previews enhances user understanding and interaction."
+        "requirement": "User Error Protection: Implement graceful handling for articles with no preview text, displaying a default 'No preview available' message.",
+        "justification": "Provides clear user feedback for incomplete article information."
       },
       {
         "attribute": "Compatibility",
-        "requirement": "Interoperability: The system must support fetching article previews from multiple news sources with standardized data formats.",
-        "justification": "Enables flexible integration with various news content providers and APIs."
+        "requirement": "Interoperability: The system must support retrieving preview text from at least three different news source APIs or RSS feeds.",
+        "justification": "Ensures flexibility in news content sourcing."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: Preview text must accurately represent the first 100 characters of the article content, preserving full words.",
+        "justification": "Provides meaningful and coherent article previews."
       }
     ]
   },
@@ -398,24 +513,34 @@
     "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
     "identifiedNFRs": [
       {
-        "attribute": "Security",
-        "requirement": "Authenticity: Implement multi-factor authentication with at least two verification methods (password + SMS or email verification).",
-        "justification": "Ensures secure account creation and prevents unauthorized access."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support capturing and validating all required personal details (name, gender, password, mobile number, location) for account creation with 100% field coverage.",
+        "justification": "Ensures all specified personal information can be fully entered during account registration process."
       },
       {
         "attribute": "Security",
-        "requirement": "User Error Protection: Enforce password complexity requirements including minimum 12 characters, mix of uppercase, lowercase, numbers, and special characters.",
-        "justification": "Protects user accounts from weak password vulnerabilities."
+        "requirement": "Authenticity: Implement multi-factor authentication during account creation, requiring email or SMS verification of the mobile number provided.",
+        "justification": "Verifies the legitimacy of the user and protects against fraudulent account creation."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Encrypt all personal details using AES-256 encryption at rest and in transit, with no plain-text storage of sensitive information.",
+        "justification": "Protects user's personal information from unauthorized access or data breaches."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: Provide real-time validation for all input fields with clear, immediate error messages for incorrect data formats.",
-        "justification": "Helps users correct input errors during account creation process."
+        "requirement": "User Error Protection: Implement real-time validation with clear, specific error messages for each input field (e.g., password strength requirements, valid mobile number format).",
+        "justification": "Guides users through account creation process and prevents incorrect data entry."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.9% uptime for account creation and verification processes.",
+        "requirement": "Availability: Maintain 99.9% uptime for the account creation service, with automatic failover and retry mechanisms.",
         "justification": "Ensures users can create accounts consistently without service interruptions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Complete the entire account creation process in less than 2 minutes, with individual field validations occurring in under 500 milliseconds.",
+        "justification": "Provides a quick and responsive account registration experience."
       }
     ]
   },
@@ -423,24 +548,39 @@
     "functionalRequirement": "The system shall allow users to import and manage various data formats like images, videos, and audio files within presentations.",
     "identifiedNFRs": [
       {
-        "attribute": "Performance Efficiency",
-        "requirement": "Resource Utilization: Support importing and processing media files up to 2GB in size with memory usage not exceeding 500MB per file.",
-        "justification": "Ensures efficient handling of large media files in presentations."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: Support import and management of at least 10 standard file formats for images (JPEG, PNG, GIF, TIFF), videos (MP4, AVI, MOV), and audio files (MP3, WAV, FLAC).",
+        "justification": "Ensures comprehensive support for various media file types in presentations."
       },
       {
-        "attribute": "Compatibility",
-        "requirement": "Interoperability: Support at least 10 common media file formats including JPEG, PNG, MP4, AVI, MP3, WAV, and provide clear error handling for unsupported formats.",
-        "justification": "Enables flexible media import across different file types and sources."
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Process and load media files within 3 seconds for files up to 100 MB in size, with a maximum of 1-second preview generation.",
+        "justification": "Provides responsive file handling and quick media preview capabilities."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: Limit memory consumption to 500 MB for processing and rendering multiple media files simultaneously.",
+        "justification": "Ensures efficient system resource management during media file handling."
       },
       {
         "attribute": "Usability",
-        "requirement": "Operability: Provide a drag-and-drop interface for media file import with preview capabilities for all supported file types.",
-        "justification": "Simplifies the process of adding media to presentations for users."
+        "requirement": "Operability: Provide a drag-and-drop interface for file import with clear visual feedback on upload status and progress.",
+        "justification": "Simplifies the process of importing and managing media files in presentations."
       },
       {
-        "attribute": "Maintainability",
-        "requirement": "Modularity: Design media import and management as a pluggable module with clear separation of concerns for different file type handlers.",
-        "justification": "Allows easy extension of file format support and future improvements."
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: Ensure compatibility with major presentation software (Microsoft PowerPoint, Google Slides, Apple Keynote) for imported media files.",
+        "justification": "Allows seamless use of imported media across different presentation platforms."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: Implement automatic file format conversion and error recovery for corrupted or incompatible media files.",
+        "justification": "Provides resilience against potential file import issues and format limitations."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Perform virus and malware scanning on all imported media files before allowing them into the presentation.",
+        "justification": "Protects the system and user from potential security threats through file imports."
       }
     ]
   },
@@ -448,24 +588,39 @@
     "functionalRequirement": "User shall be able to set the price, quantity, upload pictures, and add details when listing an item.",
     "identifiedNFRs": [
       {
-        "attribute": "Security",
-        "requirement": "Integrity: Implement server-side validation to prevent price manipulation and ensure listed prices are within predefined reasonable ranges.",
-        "justification": "Protects against fraudulent or incorrect pricing."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: Provide real-time input validation with clear guidance for price, quantity, and required details fields.",
-        "justification": "Helps users correctly input item listing information."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all item listing components including price input, quantity selection, picture upload, and detailed description for 100% of item types.",
+        "justification": "Ensures comprehensive coverage of all specified item listing features"
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete item listing process, including image upload, within 5 seconds for files up to 10MB.",
-        "justification": "Ensures a smooth and responsive item listing experience."
+        "requirement": "Time Behavior: Picture uploads must complete within 5 seconds for images up to 10MB in size, with support for concurrent uploads of up to 5 images simultaneously.",
+        "justification": "Addresses the need for efficient media upload during item listing process"
       },
       {
-        "attribute": "Flexibility",
-        "requirement": "Adaptability: Allow dynamic addition of custom fields for item details beyond standard attributes.",
-        "justification": "Provides flexibility for different types of item listings."
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Implement validation rules that prevent invalid price entries (e.g., negative prices, non-numeric characters) and enforce minimum/maximum price ranges.",
+        "justification": "Helps users input correct information and prevents potential listing errors"
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: Provide inline help tooltips and clear error messages for each item listing field to guide users through the listing process.",
+        "justification": "Enhances user understanding and reduces potential confusion during item listing"
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Implement server-side validation to sanitize and validate all user-provided listing details to prevent injection attacks or malicious content.",
+        "justification": "Protects the platform from potential security vulnerabilities in user-generated content"
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: Support multiple image formats (JPEG, PNG, WebP) and ensure compatibility with standard web and mobile image upload interfaces.",
+        "justification": "Ensures flexible image upload across different devices and platforms"
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: Design the item listing feature with separate, loosely coupled components for price, quantity, image, and description inputs to facilitate future modifications.",
+        "justification": "Allows for easier updates and modifications to individual listing components"
       }
     ]
   },
@@ -474,23 +629,38 @@
     "identifiedNFRs": [
       {
         "attribute": "Security",
-        "requirement": "Confidentiality: Encrypt all patient information using AES-256 encryption, both at rest and in transit.",
-        "justification": "Protects sensitive patient data from unauthorized access."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.99% uptime for the medical communication and information system.",
-        "justification": "Critical for continuous patient care and medical operations."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Assistance: Provide context-sensitive help and quick access to user guides within the system interface.",
-        "justification": "Supports doctors in efficiently using the system's features."
+        "requirement": "Authenticity: Implement multi-factor authentication with mandatory two-factor authentication using time-based one-time passwords (TOTP).",
+        "justification": "Ensures secure access to sensitive patient information"
       },
       {
         "attribute": "Security",
-        "requirement": "Authenticity: Implement role-based access control with multi-factor authentication and automatic session timeout after 30 minutes of inactivity.",
-        "justification": "Ensures secure access and protects patient information."
+        "requirement": "Confidentiality: Encrypt all patient information using AES-256 encryption both at rest and in transit, with strict access controls based on user roles.",
+        "justification": "Protects sensitive medical information from unauthorized access"
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.99% system uptime with automatic failover and redundant server infrastructure to ensure continuous access to patient information.",
+        "justification": "Critical for healthcare professionals who need constant access to patient data"
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Patient information retrieval must complete within 2 seconds for comprehensive patient records, supporting up to 100 concurrent user sessions.",
+        "justification": "Ensures quick access to critical patient information during medical consultations"
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: Provide context-sensitive help, clear navigation, and intuitive interface design with role-based dashboards tailored to medical staff workflows.",
+        "justification": "Supports efficient navigation and task completion for medical professionals"
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: Implement comprehensive logging of all system interactions with patient data, including user actions, access times, and modification details.",
+        "justification": "Supports audit trails and system troubleshooting for healthcare compliance"
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: Design the system to easily integrate with various Electronic Health Record (EHR) systems and support future medical communication protocol standards.",
+        "justification": "Ensures long-term compatibility and extensibility of the medical communication platform"
       }
     ]
   },
@@ -499,28 +669,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: File sharing and screen sharing operations must complete within 5 seconds for files up to 100 MB, with less than 200ms latency for screen sharing.",
-        "justification": "Ensures quick and responsive file and screen sharing functionality for user satisfaction."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Confidentiality: All shared files and screen content must be encrypted using AES-256 during transmission and at rest.",
-        "justification": "Protects sensitive information during file and screen sharing operations."
+        "requirement": "Time Behavior: File and screen sharing operations must complete within 5 seconds for files up to 100 MB, with less than 500ms latency for screen sharing updates.",
+        "justification": "Ensures smooth and responsive file and screen sharing experiences across different file sizes and sharing scenarios."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must support automatic resumption of interrupted file transfers and maintain session integrity during screen sharing.",
-        "justification": "Ensures reliable file sharing and screen sharing experiences under varying network conditions."
+        "requirement": "Fault Tolerance: The system must support resumable file transfers and automatically retry screen sharing connections up to 3 times in case of network interruptions.",
+        "justification": "Provides resilience for file sharing and screen sharing features to handle potential network instabilities."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All shared files and screen sharing sessions must be encrypted end-to-end using AES-256 encryption.",
+        "justification": "Protects sensitive information during file and contact sharing to prevent unauthorized access."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: Implement file size limits (max 1 GB), file type restrictions, and clear error messages for unsupported sharing attempts.",
-        "justification": "Provides guidance and prevents user errors during file and contact sharing."
+        "requirement": "User Error Protection: The system must provide clear error messages for failed file transfers, with specific guidance on potential resolution steps.",
+        "justification": "Helps users understand and potentially resolve issues during file and contact sharing processes."
       },
       {
         "attribute": "Compatibility",
-        "requirement": "Interoperability: Support file sharing across multiple device types (Windows, macOS, iOS, Android) with consistent functionality.",
-        "justification": "Ensures the sharing feature works seamlessly across different platforms."
+        "requirement": "Interoperability: The file sharing and screen sharing features must be compatible with at least 3 major operating systems (Windows, macOS, Linux) and support common file formats across platforms.",
+        "justification": "Ensures broad accessibility and consistent functionality across different user environments."
       }
     ]
   },
@@ -529,28 +699,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Security",
-        "requirement": "Authentication: Implement multi-factor authentication with at least two verification methods (password + SMS/email code).",
-        "justification": "Enhances security during user sign-up and credential validation process."
+        "requirement": "Authentication: Implement multi-factor authentication with at least two verification methods (e.g., password + SMS code or biometric).",
+        "justification": "Enhances account security during the sign-up and credential validation process."
       },
       {
         "attribute": "Usability",
-        "requirement": "Learnability: Provide clear, step-by-step guidance during sign-up process with inline validation and helpful error messages.",
-        "justification": "Simplifies the user registration process and reduces friction."
+        "requirement": "User Error Protection: Provide real-time password strength feedback during account creation, requiring a minimum of 12 characters with mixed character types.",
+        "justification": "Guides users to create strong, secure credentials while improving the sign-up experience."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.99% uptime for the authentication and credential validation system.",
-        "justification": "Ensures users can consistently access the sign-up and login functionality."
+        "requirement": "Availability: Maintain a 99.9% uptime for the authentication and credential validation system.",
+        "justification": "Ensures users can consistently access the Snap camera screen without prolonged login interruptions."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete credential validation and screen access within 2 seconds for 95% of login attempts.",
-        "justification": "Provides a responsive login experience for users."
+        "requirement": "Time Behavior: Complete credential validation and Snap camera screen access within 2 seconds of successful authentication.",
+        "justification": "Provides a quick and responsive login experience for users."
       },
       {
         "attribute": "Security",
-        "requirement": "Password Policy: Enforce strong password requirements (minimum 12 characters, mix of uppercase, lowercase, numbers, and special characters).",
-        "justification": "Ensures robust credential security during user registration."
+        "requirement": "Confidentiality: Store user credentials using salted bcrypt hashing with a minimum work factor of 12.",
+        "justification": "Protects user credentials from potential security breaches through advanced password storage techniques."
       }
     ]
   },
@@ -559,28 +729,28 @@
     "identifiedNFRs": [
       {
         "attribute": "Security",
-        "requirement": "Authenticity: Implement role-based access control (RBAC) with multi-factor authentication for administrator password reset actions.",
-        "justification": "Ensures only authorized administrators can reset user passwords."
+        "requirement": "Authenticity: Administrators must authenticate using multi-factor authentication (MFA) before accessing the password reset interface.",
+        "justification": "Ensures only authorized administrators can perform sensitive password reset operations."
       },
       {
-        "attribute": "Maintainability",
-        "requirement": "Analysability: Log all password reset attempts with timestamp, administrator ID, and user affected for audit purposes.",
-        "justification": "Provides traceability and helps in monitoring administrative actions."
+        "attribute": "Security",
+        "requirement": "Accountability: The system must log all password reset actions with timestamp, administrator ID, and affected user account, retaining logs for a minimum of 180 days.",
+        "justification": "Provides an audit trail for tracking and investigating potential misuse of administrative privileges."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Assistance: Provide clear audit trail and confirmation mechanisms for each password reset action.",
-        "justification": "Helps administrators understand and verify password reset operations."
+        "requirement": "User Error Protection: The password reset interface must enforce strong password validation rules, including minimum 12-character length, complexity requirements, and prevention of password reuse for the last 5 historical passwords.",
+        "justification": "Helps administrators maintain account security while providing clear guidance on password creation."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Recoverability: Implement a mechanism to revert password reset actions within 5 minutes of execution.",
-        "justification": "Allows correction of unintended password reset actions."
+        "requirement": "Recoverability: The system must provide a mechanism to notify the user via email or secure notification when their password is reset by an administrator.",
+        "justification": "Ensures users are immediately aware of unauthorized password changes."
       },
       {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete password reset process within 3 seconds for 99% of reset attempts.",
-        "justification": "Ensures quick and efficient administrative password management."
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The password reset functionality must be implemented as a separate, configurable module that can be updated or replaced without affecting other system components.",
+        "justification": "Allows for future enhancements and security updates with minimal system disruption."
       }
     ]
   },
@@ -595,22 +765,22 @@
       {
         "attribute": "Performance Efficiency",
         "requirement": "Time Behavior: The system must calculate distances between user, sites, and nearby sites in less than 100 milliseconds for up to 1,000 concurrent requests.",
-        "justification": "Ensures timely responses for geo-location data processing."
+        "justification": "The FR involves real-time access to geo-location data and calculations, requiring timely responses for usability."
       },
       {
         "attribute": "Security",
-        "requirement": "Confidentiality: Encrypt user geo-location data using TLS 1.3 during transmission and anonymize stored location data.",
-        "justification": "Protects sensitive user location information."
+        "requirement": "Confidentiality: The system must encrypt user geo-location data using TLS 1.3 during transmission and at rest using AES-256 encryption.",
+        "justification": "Protects sensitive location data from unauthorized access or interception."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.95% uptime for geo-location services and distance calculation functionality.",
-        "justification": "Ensures consistent access to location-based services."
+        "requirement": "Availability: The geo-location and distance calculation service must be available for 99.95% of operational time, with automatic failover mechanisms.",
+        "justification": "Ensures consistent access to critical location-based functionality."
       },
       {
         "attribute": "Usability",
-        "requirement": "Operability: Provide clear, consistent API documentation for geo-location and distance calculation interfaces.",
-        "justification": "Facilitates easy integration and use of location services."
+        "requirement": "User Assistance: The system must provide clear error messages and guidance when geo-location data is incomplete, invalid, or cannot be processed.",
+        "justification": "Helps users understand and resolve issues with location-based services."
       }
     ]
   },
@@ -619,28 +789,33 @@
     "identifiedNFRs": [
       {
         "attribute": "Usability",
-        "requirement": "User Engagement: Implement an intuitive search and filtering mechanism with relevance-based ranking of services and applications.",
-        "justification": "Enhances user experience in finding and selecting appropriate services."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Load service and application information within 2 seconds, with search results displayed in less than 500 milliseconds.",
-        "justification": "Ensures responsive and quick access to service information."
-      },
-      {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: Provide comprehensive information for 100% of listed services, including requirements, eligibility, and application process.",
-        "justification": "Ensures applicants have full access to necessary information for decision-making."
-      },
-      {
-        "attribute": "Compatibility",
-        "requirement": "Interoperability: Support responsive design for seamless access across desktop, tablet, and mobile devices.",
-        "justification": "Allows applicants to research and select services from any device."
+        "requirement": "The system must provide a clear, intuitive navigation interface for requirements research with no more than 3 clicks to access any service or application information.",
+        "justification": "Ensures ease of use for prospective applicants who may not be familiar with the system."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Assistance: Implement contextual help, tooltips, and guided navigation for service selection process.",
-        "justification": "Provides support to users during service research and selection."
+        "requirement": "The system must support responsive design to be fully functional on desktop, tablet, and mobile devices with screen sizes ranging from 320px to 1920px width.",
+        "justification": "Enables access for applicants using various devices and screen sizes."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must load service and application information pages within 2 seconds for 95% of user requests, with a maximum page load time of 3 seconds.",
+        "justification": "Prevents user frustration and ensures quick access to critical information."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement HTTPS encryption and protect against common web vulnerabilities (OWASP Top 10) for all information research and selection processes.",
+        "justification": "Protects applicant data and ensures secure browsing of system information."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The system must be compatible with the latest versions of Chrome, Firefox, Safari, and Edge browsers, supporting at least 99% of current web standards.",
+        "justification": "Ensures widespread accessibility across different web browsers."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must maintain 99.9% uptime during peak application research and selection periods, with automatic error logging and recovery mechanisms.",
+        "justification": "Provides consistent availability for prospective applicants accessing system information."
       }
     ]
   },
@@ -649,23 +824,33 @@
     "identifiedNFRs": [
       {
         "attribute": "Usability",
-        "requirement": "The report creation interface must provide clear, intuitive guidance with step-by-step instructions for report development, including tooltips and help text for each input field.",
-        "justification": "Ensures staff can efficiently create reports without extensive training"
+        "requirement": "The report creation interface must provide a guided workflow with clear instructions, tooltips, and contextual help for each report section.",
+        "justification": "Supports staff in efficiently creating comprehensive reports."
       },
       {
         "attribute": "Maintainability",
-        "requirement": "The report generation module must be designed with modular architecture, allowing easy updates to report templates and formatting without modifying core system code.",
-        "justification": "Supports future modifications to reporting requirements and formats"
+        "requirement": "The report generation system must use a modular architecture that allows easy addition of new report templates and modification of existing templates without changing core system code.",
+        "justification": "Enables flexible updates to reporting capabilities without extensive redevelopment."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "The report creation and publishing process must complete within 5 seconds for reports up to 10 pages in length.",
-        "justification": "Ensures timely report generation and distribution for staff productivity"
+        "requirement": "The system must generate and save reports within 5 seconds for documents up to 50 pages long, supporting concurrent report creation by at least 10 staff members simultaneously.",
+        "justification": "Ensures efficient report creation and prevents performance bottlenecks."
       },
       {
         "attribute": "Security",
-        "requirement": "Access to report creation and publishing features must be role-based, with granular permissions controlling who can create, edit, and distribute reports.",
-        "justification": "Protects sensitive organizational information and controls report workflow"
+        "requirement": "The system must implement role-based access control (RBAC) to restrict report creation, editing, and distribution based on staff member permissions.",
+        "justification": "Protects sensitive information and ensures only authorized personnel can create and distribute reports."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must automatically save report drafts every 2 minutes and provide a comprehensive version control system to track all report modifications.",
+        "justification": "Prevents data loss and provides accountability for report changes."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The report generation system must support export to PDF, DOCX, and HTML formats, ensuring full formatting preservation across different document types.",
+        "justification": "Enables flexible report distribution and consumption across various platforms."
       }
     ]
   },
@@ -674,23 +859,33 @@
     "identifiedNFRs": [
       {
         "attribute": "Usability",
-        "requirement": "The login page must provide clear error messages for invalid credentials, with specific guidance on password requirements and account recovery options.",
-        "justification": "Helps users understand and resolve login issues easily"
+        "requirement": "User Error Protection: The login page must implement input validation to prevent SQL injection, with real-time client-side and server-side validation of username and password fields.",
+        "justification": "Ensures secure and guided user authentication process after registration."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The login page must display clear, descriptive error messages for invalid credentials, with specific guidance on password requirements and account recovery options.",
+        "justification": "Provides helpful guidance to users during the authentication process."
       },
       {
         "attribute": "Security",
-        "requirement": "The login system must implement multi-factor authentication with at least two verification methods (e.g., password + SMS code or password + authenticator app).",
-        "justification": "Enhances account security beyond simple password protection"
+        "requirement": "Authenticity: The system must implement multi-factor authentication (MFA) as an optional security enhancement for user accounts.",
+        "justification": "Adds an extra layer of security for user authentication after registration."
       },
       {
-        "attribute": "Performance Efficiency",
-        "requirement": "The login process must complete within 2 seconds, including credential verification and session establishment.",
-        "justification": "Ensures quick and responsive user access to the application"
+        "attribute": "Security",
+        "requirement": "Confidentiality: All login credentials must be transmitted using HTTPS with TLS 1.3 encryption, and passwords must be stored using bcrypt with a minimum work factor of 12.",
+        "justification": "Protects user credentials during transmission and storage."
       },
       {
         "attribute": "Reliability",
-        "requirement": "The login system must have 99.99% uptime, with automatic failover mechanisms to prevent login interruptions.",
-        "justification": "Maintains consistent access to the application for users"
+        "requirement": "Availability: The login system must maintain 99.99% uptime, with automatic failover mechanisms to prevent authentication service interruptions.",
+        "justification": "Ensures consistent access to the application after registration."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The login authentication process must complete within 500 milliseconds for 95% of login attempts.",
+        "justification": "Provides a responsive user experience during authentication."
       }
     ]
   },
@@ -699,223 +894,33 @@
     "identifiedNFRs": [
       {
         "attribute": "Flexibility",
-        "requirement": "The system must support seamless data migration and version compatibility for dataset types, with zero downtime during version updates.",
-        "justification": "Ensures continuous operation during system upgrades"
+        "requirement": "Adaptability: The system must support seamless data migration and version compatibility for dataset types, allowing zero-downtime updates.",
+        "justification": "Enables smooth transition between different versions of dataset types."
       },
       {
         "attribute": "Maintainability",
-        "requirement": "Dataset type versioning must be implemented with a clear version control mechanism that allows rollback to previous versions if compatibility issues arise.",
-        "justification": "Provides safety net for system administrators during deployments"
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Version migration for dataset types must complete within 30 seconds for datasets up to 1 GB in size.",
-        "justification": "Minimizes disruption during system updates"
+        "requirement": "Modularity: The dataset type versioning mechanism must support independent deployment and rollback of dataset type implementations without affecting existing data instances.",
+        "justification": "Ensures clean and manageable code updates for dataset types."
       },
       {
         "attribute": "Reliability",
-        "requirement": "The system must maintain data integrity during dataset type version migrations, with comprehensive logging of all migration activities.",
-        "justification": "Ensures traceability and prevents data loss during updates"
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "The system shall allow site administrators to create news articles with designated publishing dates and expiry dates.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Usability",
-        "requirement": "The news article creation interface must provide a calendar widget for easy selection of publishing and expiry dates, with validation to prevent illogical date ranges.",
-        "justification": "Simplifies date selection and prevents user errors"
+        "requirement": "Fault Tolerance: The system must implement a rollback mechanism that can revert to the previous dataset type version if critical errors are detected during the new version deployment.",
+        "justification": "Provides a safety net for potential issues during dataset type updates."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Article creation, scheduling, and automatic publishing/expiry processes must complete within 3 seconds.",
-        "justification": "Ensures timely content management and publication"
+        "requirement": "Time Behavior: The transition to a new dataset type version must be completed within 30 seconds for datasets up to 1 GB in size.",
+        "justification": "Ensures minimal disruption during dataset type version updates."
       },
       {
         "attribute": "Security",
-        "requirement": "News article management must implement role-based access control, limiting article creation, editing, and scheduling to authorized administrators only.",
-        "justification": "Protects content management system from unauthorized modifications"
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "The system must guarantee 99.9% accuracy in automatic article publishing and expiry based on scheduled dates.",
-        "justification": "Ensures reliable content lifecycle management"
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Usability",
-        "requirement": "The account creation process must provide real-time validation for each input field, with clear, specific error messages for invalid entries.",
-        "justification": "Guides users through account creation with minimal friction"
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Passwords must meet complex requirements: minimum 12 characters, including uppercase, lowercase, numbers, and special characters, with protection against common password lists.",
-        "justification": "Ensures strong account security from creation"
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "The entire account creation process must complete within 10 seconds, including all validation and account setup steps.",
-        "justification": "Provides a responsive and efficient registration experience"
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "The account creation system must have 99.99% uptime, with automatic retry mechanisms for transient failures.",
-        "justification": "Ensures users can create accounts without interruption"
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Personal information collected during account creation must be encrypted at rest and in transit, with clear consent mechanisms for data usage.",
-        "justification": "Protects user personal information and ensures compliance with data protection regulations"
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "System shall provide an interface for Application Administrators to reset user passwords.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Security",
-        "requirement": "Authenticity: Implement multi-factor authentication for administrator password reset actions, requiring at least two verification methods (e.g., admin credentials + temporary 2FA code).",
-        "justification": "Ensures only authorized administrators can reset passwords, preventing unauthorized access."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Accountability: Log all password reset actions with timestamp, administrator ID, and user affected, retaining logs for a minimum of 180 days.",
-        "justification": "Provides a comprehensive audit trail for security monitoring and potential investigations."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: Implement password reset workflow with clear validation rules, including mandatory complexity checks and prevention of reusing last 5 passwords.",
-        "justification": "Guides administrators through a secure and controlled password reset process."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Recoverability: Ensure password reset functionality can be completed within 5 minutes, with automatic system rollback if the process fails midway.",
-        "justification": "Minimizes disruption and ensures administrators can quickly resolve user access issues."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "System shall be able to perform distance calculations and access geo-location information for the user, sites, and nearby sites.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete distance calculations within 100 milliseconds for up to 1,000 concurrent requests.",
-        "justification": "Ensures rapid response times for geo-location and distance-related queries."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Resource Utilization: Limit memory consumption to 50 MB per geo-location data processing request.",
-        "justification": "Optimizes system resources during distance and location calculations."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Confidentiality: Encrypt all geo-location data transmissions using TLS 1.3 with AES-256 encryption.",
-        "justification": "Protects sensitive location information during data transfer."
+        "requirement": "Integrity: The system must maintain a complete audit log of all dataset type version changes, including timestamp, user, and specific modifications.",
+        "justification": "Provides traceability and security for dataset type versioning process."
       },
       {
         "attribute": "Functional Suitability",
-        "requirement": "Functional Correctness: Maintain distance calculation accuracy within 1 meter for 99.9% of valid inputs.",
-        "justification": "Ensures precise and reliable geo-location and distance information."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Usability",
-        "requirement": "Learnability: Provide a clear, intuitive navigation flow with maximum 3 clicks to access service requirements and selection interface.",
-        "justification": "Simplifies the process for prospective applicants to find and select services."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Assistance: Implement context-sensitive help tooltips for each service selection step, accessible via a '?' icon.",
-        "justification": "Provides guidance to users during the service research and selection process."
-      },
-      {
-        "attribute": "Compatibility",
-        "requirement": "Interoperability: Support responsive design compatible with minimum 95% of modern web browsers (Chrome, Firefox, Safari, Edge) and screen sizes.",
-        "justification": "Ensures accessibility across different devices and browser platforms."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Load service requirements and selection interface within 2 seconds for 99% of user interactions.",
-        "justification": "Provides a responsive and efficient user experience during service research."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "System shall allow staff members to develop staff reports for publication and distribution.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Usability",
-        "requirement": "Operability: Provide a drag-and-drop interface for report content management with auto-save functionality every 3 minutes.",
-        "justification": "Enhances ease of use and prevents data loss during report creation."
-      },
-      {
-        "attribute": "Maintainability",
-        "requirement": "Modularity: Design report creation system with plug-in architecture supporting at least 5 different report template types.",
-        "justification": "Allows for future extensibility and customization of report generation."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.9% uptime for report creation and distribution systems during business hours.",
-        "justification": "Ensures consistent access to report development tools."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Integrity: Implement version control for all reports, tracking changes with author, timestamp, and ability to restore previous versions.",
-        "justification": "Provides accountability and traceability for report modifications."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "User shall be guided to a login page after successfully registering, where they can enter their credentials to access the application.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Security",
-        "requirement": "Authenticity: Implement mandatory multi-factor authentication with options including SMS, email, or authenticator app verification.",
-        "justification": "Enhances login security beyond basic username and password."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: Provide clear password entry guidelines, including minimum 12-character length, complexity requirements, and real-time strength meter.",
-        "justification": "Guides users in creating strong, secure credentials."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Redirect to login page within 500 milliseconds after successful registration.",
-        "justification": "Ensures a smooth, immediate transition to login after registration."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Availability: Maintain login system availability of 99.99% with automatic failover mechanisms.",
-        "justification": "Prevents login interruptions and ensures consistent access to the application."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "System shall ensure that dataset instances of a type created during app deployment start using the new code when a new version of the dataset type is deployed.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Maintainability",
-        "requirement": "Modifiability: The system must support seamless version migration for dataset types with zero downtime, allowing instant switchover to new code versions without manual intervention.",
-        "justification": "Ensures smooth transitions between dataset type versions with minimal operational disruption."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must preserve data integrity and prevent data loss during dataset type version updates, with automatic rollback capabilities if migration fails.",
-        "justification": "Critical for maintaining data consistency during version deployments."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Version migration for dataset instances must complete within 500 milliseconds for datasets up to 10,000 records.",
-        "justification": "Minimizes performance impact when updating dataset type implementations."
+        "requirement": "Functional Completeness: The versioning mechanism must support 100% of existing dataset instances without data loss or corruption during type updates.",
+        "justification": "Ensures comprehensive support for dataset type version transitions."
       }
     ]
   },
@@ -924,23 +929,33 @@
     "identifiedNFRs": [
       {
         "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must support scheduling for 100% of news article publication and expiration scenarios, including past, present, and future dates.",
-        "justification": "Ensures full coverage of article scheduling capabilities."
+        "requirement": "Functional Completeness: The system must support creating news articles with both publishing and expiry dates for 100% of administrative user accounts.",
+        "justification": "Ensures full implementation of the article management functionality as specified in the functional requirement."
       },
       {
-        "attribute": "Security",
-        "requirement": "Authenticity: Only authenticated site administrators with appropriate role-based access control (RBAC) shall be able to create and modify news article scheduling.",
-        "justification": "Protects the content management system from unauthorized modifications."
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process article creation and date scheduling within 500 milliseconds, supporting up to 50 concurrent administrative users.",
+        "justification": "Provides efficient performance for administrators creating and scheduling news articles."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: The system must validate and prevent invalid date ranges, such as expiry dates before publishing dates, with clear error messages.",
-        "justification": "Helps administrators avoid scheduling mistakes through proactive validation."
+        "requirement": "Operability: The article creation interface must provide clear, intuitive date selection mechanisms with calendar picker and manual input options.",
+        "justification": "Ensures ease of use for site administrators when setting publishing and expiry dates."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: The article scheduling system must have 99.99% uptime to ensure consistent content management.",
-        "justification": "Critical for maintaining reliable content publication processes."
+        "requirement": "Availability: The article creation and scheduling system must be available 99.9% of the time during administrative working hours.",
+        "justification": "Guarantees consistent access for site administrators to manage news content."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must implement role-based access control (RBAC) to ensure only authorized site administrators can create and schedule news articles.",
+        "justification": "Protects the content creation process from unauthorized access."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The article management system must allow easy modification of publishing and expiry dates without requiring complete article recreation.",
+        "justification": "Provides flexibility in managing news article scheduling and lifecycle."
       }
     ]
   },
@@ -948,24 +963,34 @@
     "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
     "identifiedNFRs": [
       {
-        "attribute": "Security",
-        "requirement": "Confidentiality: All personal information must be encrypted at rest using AES-256 encryption with key rotation every 90 days.",
-        "justification": "Protects sensitive user personal information from unauthorized access."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The account creation process must support capturing all specified personal details (name, gender, password, mobile number, location) with no mandatory fields omitted.",
+        "justification": "Ensures comprehensive account registration as per the functional requirement."
       },
       {
-        "attribute": "Security",
-        "requirement": "User Error Protection: Implement password strength requirements including minimum 12 characters, mix of uppercase, lowercase, numbers, and special characters.",
-        "justification": "Enhances account security during account creation."
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The account creation process must complete within 3 seconds from initial input to account confirmation.",
+        "justification": "Provides a responsive user experience during account registration."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: Provide real-time validation for each input field with specific error messages for invalid entries (e.g., incorrect mobile number format, weak password).",
-        "justification": "Guides users through accurate account creation process."
+        "requirement": "User Error Protection: Implement real-time validation for each input field with clear, specific error messages for incorrect or incomplete entries.",
+        "justification": "Helps users successfully complete the account creation process with minimal friction."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication during account creation, requiring mobile number verification via SMS or email.",
+        "justification": "Ensures the legitimacy of the account creation process and protects against fraudulent registrations."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Encrypt all personal details using AES-256 encryption both during transmission and at rest in the database.",
+        "justification": "Protects sensitive personal information from unauthorized access or data breaches."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Availability: Account creation process must be available 99.99% of the time with automatic failover mechanisms.",
-        "justification": "Ensures users can always create accounts without interruption."
+        "requirement": "Availability: Maintain 99.99% uptime for the account creation service across all supported platforms and devices.",
+        "justification": "Ensures users can create accounts consistently without service interruptions."
       }
     ]
   },
@@ -973,19 +998,34 @@
     "functionalRequirement": "A surface app page shall provide a customer with all customer system functionality.",
     "identifiedNFRs": [
       {
-        "attribute": "Usability",
-        "requirement": "User Engagement: The surface app page must load completely within 2 seconds and provide a responsive design that adapts to screen sizes from 320px to 4K displays.",
-        "justification": "Ensures accessibility and engagement across different devices."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The surface app page must expose 100% of customer system features with no hidden or inaccessible functionality.",
+        "justification": "The FR specifies providing ALL customer system functionality in a single page, requiring comprehensive feature coverage."
       },
       {
-        "attribute": "Flexibility",
-        "requirement": "Adaptability: The page must support dynamic content loading and feature toggling for at least 95% of system functionalities without full page reloads.",
-        "justification": "Allows for flexible and dynamic user interface adaptation."
+        "attribute": "Usability",
+        "requirement": "User Interface Comprehensiveness: The surface app page must organize all system functionalities into logically grouped, easily navigable sections with clear labeling and intuitive layout.",
+        "justification": "With multiple functionalities on a single page, clear organization and navigation are critical for user understanding."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The surface app page must implement context-sensitive help tooltips for each functionality to guide users and prevent incorrect interactions.",
+        "justification": "Comprehensive functionality increases complexity, necessitating built-in user guidance mechanisms."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Resource Utilization: The surface app page must consume no more than 100 MB of browser memory and maintain CPU usage below 20% during typical interactions.",
-        "justification": "Prevents performance degradation and ensures smooth user experience."
+        "requirement": "Time Behavior: The surface app page must load and render all system functionalities within 2 seconds, even with complex feature sets.",
+        "justification": "A page containing all system functionalities requires optimized loading to maintain user engagement."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The surface app page's code must be structured using component-based architecture, allowing independent updates to individual functionalities without affecting the entire page.",
+        "justification": "With comprehensive functionality, a modular design ensures easier future modifications and feature additions."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The surface app page must support responsive design, maintaining full functionality across desktop, tablet, and mobile device screen sizes.",
+        "justification": "Comprehensive functionality requires consistent user experience across different device types."
       }
     ]
   },
@@ -993,19 +1033,34 @@
     "functionalRequirement": "System shall display information and settings related to the required setting based on user input.",
     "identifiedNFRs": [
       {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately display 100% of relevant settings and information matching the specific user input context.",
+        "justification": "The FR requires precise mapping of user input to corresponding system settings and information."
+      },
+      {
         "attribute": "Usability",
-        "requirement": "User Assistance: Provide context-sensitive help tooltips for each setting, explaining its purpose and potential impacts within 500 milliseconds of user hover.",
-        "justification": "Enhances user understanding of system settings."
+        "requirement": "User Error Protection: The system must provide clear validation and error messages if user input does not match any available settings, with suggestions for correct input.",
+        "justification": "Dynamic setting display requires robust handling of potentially incorrect or mismatched user inputs."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Settings and related information must be retrieved and displayed within 300 milliseconds for 99% of user queries.",
-        "justification": "Ensures responsive and quick access to system settings."
+        "requirement": "Time Behavior: The system must retrieve and display related settings within 500 milliseconds of user input submission.",
+        "justification": "Real-time setting display requires minimal latency to maintain responsive user experience."
       },
       {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must support displaying 100% of relevant settings and information for each user input scenario.",
-        "justification": "Guarantees comprehensive information presentation based on user context."
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must verify user permissions before displaying sensitive settings, implementing role-based access control for setting visibility.",
+        "justification": "Different settings may require different access levels, necessitating secure, context-aware display mechanisms."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Self-descriptiveness: Each displayed setting must include a brief, clear explanation of its purpose and potential impact when modified.",
+        "justification": "Complex settings require contextual information to help users understand their function and consequences."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: The system must log all user setting retrieval attempts with timestamp, user ID, and input parameters for auditing and troubleshooting purposes.",
+        "justification": "Tracking setting access helps in understanding user behavior and diagnosing potential system issues."
       }
     ]
   },
@@ -1019,13 +1074,13 @@
       },
       {
         "attribute": "Security",
-        "requirement": "Authenticity: The system must log each OTP validation attempt, capturing timestamp, user ID, and result (success/failure) with immutable audit trail.",
-        "justification": "Provides security tracking for authentication attempts and potential fraud detection."
+        "requirement": "Authenticity: The system must limit OTP validation attempts to a maximum of 3 consecutive tries before temporarily blocking the account for 15 minutes.",
+        "justification": "Prevents brute force attacks and protects user accounts from unauthorized access attempts."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must allow a maximum of 3 consecutive OTP validation attempts before temporarily blocking the user account for 15 minutes.",
-        "justification": "Prevents brute force attacks while maintaining user accessibility."
+        "requirement": "Fault Tolerance: The system must log all OTP validation failures with timestamp, user ID, and error type for security audit purposes.",
+        "justification": "Enables tracking and investigation of potential security incidents or system anomalies."
       }
     ]
   },
@@ -1035,22 +1090,27 @@
       {
         "attribute": "Functional Suitability",
         "requirement": "Functional Completeness: The system must provide 100% accurate reporting of remaining job posting time and CV access status for all active job postings.",
-        "justification": "Ensures comprehensive and reliable reporting of critical job application information."
+        "justification": "Ensures comprehensive and reliable reporting of critical job posting information."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The system must generate reports on job posting time and CV access within 2 seconds for queries involving up to 500 concurrent job postings.",
-        "justification": "Provides timely access to important job application tracking information."
+        "requirement": "Time Behavior: The system must generate reports on job posting time and CV access within 2 seconds for up to 100 concurrent report requests.",
+        "justification": "Provides timely access to important job posting information without significant delay."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Assistance: The reporting interface must display remaining job posting time in a clear, human-readable format (e.g., \"2 days, 5 hours remaining\") with countdown timer.",
-        "justification": "Helps users easily understand and track job posting deadlines."
+        "requirement": "User Assistance: The system must display remaining job posting time in a human-readable format (e.g., 'X days, Y hours remaining') with clear visual indicators of time progression.",
+        "justification": "Helps users easily understand and interpret the remaining time for job postings."
       },
       {
         "attribute": "Maintainability",
-        "requirement": "Analysability: The reporting system must support export of job posting and CV access reports in at least three standard formats (CSV, PDF, XML) for further analysis.",
-        "justification": "Enables flexible data extraction and analysis of job posting information."
+        "requirement": "Modularity: The reporting feature must be implemented as a separate, independent module with well-defined interfaces for future enhancements or integrations.",
+        "justification": "Allows for easier future modifications and extensions of the reporting functionality."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The job posting and CV access reports must be exportable in standard formats (CSV, JSON, PDF) to enable integration with external systems.",
+        "justification": "Facilitates data sharing and compatibility with other job management or reporting tools."
       }
     ]
   }

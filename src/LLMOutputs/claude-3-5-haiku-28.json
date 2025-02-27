@@ -1,0 +1,72 @@
+[
+  {
+    "functionalRequirement": "The system shall allow site administrators to create news articles with designated publishing dates and expiry dates.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support creating news articles with both publishing and expiry dates for 100% of administrative user accounts.",
+        "justification": "Ensures full implementation of the article management functionality as specified in the functional requirement."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process article creation and date scheduling within 500 milliseconds, supporting up to 50 concurrent administrative users.",
+        "justification": "Provides efficient performance for administrators creating and scheduling news articles."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The article creation interface must provide clear, intuitive date selection mechanisms with calendar picker and manual input options.",
+        "justification": "Ensures ease of use for site administrators when setting publishing and expiry dates."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The article creation and scheduling system must be available 99.9% of the time during administrative working hours.",
+        "justification": "Guarantees consistent access for site administrators to manage news content."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must implement role-based access control (RBAC) to ensure only authorized site administrators can create and schedule news articles.",
+        "justification": "Protects the content creation process from unauthorized access."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The article management system must allow easy modification of publishing and expiry dates without requiring complete article recreation.",
+        "justification": "Provides flexibility in managing news article scheduling and lifecycle."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The account creation process must support capturing all specified personal details (name, gender, password, mobile number, location) with no mandatory fields omitted.",
+        "justification": "Ensures comprehensive account registration as per the functional requirement."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The account creation process must complete within 3 seconds from initial input to account confirmation.",
+        "justification": "Provides a responsive user experience during account registration."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Implement real-time validation for each input field with clear, specific error messages for incorrect or incomplete entries.",
+        "justification": "Helps users successfully complete the account creation process with minimal friction."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication during account creation, requiring mobile number verification via SMS or email.",
+        "justification": "Ensures the legitimacy of the account creation process and protects against fraudulent registrations."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Encrypt all personal details using AES-256 encryption both during transmission and at rest in the database.",
+        "justification": "Protects sensitive personal information from unauthorized access or data breaches."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.99% uptime for the account creation service across all supported platforms and devices.",
+        "justification": "Ensures users can create accounts consistently without service interruptions."
+      }
+    ]
+  }
+]
