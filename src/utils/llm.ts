@@ -10,7 +10,6 @@ import { BaseMessage } from "npm:@langchain/core/messages";
 import { ChatGoogleGenerativeAI } from "npm:@langchain/google-genai";
 import { Logger } from "./logger.ts";
 import { ChatTogetherAI } from "npm:@langchain/community/chat_models/togetherai";
-// import { ChatXAI } from "npm:@langchain/xai";
 
 interface StructuredLLMOutput {
   raw: BaseMessage;
@@ -308,6 +307,9 @@ export class GrokAIHandler extends LLMHandler<ChatOpenAI> {
         modelName,
         temperature,
         configuration: {
+          // Native langchain ChatXAI library has some issue with infinite recursion 
+          // and crashes deno, go figure
+          // So we're just using openai's lib and change the endpoint
           baseURL: "https://api.x.ai/v1",
         },
       }),
