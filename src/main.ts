@@ -72,22 +72,6 @@ async function combineOutputs(filePrefix: string) {
     const jsonContent = JSON.parse(content);
     combinedOutput.push(...jsonContent);
   }
-  // const seen = new Set();
-  // const duplicates: { functionalRequirement: string; file: string }[] = [];
-
-  // for (const file of files) {
-  //   const content = await Deno.readTextFile(join(dir, file));
-  //   const jsonContent = JSON.parse(content);
-  //   jsonContent.forEach((item: { functionalRequirement: string }) => {
-  //     if (seen.has(item.functionalRequirement)) {
-  //       duplicates.push({ ...item, file });
-  //     } else {
-  //       seen.add(item.functionalRequirement);
-  //     }
-  //   });
-  // }
-
-  // console.log("Duplicates:", duplicates);
 
   await Deno.writeTextFile(
     join(dir, `${filePrefix}.json`),

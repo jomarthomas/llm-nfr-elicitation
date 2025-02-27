@@ -1,0 +1,142 @@
+[
+  {
+    "functionalRequirement": "In the Facebook settings menu, the system shall allow the user to delete their saved username and password for Facebook.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide a feature to delete both the username and password saved for Facebook within the settings menu for 100% of users.",
+        "justification": "The FR specifies the need to delete saved credentials, which must be fully supported for all users."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that upon deletion, the username and password are completely removed from the system without any residual data remaining.",
+        "justification": "The FR implies that the deletion must be thorough and accurate to maintain user privacy and data integrity."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must present the delete option with clear labels and intuitive navigation within the settings menu, accessible within 3 clicks from the main settings page.",
+        "justification": "The FR requires user interaction to delete credentials, which should be straightforward and user-friendly."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must prompt the user for confirmation before deleting the saved credentials, with a clear warning message about the consequences of deletion.",
+        "justification": "The FR involves a critical action that could lead to loss of access, necessitating protective measures against unintended deletions."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must allow users to recover their deleted credentials within 30 days of deletion, provided they can verify their identity.",
+        "justification": "The FR implies a need for data management, and recoverability is important for user convenience and data integrity."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that the deletion process does not expose the credentials to unauthorized parties, using secure deletion methods such as overwriting data.",
+        "justification": "The FR involves sensitive user data, and its deletion must be handled securely to protect user privacy."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall request a deposit of Rs. 5000 upon entry of valid customer information and update it temporarily in the customer database.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must request a deposit of Rs. 5000 and update the customer database with this information for 100% of valid customer entries.",
+        "justification": "The FR requires the system to handle deposits and database updates, necessitating full coverage of these functions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately update the customer database with the deposit amount of Rs. 5000, ensuring no discrepancies in the recorded amount.",
+        "justification": "The FR implies the need for precise and correct handling of financial transactions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process the deposit request and update the customer database within 5 seconds for 99% of transactions.",
+        "justification": "The FR involves real-time financial transactions, requiring timely processing for user satisfaction."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process deposit requests and update the customer database for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the system for financial transactions, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that the deposit amount and customer information are not altered during transmission or storage, using checksums or similar integrity checks.",
+        "justification": "The FR involves financial data, which must be protected against unauthorized changes."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt customer information and deposit amounts using AES-256 encryption during storage and transmission.",
+        "justification": "The FR involves sensitive financial data, requiring protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall generate reports on storage consumption by financial contact.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate reports that include all relevant data on storage consumption by financial contact for 100% of the specified reporting periods.",
+        "justification": "The FR requires the system to produce comprehensive reports on storage usage."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the generated reports accurately reflect the storage consumption data, with no more than a 1% margin of error.",
+        "justification": "The FR implies the need for precise and correct reporting of storage data."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate the storage consumption reports within 1 minute for up to 10,000 financial contacts.",
+        "justification": "The FR involves generating reports, which should be done in a timely manner to be useful for decision-making."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user interface or API for accessing the storage consumption reports, with clear and consistent naming conventions for report parameters.",
+        "justification": "The FR requires interaction with reports, which should be easy to operate for users or developers."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to generate storage consumption reports for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the system for generating reports, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt the storage consumption data using AES-256 encryption during storage and transmission.",
+        "justification": "The FR involves sensitive data related to financial contacts, requiring protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall be able to generate a series of multiple-choice fraction questions that form a cohesive storyline to introduce a specific topic.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate a series of multiple-choice fraction questions that form a cohesive storyline for 100% of the specified topics.",
+        "justification": "The FR requires the system to produce complete and relevant educational content."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the generated questions accurately represent the fraction concepts and storyline, with no factual errors in 99% of the questions.",
+        "justification": "The FR implies the need for precise and correct educational content."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate the series of questions within 5 seconds for up to 100 users simultaneously.",
+        "justification": "The FR involves generating educational content, which should be done in a timely manner to support user engagement."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an interface for accessing the series of questions, with clear instructions and navigation to ensure ease of use.",
+        "justification": "The FR requires interaction with educational content, which should be user-friendly."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must include a tutorial or help section that explains how to use the question series and understand the storyline, accessible within 2 clicks from the main interface.",
+        "justification": "The FR involves educational content, which should be easy to learn and use for all users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to generate the series of questions for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the system for educational purposes, necessitating high availability."
+      }
+    ]
+  }
+]

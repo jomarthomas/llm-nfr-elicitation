@@ -1,0 +1,147 @@
+[
+  {
+    "functionalRequirement": "The website shall provide forms for certificates so users can request certificates online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The website must include all necessary fields for certificate requests, covering 100% of the required information as specified in the certificate application process.",
+        "justification": "The FR requires a complete form for certificate requests, ensuring all necessary data is captured."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The website must validate all form inputs according to predefined rules, ensuring 99.9% accuracy in data entry for certificate requests.",
+        "justification": "The FR implies the need for correct and accurate data submission for certificate requests."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The website must process certificate request submissions within 2 seconds for 95% of requests.",
+        "justification": "The FR involves user interaction, requiring quick processing to maintain a positive user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The certificate request form must be accessible via a clear and prominent link on the website's main navigation, with intuitive field labels and instructions.",
+        "justification": "The FR requires user interaction with forms, which should be easy to navigate and use."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The website must provide real-time validation and error messages for incorrect or missing form inputs, preventing submission of incomplete certificate requests.",
+        "justification": "The FR involves form submission, which should minimize user errors through immediate feedback."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The website must be available for certificate requests 99.9% of the time during operational hours.",
+        "justification": "The FR assumes continuous access to the certificate request service, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All data entered into the certificate request form must be encrypted using HTTPS with TLS 1.2 or higher.",
+        "justification": "The FR involves handling sensitive user data, which requires protection during transmission."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The website must ensure that certificate request data is not altered during transmission or storage, using SHA-256 checksums.",
+        "justification": "The FR involves critical data that must remain unaltered for the certificate process."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to manage privacy settings such as who can view their profile, connections, and sharing data with third parties.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide options for managing all specified privacy settings, covering 100% of the privacy aspects mentioned in the FR.",
+        "justification": "The FR requires comprehensive privacy management options for users."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must correctly apply privacy settings as selected by the user, ensuring 99.9% accuracy in privacy setting enforcement.",
+        "justification": "The FR implies the need for accurate implementation of user-selected privacy settings."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The privacy settings interface must be accessible via a clear and prominent link in the user's profile settings, with intuitive controls and clear labels.",
+        "justification": "The FR involves user interaction with privacy settings, which should be easy to navigate and use."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide immediate feedback and confirmation for changes to privacy settings, preventing unintended modifications.",
+        "justification": "The FR involves user settings, which should minimize errors through immediate feedback."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The privacy settings management feature must be available 99.9% of the time during operational hours.",
+        "justification": "The FR assumes continuous access to privacy settings, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All privacy settings and associated data must be encrypted using AES-256 at rest and TLS 1.2 or higher during transmission.",
+        "justification": "The FR involves handling sensitive user data, which requires protection at rest and during transmission."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that privacy settings data is not altered during transmission or storage, using SHA-256 checksums.",
+        "justification": "The FR involves critical data that must remain unaltered for privacy management."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall set over temperature values to prevent temperature deviations beyond 3 degrees Fahrenheit.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must monitor and adjust temperatures across all relevant components, covering 100% of the temperature control scenarios.",
+        "justification": "The FR requires comprehensive temperature monitoring and adjustment to prevent deviations."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must set over temperature values with an accuracy of within 0.5 degrees Fahrenheit for 99.9% of temperature readings.",
+        "justification": "The FR implies the need for precise temperature control to prevent deviations."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must detect and respond to temperature deviations within 1 second to prevent exceeding the 3-degree threshold.",
+        "justification": "The FR involves real-time temperature monitoring and control, requiring timely responses."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must continue to monitor and adjust temperatures even in the event of a single sensor failure, ensuring 99.9% uptime of temperature control functionality.",
+        "justification": "The FR requires continuous temperature control, which must be resilient to failures."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The system must maintain temperatures within the specified range to prevent equipment damage or safety hazards.",
+        "justification": "The FR involves temperature control to ensure safe operation of equipment."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall show the first lines of news articles based on the titles on the title screen.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display the first lines of news articles for 100% of the titles shown on the title screen.",
+        "justification": "The FR requires comprehensive display of article excerpts for all titles."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately match the first lines of news articles to their corresponding titles with 99.9% accuracy.",
+        "justification": "The FR implies the need for correct and accurate display of article excerpts."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must load and display the first lines of news articles within 500 milliseconds for 95% of requests.",
+        "justification": "The FR involves user interaction with news content, requiring quick display for usability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for navigating between titles and their corresponding first lines, with consistent formatting and layout.",
+        "justification": "The FR involves user interaction with news content, which should be easy to navigate and use."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to display the first lines of news articles 99.9% of the time during operational hours.",
+        "justification": "The FR assumes continuous access to news content, necessitating high availability."
+      }
+    ]
+  }
+]

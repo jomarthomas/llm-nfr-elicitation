@@ -1,0 +1,87 @@
+[
+  {
+    "functionalRequirement": "If the validation fails, system shall prompt \"Wrong OTP\".",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display the \"Wrong OTP\" message for 100% of failed OTP validations.",
+        "justification": "The FR specifies the exact message to be shown when OTP validation fails, requiring complete implementation of this feature."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The \"Wrong OTP\" message must be displayed only when the OTP entered by the user does not match the one sent to them.",
+        "justification": "The FR implies that the message should be shown accurately based on the validation result."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The \"Wrong OTP\" message must be displayed in a clear and prominent manner, with a font size of at least 14 points and in a contrasting color to the background.",
+        "justification": "The FR involves user interaction, and the message needs to be easily readable and noticeable to ensure effective communication."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide a retry option for entering the OTP after displaying the \"Wrong OTP\" message, with a maximum of 3 attempts before locking the account.",
+        "justification": "The FR involves user input validation, and protecting users from repeated errors enhances usability."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Faultlessness: The system must ensure that the \"Wrong OTP\" message is displayed without any errors or crashes for 99.99% of failed OTP validations.",
+        "justification": "The FR requires a specific response to failed validations, and the system must handle this reliably."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must not log or store the entered OTP in any form, ensuring that the \"Wrong OTP\" message does not compromise user data.",
+        "justification": "The FR involves sensitive user input, and protecting this data is crucial for security."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Information on remaining job posting time and CV access shall be reportable",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide reports that include both the remaining time for job postings and the access status of CVs for 100% of the requested data.",
+        "justification": "The FR specifies that both pieces of information must be reportable, requiring complete coverage of these aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The reported remaining time for job postings must be accurate to within 1 minute, and the CV access status must reflect the actual access permissions.",
+        "justification": "The FR implies that the reported data must be correct and reflect the real-time status."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate reports on remaining job posting time and CV access within 5 seconds for up to 100 concurrent requests.",
+        "justification": "The FR involves generating reports, which should be done quickly to maintain usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to generate a single report on job posting time and CV access.",
+        "justification": "Efficient resource use is important for scalability, given the FR’s focus on generating reports."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user-friendly interface for generating reports, with clear labels and intuitive navigation.",
+        "justification": "The FR involves user interaction with the reporting feature, which should be easy to use."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The system must include a help section or tooltips explaining how to interpret the reported data on job posting time and CV access.",
+        "justification": "The FR involves generating reports, and providing assistance enhances user understanding and usability."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to generate reports on job posting time and CV access for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the reporting feature, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt the data on CV access status using AES-256 encryption when storing or transmitting the reports.",
+        "justification": "The FR involves sensitive data on CV access, which requires protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The reporting functionality must be designed as a separate module, allowing for independent updates and maintenance without affecting other system components.",
+        "justification": "The FR involves a specific feature that should be maintainable independently to ensure system stability and ease of updates."
+      }
+    ]
+  }
+]

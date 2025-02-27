@@ -1,0 +1,142 @@
+[
+  {
+    "functionalRequirement": "System shall display a confirmation popup after the user fills out the form and clicks the submit button, saving the information to the database for further processing.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display a confirmation popup for 100% of form submissions where the submit button is clicked, ensuring all required fields are filled out before saving to the database.",
+        "justification": "The FR requires the system to display a confirmation popup and save data, necessitating complete coverage of these actions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately save 100% of the form data to the database without loss or corruption upon confirmation.",
+        "justification": "The FR implies the need for correct data storage following user confirmation."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must display the confirmation popup within 500 milliseconds of the submit button being clicked.",
+        "justification": "The FR involves user interaction, requiring timely feedback to enhance user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The confirmation popup must include clear and concise text (no more than 20 words) and a prominent 'Confirm' button (minimum size of 44x44 pixels).",
+        "justification": "The FR requires user interaction with the confirmation popup, which should be easy to operate."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate all form fields before displaying the confirmation popup, preventing submission of incomplete or invalid data.",
+        "justification": "The FR involves form submission, necessitating protection against user errors."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to display the confirmation popup and save data to the database for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous availability for form processing and data storage."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all form data using AES-256 encryption before storing it in the database.",
+        "justification": "The FR involves saving user data, which requires protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User will choose from options including searching for their issue, chatting with customer support, asking the community, emailing customer support, or calling customer support.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must present all five options (searching for issue, chatting, asking community, emailing, calling) to the user 100% of the time when accessing the support interface.",
+        "justification": "The FR requires the system to provide a complete set of support options to the user."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Appropriateness Recognizability: The system must clearly label each support option with a descriptive icon and text (no more than 10 words per option) to ensure users can easily recognize and select the appropriate method.",
+        "justification": "The FR involves user interaction with support options, requiring clear and recognizable presentation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must allow users to select a support option within 3 seconds of accessing the support interface, with each option being selectable via a single click or tap.",
+        "justification": "The FR requires user interaction with support options, necessitating ease of operation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must provide immediate feedback (within 100 milliseconds) upon selection of a support option, such as a visual or auditory cue.",
+        "justification": "The FR involves user interaction with support options, requiring engagement to enhance user experience."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to present the support options for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous availability for accessing support options."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall be able to grant edit permissions for assets to departmental administrators, inventory users, faculty users, and university users based on their department affiliation and authorization level.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must grant edit permissions to all specified user types (departmental administrators, inventory users, faculty users, university users) based on their department affiliation and authorization level for 100% of valid requests.",
+        "justification": "The FR requires the system to grant permissions to all specified user types, necessitating complete coverage of these actions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately assign edit permissions to users based on their department affiliation and authorization level for 100% of valid requests.",
+        "justification": "The FR implies the need for correct permission assignment based on user attributes."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must grant or deny edit permissions within 500 milliseconds of a user's request.",
+        "justification": "The FR involves user interaction, requiring timely feedback to enhance user experience."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that edit permissions cannot be altered or bypassed by unauthorized users or processes.",
+        "justification": "The FR involves granting permissions, which requires protection against unauthorized changes."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Accountability: The system must log all permission grant and denial actions, including the user ID, timestamp, and the specific permission granted or denied.",
+        "justification": "The FR involves granting permissions, necessitating accountability for auditing and security purposes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The system must implement permission management as a separate module, allowing for easy updates and maintenance without affecting other system components.",
+        "justification": "The FR involves a specific functionality (permission management) that should be modular for ease of maintenance."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Texts sent to that number will be sent to the API, then the system will reply to the user with the answer as another text message.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must process 100% of incoming text messages sent to the specified number and reply with an answer via text message.",
+        "justification": "The FR requires the system to handle all incoming texts and provide a response, necessitating complete coverage of these actions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process incoming text messages and send a reply within 5 seconds of receipt.",
+        "justification": "The FR involves real-time text message processing, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process and respond to a single text message.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling text messages."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process and respond to text messages for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous availability for text message processing and response."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all text messages using TLS 1.3 during transmission between the user and the API.",
+        "justification": "The FR involves handling user text messages, which are sensitive data requiring protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that text messages are not altered or tampered with during transmission or processing.",
+        "justification": "The FR involves handling user text messages, necessitating protection against unauthorized changes."
+      }
+    ]
+  }
+]
