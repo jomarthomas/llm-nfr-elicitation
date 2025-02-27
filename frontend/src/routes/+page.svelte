@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { applyAction, deserialize, enhance } from '$app/forms';
+	import { deserialize } from '$app/forms';
 	import BlurredSpinner from '$components/BlurredSpinner.svelte';
-	import type { nfrSchema } from '$lib/Prompt';
+	import type { nfrSchema } from '$lib/prompt';
 	import type { ActionResult } from '@sveltejs/kit';
 
 	const nfr = {
@@ -35,11 +35,31 @@
 	const models = [
 		{
 			name: 'OpenAI',
-			mode: 'o3-mini'
+			mode: 'gpt-4o-mini'
 		},
 		{
 			name: 'Google AI',
-			model: 'gemini-1.5-flash-8b'
+			model: 'gemini-1.5-pro'
+		},
+		{
+			name: 'Deepseek',
+			model: 'deepseek-ai/DeepSeek-V3'
+		},
+		{
+			name: 'Llama',
+			model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free'
+		},
+		{
+			name: 'Qwen',
+			model: 'Qwen/Qwen2.5-72B-Instruct-Turbo'
+		},
+		{
+			name: 'Claude',
+			model: 'claude-3-5-haiku-20241022'
+		},
+		{
+			name: 'Grok',
+			model: 'grok-2-1212'
 		}
 	];
 
@@ -100,7 +120,7 @@
 		<textarea class="CrispInput" id="fr" name="fr" data-type="text-area"></textarea>
 		<div class="Home__tools">
 			<input type="text" name="model" id="model" hidden bind:value={selectedModel} />
-			<select class="CrispSelect" bind:value={selectedModel} disabled>
+			<select class="CrispSelect" bind:value={selectedModel}>
 				{#each models as item}
 					<option value={item.model}>{item.name}</option>
 				{/each}
@@ -141,9 +161,9 @@
 				rgba(0, 0, 0, 0) 0px 0px 0px 0px,
 				rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 
-        & > textarea {
-          font-size: 17px;
-        }
+			& > textarea {
+				font-size: 17px;
+			}
 		}
 
 		&__tools {

@@ -25,6 +25,7 @@ const config = {
 			$data: 'src/data',
 			$utils: 'src/utils',
 			$types: 'src/types',
+			$stores: 'src/stores',
 			$styles: 'src/styles/routes',
 			$components: 'src/components',
 		},

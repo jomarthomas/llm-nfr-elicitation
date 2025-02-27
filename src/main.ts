@@ -116,11 +116,11 @@ if (import.meta.main) {
   //   temperature: 0.4,
   // });
 
-  const grok = new GrokAIHandler({
-    apiKey: Deno.env.get("GROK_API_KEY") ?? "",
-    modelName: "grok-2-1212",
-    temperature: 0.4,
-  });
+  // const grok = new GrokAIHandler({
+  //   apiKey: Deno.env.get("GROK_API_KEY") ?? "",
+  //   modelName: "grok-2-1212",
+  //   temperature: 0.4,
+  // });
 
   await batchedCalls({
     model: grok,
