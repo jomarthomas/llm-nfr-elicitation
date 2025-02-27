@@ -1,0 +1,102 @@
+[
+  {
+    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide a comprehensive list of all available services and applications, including detailed descriptions and requirements, for 100% of specified use cases.",
+        "justification": "The FR requires the system to offer a full range of information for applicants to research and select services, ensuring that all necessary details are available."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately display the eligibility criteria and application requirements for each service or application, with 100% accuracy.",
+        "justification": "The FR implies the need for correct and up-to-date information to guide applicants in selecting the right services or applications."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must load service and application details within 2 seconds for up to 1,000 concurrent users.",
+        "justification": "The FR involves providing information to users, and a fast response time is essential for a good user experience."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory per user session when displaying service and application details.",
+        "justification": "Efficient resource use is important to ensure the system can handle a large number of users without performance degradation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Appropriateness Recognizability: The system must provide a clear and intuitive interface for searching and filtering services and applications, with easily identifiable options and categories.",
+        "justification": "The FR requires the system to be user-friendly, making it easy for applicants to find and understand the available options."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide tooltips and help text for all interactive elements, ensuring that new users can understand how to use the system within 5 minutes of first use.",
+        "justification": "The FR involves a wide range of users, and a system that is easy to learn will enhance user satisfaction and efficiency."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must provide a progress indicator and confirmation messages when users initiate an application, ensuring they are aware of the status and next steps.",
+        "justification": "The FR involves a multi-step process, and clear feedback will keep users engaged and informed."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for 99.9% of the operational time to ensure that applicants can access and use the system when needed.",
+        "justification": "The FR assumes continuous access to the system, which is crucial for the application process."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all user data, including application details and personal information, using AES-256 encryption both at rest and in transit.",
+        "justification": "The FR involves handling sensitive user information, which must be protected to ensure privacy and compliance with data protection regulations."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow staff members to develop staff reports for publication and distribution.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide all necessary tools and features for staff members to create, edit, and format reports, including text editing, table creation, and image insertion, for 100% of specified use cases.",
+        "justification": "The FR requires a comprehensive set of tools to support the development of staff reports, ensuring that all necessary features are available."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that all reports generated are free from formatting errors and data inconsistencies, with 100% accuracy.",
+        "justification": "The FR implies the need for accurate and professional reports, which are critical for publication and distribution."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must save and publish reports within 5 seconds for documents up to 100 pages in length.",
+        "justification": "The FR involves the creation and publication of reports, and a fast response time is essential for productivity."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 200 MB of memory per user session when creating and editing reports.",
+        "justification": "Efficient resource use is important to ensure the system can handle multiple users and large documents without performance issues."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Appropriateness Recognizability: The system must provide a clear and intuitive interface for creating and editing reports, with easily identifiable tools and options.",
+        "justification": "The FR requires the system to be user-friendly, making it easy for staff members to create professional reports."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide a comprehensive help guide and context-sensitive help, ensuring that new users can create a report within 15 minutes of first use.",
+        "justification": "The FR involves a range of users with varying levels of expertise, and a system that is easy to learn will enhance user satisfaction and efficiency."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must provide real-time previews and auto-saving features to ensure that staff members can see the report as it will appear when published and make changes without losing work.",
+        "justification": "The FR involves a detailed editing process, and real-time feedback will enhance user engagement and reduce errors."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for 99.9% of the operational time to ensure that staff members can create and publish reports when needed.",
+        "justification": "The FR assumes continuous access to the system, which is crucial for the report creation and publication process."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all report data, including drafts and final versions, using AES-256 encryption both at rest and in transit.",
+        "justification": "The FR involves handling sensitive organizational information, which must be protected to ensure privacy and compliance with data protection regulations."
+      }
+    ]
+  }
+]

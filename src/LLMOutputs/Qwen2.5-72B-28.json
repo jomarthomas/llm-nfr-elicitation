@@ -1,0 +1,102 @@
+[
+  {
+    "functionalRequirement": "The system shall allow site administrators to create news articles with designated publishing dates and expiry dates.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the creation of news articles with fields for title, content, publishing date, and expiry date, ensuring all required fields are validated and stored.",
+        "justification": "The FR requires the system to handle the creation of news articles with specific metadata, necessitating complete functional coverage."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the publishing date is not before the current date and the expiry date is not before the publishing date, with validation errors returned for invalid dates.",
+        "justification": "The FR implies the need for correct date handling and validation to ensure articles are published and expire as intended."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must allow site administrators to create a news article within 5 seconds, including validation and storage.",
+        "justification": "The FR involves a user-facing operation that should be responsive to maintain a good user experience."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process the creation of a single news article.",
+        "justification": "Efficient resource use is important for scalability, especially when multiple administrators are creating articles simultaneously."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive user interface for site administrators to input news article details, including date pickers for publishing and expiry dates.",
+        "justification": "The FR requires interaction with the system, which should be easy to use for administrators."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must handle and log any errors that occur during the creation of news articles, ensuring that partial data is not stored and the user is informed of the error.",
+        "justification": "The FR involves critical data entry, and the system should be robust to prevent data corruption."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that only authorized site administrators can create news articles, with authentication and authorization checks in place.",
+        "justification": "The FR involves sensitive operations that should be restricted to authorized users to prevent unauthorized access."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that news article data is stored securely and cannot be altered without proper authorization, using database transactions and access controls.",
+        "justification": "The FR requires the integrity of news articles to be maintained, preventing unauthorized modifications."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the creation of a Gmail account with fields for name, gender, password, mobile number, and location, ensuring all required fields are validated and stored.",
+        "justification": "The FR requires the system to handle the creation of user accounts with specific personal details, necessitating complete functional coverage."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must validate the password to ensure it meets complexity requirements (e.g., minimum length, use of special characters, no common words), and the mobile number to ensure it is a valid phone number.",
+        "justification": "The FR implies the need for robust validation to ensure the security and accuracy of user data."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must allow users to create a Gmail account within 10 seconds, including validation and storage.",
+        "justification": "The FR involves a user-facing operation that should be responsive to maintain a good user experience."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 50 MB of memory to process the creation of a single Gmail account.",
+        "justification": "Efficient resource use is important for scalability, especially when many users are creating accounts simultaneously."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive user interface for users to input their personal details, with clear error messages for invalid inputs.",
+        "justification": "The FR requires interaction with the system, which should be easy to use for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must prevent users from accidentally submitting the form multiple times by disabling the submit button after the first click.",
+        "justification": "The FR involves a form submission, and the system should protect users from common errors."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must handle and log any errors that occur during the account creation process, ensuring that partial data is not stored and the user is informed of the error.",
+        "justification": "The FR involves critical data entry, and the system should be robust to prevent data corruption."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user data, including passwords and personal details, using AES-256 encryption both at rest and in transit.",
+        "justification": "The FR involves sensitive personal information, which must be protected to ensure user privacy."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that user data is stored securely and cannot be altered without proper authorization, using database transactions and access controls.",
+        "justification": "The FR requires the integrity of user data to be maintained, preventing unauthorized modifications."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Accountability: The system must log all account creation activities, including the timestamp and IP address of the user, to track and audit account creation processes.",
+        "justification": "The FR involves the creation of user accounts, and logging is necessary for security and compliance."
+      }
+    ]
+  }
+]

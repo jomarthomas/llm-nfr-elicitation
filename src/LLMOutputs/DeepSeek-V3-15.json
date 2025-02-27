@@ -1,0 +1,102 @@
+[
+  {
+    "functionalRequirement": "System shall show the first lines of news articles based on the titles on the title screen.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display the first lines of news articles for 100% of the titles shown on the title screen.",
+        "justification": "The FR requires the system to consistently show the first lines of news articles based on their titles."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must load and display the first lines of news articles within 500 milliseconds for up to 100 concurrent users.",
+        "justification": "The FR implies the need for quick loading times to ensure a smooth user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and consistent layout for displaying the first lines of news articles, ensuring readability across all devices.",
+        "justification": "The FR involves displaying content to users, necessitating an easy-to-use and consistent interface."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must validate all provided personal details (e.g., name, password, mobile number) according to Gmail's validation rules with 100% accuracy.",
+        "justification": "The FR requires accurate validation of user-provided data to ensure account creation integrity."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all personal details using AES-256 during transmission and storage.",
+        "justification": "The FR involves handling sensitive personal data, necessitating strong encryption."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide real-time feedback and error messages for invalid inputs during account creation.",
+        "justification": "The FR requires user interaction, necessitating mechanisms to prevent and correct errors."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to import and manage various data formats like images, videos, and audio files within presentations.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support importing and managing all specified data formats (images, videos, audio files) for 100% of supported use cases.",
+        "justification": "The FR requires comprehensive support for multiple data formats."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must import and display a 100 MB video file within 2 seconds.",
+        "justification": "The FR involves handling large files, requiring efficient processing times."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The system must support importing files from at least three different file storage services (e.g., Google Drive, Dropbox, OneDrive).",
+        "justification": "The FR involves importing files, necessitating compatibility with external services."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to set the price, quantity, upload pictures, and add details when listing an item.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must validate price and quantity inputs to ensure they are within acceptable ranges (e.g., positive numbers) with 100% accuracy.",
+        "justification": "The FR requires accurate validation of user inputs to ensure data integrity."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for uploading pictures and adding item details.",
+        "justification": "The FR involves user interaction, necessitating an easy-to-use interface."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that uploaded pictures and item details cannot be tampered with during transmission or storage.",
+        "justification": "The FR involves handling user-generated content, necessitating data integrity."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Doctors shall be able to log in to check patient information, answer patient queries, perform daily activities, set reminders, and communicate with their staff.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all specified functionalities (e.g., checking patient information, setting reminders) for 100% of logged-in doctors.",
+        "justification": "The FR requires comprehensive support for all listed functionalities."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must implement multi-factor authentication (MFA) for doctor logins.",
+        "justification": "The FR involves accessing sensitive patient information, necessitating strong authentication."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for doctor logins and functionalities for 99.99% of the operational time.",
+        "justification": "The FR assumes continuous access to critical functionalities, necessitating high availability."
+      }
+    ]
+  }
+]

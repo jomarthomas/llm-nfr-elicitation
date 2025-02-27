@@ -1,0 +1,67 @@
+[
+  {
+    "functionalRequirement": "User shall be guided to a login page after successfully registering, where they can enter their credentials to access the application.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The login page must be accessible within 2 seconds after the user completes the registration process.",
+        "justification": "The FR requires a smooth transition from registration to login, ensuring a user-friendly experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages and guidance if the user enters incorrect credentials, including suggestions for common issues (e.g., case sensitivity, password reset).",
+        "justification": "The FR involves user interaction, and clear error messages help prevent frustration and improve the user experience."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: User credentials must be transmitted over a secure connection using TLS 1.3.",
+        "justification": "The FR involves sensitive user data, and secure transmission is essential to protect user credentials."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must validate user credentials against a secure and tamper-proof authentication service.",
+        "justification": "The FR requires verifying user credentials, and ensuring data integrity is crucial to prevent unauthorized access."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The login page must be available 99.9% of the time to ensure users can access the application after registration.",
+        "justification": "The FR assumes continuous access to the application, necessitating high availability of the login page."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall ensure that dataset instances of a type created during app deployment start using the new code when a new version of the dataset type is deployed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must automatically update all dataset instances to the new version without manual intervention within 5 minutes of the new version being deployed.",
+        "justification": "The FR requires seamless updates to dataset instances, ensuring that all instances are using the latest code."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must complete the update process for all dataset instances within 5 minutes of the new version being deployed, for up to 1,000 instances.",
+        "justification": "The FR involves a timely update process, which is critical for maintaining the application's performance and reliability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory per dataset instance during the update process.",
+        "justification": "Efficient resource use is important to ensure that the update process does not impact the overall performance of the application."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must be able to recover from any update failures and retry the update process for affected dataset instances up to 3 times.",
+        "justification": "The FR requires a robust update mechanism, and fault tolerance ensures that updates are successfully applied even in the face of transient issues."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for the configuration of update policies, such as the maximum number of concurrent updates and the retry mechanism, through a centralized management interface.",
+        "justification": "The FR involves a complex update process, and modifiability ensures that the system can be adjusted to meet changing requirements."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must verify the integrity of the new dataset type version before applying it to dataset instances, using a digital signature or checksum.",
+        "justification": "The FR involves deploying new code, and ensuring the integrity of the code is crucial to prevent the application of corrupted or malicious updates."
+      }
+    ]
+  }
+]

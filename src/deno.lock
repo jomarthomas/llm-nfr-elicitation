@@ -6,6 +6,7 @@
     "npm:@langchain/core@*": "0.3.38_zod@3.24.1",
     "npm:@langchain/google-genai@*": "0.1.8_@langchain+core@0.3.38__zod@3.24.1",
     "npm:@langchain/openai@*": "0.4.2_@langchain+core@0.3.38__zod@3.24.1_zod@3.24.1_openai@4.82.0__zod@3.24.1",
+    "npm:@langchain/xai@*": "0.0.2_@langchain+core@0.3.38__zod@3.24.1_openai@4.82.0",
     "npm:@types/node@*": "22.5.4",
     "npm:open@*": "10.1.0",
     "npm:openai@*": "4.82.0",
@@ -61,8 +62,8 @@
         "dotenv",
         "openai@4.82.0_ws@8.18.0_zod@3.24.1",
         "ws",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@cfworker/json-schema@4.1.1": {
@@ -86,8 +87,8 @@
         "@anthropic-ai/sdk@0.36.3",
         "@langchain/core@0.3.38_zod@3.24.1",
         "fast-xml-parser",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/anthropic@0.3.13_@langchain+core@0.3.38__zod@3.24.1_zod@3.24.1_@langchain+core@0.3.38__zod@3.24.1__openai@4.82.0___zod@3.24.1___ws@8.18.0_openai@4.82.0__zod@3.24.1__ws@8.18.0": {
@@ -96,8 +97,8 @@
         "@anthropic-ai/sdk@0.36.3",
         "@langchain/core@0.3.38_zod@3.24.1_openai@4.82.0__zod@3.24.1__ws@8.18.0",
         "fast-xml-parser",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/community@0.3.32_@browserbasehq+stagehand@1.13.1__@playwright+test@1.50.1__deepmerge@4.3.1__dotenv@16.4.7__openai@4.82.0___zod@3.24.1___ws@8.18.0__zod@3.24.1__ws@8.18.0_@ibm-cloud+watsonx-ai@1.5.0__@langchain+core@0.3.38___zod@3.24.1___openai@4.82.0____zod@3.24.1____ws@8.18.0__openai@4.82.0___zod@3.24.1___ws@8.18.0_@langchain+core@0.3.38__zod@3.24.1_ibm-cloud-sdk-core@5.1.3__axios@1.7.9_openai@4.82.0_openai@4.82.0__zod@3.24.1__ws@8.18.0_zod@3.24.1_@langchain+core@0.3.38__zod@3.24.1__openai@4.82.0___zod@3.24.1___ws@8.18.0_@langchain+anthropic@0.3.13__@langchain+core@0.3.38___zod@3.24.1__zod@3.24.1_@langchain+google-genai@0.1.8__@langchain+core@0.3.38___zod@3.24.1": {
@@ -116,8 +117,8 @@
         "langsmith@0.3.7_openai@4.82.0__zod@3.24.1__ws@8.18.0_zod@3.24.1",
         "openai@4.82.0_zod@3.24.1_ws@8.18.0",
         "uuid",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/core@0.3.38_openai@4.82.0__zod@3.24.1_zod@3.24.1": {
@@ -133,8 +134,8 @@
         "p-queue",
         "p-retry",
         "uuid",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/core@0.3.38_zod@3.24.1": {
@@ -150,8 +151,25 @@
         "p-queue",
         "p-retry",
         "uuid",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
+      ]
+    },
+    "@langchain/core@0.3.38_zod@3.24.1_openai@4.82.0": {
+      "integrity": "sha512-o7mowk/0oIsYsPxRAJ3TKX6OG674HqcaNRged0sxaTegLAMyZDBDRXEAt3qoe5UfkHnqXAggDLjNVDhpMwECmg==",
+      "dependencies": [
+        "@cfworker/json-schema",
+        "ansi-styles@5.2.0",
+        "camelcase",
+        "decamelize",
+        "js-tiktoken",
+        "langsmith@0.3.7_openai@4.82.0__zod@3.24.1_zod@3.24.1_openai@4.82.0",
+        "mustache",
+        "p-queue",
+        "p-retry",
+        "uuid",
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/core@0.3.38_zod@3.24.1_openai@4.82.0__zod@3.24.1": {
@@ -167,8 +185,8 @@
         "p-queue",
         "p-retry",
         "uuid",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/core@0.3.38_zod@3.24.1_openai@4.82.0__zod@3.24.1__ws@8.18.0": {
@@ -184,8 +202,25 @@
         "p-queue",
         "p-retry",
         "uuid",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
+      ]
+    },
+    "@langchain/core@0.3.40_openai@4.82.0__zod@3.24.2_zod@3.24.2": {
+      "integrity": "sha512-RGhJOTzJv6H+3veBAnDlH2KXuZ68CXMEg6B6DPTzL3IGDyd+vLxXG4FIttzUwjdeQKjrrFBwlXpJDl7bkoApzQ==",
+      "dependencies": [
+        "@cfworker/json-schema",
+        "ansi-styles@5.2.0",
+        "camelcase",
+        "decamelize",
+        "js-tiktoken",
+        "langsmith@0.3.7_openai@4.82.0__zod@3.24.2_zod@3.24.2",
+        "mustache",
+        "p-queue",
+        "p-retry",
+        "uuid",
+        "zod@3.24.2",
+        "zod-to-json-schema@3.24.1_zod@3.24.2"
       ]
     },
     "@langchain/google-genai@0.1.8_@langchain+core@0.3.38__zod@3.24.1": {
@@ -193,7 +228,7 @@
       "dependencies": [
         "@google/generative-ai",
         "@langchain/core@0.3.38_zod@3.24.1",
-        "zod-to-json-schema"
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/google-genai@0.1.8_@langchain+core@0.3.38__zod@3.24.1_@langchain+core@0.3.38__zod@3.24.1__openai@4.82.0___zod@3.24.1___ws@8.18.0_zod@3.24.1_openai@4.82.0__zod@3.24.1__ws@8.18.0": {
@@ -201,7 +236,7 @@
       "dependencies": [
         "@google/generative-ai",
         "@langchain/core@0.3.38_zod@3.24.1_openai@4.82.0__zod@3.24.1__ws@8.18.0",
-        "zod-to-json-schema"
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/openai@0.4.2_@langchain+core@0.3.38__zod@3.24.1__openai@4.82.0___zod@3.24.1___ws@8.18.0_zod@3.24.1_openai@4.82.0__zod@3.24.1": {
@@ -210,8 +245,8 @@
         "@langchain/core@0.3.38_zod@3.24.1_openai@4.82.0__zod@3.24.1",
         "js-tiktoken",
         "openai@4.82.0_zod@3.24.1",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "@langchain/openai@0.4.2_@langchain+core@0.3.38__zod@3.24.1_zod@3.24.1_openai@4.82.0__zod@3.24.1": {
@@ -220,8 +255,18 @@
         "@langchain/core@0.3.38_openai@4.82.0__zod@3.24.1_zod@3.24.1",
         "js-tiktoken",
         "openai@4.82.0_zod@3.24.1",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
+      ]
+    },
+    "@langchain/openai@0.4.4_@langchain+core@0.3.40__openai@4.82.0___zod@3.24.2__zod@3.24.2_zod@3.24.2_openai@4.82.0__zod@3.24.2": {
+      "integrity": "sha512-UZybJeMd8+UX7Kn47kuFYfqKdBCeBUWNqDtmAr6ZUIMMnlsNIb6MkrEEhGgAEjGCpdT4CU8U/DyyddTz+JayOQ==",
+      "dependencies": [
+        "@langchain/core@0.3.40_openai@4.82.0__zod@3.24.2_zod@3.24.2",
+        "js-tiktoken",
+        "openai@4.82.0_zod@3.24.2",
+        "zod@3.24.2",
+        "zod-to-json-schema@3.24.1_zod@3.24.2"
       ]
     },
     "@langchain/textsplitters@0.1.0_@langchain+core@0.3.38__zod@3.24.1__openai@4.82.0___zod@3.24.1___ws@8.18.0_openai@4.82.0__zod@3.24.1__ws@8.18.0": {
@@ -229,6 +274,14 @@
       "dependencies": [
         "@langchain/core@0.3.38_zod@3.24.1_openai@4.82.0__zod@3.24.1__ws@8.18.0",
         "js-tiktoken"
+      ]
+    },
+    "@langchain/xai@0.0.2_@langchain+core@0.3.38__zod@3.24.1_openai@4.82.0": {
+      "integrity": "sha512-wVOs7SfJs4VWk/oiHJomaoaZ+r9nQhPqbEXlQ2D8L0d54PxYhb1ILR9rub9LT1RpqazSX8HG4A8+hX4R01qkSg==",
+      "dependencies": [
+        "@langchain/core@0.3.38_zod@3.24.1_openai@4.82.0",
+        "@langchain/openai@0.4.4_@langchain+core@0.3.40__openai@4.82.0___zod@3.24.2__zod@3.24.2_zod@3.24.2_openai@4.82.0__zod@3.24.2",
+        "zod@3.24.2"
       ]
     },
     "@playwright/test@1.50.1": {
@@ -622,8 +675,8 @@
         "p-retry",
         "uuid",
         "yaml",
-        "zod",
-        "zod-to-json-schema"
+        "zod@3.24.1",
+        "zod-to-json-schema@3.24.1_zod@3.24.1"
       ]
     },
     "langsmith@0.3.7_openai@4.82.0__zod@3.24.1__ws@8.18.0_zod@3.24.1": {
@@ -652,6 +705,19 @@
         "uuid"
       ]
     },
+    "langsmith@0.3.7_openai@4.82.0__zod@3.24.1_zod@3.24.1_openai@4.82.0": {
+      "integrity": "sha512-wakN1hxGkm1JR2PpAV7fiT7oC99LKcgxiuUrYGZWPbuj7Y8EPF19F7VNr4B+hA219bfaeWTa4Lxy2YrtPSKnQA==",
+      "dependencies": [
+        "@types/uuid",
+        "chalk",
+        "console-table-printer",
+        "openai@4.82.0_zod@3.24.1",
+        "p-queue",
+        "p-retry",
+        "semver",
+        "uuid"
+      ]
+    },
     "langsmith@0.3.7_openai@4.82.0__zod@3.24.1_zod@3.24.1_openai@4.82.0__zod@3.24.1__ws@8.18.0": {
       "integrity": "sha512-wakN1hxGkm1JR2PpAV7fiT7oC99LKcgxiuUrYGZWPbuj7Y8EPF19F7VNr4B+hA219bfaeWTa4Lxy2YrtPSKnQA==",
       "dependencies": [
@@ -659,6 +725,19 @@
         "chalk",
         "console-table-printer",
         "openai@4.82.0_zod@3.24.1_ws@8.18.0",
+        "p-queue",
+        "p-retry",
+        "semver",
+        "uuid"
+      ]
+    },
+    "langsmith@0.3.7_openai@4.82.0__zod@3.24.2_zod@3.24.2": {
+      "integrity": "sha512-wakN1hxGkm1JR2PpAV7fiT7oC99LKcgxiuUrYGZWPbuj7Y8EPF19F7VNr4B+hA219bfaeWTa4Lxy2YrtPSKnQA==",
+      "dependencies": [
+        "@types/uuid",
+        "chalk",
+        "console-table-printer",
+        "openai@4.82.0_zod@3.24.2",
         "p-queue",
         "p-retry",
         "semver",
@@ -754,7 +833,7 @@
         "formdata-node",
         "node-fetch",
         "ws",
-        "zod"
+        "zod@3.24.1"
       ]
     },
     "openai@4.82.0_zod@3.24.1": {
@@ -767,7 +846,7 @@
         "form-data-encoder",
         "formdata-node",
         "node-fetch",
-        "zod"
+        "zod@3.24.1"
       ]
     },
     "openai@4.82.0_zod@3.24.1_ws@8.18.0": {
@@ -781,7 +860,20 @@
         "formdata-node",
         "node-fetch",
         "ws",
-        "zod"
+        "zod@3.24.1"
+      ]
+    },
+    "openai@4.82.0_zod@3.24.2": {
+      "integrity": "sha512-1bTxOVGZuVGsKKUWbh3BEwX1QxIXUftJv+9COhhGGVDTFwiaOd4gWsMynF2ewj1mg6by3/O+U8+EEHpWRdPaJg==",
+      "dependencies": [
+        "@types/node@18.19.64",
+        "@types/node-fetch",
+        "abort-controller",
+        "agentkeepalive",
+        "form-data-encoder",
+        "formdata-node",
+        "node-fetch",
+        "zod@3.24.2"
       ]
     },
     "openapi-types@12.1.3": {
@@ -1063,11 +1155,20 @@
     "zod-to-json-schema@3.24.1_zod@3.24.1": {
       "integrity": "sha512-3h08nf3Vw3Wl3PK+q3ow/lIil81IT2Oa7YpQyUUDsEWbXveMesdfK1xBd2RhCkynwZndAxixji/7SYJJowr62w==",
       "dependencies": [
-        "zod"
+        "zod@3.24.1"
+      ]
+    },
+    "zod-to-json-schema@3.24.1_zod@3.24.2": {
+      "integrity": "sha512-3h08nf3Vw3Wl3PK+q3ow/lIil81IT2Oa7YpQyUUDsEWbXveMesdfK1xBd2RhCkynwZndAxixji/7SYJJowr62w==",
+      "dependencies": [
+        "zod@3.24.2"
       ]
     },
     "zod@3.24.1": {
       "integrity": "sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A=="
+    },
+    "zod@3.24.2": {
+      "integrity": "sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ=="
     }
   },
   "redirects": {

@@ -1,0 +1,107 @@
+[
+  {
+    "functionalRequirement": "User shall be able to share files, screen share, conduct group screen sharing, and send contacts.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support file sharing, screen sharing, group screen sharing, and contact sending for all supported file types and contact formats.",
+        "justification": "The FR requires a comprehensive set of features for user interaction, which must be fully implemented."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that shared files and screens are transmitted without corruption and that contact information is accurately sent.",
+        "justification": "The FR implies the need for accurate and reliable transmission of shared content."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must initiate file sharing, screen sharing, and contact sending within 2 seconds of user request.",
+        "justification": "The FR involves real-time user interactions, which require quick responses to maintain a good user experience."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory for each active file or screen sharing session.",
+        "justification": "Efficient resource management is crucial for maintaining performance during resource-intensive activities like file and screen sharing."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The system must support file sharing and screen sharing across all major operating systems (Windows, macOS, iOS, Android) and web browsers (Chrome, Firefox, Safari, Edge).",
+        "justification": "The FR requires broad compatibility to ensure that users on different platforms can interact seamlessly."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for initiating and managing file sharing, screen sharing, and contact sending, with clear status indicators and error messages.",
+        "justification": "The FR involves multiple user interactions, which should be easy to perform and understand."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must handle network interruptions gracefully, allowing users to resume file sharing and screen sharing sessions without data loss.",
+        "justification": "The FR involves continuous data transmission, which should be resilient to network issues."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all shared files, screen shares, and contact information using AES-256 encryption during transmission.",
+        "justification": "The FR involves sharing sensitive user data, which must be protected."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that shared files and screen shares are not tampered with during transmission, using digital signatures or similar mechanisms.",
+        "justification": "The FR requires that shared content remains unaltered and trustworthy."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to sign up and validate credentials, leading to access to the Snap camera screen.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support user sign-up with a variety of credential types (email, phone number, social media accounts) and validate these credentials accurately.",
+        "justification": "The FR requires a robust sign-up process that supports multiple authentication methods."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that user credentials are validated against a secure database, with no false positives or negatives.",
+        "justification": "The FR implies the need for accurate and secure credential validation."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must complete the sign-up and credential validation process within 3 seconds of user submission.",
+        "justification": "The FR involves a user-facing process that should be quick to enhance user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 50 MB of memory for the sign-up and validation process.",
+        "justification": "Efficient resource use is important to ensure the system can handle a large number of sign-ups without performance degradation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide clear and concise instructions for the sign-up process, including examples and help links for common issues.",
+        "justification": "The FR involves a new user experience, which should be easy to understand and follow."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages and suggestions for correction if the user enters invalid credentials or encounters issues during sign-up.",
+        "justification": "The FR requires a user-friendly sign-up process that helps users avoid and correct errors."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for sign-up and credential validation 99.9% of the time, with no more than 1 hour of downtime per year.",
+        "justification": "The FR assumes continuous access to the sign-up process, which is critical for new user acquisition."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user credentials using AES-256 encryption during transmission and storage.",
+        "justification": "The FR involves sensitive user data, which must be protected."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that user credentials are not tampered with during transmission or storage, using secure hashing algorithms for passwords.",
+        "justification": "The FR requires that user credentials remain unaltered and secure."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Accountability: The system must log all sign-up and validation activities, including timestamps and user actions, for audit purposes.",
+        "justification": "The FR involves user authentication, which should be traceable for security and compliance."
+      }
+    ]
+  }
+]

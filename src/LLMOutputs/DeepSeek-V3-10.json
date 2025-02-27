@@ -1,0 +1,137 @@
+[
+  {
+    "functionalRequirement": "For any systematic action, such as disputes aging process, a case activity will be generated, and the user who initiated the dispute case must be notified upon next logon.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate case activities for 100% of systematic actions, such as disputes aging process, and ensure notifications are triggered for all relevant users.",
+        "justification": "The FR requires comprehensive coverage of case activity generation and user notifications."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately generate case activities and notifications for the correct user in 99.9% of cases.",
+        "justification": "The FR implies the need for precise and correct handling of case activities and notifications."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate case activities and notifications within 500 milliseconds of the systematic action being triggered.",
+        "justification": "The FR involves real-time processing of actions, requiring timely responses."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to generate case activities and notifications for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous availability for generating case activities and notifications."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt case activity and notification data using TLS 1.3 during transmission.",
+        "justification": "The FR involves sensitive data, requiring protection during transmission."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall read initialization data to derive definitions of heating and cooling units.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must read and derive definitions for 100% of heating and cooling units specified in the initialization data.",
+        "justification": "The FR requires full coverage of heating and cooling unit definitions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately derive definitions for heating and cooling units with an error rate of less than 0.1%.",
+        "justification": "The FR implies the need for precise and correct derivation of unit definitions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must derive heating and cooling unit definitions within 200 milliseconds of reading the initialization data.",
+        "justification": "The FR involves real-time processing of initialization data, requiring timely responses."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to read initialization data and derive unit definitions for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous availability for reading and deriving unit definitions."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The website shall provide forms for certificates so users can request certificates online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The website must provide forms for 100% of certificate types available for online request.",
+        "justification": "The FR requires comprehensive coverage of certificate forms."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The website must accurately process certificate requests with an error rate of less than 0.1%.",
+        "justification": "The FR implies the need for precise and correct handling of certificate requests."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The website must provide a user-friendly interface for certificate forms, with clear instructions and validation for all required fields.",
+        "justification": "The FR involves user interaction with certificate forms, requiring ease of use."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The website must encrypt all certificate request data using TLS 1.3 during transmission.",
+        "justification": "The FR involves sensitive data, requiring protection during transmission."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to manage privacy settings such as who can view their profile, connections, and sharing data with third parties.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide privacy settings for 100% of user profile, connections, and third-party data sharing options.",
+        "justification": "The FR requires comprehensive coverage of privacy settings."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately apply privacy settings with an error rate of less than 0.1%.",
+        "justification": "The FR implies the need for precise and correct application of privacy settings."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for managing privacy settings, with consistent navigation and feedback.",
+        "justification": "The FR involves user interaction with privacy settings, requiring ease of use."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all privacy settings data using TLS 1.3 during transmission.",
+        "justification": "The FR involves sensitive data, requiring protection during transmission."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall set over temperature values to prevent temperature deviations beyond 3 degrees Fahrenheit.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must set over temperature values for 100% of temperature monitoring points.",
+        "justification": "The FR requires comprehensive coverage of over temperature settings."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately set over temperature values with a deviation of no more than 0.1 degrees Fahrenheit.",
+        "justification": "The FR implies the need for precise and correct temperature control."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must detect and respond to temperature deviations within 100 milliseconds.",
+        "justification": "The FR involves real-time temperature monitoring, requiring timely responses."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to monitor and control temperature for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous availability for temperature monitoring and control."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The system must prevent temperature deviations beyond 3 degrees Fahrenheit to ensure safe operation.",
+        "justification": "The FR involves safety-critical temperature control, requiring strict adherence to operational constraints."
+      }
+    ]
+  }
+]

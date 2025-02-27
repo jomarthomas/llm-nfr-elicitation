@@ -10,6 +10,7 @@ import { BaseMessage } from "npm:@langchain/core/messages";
 import { ChatGoogleGenerativeAI } from "npm:@langchain/google-genai";
 import { Logger } from "./logger.ts";
 import { ChatTogetherAI } from "npm:@langchain/community/chat_models/togetherai";
+import { ChatXAI } from "npm:@langchain/xai";
 
 interface StructuredLLMOutput {
   raw: BaseMessage;
@@ -17,14 +18,15 @@ interface StructuredLLMOutput {
 }
 
 // Define the abstract LLM Handler
-abstract class LLMHandler<
+export abstract class LLMHandler<
   TModel extends
     | ChatOpenAI
     | ChatAnthropic
     | ChatGoogleGenerativeAI
     | ChatTogetherAI
+    | ChatXAI
 > {
-  constructor(protected model: TModel) {}
+  constructor(protected model: TModel, public modelName: string) {}
 
   abstract health(): Promise<any>;
   abstract query(input: string): Promise<StructuredLLMOutput>;
@@ -42,7 +44,10 @@ export class OpenAIHandler extends LLMHandler<ChatOpenAI> {
     temperature: number;
     modelName: string;
   }) {
-    super(new ChatOpenAI({ openAIApiKey: apiKey, modelName, temperature }));
+    super(
+      new ChatOpenAI({ openAIApiKey: apiKey, modelName, temperature }),
+      modelName
+    );
   }
 
   async health(): Promise<any> {
@@ -97,7 +102,8 @@ export class AnthropicHandler extends LLMHandler<ChatAnthropic> {
     modelName: string;
   }) {
     super(
-      new ChatAnthropic({ anthropicApiKey: apiKey, modelName, temperature })
+      new ChatAnthropic({ anthropicApiKey: apiKey, modelName, temperature }),
+      modelName
     );
   }
 
@@ -142,7 +148,10 @@ export class GeminiHandler extends LLMHandler<ChatGoogleGenerativeAI> {
     temperature: number;
     modelName: string;
   }) {
-    super(new ChatGoogleGenerativeAI({ apiKey, modelName, temperature }));
+    super(
+      new ChatGoogleGenerativeAI({ apiKey, modelName, temperature }),
+      modelName
+    );
   }
 
   async health(): Promise<any> {
@@ -196,7 +205,10 @@ export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
     temperature: number;
     modelName: string;
   }) {
-    super(new ChatTogetherAI({ apiKey, model: modelName, temperature }));
+    super(
+      new ChatTogetherAI({ apiKey, model: modelName, temperature }),
+      modelName
+    );
   }
 
   async health(): Promise<any> {
@@ -237,6 +249,57 @@ export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
     } catch (error) {
       Logger.error(`${this.model.name}-Handler query failed`, error);
       throw new Error(`Failed to query ${this.model.name} model`);
+    }
+  }
+}
+
+// Grok Handler
+export class GrokAIHandler extends LLMHandler<ChatXAI> {
+  constructor({
+    apiKey,
+    temperature,
+    modelName,
+  }: {
+    apiKey: string;
+    temperature: number;
+    modelName: string;
+  }) {
+    super(new ChatXAI({ apiKey, model: modelName, temperature }), modelName);
+  }
+
+  async health(): Promise<any> {
+    try {
+      const response = await this.model.invoke([
+        ["human", "This is a health check"],
+      ]);
+      return response;
+    } catch (error) {
+      Logger.error("OpenAIHandler health check failed", error);
+      return "Health check failed";
+    }
+  }
+
+  async query(input: string): Promise<StructuredLLMOutput> {
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrSchema);
+      return await structuredLLM.invoke(generatePrompt(input));
+    } catch (error) {
+      Logger.error("OpenAIHandler query failed", error);
+      throw new Error("Failed to query OpenAI model");
+    }
+  }
+
+  async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
+      const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
+      return results.items.map((result: any) => ({
+        raw: result,
+        parsed: nfrSchema.parse(result),
+      }));
+    } catch (error) {
+      Logger.error("OpenAIHandler query failed", error);
+      throw new Error("Failed to query OpenAI model");
     }
   }
 }
