@@ -10,7 +10,7 @@ import { BaseMessage } from "npm:@langchain/core/messages";
 import { ChatGoogleGenerativeAI } from "npm:@langchain/google-genai";
 import { Logger } from "./logger.ts";
 import { ChatTogetherAI } from "npm:@langchain/community/chat_models/togetherai";
-import { ChatXAI } from "npm:@langchain/xai";
+// import { ChatXAI } from "npm:@langchain/xai";
 
 interface StructuredLLMOutput {
   raw: BaseMessage;
@@ -20,11 +20,10 @@ interface StructuredLLMOutput {
 // Define the abstract LLM Handler
 export abstract class LLMHandler<
   TModel extends
-    | ChatOpenAI
     | ChatAnthropic
     | ChatGoogleGenerativeAI
     | ChatTogetherAI
-    | ChatXAI
+    | ChatOpenAI
 > {
   constructor(protected model: TModel, public modelName: string) {}
 
@@ -102,7 +101,17 @@ export class AnthropicHandler extends LLMHandler<ChatAnthropic> {
     modelName: string;
   }) {
     super(
-      new ChatAnthropic({ anthropicApiKey: apiKey, modelName, temperature }),
+      new ChatAnthropic({
+        anthropicApiKey: apiKey,
+        modelName,
+        temperature,
+        cache: true,
+        clientOptions: {
+          defaultHeaders: {
+            "anthropic-beta": "prompt-caching-2024-07-31",
+          },
+        },
+      }),
       modelName
     );
   }
@@ -133,7 +142,36 @@ export class AnthropicHandler extends LLMHandler<ChatAnthropic> {
   }
 
   async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
-    return [];
+    try {
+      const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
+      // https://js.langchain.com/docs/integrations/chat/anthropic/#prompt-caching
+      // Cache the prompt so we don't burn through all the credits
+      const results = await structuredLLM.invoke([
+        {
+          role: "system",
+          content: [
+            {
+              type: "text",
+              text: `${Deno.readTextFileSync("./data/prompt tests/Advanced")}
+              You must always return valid JSON fenced by a markdown code block. Do not return any additional text.`,
+              // Tell Anthropic to cache this block
+              cache_control: { type: "ephemeral" },
+            },
+          ],
+        },
+        {
+          role: "user",
+          content: inputs,
+        },
+      ]); //generateBatchPrompt(inputs));
+      return results.items.map((result: any) => ({
+        raw: result,
+        parsed: result,
+      }));
+    } catch (error) {
+      Logger.error(`${this.modelName}-Handler query failed`, error);
+      throw new Error(`Failed to query ${this.modelName} model`);
+    }
   }
 }
 
@@ -194,7 +232,7 @@ export class GeminiHandler extends LLMHandler<ChatGoogleGenerativeAI> {
   }
 }
 
-// Gemini Handler
+// TogetherAI Handler
 export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
   constructor({
     apiKey,
@@ -231,8 +269,8 @@ export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
       });
       return await structuredLLM.invoke(generatePrompt(input));
     } catch (error) {
-      Logger.error(`${this.model.name}-Handler query failed`, error);
-      throw new Error(`Failed to query ${this.model.name} model`);
+      Logger.error(`${this.modelName}-Handler query failed`, error);
+      throw new Error(`Failed to query ${this.modelName} model`);
     }
   }
 
@@ -247,59 +285,59 @@ export class TogetherAIHandler extends LLMHandler<ChatTogetherAI> {
         parsed: result,
       }));
     } catch (error) {
-      Logger.error(`${this.model.name}-Handler query failed`, error);
-      throw new Error(`Failed to query ${this.model.name} model`);
+      Logger.error(`${this.modelName}-Handler query failed`, error);
+      throw new Error(`Failed to query ${this.modelName} model`);
     }
   }
 }
 
 // Grok Handler
-export class GrokAIHandler extends LLMHandler<ChatXAI> {
-  constructor({
-    apiKey,
-    temperature,
-    modelName,
-  }: {
-    apiKey: string;
-    temperature: number;
-    modelName: string;
-  }) {
-    super(new ChatXAI({ apiKey, model: modelName, temperature }), modelName);
-  }
+// export class GrokAIHandler extends LLMHandler<ChatXAI> {
+//   constructor({
+//     apiKey,
+//     temperature,
+//     modelName,
+//   }: {
+//     apiKey: string;
+//     temperature: number;
+//     modelName: string;
+//   }) {
+//     super(new ChatXAI({ apiKey, model: modelName, temperature }), modelName);
+//   }
 
-  async health(): Promise<any> {
-    try {
-      const response = await this.model.invoke([
-        ["human", "This is a health check"],
-      ]);
-      return response;
-    } catch (error) {
-      Logger.error("OpenAIHandler health check failed", error);
-      return "Health check failed";
-    }
-  }
+//   async health(): Promise<any> {
+//     try {
+//       const response = await this.model.invoke([
+//         ["human", "This is a health check"],
+//       ]);
+//       return response;
+//     } catch (error) {
+//       Logger.error("OpenAIHandler health check failed", error);
+//       return "Health check failed";
+//     }
+//   }
 
-  async query(input: string): Promise<StructuredLLMOutput> {
-    try {
-      const structuredLLM = this.model.withStructuredOutput(nfrSchema);
-      return await structuredLLM.invoke(generatePrompt(input));
-    } catch (error) {
-      Logger.error("OpenAIHandler query failed", error);
-      throw new Error("Failed to query OpenAI model");
-    }
-  }
+//   async query(input: string): Promise<StructuredLLMOutput> {
+//     try {
+//       const structuredLLM = this.model.withStructuredOutput(nfrSchema);
+//       return await structuredLLM.invoke(generatePrompt(input));
+//     } catch (error) {
+//       Logger.error("OpenAIHandler query failed", error);
+//       throw new Error("Failed to query OpenAI model");
+//     }
+//   }
 
-  async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
-    try {
-      const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
-      const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
-      return results.items.map((result: any) => ({
-        raw: result,
-        parsed: nfrSchema.parse(result),
-      }));
-    } catch (error) {
-      Logger.error("OpenAIHandler query failed", error);
-      throw new Error("Failed to query OpenAI model");
-    }
-  }
-}
+//   async batchQuery(inputs: string): Promise<StructuredLLMOutput[]> {
+//     try {
+//       const structuredLLM = this.model.withStructuredOutput(nfrBatchSchema);
+//       const results = await structuredLLM.invoke(generateBatchPrompt(inputs));
+//       return results.items.map((result: any) => ({
+//         raw: result,
+//         parsed: nfrSchema.parse(result),
+//       }));
+//     } catch (error) {
+//       Logger.error("OpenAIHandler query failed", error);
+//       throw new Error("Failed to query OpenAI model");
+//     }
+//   }
+// }

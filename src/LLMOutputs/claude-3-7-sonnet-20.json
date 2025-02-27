@@ -1,0 +1,132 @@
+[
+  {
+    "functionalRequirement": "User shall be able to share files, screen share, conduct group screen sharing, and send contacts.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must support all common file formats (PDF, DOCX, XLSX, JPEG, PNG, MP4) for file sharing with 100% compatibility.",
+        "justification": "The FR requires file sharing functionality, which necessitates support for standard file formats to ensure complete functionality."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must initiate screen sharing within 2 seconds of user request under normal network conditions (>5 Mbps).",
+        "justification": "Screen sharing is a real-time feature requiring quick response times to maintain user engagement and usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must support group screen sharing with up to 50 concurrent viewers while maintaining a frame rate of at least 15 fps at 720p resolution.",
+        "justification": "Group screen sharing requires sufficient capacity to handle multiple viewers without significant degradation in quality."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "File sharing operations must complete the upload/download process at a minimum of 80% of the available network bandwidth.",
+        "justification": "Efficient resource utilization is necessary for timely file sharing operations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must provide clear visual indicators for active screen sharing sessions, with distinct states for individual and group sharing modes.",
+        "justification": "Users need to easily recognize when screen sharing is active to prevent unintentional sharing of sensitive information."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The file sharing interface must allow users to select and share files in no more than 3 clicks/taps from any main screen.",
+        "justification": "Streamlined operability is essential for frequent file sharing actions."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must maintain screen sharing connections with 99.5% uptime during active sessions, automatically reconnecting within 5 seconds if disconnection occurs.",
+        "justification": "Reliable connectivity is crucial for screen sharing functionality to be effective."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All shared files must be scanned for malware before being made available to recipients, with detection rates matching industry standards (>98%).",
+        "justification": "File sharing introduces security risks that must be mitigated to protect users."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Screen sharing sessions must implement end-to-end encryption using AES-256 to protect content during transmission.",
+        "justification": "Screen content may contain sensitive information requiring protection from unauthorized access."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The file sharing and screen sharing features must function consistently across Windows, macOS, iOS, and Android operating systems with identical core functionality.",
+        "justification": "Cross-platform compatibility is essential for sharing features in a diverse device ecosystem."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The screen sharing module must be implemented as a separate component with well-defined interfaces, allowing for independent updates without affecting other system components.",
+        "justification": "Modular design facilitates maintenance and updates to the screen sharing functionality."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must support scaling to handle a 200% increase in concurrent screen sharing sessions without requiring architectural changes.",
+        "justification": "Scalability is important to accommodate growth in user base and usage patterns."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to sign up and validate credentials, leading to access to the Snap camera screen.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must validate 100% of user credentials against all defined validation rules (e.g., password complexity, email format) with appropriate feedback for each validation failure.",
+        "justification": "Credential validation is a core aspect of the sign-up process that requires comprehensive rule enforcement."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The sign-up process must complete within 3 seconds (from submission to confirmation) under normal load conditions (up to 1000 concurrent sign-ups).",
+        "justification": "Quick response times during sign-up are essential to prevent user abandonment of the process."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must transition to the Snap camera screen within 1 second after successful credential validation.",
+        "justification": "Rapid access to the camera screen after authentication maintains user engagement and flow."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The sign-up form must clearly indicate all required fields and provide real-time validation feedback for each field as the user completes it.",
+        "justification": "Immediate feedback improves the user experience and reduces errors during sign-up."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must provide password strength indicators that update in real-time as users create passwords, with clear visual differentiation between weak, medium, and strong passwords.",
+        "justification": "Password strength indicators help users create secure credentials while understanding security requirements."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The sign-up and credential validation system must maintain 99.9% availability during peak usage hours (defined as 8 AM to 10 PM in each supported time zone).",
+        "justification": "High availability is critical for user acquisition and onboarding processes."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "User passwords must be stored using bcrypt with a minimum work factor of 10, never in plaintext or using reversible encryption.",
+        "justification": "Secure password storage is essential to protect user credentials from unauthorized access."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement rate limiting that restricts failed sign-up attempts to no more than 5 per minute from a single IP address to prevent brute force attacks.",
+        "justification": "Rate limiting protects against automated attacks targeting the sign-up process."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must enforce multi-factor authentication for new account creation, requiring verification through email or phone before granting access to the Snap camera screen.",
+        "justification": "MFA adds an essential layer of security to verify user identity during account creation."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The authentication system must be implemented as a separate service with a well-documented API, allowing for updates to authentication methods without modifying the camera access components.",
+        "justification": "Modular design facilitates maintenance and security updates to the authentication system."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The sign-up system must support the addition of new authentication methods (e.g., social media login, biometric authentication) without requiring changes to the core credential validation logic.",
+        "justification": "Adaptability to evolving authentication technologies and user preferences is important for long-term viability."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "The system must implement secure access controls that prevent unauthorized camera activation, requiring explicit user permission before enabling the Snap camera functionality.",
+        "justification": "Camera access has privacy implications requiring safety measures to prevent misuse or unintended activation."
+      }
+    ]
+  }
+]

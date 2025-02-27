@@ -1,0 +1,97 @@
+[
+  {
+    "functionalRequirement": "In the Facebook settings menu, the system shall allow the user to delete their saved username and password for Facebook.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must completely remove all traces of saved Facebook credentials (username and password) from all storage locations when a user initiates the deletion action.",
+        "justification": "The FR requires complete deletion of saved credentials, necessitating thoroughness in the implementation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The credential deletion option must be discoverable within the Facebook settings menu within 10 seconds by 95% of users during usability testing.",
+        "justification": "The FR specifies the deletion option should be in the Facebook settings menu, requiring easy discoverability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must provide clear confirmation before and after credential deletion, with success/failure notifications visible for at least 3 seconds.",
+        "justification": "Users need feedback about the deletion process to understand the system state and confirm their action was completed."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The credential deletion process must require user authentication with a second factor (if enabled) or password re-entry before execution.",
+        "justification": "Since the FR involves deletion of security-sensitive information, additional verification is needed to prevent unauthorized deletion."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must log all credential deletion attempts (successful and failed) with timestamp, device information, and IP address, while preserving user anonymity in logs.",
+        "justification": "Security auditing is necessary for credential management operations to detect potential unauthorized access attempts."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The credential deletion function must complete successfully in 99.9% of attempts, with appropriate error handling and recovery mechanisms for failed attempts.",
+        "justification": "The FR implies a critical security function that must be highly reliable to maintain user trust and security."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The credential deletion process must complete within 2 seconds under normal operating conditions.",
+        "justification": "Quick response time is necessary for good user experience when performing security-related actions."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The credential deletion functionality must be implemented as a separate module with defined interfaces to facilitate future updates to authentication mechanisms.",
+        "justification": "Authentication systems frequently change, requiring the deletion functionality to be maintainable independently."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall request a deposit of Rs. 5000 upon entry of valid customer information and update it temporarily in the customer database.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must validate customer information against all required fields with 100% accuracy before proceeding with the deposit request.",
+        "justification": "The FR specifies that customer information must be valid before requesting a deposit, requiring complete validation."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must process the deposit request and update the customer database within 3 seconds of valid customer information entry for 95% of transactions.",
+        "justification": "Financial transactions require prompt processing to maintain good user experience and operational efficiency."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must support at least 100 concurrent deposit transactions without degradation in response time.",
+        "justification": "Financial systems need capacity to handle multiple simultaneous transactions, especially during peak usage periods."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must maintain 99.99% uptime for the deposit functionality during business hours (9 AM to 6 PM local time).",
+        "justification": "Financial transactions are critical operations requiring high availability to ensure customer satisfaction."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "In case of system failure during a deposit transaction, the system must roll back incomplete transactions and notify both the customer and system administrator within 1 minute.",
+        "justification": "Financial transactions must be atomic to prevent data inconsistencies and financial losses."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All deposit transaction data must be encrypted using AES-256 during transmission and storage, with decryption limited to authorized personnel only.",
+        "justification": "Financial data requires strong protection due to its sensitive nature and potential for fraud."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must maintain an immutable audit trail of all deposit transactions, including timestamp, customer ID, amount, and status changes.",
+        "justification": "Financial transactions require comprehensive auditing for regulatory compliance and dispute resolution."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The deposit request interface must clearly indicate the required amount (Rs. 5000) and provide confirmation before processing the transaction.",
+        "justification": "Users need clear information about financial transactions to avoid errors and ensure informed consent."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The temporary database update mechanism must be implemented with a configurable retention period, initially set to 24 hours.",
+        "justification": "The FR specifies a temporary update, requiring a maintainable mechanism to manage the temporary state."
+      }
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must provide 100% of the required information about application requirements and services for all supported application types.",
+        "justification": "The FR requires comprehensive research capabilities, necessitating complete information availability for applicants."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must load requirement information and service options within 2 seconds for 95% of requests under normal load conditions.",
+        "justification": "Quick access to information is essential for applicants researching requirements and selecting services."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must organize requirement information and service options in a logical hierarchy with no more than 3 levels of navigation depth to reach any specific information.",
+        "justification": "The FR focuses on research and selection, which requires intuitive information organization for effective user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must provide search functionality that returns relevant requirement information within 1 second and with at least 90% relevance for keyword searches.",
+        "justification": "Research capabilities require effective search functionality to help applicants find specific requirements quickly."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must maintain 99.5% uptime during business hours (8AM-8PM local time) to ensure consistent access to application requirements and services.",
+        "justification": "Applicants need reliable access to research requirements and initiate applications online."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement role-based access control ensuring that prospective applicants can only access public information and their own application data.",
+        "justification": "The FR involves user-initiated processes that require appropriate access controls to protect information."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The system must allow administrators to update requirement information and available services within 1 business day of regulatory or policy changes.",
+        "justification": "The FR depends on up-to-date requirement information, necessitating easy maintenance capabilities."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must support the addition of new application types and services without requiring more than 5 person-days of development effort per new service.",
+        "justification": "The system needs to adapt to new types of applications and services as organizational needs evolve."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow staff members to develop staff reports for publication and distribution.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must support all required report formats (PDF, HTML, DOCX) with 100% format fidelity for publication and distribution.",
+        "justification": "The FR requires report development for publication, necessitating support for standard document formats."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must generate and render reports of up to 100 pages with embedded graphics within 5 seconds for 90% of requests.",
+        "justification": "Staff need efficient report generation capabilities to complete their work without unnecessary delays."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The report editor must provide a WYSIWYG interface with formatting controls that match 95% of the functionality available in standard word processors.",
+        "justification": "Staff members need intuitive editing capabilities to effectively develop reports for publication."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must automatically save report drafts every 2 minutes and maintain recoverable versions for at least 7 days.",
+        "justification": "Report development requires protection against data loss to ensure staff productivity."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement document-level access controls allowing report authors to specify which staff roles can view, edit, or publish specific reports.",
+        "justification": "Reports may contain sensitive information requiring appropriate access controls."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The system must support the creation and modification of report templates that can be reused across departments with no more than 1 hour of configuration time per template.",
+        "justification": "Reusable templates improve efficiency and consistency in report development."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The system must support import and export of report content from/to common office applications (Microsoft Office, Google Workspace) with 99% content and formatting preservation.",
+        "justification": "Staff may need to work with external tools during report development, requiring seamless data exchange."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must allow for the configuration of custom distribution channels for reports (email, intranet, public website) without requiring code changes.",
+        "justification": "Distribution needs may vary by report type and audience, requiring flexible publication options."
+      }
+    ]
+  }
+]

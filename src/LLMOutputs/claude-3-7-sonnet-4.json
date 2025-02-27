@@ -1,0 +1,92 @@
+[
+  {
+    "functionalRequirement": "System shall display a confirmation popup after the user fills out the form and clicks the submit button, saving the information to the database for further processing.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must successfully save 100% of valid form submissions to the database with all fields correctly mapped to database columns.",
+        "justification": "This ensures the core functionality of saving information to the database works correctly as specified in the FR."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The confirmation popup must appear within 300 milliseconds after the user clicks the submit button, regardless of database save operation completion.",
+        "justification": "Quick feedback is essential for good user experience when submitting forms, even if the background database operation is still in progress."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must complete the database save operation within 2 seconds for 95% of submissions under normal load conditions.",
+        "justification": "The FR requires saving information to the database, which needs to be performed efficiently to maintain system responsiveness."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The confirmation popup must clearly indicate the success status of the form submission using both color coding (green for success) and an appropriate icon.",
+        "justification": "Clear visual feedback helps users understand that their form submission was successful."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The confirmation popup must include a dismissible action (such as an 'OK' button or 'X' icon) that is at least 44x44 pixels in size for touch accessibility.",
+        "justification": "Users need a clear way to acknowledge and dismiss the confirmation, with sufficient target size for all input methods."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "If the database save operation fails, the system must retry the operation up to 3 times with a 2-second interval between attempts before showing an error message.",
+        "justification": "The FR requires saving to the database, and retry mechanisms improve reliability when temporary issues occur."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All form data must be validated on both client and server sides before being saved to the database, with input sanitization to prevent SQL injection attacks.",
+        "justification": "Security validation is necessary when saving user-provided information to a database to prevent data breaches."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The confirmation popup component must be implemented as a reusable module that can be configured with different messages, icons, and action buttons.",
+        "justification": "A modular approach allows for easier maintenance and consistency across the application when confirmation popups are needed."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User will choose from options including searching for their issue, chatting with customer support, asking the community, emailing customer support, or calling customer support.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must present all five support options (search, chat, community, email, call) with 100% availability whenever the support interface is accessed.",
+        "justification": "The FR specifies that users should be able to choose from all these options, requiring complete functionality."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must load all support options within 1 second of the user navigating to the support page under normal network conditions.",
+        "justification": "Quick loading of support options is necessary for users seeking assistance, especially in potentially urgent situations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Each support option must be represented with a distinctive icon and clear descriptive text that communicates its purpose and expected response time.",
+        "justification": "Clear visual and textual differentiation helps users select the most appropriate support channel for their needs."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The support options must be arranged in order of expected resolution time, from fastest (search) to slowest (email), to help users make informed choices.",
+        "justification": "Logical organization of options based on resolution time helps users select the most appropriate support method for their urgency level."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must display accurate availability status for each support option (e.g., chat hours, current wait times) that updates at least every 5 minutes.",
+        "justification": "Users need reliable information about support availability to make appropriate choices about which channel to use."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "When transitioning to any support option, the system must only pass the minimum required user information needed for that specific support channel.",
+        "justification": "Limiting data sharing between system components maintains user privacy while still enabling effective support."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "All support options must function correctly across desktop and mobile browsers, with the call option utilizing the device's native calling capabilities when available.",
+        "justification": "Support options need to work across different platforms to ensure all users can access help regardless of their device."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must allow administrators to enable, disable, or modify any of the five support options without requiring code changes or system restarts.",
+        "justification": "Support channels may need to be adjusted based on staffing, business hours, or other operational factors."
+      }
+    ]
+  }
+]

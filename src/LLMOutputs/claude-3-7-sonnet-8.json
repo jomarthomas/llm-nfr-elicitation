@@ -1,0 +1,87 @@
+[
+  {
+    "functionalRequirement": "After adding a transportation route, the user shall be able to retrieve transportation requests from other users.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system shall retrieve 100% of valid transportation requests that match the added route's parameters (location, time, capacity).",
+        "justification": "The core functionality requires complete retrieval of all relevant transportation requests to ensure the user has access to all potential matches."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall retrieve and display matching transportation requests within 2 seconds after a route is added, even during peak usage periods with up to 10,000 concurrent users.",
+        "justification": "Quick response time is essential for a transportation matching system where users expect immediate results after adding a route."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system shall present retrieved transportation requests in a prioritized list based on relevance (e.g., proximity, time match) with clear visual indicators for perfect matches versus partial matches.",
+        "justification": "Organizing transportation requests by relevance improves user experience by highlighting the most suitable matches first."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system shall maintain 99.9% uptime for the transportation request retrieval functionality, with scheduled maintenance occurring only during off-peak hours (2 AM - 4 AM local time).",
+        "justification": "High availability is critical for a transportation system where users depend on timely access to request information."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system shall only display non-sensitive information about other users' transportation requests until a formal connection is established, masking personal details like full names, exact addresses, and contact information.",
+        "justification": "Privacy protection is necessary when sharing transportation request information between users who haven't yet agreed to connect."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The transportation request retrieval functionality shall be implemented as a separate microservice with documented APIs to allow for independent scaling and updates without affecting the route creation functionality.",
+        "justification": "A modular design supports easier maintenance and updates to the request retrieval system without disrupting other system components."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system shall support retrieval of transportation requests across multiple platforms (web, iOS, Android) with consistent functionality and response times within 0.5 seconds of the primary platform.",
+        "justification": "Cross-platform adaptability ensures users can access transportation requests regardless of their device preference."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The Disputes System shall allow users to create charge back requests, prompting for required information and resulting in printed notifications sent to merchants if proof of disputed transactions is not provided.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system shall validate 100% of charge back request submissions for completeness, ensuring all required fields (transaction date, amount, merchant, reason code) are filled before submission is allowed.",
+        "justification": "Complete information collection is essential for processing valid charge back requests and meeting financial industry requirements."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall process and acknowledge receipt of a charge back request within 3 seconds of submission, and generate merchant notifications within 1 business day when proof is not provided.",
+        "justification": "Timely processing of disputes and notifications is critical for meeting regulatory timeframes and customer service expectations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The charge back request form shall include contextual help for each field, with examples of acceptable inputs and clear error messages that suggest corrections when invalid data is entered.",
+        "justification": "Clear guidance reduces user errors and frustration when creating charge back requests, which can be complex for non-expert users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system shall maintain a 99.95% success rate for generating and sending merchant notifications, with automated retry mechanisms that attempt delivery up to 3 times at 8-hour intervals before flagging for manual intervention.",
+        "justification": "Reliable notification delivery is essential to the dispute resolution process and compliance with financial regulations."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system shall encrypt all dispute data using AES-256 encryption at rest and TLS 1.3 in transit, with access controls limiting dispute details to the filing customer, assigned dispute handlers, and authorized merchant representatives.",
+        "justification": "Financial dispute information contains sensitive transaction details requiring strong security measures to prevent unauthorized access."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The Disputes System shall log all charge back request activities in a structured format that includes timestamps, user IDs, action types, and status changes to support auditing and troubleshooting.",
+        "justification": "Comprehensive logging facilitates analysis of the dispute process, helps identify system issues, and supports compliance requirements."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The notification system shall support multiple output formats (PDF, email, API calls to merchant systems) with the ability to add new notification channels without modifying the core dispute processing logic.",
+        "justification": "Adaptable notification methods ensure the system can accommodate different merchant preferences and evolving communication standards."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "The system shall implement dual verification for charge back requests exceeding $1,000, requiring supervisor approval before processing to prevent accidental or fraudulent high-value disputes.",
+        "justification": "Additional verification for high-value disputes reduces financial risk and protects both customers and merchants from potentially costly errors."
+      }
+    ]
+  }
+]

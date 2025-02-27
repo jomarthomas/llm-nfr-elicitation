@@ -1,0 +1,72 @@
+[
+  {
+    "functionalRequirement": "For any systematic action, such as disputes aging process, a case activity will be generated, and the user who initiated the dispute case must be notified upon next logon.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must generate case activities for 100% of systematic actions, with all required metadata including action type, timestamp, and associated dispute case ID.",
+        "justification": "The FR requires complete tracking of systematic actions through case activities, necessitating comprehensive data capture."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must generate case activities and queue notifications within 500 milliseconds of a systematic action occurring.",
+        "justification": "Timely generation of case activities is essential for maintaining accurate system state and ensuring notifications are available upon next logon."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Notifications must be displayed prominently upon user logon, with visual distinction from other system messages, and remain visible until acknowledged.",
+        "justification": "The FR specifies that users must be notified, which requires an effective notification mechanism that ensures users notice the information."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The notification system must maintain a 99.9% delivery rate for user notifications, with failed notifications being retried up to 3 times.",
+        "justification": "The FR mandates that users must be notified, which requires a highly reliable notification mechanism."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Case activity data and notifications must only be accessible to authorized users with appropriate permissions, enforced through role-based access controls.",
+        "justification": "Case activities may contain sensitive dispute information, requiring proper access controls to maintain data confidentiality."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The notification system must be implemented as a separate module with well-defined interfaces, allowing for future modifications without affecting the core dispute management functionality.",
+        "justification": "Separating the notification system enhances maintainability by isolating changes to this specific functionality."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall read initialization data to derive definitions of heating and cooling units.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must correctly interpret 100% of valid initialization data formats to derive accurate heating and cooling unit definitions.",
+        "justification": "The FR requires complete and correct interpretation of initialization data to properly define heating and cooling units."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must read and process initialization data within 2 seconds during system startup, regardless of the number of heating and cooling unit definitions (up to 10,000 units).",
+        "justification": "Efficient processing of initialization data is necessary to ensure timely system startup and availability."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The system must support at least 3 standard initialization data formats (e.g., JSON, XML, CSV) for defining heating and cooling units.",
+        "justification": "Supporting multiple data formats enhances interoperability with various data sources and existing systems."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must validate initialization data integrity and report specific errors for any corrupted or invalid data, continuing operation with default values where possible.",
+        "justification": "Robust handling of initialization data is essential for system reliability, especially during startup."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The system must log all initialization data processing activities with detailed information to facilitate troubleshooting of unit definition issues.",
+        "justification": "Comprehensive logging enhances the analyzability of initialization processes for maintenance purposes."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must allow for the addition of new heating and cooling unit types without requiring code changes, supporting extensibility through configuration.",
+        "justification": "The system should be adaptable to accommodate new types of heating and cooling units as they become available."
+      }
+    ]
+  }
+]

@@ -5,7 +5,7 @@ import {
   TogetherAIHandler,
   AnthropicHandler,
 } from "./utils/llm.ts";
-import { generatePrompt } from "./utils/prompt.ts";
+import { join } from "https://deno.land/std/path/mod.ts";
 
 const text = await Deno.readTextFile("./data/Final_FR.tsv");
 const FR = Papa.parse(text, { delimiter: "\t", header: false }).data.map(
@@ -20,7 +20,7 @@ async function batchedCalls({
   sleep = 5000,
   fileName,
 }: {
-  model: GeminiHandler | OpenAIHandler | TogetherAIHandler;
+  model: GeminiHandler | OpenAIHandler | TogetherAIHandler | AnthropicHandler;
   batchSize?: number;
   FRStart?: number;
   FREnd?: number;
@@ -44,6 +44,28 @@ async function batchedCalls({
     console.log(`⇒ Sleeping for ${sleep / 1000} seconds`);
     await new Promise((resolve) => setTimeout(resolve, sleep));
   }
+}
+
+async function combineOutputs(filePrefix: string) {
+  const dir = "./LLMOutputs";
+  const files = [];
+  for await (const dirEntry of Deno.readDir(dir)) {
+    if (dirEntry.isFile && dirEntry.name.startsWith(filePrefix)) {
+      files.push(dirEntry.name);
+    }
+  }
+
+  const combinedOutput = [];
+  for (const file of files) {
+    const content = await Deno.readTextFile(join(dir, file));
+    const jsonContent = JSON.parse(content);
+    combinedOutput.push(...jsonContent);
+  }
+
+  await Deno.writeTextFile(
+    join(dir, `${filePrefix}.json`),
+    JSON.stringify(combinedOutput, null, 2)
+  );
 }
 
 if (import.meta.main) {
@@ -71,22 +93,21 @@ if (import.meta.main) {
   //   temperature: 0.4,
   // });
 
-  const qwen = new TogetherAIHandler({
-    apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
-    modelName: "Qwen/Qwen2.5-72B-Instruct-Turbo",
-    temperature: 0.4,
-  });
+  // const qwen = new TogetherAIHandler({
+  //   apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
+  //   modelName: "Qwen/Qwen2.5-72B-Instruct-Turbo",
+  //   temperature: 0.4,
+  // });
 
   const claude = new AnthropicHandler({
-    apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
-    modelName: "Qwen/Qwen2.5-72B-Instruct-Turbo",
+    apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
+    modelName: "claude-3-7-sonnet-20250219",
     temperature: 0.4,
   });
 
   await batchedCalls({
-    FRStart: 20,
+    model: claude,
     batchSize: 2,
-    model: qwen,
-    fileName: "Qwen2.5-72B",
+    fileName: "claude-3-7-sonnet",
   });
 }
