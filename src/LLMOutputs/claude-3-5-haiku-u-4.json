@@ -1,0 +1,127 @@
+[
+  {
+    "functionalRequirement": "Customers shall be able to search for new products in the database by entering item names, and upon successful search, view detailed product information.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The search functionality must support 100% of product types in the database, including exact and partial name matches.",
+        "justification": "Ensures comprehensive search capability for all products in the system."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Search results must be returned within 500 milliseconds for databases containing up to 100,000 product entries.",
+        "justification": "Provides quick response times for user product searches to maintain a smooth user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The search function must provide autocorrect suggestions for misspelled product names and handle case-insensitive searches.",
+        "justification": "Helps users find products even with minor input errors or variations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The search interface must display clear error messages if no products are found, with suggestions for alternative search terms.",
+        "justification": "Guides users when their initial search does not yield results."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Search queries and product view history must be encrypted and not stored longer than 30 days.",
+        "justification": "Protects user search privacy and prevents unauthorized tracking of search behaviors."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to search for suggested doctors for consultation based on their symptoms or predicted diseases.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The doctor suggestion algorithm must match symptoms/diseases to specialties with 95% accuracy based on medical knowledge databases.",
+        "justification": "Ensures reliable and medically appropriate doctor recommendations."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Doctor recommendations must be generated within 2 seconds of symptom input.",
+        "justification": "Provides quick response for users seeking medical consultation."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The doctor suggestion system must be operational 99.9% of the time, with automatic failover mechanisms.",
+        "justification": "Critical for providing consistent medical consultation support."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All symptom and disease information must be encrypted using HIPAA-compliant encryption standards during transmission and storage.",
+        "justification": "Protects sensitive medical information and ensures patient privacy."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The system must provide clear explanations for doctor recommendations, including specialty relevance and matching criteria.",
+        "justification": "Helps users understand the basis of doctor suggestions."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to choose payment methods such as PayPal balance, debit or credit card, and transfer funds by entering recipient's email ID or name, and making the payment.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all specified payment methods (PayPal, debit card, credit card) with full transaction capabilities.",
+        "justification": "Ensures users can use their preferred payment method."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Implement PCI DSS Level 1 compliance for all payment transactions, with real-time fraud detection algorithms.",
+        "justification": "Protects financial transactions from unauthorized access or manipulation."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication for all fund transfer operations, including one-time PIN or biometric verification.",
+        "justification": "Ensures that only authorized users can perform financial transactions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Complete payment processing and fund transfer within 3 seconds for 99% of transactions.",
+        "justification": "Provides quick and responsive payment experience."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: Implement automatic transaction rollback mechanism if any payment step fails, with comprehensive error logging.",
+        "justification": "Prevents partial or failed transactions and ensures financial data integrity."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Provide real-time validation for recipient email/name and payment method before transaction confirmation.",
+        "justification": "Prevents user errors during fund transfer process."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall automatically update the available quantity of each medicine after a sale is completed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: Inventory quantity must be updated with 100% accuracy immediately after each sale transaction.",
+        "justification": "Ensures precise tracking of medicine inventory levels."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Inventory update must be completed within 100 milliseconds of sale transaction completion.",
+        "justification": "Provides real-time inventory tracking with minimal system overhead."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Inventory management system must maintain 99.99% uptime with automatic data synchronization.",
+        "justification": "Critical for maintaining accurate stock levels across sales channels."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: Implement a separate, loosely coupled inventory management module that can be independently updated or replaced.",
+        "justification": "Allows for future enhancements or modifications to inventory tracking system."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Implement audit logging for all inventory updates with immutable transaction records.",
+        "justification": "Provides traceability and prevents unauthorized inventory manipulations."
+      }
+    ]
+  }
+]

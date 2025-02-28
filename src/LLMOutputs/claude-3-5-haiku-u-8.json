@@ -1,0 +1,102 @@
+[
+  {
+    "functionalRequirement": "The system shall provide a calendar view of available appointment slots for each healthcare provider",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The calendar view must load and update available appointment slots within 2 seconds for each healthcare provider, supporting real-time availability tracking.",
+        "justification": "Quick loading of appointment slots is crucial for user experience and efficient scheduling."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Interface Clarity: The calendar view must be intuitive, with color-coded availability status, clear time slots, and responsive design compatible with desktop and mobile devices.",
+        "justification": "Ensures easy interpretation of appointment availability across different devices."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Data Consistency: The system must maintain 99.9% accuracy in displaying real-time appointment availability, with immediate updates when slots are booked or cancelled.",
+        "justification": "Prevents scheduling conflicts and ensures users see the most current appointment information."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The calendar system must support standard calendar formats (iCal, Google Calendar) for easy integration and synchronization.",
+        "justification": "Allows users to integrate healthcare appointments with personal scheduling systems."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to search for properties based on specific criteria such as location, area, and number of bedrooms",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Search results must be returned within 3 seconds for up to 500 property listings, with pagination support for large result sets.",
+        "justification": "Ensures quick and responsive property search functionality."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The search interface must provide clear input validation, suggesting corrections for invalid search criteria and offering helpful error messages.",
+        "justification": "Helps users refine their search and prevents frustration with unclear search parameters."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The search system must support all specified search criteria (location, area, bedrooms) with precise filtering and sorting options.",
+        "justification": "Ensures comprehensive property search capabilities matching user requirements."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: User search history and preferences must be encrypted and stored securely, with options to clear search history.",
+        "justification": "Protects user privacy and search-related personal information."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall calculate modification charges based on modifying time, date, route, availability, display new fares, and process payments through the payment gateway",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Modification charge calculations must be completed and displayed within 1 second, with real-time fare updates.",
+        "justification": "Ensures quick and responsive pricing modifications for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Faultlessness: The modification and pricing calculation system must maintain 99.99% accuracy in fare computations across all modification scenarios.",
+        "justification": "Critical for maintaining trust and preventing pricing errors."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: All payment transactions must be processed using PCI DSS compliant encryption, with secure tokenization of payment information.",
+        "justification": "Protects financial transactions and user payment details."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The modification interface must clearly display all price changes, additional charges, and provide a step-by-step confirmation process.",
+        "justification": "Ensures transparency in pricing modifications and user understanding."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall generate a PDF report of all transactions and send a copy to the customer's email address and another copy to the system database for monthly transaction calculation",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: PDF report generation must be completed within 5 seconds for up to 1,000 transactions, with efficient background processing.",
+        "justification": "Ensures quick report generation without system performance degradation."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The transaction reporting system must maintain 99.95% uptime, with automatic retry mechanisms for failed email or database transmissions.",
+        "justification": "Ensures consistent and reliable transaction record-keeping."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: PDF reports must be encrypted using AES-256, with access controls limiting visibility to authorized personnel only.",
+        "justification": "Protects sensitive transaction information from unauthorized access."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Analysability: Transaction reports must be generated in a standardized, machine-readable format supporting easy data extraction and analysis.",
+        "justification": "Facilitates future reporting, auditing, and business intelligence processes."
+      }
+    ]
+  }
+]

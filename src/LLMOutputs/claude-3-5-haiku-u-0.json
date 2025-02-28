@@ -1,0 +1,122 @@
+[
+  {
+    "functionalRequirement": "User shall/will be able to open various types of accounts like savings, fixed deposit, etc.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support opening at least 5 different types of bank accounts with all standard required fields for each account type.",
+        "justification": "Ensures comprehensive coverage of account types mentioned in the functional requirement."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must implement multi-factor authentication for account creation, including government-issued ID verification and biometric or two-factor authentication.",
+        "justification": "Protects against fraudulent account openings and ensures secure account creation process."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide real-time validation for all account opening fields, with clear error messages for incorrect or incomplete information.",
+        "justification": "Helps users complete account creation process accurately and efficiently."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The account opening system must have 99.99% uptime during business hours (8 AM to 8 PM, 7 days a week).",
+        "justification": "Ensures users can open accounts consistently without service interruptions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The entire account creation process must be completed within 10 minutes, with each validation step taking no more than 2 seconds.",
+        "justification": "Provides a quick and responsive account opening experience for users."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to add expenses with details including amount, date, payer, and optional split among participants.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately calculate expense splits with 100% mathematical precision, supporting up to 10 participants per expense.",
+        "justification": "Ensures accurate financial calculations for expense tracking."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Expense entry and split calculation must be completed within 500 milliseconds for single entries.",
+        "justification": "Provides responsive expense tracking with minimal user waiting time."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All expense data must be encrypted at rest using AES-256 encryption and transmitted using TLS 1.3 protocol.",
+        "justification": "Protects sensitive financial information from unauthorized access."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The system must provide inline tooltips and auto-complete suggestions for common expense categories and payer names.",
+        "justification": "Simplifies expense entry process and reduces user input errors."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must implement automatic backup of expense data every 5 minutes and support full data restoration within 15 minutes in case of system failure.",
+        "justification": "Ensures no loss of critical financial tracking information."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Faculties shall be able to upload and download assignments, college notices, student notices, journals, and videos.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: File uploads and downloads must complete within 30 seconds for files up to 500 MB, with bandwidth support of at least 10 Mbps.",
+        "justification": "Ensures efficient handling of various document and media types."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "Interoperability: The system must support file uploads and downloads for at least 20 different file formats including .docx, .pdf, .jpg, .mp4, .xlsx, and .ppt.",
+        "justification": "Provides flexibility for different types of academic documents and media."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement role-based access control ensuring only authorized faculty members can upload or download specific types of documents.",
+        "justification": "Protects sensitive academic materials from unauthorized access."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Provide file type and size validation with clear error messages, preventing uploads of unsupported or oversized files.",
+        "justification": "Guides users to upload appropriate files and prevents system overload."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.95% uptime for document management system during academic working hours.",
+        "justification": "Ensures consistent access to critical academic resources."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall allow users to rate and review services by providing comments on tour plans or services, with comments stored in the database and a thank you message displayed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: Support rating system with 5-star scale and ability to submit text comments of up to 500 characters.",
+        "justification": "Provides comprehensive feedback mechanism for users."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: Implement content filtering to prevent offensive or inappropriate comments before database storage.",
+        "justification": "Ensures clean and appropriate user-generated content."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Comment submission and thank you message display must occur within 200 milliseconds.",
+        "justification": "Provides immediate feedback to enhance user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: Provide optional fields for detailed feedback and suggestions to improve services.",
+        "justification": "Encourages more comprehensive user input and service improvement."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: Implement automatic backup of all user reviews and ratings every hour, with ability to restore within 10 minutes.",
+        "justification": "Ensures preservation of valuable user feedback data."
+      }
+    ]
+  }
+]

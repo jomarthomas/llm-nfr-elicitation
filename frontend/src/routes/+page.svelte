@@ -4,34 +4,7 @@
 	import type { nfrSchema } from '$lib/prompt';
 	import type { ActionResult } from '@sveltejs/kit';
 
-	const nfr = {
-		functionalRequirement:
-			'A Data Publishing User shall have a view of all their published datasets.',
-		identifiedNFRs: [
-			{
-				attribute: 'Functional Suitability',
-				requirement:
-					'The system shall provide a complete and accurate view of all published datasets to authorized users.',
-				justification:
-					'The requirement ensures the system provides a complete and accurate view of published datasets for users.'
-			},
-			{
-				attribute: 'Usability',
-				requirement:
-					'The user interface shall be intuitive and allow efficient filtering and navigation of published datasets.',
-				justification:
-					'A user-friendly interface is needed to navigate and filter published datasets.'
-			},
-			{
-				attribute: 'Maintainability',
-				requirement:
-					'The system architecture should be modular and easily extensible to accommodate future dataset additions and modifications.',
-				justification:
-					'The system needs to be easily maintained to accommodate future changes and additions to published datasets.'
-			}
-		]
-	};
-
+	
 	const models = [
 		{
 			name: 'OpenAI',

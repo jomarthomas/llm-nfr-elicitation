@@ -1,0 +1,4 @@
+[ERROR] claude-3-7-sonnet-20250219-Handler query failed Error: Failed to parse. Text: "{}". Error: [{"code":"invalid_type","expected":"array","received":"undefined","path":["items"],"message":"Required"}]
+
+Troubleshooting URL: https://js.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE/
+

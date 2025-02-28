@@ -1,24 +1,46 @@
 <script lang="ts">
 	import Grade from '$components/Grade.svelte';
 	import { addToast } from '$stores/ToastStore';
-	import type { FRWithNFRs } from '../../../db/methods/GetFR';
 
-	let { data: FR }: { data: { fr: FRWithNFRs } } = $props();
-	$inspect(FR);
+	// TODO: the type is already in nfrSchema but that doesn't have "id" and
+	// I can't add it dynamically here
+	interface FRWithNFRs {
+		id: number;
+		functionalRequirement: string;
+		identifiedNFRs: {
+			id: string;
+			attribute:
+				| 'Functional Suitability'
+				| 'Performance Efficiency'
+				| 'Compatibility'
+				| 'Usability'
+				| 'Reliability'
+				| 'Security'
+				| 'Maintainability'
+				| 'Flexibility'
+				| 'Safety';
+			requirement: string;
+			justification: string;
+		}[];
+	}
+
+	let { data: FR }: { data: { fr: FRWithNFRs | null } } = $props();
 
 	let nfrScores = $state(
-		FR.fr.identifiedNFRs.map((nfr) => ({
-			id: nfr.id,
-			attributeScore: 0, // Applicability score
-			requirementScore: 0 // Validity score
-		}))
+		FR.fr
+			? FR.fr.identifiedNFRs.map((nfr) => ({
+					id: nfr.id,
+					attributeScore: 0, // Applicability score
+					requirementScore: 0 // Validity score
+				}))
+			: null
 	);
 
 	// Handle form submission
 	async function handleSubmit(event: Event) {
 		event.preventDefault();
 		// Check if any attribute or requirement score is 0
-		const hasZeroScore = nfrScores.some(
+		const hasZeroScore = nfrScores?.some(
 			(score) => score.attributeScore === 0 || score.requirementScore === 0
 		);
 
@@ -31,8 +53,8 @@
 		}
 
 		const payload = {
-			id: FR.fr.id,
-			identifiedNFRs: nfrScores.map((score) => ({
+			id: FR.fr?.id,
+			identifiedNFRs: nfrScores?.map((score) => ({
 				id: score.id,
 				attribute: score.attributeScore,
 				requirement: score.requirementScore
@@ -45,45 +67,67 @@
 				'content-type': 'application/json'
 			}
 		});
+
+		if (response.ok) {
+			const result = await response.json();
+			if (result.status === 'success') {
+				location.reload();
+			} else {
+				addToast({
+					message: 'Failed to submit evaluation',
+					type: 'danger'
+				});
+			}
+		} else {
+			addToast({
+				message: 'Failed to submit evaluation',
+				type: 'danger'
+			});
+		}
 	}
 </script>
 
 <form class="fr-evaluation" onsubmit={handleSubmit}>
-	<div class="fr-evaluation__header">
-		<h1 class="fr-evaluation__title">Functional Requirement</h1>
-		<p class="fr-evaluation__description">{FR.fr.functionalRequirement}</p>
-	</div>
+	{#if FR.fr}
+		<div class="fr-evaluation__header">
+			<h1 class="fr-evaluation__title">Functional Requirement</h1>
+			<p class="fr-evaluation__description">{FR.fr?.functionalRequirement}</p>
+		</div>
 
-	<div class="fr-evaluation__nfr-list">
-		{#each FR.fr.identifiedNFRs as nfr, index}
-			<table class="CrispTable" data-no-footer data-horizontal="true">
-				<tbody>
-					<tr>
-						<th>
-							<span>Attribute</span>
-						</th>
-						<td class="attribute Row--between">
-							{nfr.attribute}
-							<Grade type="Attribute" bind:level={nfrScores[index].attributeScore} />
-						</td>
-					</tr>
-					<tr>
-						<th>NFR</th>
-						<td class="requirement Row--a-start gap-15">
-							{nfr.requirement}
-							<Grade type="NFR" bind:level={nfrScores[index].requirementScore} />
-						</td>
-					</tr>
-					<tr>
-						<th>Justification</th>
-						<td>{nfr.justification}</td>
-					</tr>
-				</tbody>
-			</table>
-		{/each}
-	</div>
-
-	<button type="submit" class="CrispButton">Submit Evaluation</button>
+		<div class="fr-evaluation__nfr-list">
+			{#each FR.fr.identifiedNFRs as nfr, index}
+				<table class="CrispTable" data-no-footer data-horizontal="true">
+					<tbody>
+						<tr>
+							<th>
+								<span>Attribute</span>
+							</th>
+							<td class="attribute Row--between">
+								{nfr.attribute}
+								<Grade type="Attribute" bind:level={nfrScores![index].attributeScore} />
+							</td>
+						</tr>
+						<tr>
+							<th>NFR</th>
+							<td class="requirement Row--a-start gap-15">
+								{nfr.requirement}
+								<Grade type="NFR" bind:level={nfrScores![index].requirementScore} />
+							</td>
+						</tr>
+						<tr>
+							<th>Justification</th>
+							<td>{nfr.justification}</td>
+						</tr>
+					</tbody>
+				</table>
+			{/each}
+		</div>
+		<button type="submit" class="CrispButton">Submit Evaluation</button>
+	{:else}
+		<p class="Row--center">
+			You have evaluated all the NFRs assigned to you! Thank you for helping us out!
+		</p>
+	{/if}
 </form>
 
 <style lang="scss">

@@ -305,56 +305,56 @@ if (import.meta.main) {
   });
 
   const reqs = Promise.all([
-    await batchedCalls({
-      model: claude35,
-      batchSize: 4,
-      fileName: "claude-3-5-haiku-u",
-    }).then(async () => {
-      await combineOutputs("claude-3-5-haiku-u");
-    }),
+    // await batchedCalls({
+    //   model: claude35,
+    //   batchSize: 4,
+    //   fileName: "claude-3-5-haiku-u",
+    // }).then(async () => {
+    //   await combineOutputs("claude-3-5-haiku-u");
+    // }),
     await batchedCalls({
       model: claude37,
-      batchSize: 4,
+      batchSize: 2,
       fileName: "claude-3-7-haiku-u",
     }).then(async () => {
       await combineOutputs("claude-3-7-haiku-u");
     }),
     await batchedCalls({
       model: deepseek,
-      batchSize: 4,
+      batchSize: 2,
       fileName: "deepSeek-V3-u",
     }).then(async () => {
       await combineOutputs("deepSeek-V3-u");
     }),
     await batchedCalls({
       model: openai,
-      batchSize: 4,
+      batchSize: 2,
       fileName: "gpt-4o-mini-u",
     }).then(async () => {
       await combineOutputs("gpt-4o-mini-u");
     }),
     await batchedCalls({
       model: grok,
-      batchSize: 4,
+      batchSize: 2,
       fileName: "grok-2-u",
     }).then(async () => {
       await combineOutputs("grok-2-u");
     }),
     await batchedCalls({
       model: llama,
-      batchSize: 4,
+      batchSize: 2,
       fileName: "lama-3.3-70B-u",
     }).then(async () => {
       await combineOutputs("lama-3.3-70B-u");
     }),
     await batchedCalls({
       model: qwen,
-      batchSize: 4,
+      batchSize: 2,
       fileName: "Qwen2.5-72B-u",
     }).then(async () => {
       await combineOutputs("Qwen2.5-72B-u");
     }),
   ]);
 
-  
+
 }
