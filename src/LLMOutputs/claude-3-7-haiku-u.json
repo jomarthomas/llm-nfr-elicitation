@@ -1,0 +1,572 @@
+[
+  {
+    "functionalRequirement": "User shall/will be able to open various types of accounts like savings, fixed deposit, etc.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must support at least 5 different account types (savings, fixed deposit, current, recurring deposit, and salary accounts) with all their specific attributes and rules correctly implemented.",
+        "justification": "The FR requires supporting various account types, necessitating complete implementation of all account types mentioned and potentially others."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The account opening process must complete within 3 minutes for any account type under normal system load conditions.",
+        "justification": "Efficient account opening is critical for user satisfaction when creating different types of accounts."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The account opening interface must clearly differentiate between account types with visual cues and explanatory text, with 90% of users able to select the correct account type for their needs in usability testing.",
+        "justification": "Users need to understand differences between account types to make appropriate selections."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The account opening functionality must maintain 99.9% availability during banking hours (8 AM to 8 PM) and 99% during non-banking hours.",
+        "justification": "Account opening is a critical banking function that requires high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement multi-factor authentication for opening new accounts and encrypt all personal and financial information using AES-256 encryption.",
+        "justification": "Financial account creation requires strong security measures to protect sensitive user information."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The system must allow new account types to be added with configuration changes only, requiring no more than 5 person-days of effort per new account type.",
+        "justification": "Banking products evolve over time, requiring the system to be easily maintainable for new account types."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must support customization of account parameters (interest rates, minimum balances, withdrawal limits) through an administrative interface without requiring code changes.",
+        "justification": "Different account types have different parameters that may need adjustment over time."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to add expenses with details including amount, date, payer, and optional split among participants.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The expense tracking system must support at least 5 different splitting methods (equal, percentage, fixed amount, shares, and by items) with 100% accuracy in calculations.",
+        "justification": "The FR mentions optional split among participants, requiring complete and correct implementation of splitting functionality."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must process and save an expense entry, including complex splits among up to 20 participants, in less than 2 seconds.",
+        "justification": "Quick expense entry is essential for user satisfaction, especially when handling complex splits."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The expense entry interface must allow users to complete a basic expense entry in less than 30 seconds, with split functionality requiring no more than 3 additional steps.",
+        "justification": "Expense tracking should be quick and intuitive to encourage regular use."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The expense tracking system must maintain data integrity with zero loss of expense entries even during system failures, with automatic recovery mechanisms.",
+        "justification": "Financial data requires high reliability to maintain user trust and accurate records."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must enforce access controls ensuring users can only view and modify expenses they created or are participants in, with all financial data encrypted at rest and in transit.",
+        "justification": "Expense data may contain sensitive financial information requiring protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The expense tracking module must achieve a cyclomatic complexity score below 15 for all methods and maintain a test coverage of at least 90%.",
+        "justification": "Complex financial calculations require high maintainability to ensure correctness over time."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must support the addition of new expense fields and splitting methods through configuration without requiring code changes.",
+        "justification": "Expense tracking requirements may evolve, requiring the system to adapt to new fields and splitting methods."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Faculties shall be able to upload and download assignments, college notices, student notices, journals, and videos.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system shall support all common file formats for assignments (DOC, DOCX, PDF, TXT), notices (PDF, DOCX), journals (PDF), and videos (MP4, AVI, MOV) with 100% format compatibility.",
+        "justification": "The FR requires handling multiple document types, necessitating comprehensive format support for faculty uploads and downloads."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall complete file uploads of up to 100MB in less than 30 seconds and downloads in less than 15 seconds under normal network conditions (minimum 10Mbps connection).",
+        "justification": "Faculty members need efficient file transfer capabilities to manage educational materials without delays."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall support at least 50 concurrent upload/download operations without degradation in performance.",
+        "justification": "Multiple faculty members may need to access the system simultaneously, especially during peak periods like exam preparation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The file upload/download interface shall provide clear progress indicators and confirmation messages, with no more than 3 steps required to complete either operation.",
+        "justification": "Faculty members need intuitive interfaces to efficiently manage educational materials without requiring extensive training."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system shall automatically resume interrupted uploads/downloads when connection is restored, with no more than 5% of data loss requiring retransmission.",
+        "justification": "Faculty operations should not be severely impacted by temporary network issues, ensuring reliable file transfers."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system shall implement role-based access controls ensuring only authorized faculty members can upload official notices and academic materials, with all access attempts logged.",
+        "justification": "The FR involves handling official academic materials that require proper authorization and accountability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All uploaded and downloaded files shall be scanned for malware with detection rates of at least 99% for known threats.",
+        "justification": "File exchange functionality creates potential security vulnerabilities that must be mitigated to protect system integrity."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The file management system shall be modular, allowing independent updates to upload, download, and storage components without affecting other system functions.",
+        "justification": "The file handling functionality may need updates or enhancements over time without disrupting the entire system."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system shall be capable of scaling to store up to 5TB of uploaded content with the ability to expand storage capacity by at least 20% annually without service interruption.",
+        "justification": "Educational content will grow over time, requiring scalable storage capabilities to accommodate increasing faculty uploads."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall allow users to rate and review services by providing comments on tour plans or services, with comments stored in the database and a thank you message displayed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The rating system shall support numerical ratings (1-5 stars) and text reviews of up to 1000 characters, with 100% of submitted content properly stored and displayed.",
+        "justification": "The FR requires complete and accurate capture of user feedback in multiple formats (ratings and comments)."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall process and store ratings and reviews within 2 seconds of submission and display the thank you message within 1 second thereafter.",
+        "justification": "Quick response times are essential for a positive user experience when providing feedback."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall handle at least 100 concurrent rating/review submissions without performance degradation.",
+        "justification": "Popular services may receive multiple reviews simultaneously, requiring efficient processing capacity."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The rating and review interface shall be intuitive enough that 90% of first-time users can successfully submit feedback without assistance or errors.",
+        "justification": "The feedback system should be accessible to all users regardless of technical proficiency to maximize participation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The thank you message shall be customized based on the rating provided (positive or negative) and displayed prominently for at least 3 seconds before dismissal.",
+        "justification": "Acknowledgment of user feedback enhances engagement and encourages future participation."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The rating and review system shall maintain 99.9% uptime during business hours and automatically save draft reviews if submission is interrupted.",
+        "justification": "Users should be able to provide feedback reliably without losing their input due to system issues."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system shall implement CAPTCHA or equivalent verification for anonymous reviews to prevent automated spam, with false positive rate below 1%.",
+        "justification": "Review systems are vulnerable to spam and abuse, requiring protective measures while maintaining legitimate user access."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "User review data shall be stored with appropriate access controls ensuring only authorized personnel can access the complete review database.",
+        "justification": "Review data may contain personal opinions and information requiring protection from unauthorized access."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The rating and review component shall be implemented as a separate module that can be modified or enhanced without affecting other system functions.",
+        "justification": "Feedback mechanisms often require refinement based on usage patterns and business needs."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system shall support future expansion to include media attachments (photos, videos) in reviews without requiring major architectural changes.",
+        "justification": "Feedback systems typically evolve to include richer content types, requiring forward-compatible design."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Customers shall be able to search for new products in the database by entering item names, and upon successful search, view detailed product information.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The product search functionality shall return relevant results for at least 95% of valid product name queries, including partial matches and common misspellings.",
+        "justification": "This ensures the search function effectively fulfills its core purpose of finding products based on customer input."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The product search shall return results within 2 seconds for 95% of queries, even during peak loads of up to 1000 concurrent users.",
+        "justification": "Fast search response is critical for customer satisfaction when searching for products."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The product detail view shall load all information (images, specifications, pricing) within 3 seconds for 90% of requests.",
+        "justification": "Customers need timely access to product details after performing a search to make purchase decisions."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The search interface shall provide auto-suggestions after the user types 3 or more characters, with suggestions appearing within 500ms.",
+        "justification": "Auto-suggestions enhance the search experience by helping customers find products more easily."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The product detail view shall present information in a consistent layout with critical details (price, availability, specifications) visible without scrolling on standard desktop and mobile viewports.",
+        "justification": "Consistent and accessible presentation of product information improves the customer experience after search."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The search functionality shall maintain 99.9% availability during business hours and 99.5% during non-business hours.",
+        "justification": "Search is a core customer-facing function that requires high availability to ensure customer satisfaction."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The search function shall sanitize all user inputs to prevent SQL injection and cross-site scripting attacks, with 100% of inputs validated before processing.",
+        "justification": "Search functionality involves user input that could be exploited if not properly secured."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The search functionality shall be implemented as a separate service module with defined APIs, allowing for updates without affecting other system components.",
+        "justification": "Modular implementation enables easier maintenance and updates to the search functionality."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The search system shall be able to scale to handle a 200% increase in product database size without degradation in performance.",
+        "justification": "As the product catalog grows, the search functionality must maintain its performance levels."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to search for suggested doctors for consultation based on their symptoms or predicted diseases.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The doctor recommendation system shall match users with appropriate specialists with at least 90% relevance based on symptoms or diseases entered.",
+        "justification": "The core function requires accurate matching between medical conditions and appropriate medical specialists."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The doctor search functionality shall return results within 3 seconds for 95% of queries, even during peak usage periods.",
+        "justification": "Users seeking medical consultation need timely recommendations, especially in potential emergency situations."
+      },
+      {
+        "attribute": "Compatibility",
+        "requirement": "The doctor search functionality shall be compatible with all major browsers (Chrome, Firefox, Safari, Edge) and mobile platforms (iOS, Android) with the same level of functionality.",
+        "justification": "Users may need to search for doctors across different devices and platforms, particularly in urgent situations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The symptom input interface shall provide auto-complete suggestions from a standardized medical terminology database after typing 2 or more characters.",
+        "justification": "Medical terminology can be complex; auto-complete helps users accurately describe their conditions."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The doctor recommendation results shall display key information (specialty, experience, availability, location) in a consistent format that requires no more than one click to access detailed profiles.",
+        "justification": "Users need clear, accessible information to make informed decisions about which doctor to consult."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The doctor search system shall maintain 99.95% uptime, with scheduled maintenance only during off-peak hours (2 AM - 4 AM local time).",
+        "justification": "Medical consultations may be needed at any time, requiring high availability of the search function."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All symptom and disease information entered by users shall be encrypted in transit and at rest using industry-standard encryption (TLS 1.3 and AES-256).",
+        "justification": "Medical information is highly sensitive personal data requiring strong protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system shall implement role-based access controls ensuring that only authorized healthcare providers can view detailed user symptom information.",
+        "justification": "Medical privacy regulations require strict access controls for patient health information."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The medical terminology and doctor database shall be updateable without system downtime, with changes reflected in search results within 15 minutes of updates.",
+        "justification": "Medical information and doctor availability change frequently, requiring easy maintenance."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "The system shall clearly indicate that doctor recommendations are not a substitute for emergency care, with prominent warnings for symptoms that suggest immediate medical attention is required.",
+        "justification": "Patient safety requires clear guidance about the limitations of the recommendation system in emergency situations."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to choose payment methods such as PayPal balance, debit or credit card, and transfer funds by entering recipient's email ID or name, and making the payment.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must support 100% of the specified payment methods (PayPal balance, debit card, credit card) without errors during transaction processing.",
+        "justification": "The FR explicitly requires multiple payment methods, necessitating complete implementation of all specified options."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The payment processing system must complete transactions within 3 seconds for 95% of payment attempts under normal operating conditions.",
+        "justification": "Payment processing requires efficient time behavior to ensure user satisfaction and prevent abandonment during the payment flow."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The payment interface must clearly indicate all available payment methods with recognizable icons and labels, with 90% of users able to complete a payment transaction on their first attempt without assistance.",
+        "justification": "The FR focuses on user choice and payment completion, requiring an intuitive interface for payment method selection and recipient identification."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The payment system must maintain 99.9% uptime during business hours and 99.5% during non-business hours, with no more than 5 minutes of consecutive downtime.",
+        "justification": "Payment processing is a critical function requiring high availability to ensure users can complete transactions when needed."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All payment data must be encrypted using TLS 1.3 during transmission, and credit/debit card information must be tokenized and comply with PCI DSS requirements.",
+        "justification": "The FR involves sensitive financial information requiring strong security measures to protect user payment details."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement multi-factor authentication for payments exceeding $1000 and maintain an audit log of all payment transactions for at least 2 years.",
+        "justification": "Financial transactions require accountability and non-repudiation to protect both users and the organization from fraud."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The payment processing module must be implemented as a separate service with well-defined APIs that can be updated independently of other system components.",
+        "justification": "Payment methods and regulations change frequently, requiring a modular design that supports easy modifications and updates."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The payment system must be designed to incorporate new payment methods with no more than 2 weeks of development effort per new payment method.",
+        "justification": "The FR implies a need for multiple payment methods, suggesting adaptability to add new payment options in the future is important."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall automatically update the available quantity of each medicine after a sale is completed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The inventory system must accurately update medicine quantities for 100% of completed sales with zero discrepancies between recorded sales and inventory changes.",
+        "justification": "The FR requires precise tracking of medicine quantities, necessitating complete accuracy in inventory updates."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The inventory update must complete within 500 milliseconds after sale confirmation for 99% of transactions.",
+        "justification": "Automatic updates should occur promptly to maintain real-time inventory accuracy and prevent potential overselling."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The inventory update mechanism must have a failure rate of less than 0.01%, with automatic retry capabilities for failed updates.",
+        "justification": "Inventory accuracy is critical for medicine sales, requiring high reliability to prevent stock discrepancies."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Inventory update operations must be restricted to authenticated sales processes and authorized personnel, with all changes logged for audit purposes.",
+        "justification": "Medicine inventory represents valuable assets requiring protection from unauthorized modifications."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The inventory update module must include automated tests that verify correct quantity calculations for at least 95% of possible sales scenarios.",
+        "justification": "The automatic nature of updates requires high testability to ensure continued correct operation as the system evolves."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The inventory system must support batch updates for bulk sales and returns, handling at least 1,000 items in a single transaction without performance degradation.",
+        "justification": "While the FR mentions individual sales, the system should scale to accommodate various sales volumes and scenarios."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "The system must implement concurrency controls to prevent race conditions when multiple sales of the same medicine occur simultaneously, ensuring inventory accuracy is maintained.",
+        "justification": "Medicine inventory requires safe integration with the sales process to prevent critical errors in stock levels that could affect patient care."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall provide a calendar view of available appointment slots for each healthcare provider",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The calendar view must display 100% of available appointment slots for each healthcare provider without omission, including all time slots within the provider's working hours.",
+        "justification": "Complete representation of all available slots is essential for the calendar view to fulfill its core purpose."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The calendar view must load and display all available appointment slots within 2 seconds, even when displaying data for up to 50 healthcare providers simultaneously.",
+        "justification": "Quick loading of the calendar is necessary for a responsive user experience when scheduling appointments."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The calendar interface must use color coding and clear visual indicators to distinguish between available, booked, and unavailable time slots, with a legend explaining these indicators.",
+        "justification": "Visual differentiation is critical for users to quickly identify available slots in a calendar view."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The calendar must support navigation between days, weeks, and months with no more than 2 clicks or interactions per navigation action.",
+        "justification": "Easy navigation is essential for users to find available appointment slots across different time periods."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The calendar view must maintain 99.9% accuracy in reflecting real-time availability, with automatic updates at intervals of no more than 30 seconds.",
+        "justification": "Real-time accuracy is crucial to prevent double bookings and ensure users see current availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The calendar view must restrict access to provider availability information based on user roles, with authentication required for viewing sensitive scheduling details.",
+        "justification": "Provider schedules may contain sensitive information requiring appropriate access controls."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The calendar component must be implemented as a reusable module that can be updated independently from other system components, with documented APIs for integration.",
+        "justification": "A modular approach ensures the calendar view can be maintained and enhanced without affecting other system functions."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The calendar view must support customizable time slot intervals ranging from 5 minutes to 4 hours to accommodate different appointment types across various healthcare specialties.",
+        "justification": "Different healthcare providers may require different appointment durations based on their specialty and services."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to search for properties based on specific criteria such as location, area, and number of bedrooms.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The search functionality must support all specified criteria (location, area, number of bedrooms) with 100% accuracy in matching results to the specified parameters.",
+        "justification": "The search must correctly implement all the specified criteria to fulfill its core purpose."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The property search must return results within 3 seconds for queries that may return up to 1000 properties, even during peak usage periods with 500 concurrent users.",
+        "justification": "Quick search response is essential for a good user experience in property search applications."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The search function must utilize database indexing on all searchable fields to optimize query performance, with query execution plans that execute in under 1 second for 95% of searches.",
+        "justification": "Efficient resource utilization is necessary to handle potentially complex property search queries."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The search interface must provide autocomplete suggestions for location fields after the user types 3 or more characters, with suggestions appearing within 500ms.",
+        "justification": "Autocomplete functionality improves usability by helping users specify locations correctly."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The search results must be sortable by at least 5 different criteria (e.g., price, date listed, size) with clear visual indicators of the current sort order.",
+        "justification": "Sorting options are essential for users to organize property search results according to their preferences."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The search functionality must maintain 99.95% uptime during business hours (8am-8pm local time), with degraded performance acceptable outside these hours only during scheduled maintenance.",
+        "justification": "High availability is crucial for property search functionality as it's a core feature of the system."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The search function must sanitize all user inputs to prevent SQL injection attacks, with input validation for all search parameters before query execution.",
+        "justification": "Search functionality typically involves user input that must be secured against potential injection attacks."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The search algorithm must be implemented in a separate service layer with documented APIs, allowing for future modifications to search logic without affecting the user interface.",
+        "justification": "Separating search logic improves maintainability as search algorithms may need optimization or enhancement over time."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The search functionality must support the addition of new search criteria without requiring more than 8 hours of development effort per new criterion.",
+        "justification": "The system should be adaptable to include additional property search criteria as business needs evolve."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall calculate modification charges based on modifying time, date, route, availability, display new fares, and process payments through the payment gateway.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must correctly calculate modification charges with 100% accuracy for all combinations of time, date, route, and availability changes according to the defined business rules.",
+        "justification": "The FR requires precise calculation of charges based on multiple variables, necessitating complete functional correctness."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must calculate modification charges and display new fares within 2 seconds of receiving all required inputs, even during peak loads of 1000 concurrent users.",
+        "justification": "Quick calculation and display of fares is essential for a smooth user experience when making modifications."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Payment processing through the payment gateway must complete within 5 seconds for 95% of transactions and within 10 seconds for 99.5% of transactions.",
+        "justification": "The FR includes payment processing which requires efficient time behavior to maintain user satisfaction."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must display new fares in a format that clearly differentiates between original fare, modification charges, and total amount due, with appropriate currency symbols and decimal places.",
+        "justification": "Clear presentation of fare information is crucial for users to understand the financial impact of their modifications."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must maintain 99.9% uptime for the modification and payment processing functions, with scheduled maintenance occurring only during off-peak hours.",
+        "justification": "The FR involves financial transactions that require high availability to ensure users can make modifications when needed."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All payment data must be encrypted using TLS 1.3 or higher during transmission and must comply with PCI DSS requirements for storage and processing.",
+        "justification": "The FR includes payment processing which requires strong security measures to protect sensitive financial information."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must maintain an audit log of all modification charges and payment transactions, recording user ID, timestamp, modification details, and transaction ID for a minimum of 3 years.",
+        "justification": "Financial transactions require accountability and traceability for both business and regulatory purposes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The fare calculation module must be implemented as a separate component with well-defined interfaces, allowing for modification of pricing rules without affecting other system components.",
+        "justification": "The complexity of fare calculations based on multiple variables requires a modular approach for easier maintenance and updates."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must support integration with at least 3 different payment gateways, with the ability to add new payment gateways without modifying the core payment processing logic.",
+        "justification": "Payment processing through gateways requires flexibility to adapt to different providers and future changes."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall generate a PDF report of all transactions and send a copy to the customer's email address and another copy to the system database for monthly transaction calculation.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The PDF report must include all transaction details including date, time, transaction ID, amount, payment method, and item details with 100% accuracy and completeness.",
+        "justification": "The FR requires comprehensive transaction reporting with no missing information to ensure functional completeness."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must generate the PDF report and send it to both the customer's email and the database within 30 seconds of transaction completion.",
+        "justification": "Timely generation and delivery of transaction reports is necessary for good user experience and operational efficiency."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The PDF generation process must consume no more than 100MB of memory per report, regardless of the number of transactions included.",
+        "justification": "Efficient resource utilization is important for scalability, especially when generating reports with many transactions."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The PDF report must be formatted with a clear hierarchical structure, consistent font sizes (minimum 11pt), appropriate spacing, and must be accessible according to PDF/UA standards.",
+        "justification": "The report needs to be easily readable and accessible to all users, including those with disabilities."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must successfully deliver email reports to customers for at least 99% of all transactions, with automatic retry mechanisms for failed deliveries (3 attempts at 10-minute intervals).",
+        "justification": "Reliable delivery of transaction reports is essential as they serve as receipts and records for customers."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All PDF reports must be digitally signed to ensure authenticity and must be encrypted with AES-256 when stored in the database and when transmitted via email.",
+        "justification": "Transaction reports contain sensitive financial information requiring protection and verification of authenticity."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Customer email addresses must be validated before sending reports and must be stored in the database using appropriate encryption or hashing techniques in compliance with data protection regulations.",
+        "justification": "Email addresses are personal data requiring protection, and validation prevents delivery errors."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The PDF report template must be configurable through external files or database settings, allowing for changes to report format, branding, and content without requiring code modifications.",
+        "justification": "Report formats often need updates for branding or content changes, requiring easy maintainability."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must support multiple email service providers with automatic failover capability if the primary email service is unavailable.",
+        "justification": "Email delivery is critical to the FR, requiring adaptability to ensure successful delivery under various conditions."
+      }
+    ]
+  }
+]

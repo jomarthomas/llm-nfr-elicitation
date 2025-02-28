@@ -1,0 +1,82 @@
+[
+  {
+    "functionalRequirement": "User shall/will be able to open various types of accounts like savings, fixed deposit, etc.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the creation of at least 5 different account types (e.g., savings, fixed deposit, current, credit card, loan) with 100% of required fields (e.g., account number, account holder name, initial deposit) for each type.",
+        "justification": "The FR requires the system to accommodate various account types, necessitating comprehensive support for different account categories."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must validate user input for account creation (e.g., valid account type, sufficient initial deposit) and ensure that at least 99.9% of valid account creation requests are processed correctly.",
+        "justification": "The FR implies the need for accurate and correct account creation based on user input."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must create a new account in less than 500 milliseconds for up to 100 concurrent requests.",
+        "justification": "The FR involves real-time account creation, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 20 MB of memory to process a single account creation request.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple account types and users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide clear and concise instructions for account creation, with an average user completion time of less than 2 minutes for 90% of new users.",
+        "justification": "The FR requires user interaction with the account creation process, which should be easy to learn and use."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must be able to recover from at least 95% of account creation failures (e.g., due to invalid user input, temporary database connection issues) without requiring manual intervention.",
+        "justification": "The FR assumes reliable account creation, necessitating robust fault tolerance mechanisms."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt sensitive account information (e.g., account number, account holder name) using AES-256 during storage and transmission.",
+        "justification": "The FR involves accessing sensitive account data, which requires protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to add expenses with details including amount, date, payer, and optional split among participants.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the addition of expenses with at least 5 required fields (e.g., amount, date, payer, description) and 2 optional fields (e.g., split among participants, category) for 100% of expense types.",
+        "justification": "The FR requires the system to accommodate detailed expense tracking, necessitating comprehensive support for various expense fields."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must validate user input for expense addition (e.g., valid date, positive amount) and ensure that at least 99.9% of valid expense addition requests are processed correctly.",
+        "justification": "The FR implies the need for accurate and correct expense tracking based on user input."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must add a new expense in less than 200 milliseconds for up to 500 concurrent requests.",
+        "justification": "The FR involves real-time expense tracking, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 15 MB of memory to process a single expense addition request.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple expenses and users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for adding expenses, with an average user completion time of less than 1 minute for 90% of users.",
+        "justification": "The FR requires user interaction with the expense addition process, which should be easy to operate and use."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to add expenses for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to expense tracking, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that at least 99.99% of expense data is accurately stored and retrieved, with no unauthorized modifications or deletions.",
+        "justification": "The FR involves storing sensitive expense data, which requires protection against data corruption or tampering."
+      }
+    ]
+  }
+]

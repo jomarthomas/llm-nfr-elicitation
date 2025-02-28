@@ -1,0 +1,87 @@
+[
+  {
+    "functionalRequirement": "Faculties shall be able to upload and download assignments, college notices, student notices, journals, and videos.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support uploading and downloading of all specified file types (assignments, college notices, student notices, journals, and videos) for 100% of faculty users.",
+        "justification": "The FR requires comprehensive file handling capabilities for faculty, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that uploaded files are correctly stored and downloadable in their original format for 99.9% of valid uploads.",
+        "justification": "The FR implies the need for accurate and correct file handling based on faculty interactions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must complete file uploads and downloads in less than 5 seconds for files up to 100 MB in size, for up to 100 concurrent requests.",
+        "justification": "The FR involves frequent file interactions, requiring timely responses for usability and productivity."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 200 MB of memory to process a single file upload or download request.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple files and users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an intuitive interface for uploading and downloading files, with clear instructions and feedback for successful or failed operations.",
+        "justification": "The FR requires interaction with files, which should be easy to operate for faculty users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for file uploads and downloads for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to file handling services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt files in transit using TLS 1.3 and store them securely with access controls, ensuring that only authorized faculty users can access uploaded files.",
+        "justification": "The FR involves handling potentially sensitive files, which requires protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall allow users to rate and review services by providing comments on tour plans or services, with comments stored in the database and a thank you message displayed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support rating and reviewing of all specified services (tour plans or services) for 100% of user interactions.",
+        "justification": "The FR requires comprehensive review capabilities for users, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that user ratings and comments are correctly stored in the database and displayed for 99.9% of valid submissions.",
+        "justification": "The FR implies the need for accurate and correct handling of user feedback."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process and store user ratings and comments in less than 1 second, for up to 500 concurrent requests.",
+        "justification": "The FR involves real-time feedback, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 20 MB of memory to process a single rating or comment submission.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple user interactions."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user-friendly interface for submitting ratings and comments, with clear instructions and feedback for successful or failed operations.",
+        "justification": "The FR requires interaction with the review system, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must display a thank you message or acknowledgement for 100% of successful rating and comment submissions, to encourage user participation.",
+        "justification": "The FR aims to engage users in providing feedback, necessitating a responsive and appreciative system interaction."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for user ratings and comments for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to review services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that user ratings and comments are not tampered with or altered during storage or transmission, using measures such as digital signatures or hashing.",
+        "justification": "The FR involves handling user feedback, which requires protection against data corruption or manipulation."
+      }
+    ]
+  }
+]

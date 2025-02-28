@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Grade from '$components/Grade.svelte';
 	import { addToast } from '$stores/ToastStore';
+	import { page } from '$app/state';
 
 	// TODO: the type is already in nfrSchema but that doesn't have "id" and
 	// I can't add it dynamically here
@@ -54,6 +55,7 @@
 
 		const payload = {
 			id: FR.fr?.id,
+			user: page.params.user,
 			identifiedNFRs: nfrScores?.map((score) => ({
 				id: score.id,
 				attribute: score.attributeScore,

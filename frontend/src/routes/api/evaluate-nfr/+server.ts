@@ -6,6 +6,7 @@ import { nfrTable } from '$db/schema';
 export const POST: RequestHandler = async ({ request }) => {
 	const payload = (await request.json()) as {
 		id: number;
+		user: string;
 		identifiedNFRs: [
 			{
 				id: string;
@@ -44,6 +45,13 @@ export const POST: RequestHandler = async ({ request }) => {
 			await db
 				.update(nfrTable)
 				.set({ validity: element.requirement })
+				.where(eq(nfrTable.id, element.id))
+		);
+
+		updates.push(
+			await db
+				.update(nfrTable)
+				.set({ user: payload.user })
 				.where(eq(nfrTable.id, element.id))
 		);
 	}

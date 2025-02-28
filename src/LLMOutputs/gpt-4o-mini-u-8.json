@@ -1,0 +1,57 @@
+[
+  {
+    "functionalRequirement": "The system shall provide a calendar view of available appointment slots for each healthcare provider.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display all available appointment slots for each healthcare provider for 100% of the specified time periods.",
+        "justification": "The FR requires a comprehensive view of appointment availability, necessitating complete coverage of all relevant time slots."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must render the calendar view of available appointment slots within 200 milliseconds for up to 500 concurrent users.",
+        "justification": "A quick response time is essential for user satisfaction when accessing appointment information."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The calendar view must be intuitive and easy to navigate for users, allowing them to find available slots within 3 clicks.",
+        "justification": "The FR implies that users should be able to easily interact with the calendar to find appointments without extensive training."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The calendar view must be accessible and functional 99.9% of the operational time.",
+        "justification": "Users need consistent access to appointment slots, which is critical for planning their visits."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to search for properties based on specific criteria such as location, area, and number of bedrooms.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The search functionality must allow filtering by all specified criteria (location, area, number of bedrooms) for 100% of the property listings.",
+        "justification": "The FR requires comprehensive search capabilities, ensuring all relevant criteria are supported."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must return search results within 3 seconds for queries involving up to 1,000 property listings.",
+        "justification": "Fast search results are essential for user satisfaction and engagement when looking for properties."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The system must provide tooltips or help text for each search criterion to assist users in understanding how to effectively use the search.",
+        "justification": "The FR indicates a need for user support in the search process, enhancing usability."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The search feature must gracefully handle invalid input criteria by providing user-friendly error messages without crashing.",
+        "justification": "Ensuring that users can correct their inputs without system failure is crucial for maintaining a reliable user experience."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that user search queries are logged securely and anonymized to protect user privacy.",
+        "justification": "User search data can be sensitive, and protecting this information is essential for maintaining trust."
+      }
+    ]
+  }
+]

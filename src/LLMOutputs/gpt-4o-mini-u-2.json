@@ -1,0 +1,62 @@
+[
+  {
+    "functionalRequirement": "Faculties shall be able to upload and download assignments, college notices, student notices, journals, and videos.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support uploading and downloading of assignments, college notices, student notices, journals, and videos for 100% of specified use cases.",
+        "justification": "The FR specifies various document types that faculties need to manage, requiring comprehensive functionality to cover all specified use cases."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide a user-friendly interface that enables faculties to upload and download documents with no more than 3 clicks.",
+        "justification": "Ease of use is critical for faculties to efficiently manage their documents, ensuring they can quickly learn and perform these tasks."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must complete upload and download operations within 5 seconds for files up to 100 MB.",
+        "justification": "Timely uploads and downloads are essential for maintaining an efficient workflow for faculties."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for document uploads and downloads 99.9% of the operational time.",
+        "justification": "Continuous access to the system is necessary for faculties to perform their tasks without interruptions."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that all uploaded documents are stored without alteration and maintain a checksum for verification.",
+        "justification": "Ensuring the integrity of documents is crucial as faculties rely on accurate and unaltered submissions."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall allow users to rate and review services by providing comments on tour plans or services, with comments stored in the database and a thank you message displayed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must allow users to submit ratings and comments for 100% of the available tour plans and services.",
+        "justification": "The FR specifies that users should be able to review all services, necessitating complete functionality for all offerings."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must display a thank you message immediately after a user submits a rating or comment, enhancing user satisfaction.",
+        "justification": "Providing immediate feedback to users after their action encourages engagement and positive user experience."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process and store user comments in the database within 2 seconds of submission.",
+        "justification": "Quick processing of user inputs is essential to maintain user interest and satisfaction."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for users to submit ratings and comments 99.95% of the operational time.",
+        "justification": "High availability is necessary to ensure that users can always provide feedback on services."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that user comments and ratings are stored securely and are only accessible to authorized personnel.",
+        "justification": "Protecting user data is critical to maintain trust and comply with privacy regulations."
+      }
+    ]
+  }
+]

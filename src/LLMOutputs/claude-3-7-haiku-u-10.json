@@ -1,0 +1,102 @@
+[
+  {
+    "functionalRequirement": "System shall calculate modification charges based on modifying time, date, route, availability, display new fares, and process payments through the payment gateway.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must correctly calculate modification charges with 100% accuracy for all combinations of time, date, route, and availability changes according to the defined business rules.",
+        "justification": "The FR requires precise calculation of charges based on multiple variables, necessitating complete functional correctness."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must calculate modification charges and display new fares within 2 seconds of receiving all required inputs, even during peak loads of 1000 concurrent users.",
+        "justification": "Quick calculation and display of fares is essential for a smooth user experience when making modifications."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Payment processing through the payment gateway must complete within 5 seconds for 95% of transactions and within 10 seconds for 99.5% of transactions.",
+        "justification": "The FR includes payment processing which requires efficient time behavior to maintain user satisfaction."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The system must display new fares in a format that clearly differentiates between original fare, modification charges, and total amount due, with appropriate currency symbols and decimal places.",
+        "justification": "Clear presentation of fare information is crucial for users to understand the financial impact of their modifications."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must maintain 99.9% uptime for the modification and payment processing functions, with scheduled maintenance occurring only during off-peak hours.",
+        "justification": "The FR involves financial transactions that require high availability to ensure users can make modifications when needed."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All payment data must be encrypted using TLS 1.3 or higher during transmission and must comply with PCI DSS requirements for storage and processing.",
+        "justification": "The FR includes payment processing which requires strong security measures to protect sensitive financial information."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must maintain an audit log of all modification charges and payment transactions, recording user ID, timestamp, modification details, and transaction ID for a minimum of 3 years.",
+        "justification": "Financial transactions require accountability and traceability for both business and regulatory purposes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The fare calculation module must be implemented as a separate component with well-defined interfaces, allowing for modification of pricing rules without affecting other system components.",
+        "justification": "The complexity of fare calculations based on multiple variables requires a modular approach for easier maintenance and updates."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must support integration with at least 3 different payment gateways, with the ability to add new payment gateways without modifying the core payment processing logic.",
+        "justification": "Payment processing through gateways requires flexibility to adapt to different providers and future changes."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall generate a PDF report of all transactions and send a copy to the customer's email address and another copy to the system database for monthly transaction calculation.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The PDF report must include all transaction details including date, time, transaction ID, amount, payment method, and item details with 100% accuracy and completeness.",
+        "justification": "The FR requires comprehensive transaction reporting with no missing information to ensure functional completeness."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system must generate the PDF report and send it to both the customer's email and the database within 30 seconds of transaction completion.",
+        "justification": "Timely generation and delivery of transaction reports is necessary for good user experience and operational efficiency."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The PDF generation process must consume no more than 100MB of memory per report, regardless of the number of transactions included.",
+        "justification": "Efficient resource utilization is important for scalability, especially when generating reports with many transactions."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The PDF report must be formatted with a clear hierarchical structure, consistent font sizes (minimum 11pt), appropriate spacing, and must be accessible according to PDF/UA standards.",
+        "justification": "The report needs to be easily readable and accessible to all users, including those with disabilities."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system must successfully deliver email reports to customers for at least 99% of all transactions, with automatic retry mechanisms for failed deliveries (3 attempts at 10-minute intervals).",
+        "justification": "Reliable delivery of transaction reports is essential as they serve as receipts and records for customers."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All PDF reports must be digitally signed to ensure authenticity and must be encrypted with AES-256 when stored in the database and when transmitted via email.",
+        "justification": "Transaction reports contain sensitive financial information requiring protection and verification of authenticity."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Customer email addresses must be validated before sending reports and must be stored in the database using appropriate encryption or hashing techniques in compliance with data protection regulations.",
+        "justification": "Email addresses are personal data requiring protection, and validation prevents delivery errors."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The PDF report template must be configurable through external files or database settings, allowing for changes to report format, branding, and content without requiring code modifications.",
+        "justification": "Report formats often need updates for branding or content changes, requiring easy maintainability."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system must support multiple email service providers with automatic failover capability if the primary email service is unavailable.",
+        "justification": "Email delivery is critical to the FR, requiring adaptability to ensure successful delivery under various conditions."
+      }
+    ]
+  }
+]

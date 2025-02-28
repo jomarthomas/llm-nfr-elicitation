@@ -1,0 +1,67 @@
+[
+  {
+    "functionalRequirement": "User shall be able to choose payment methods such as PayPal balance, debit or credit card, and transfer funds by entering recipient's email ID or name, and making the payment.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support at least three payment methods (PayPal balance, debit card, credit card) for 100% of payment transactions.",
+        "justification": "The FR requires multiple payment options to ensure users can complete transactions using their preferred method."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately process payments and reflect the correct amount debited or credited for 99.9% of transactions.",
+        "justification": "The FR implies the need for precise financial transactions, which must be correct to maintain user trust."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process payment transactions within 2 seconds for 95% of cases.",
+        "justification": "Quick processing of payments is crucial for user satisfaction and retention."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The payment interface must allow users to complete a payment within three clicks or taps, with clear instructions for each payment method.",
+        "justification": "The FR involves user interaction with payment options, necessitating an intuitive and easy-to-learn interface."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all payment information using AES-256 encryption during transmission.",
+        "justification": "Payment information is sensitive and must be protected to prevent unauthorized access."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that all payment transactions are logged securely and cannot be altered after completion.",
+        "justification": "Maintaining the integrity of transaction records is essential for accountability and auditing."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The payment processing system must be operational 99.9% of the time to ensure users can make transactions at any time.",
+        "justification": "High availability is critical for a payment system to ensure users can complete transactions without interruption."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall automatically update the available quantity of each medicine after a sale is completed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must automatically update the available quantity of each medicine for 100% of sales transactions.",
+        "justification": "The FR requires that stock levels be accurately maintained to reflect real-time inventory after sales."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must update the available quantity within 1 second after a sale is completed.",
+        "justification": "Real-time updates are essential to prevent overselling and ensure accurate inventory management."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must be able to recover from failures during the update process without losing transaction data.",
+        "justification": "The FR implies that the system must handle errors gracefully to maintain data integrity."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for easy updates to the inventory management logic without requiring extensive downtime.",
+        "justification": "Flexibility in maintaining and updating the system is important to adapt to changing business needs."
+      }
+    ]
+  }
+]

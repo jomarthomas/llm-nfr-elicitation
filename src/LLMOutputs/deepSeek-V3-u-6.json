@@ -1,0 +1,77 @@
+[
+  {
+    "functionalRequirement": "User shall be able to choose payment methods such as PayPal balance, debit or credit card, and transfer funds by entering recipient's email ID or name, and making the payment.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all specified payment methods (PayPal balance, debit card, credit card) and allow fund transfers via recipient's email ID or name for 100% of valid inputs.",
+        "justification": "The FR requires comprehensive support for multiple payment methods and transfer mechanisms, necessitating full functional coverage."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately process payments and fund transfers with zero errors for 99.99% of valid transactions.",
+        "justification": "The FR implies the need for precise and error-free payment processing to ensure user trust and satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process payments and fund transfers in less than 2 seconds for up to 10,000 concurrent users.",
+        "justification": "The FR involves real-time payment processing, requiring timely responses for usability and efficiency."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive user interface for selecting payment methods, entering recipient details, and confirming payments.",
+        "justification": "The FR requires user interaction for payment processing, necessitating ease of use."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process payments and fund transfers for 99.99% of the operational time.",
+        "justification": "The FR assumes continuous access to payment services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all payment and recipient data using AES-256 during transmission and storage.",
+        "justification": "The FR involves sensitive financial and personal data, requiring robust protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that payment and recipient data cannot be altered during transmission or storage.",
+        "justification": "The FR requires secure handling of financial transactions to prevent tampering."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall automatically update the available quantity of each medicine after a sale is completed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must update the available quantity of all medicines in the inventory for 100% of completed sales.",
+        "justification": "The FR requires comprehensive coverage of inventory updates for all sales transactions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately update the available quantity of each medicine with zero errors for 99.99% of completed sales.",
+        "justification": "The FR implies the need for precise and error-free inventory updates to maintain accurate stock levels."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must update the available quantity of each medicine within 1 second of a sale being completed.",
+        "justification": "The FR involves real-time inventory updates, requiring timely processing for operational efficiency."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to update inventory quantities for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to inventory management services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that inventory data cannot be altered during updates or storage.",
+        "justification": "The FR requires secure handling of inventory data to prevent tampering."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for easy modification of inventory update logic without disrupting other functionalities.",
+        "justification": "The FR involves inventory management, which may require updates or changes over time."
+      }
+    ]
+  }
+]

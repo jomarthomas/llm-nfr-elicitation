@@ -1,0 +1,107 @@
+[
+  {
+    "functionalRequirement": "Faculties shall be able to upload and download assignments, college notices, student notices, journals, and videos.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system shall support all common file formats for assignments (DOC, DOCX, PDF, TXT), notices (PDF, DOCX), journals (PDF), and videos (MP4, AVI, MOV) with 100% format compatibility.",
+        "justification": "The FR requires handling multiple document types, necessitating comprehensive format support for faculty uploads and downloads."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall complete file uploads of up to 100MB in less than 30 seconds and downloads in less than 15 seconds under normal network conditions (minimum 10Mbps connection).",
+        "justification": "Faculty members need efficient file transfer capabilities to manage educational materials without delays."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall support at least 50 concurrent upload/download operations without degradation in performance.",
+        "justification": "Multiple faculty members may need to access the system simultaneously, especially during peak periods like exam preparation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The file upload/download interface shall provide clear progress indicators and confirmation messages, with no more than 3 steps required to complete either operation.",
+        "justification": "Faculty members need intuitive interfaces to efficiently manage educational materials without requiring extensive training."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The system shall automatically resume interrupted uploads/downloads when connection is restored, with no more than 5% of data loss requiring retransmission.",
+        "justification": "Faculty operations should not be severely impacted by temporary network issues, ensuring reliable file transfers."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system shall implement role-based access controls ensuring only authorized faculty members can upload official notices and academic materials, with all access attempts logged.",
+        "justification": "The FR involves handling official academic materials that require proper authorization and accountability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All uploaded and downloaded files shall be scanned for malware with detection rates of at least 99% for known threats.",
+        "justification": "File exchange functionality creates potential security vulnerabilities that must be mitigated to protect system integrity."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The file management system shall be modular, allowing independent updates to upload, download, and storage components without affecting other system functions.",
+        "justification": "The file handling functionality may need updates or enhancements over time without disrupting the entire system."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system shall be capable of scaling to store up to 5TB of uploaded content with the ability to expand storage capacity by at least 20% annually without service interruption.",
+        "justification": "Educational content will grow over time, requiring scalable storage capabilities to accommodate increasing faculty uploads."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall allow users to rate and review services by providing comments on tour plans or services, with comments stored in the database and a thank you message displayed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The rating system shall support numerical ratings (1-5 stars) and text reviews of up to 1000 characters, with 100% of submitted content properly stored and displayed.",
+        "justification": "The FR requires complete and accurate capture of user feedback in multiple formats (ratings and comments)."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall process and store ratings and reviews within 2 seconds of submission and display the thank you message within 1 second thereafter.",
+        "justification": "Quick response times are essential for a positive user experience when providing feedback."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The system shall handle at least 100 concurrent rating/review submissions without performance degradation.",
+        "justification": "Popular services may receive multiple reviews simultaneously, requiring efficient processing capacity."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The rating and review interface shall be intuitive enough that 90% of first-time users can successfully submit feedback without assistance or errors.",
+        "justification": "The feedback system should be accessible to all users regardless of technical proficiency to maximize participation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The thank you message shall be customized based on the rating provided (positive or negative) and displayed prominently for at least 3 seconds before dismissal.",
+        "justification": "Acknowledgment of user feedback enhances engagement and encourages future participation."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The rating and review system shall maintain 99.9% uptime during business hours and automatically save draft reviews if submission is interrupted.",
+        "justification": "Users should be able to provide feedback reliably without losing their input due to system issues."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system shall implement CAPTCHA or equivalent verification for anonymous reviews to prevent automated spam, with false positive rate below 1%.",
+        "justification": "Review systems are vulnerable to spam and abuse, requiring protective measures while maintaining legitimate user access."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "User review data shall be stored with appropriate access controls ensuring only authorized personnel can access the complete review database.",
+        "justification": "Review data may contain personal opinions and information requiring protection from unauthorized access."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The rating and review component shall be implemented as a separate module that can be modified or enhanced without affecting other system functions.",
+        "justification": "Feedback mechanisms often require refinement based on usage patterns and business needs."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The system shall support future expansion to include media attachments (photos, videos) in reviews without requiring major architectural changes.",
+        "justification": "Feedback systems typically evolve to include richer content types, requiring forward-compatible design."
+      }
+    ]
+  }
+]

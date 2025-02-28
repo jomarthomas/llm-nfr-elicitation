@@ -1,0 +1,102 @@
+[
+  {
+    "functionalRequirement": "User shall be able to choose payment methods such as PayPal balance, debit or credit card, and transfer funds by entering recipient's email ID or name, and making the payment.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support multiple payment methods including PayPal balance, debit or credit card, and transfer funds, and must allow users to enter recipient's email ID or name for fund transfers.",
+        "justification": "The FR requires the system to support a variety of payment methods and recipient identification, ensuring full functional coverage."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately process payments and transfers, ensuring that the correct amount is deducted from the user's account and credited to the recipient's account with 100% accuracy.",
+        "justification": "The FR implies the need for accurate and correct financial transactions, which are critical for user trust and compliance."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must complete a payment transaction within 5 seconds for 99.9% of transactions.",
+        "justification": "The FR involves real-time payment processing, which requires quick and efficient handling to maintain user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory per transaction to process payments and fund transfers.",
+        "justification": "Efficient resource use is essential for handling multiple transactions simultaneously without impacting performance."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for selecting payment methods and entering recipient information, with clear error messages for invalid inputs.",
+        "justification": "The FR requires user interaction, which should be straightforward and error-tolerant to enhance user experience."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must be able to recover from payment processing errors and retry failed transactions up to 3 times before notifying the user.",
+        "justification": "The FR involves financial transactions, which should be resilient to errors to prevent data loss or incorrect transactions."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must log all payment transactions and provide a mechanism for users to view transaction history and dispute any issues within 24 hours.",
+        "justification": "The FR requires a reliable system that can track and resolve payment issues, ensuring user trust and compliance."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all payment and recipient information using AES-256 encryption both at rest and in transit.",
+        "justification": "The FR involves sensitive financial and personal information, which must be protected to ensure user privacy and security."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must use digital signatures to verify the authenticity of payment transactions and prevent tampering.",
+        "justification": "The FR requires secure and tamper-proof transactions to maintain the integrity of financial data."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Accountability: The system must log all payment transactions with detailed audit trails, including user actions and system responses, to ensure traceability and compliance.",
+        "justification": "The FR involves financial transactions, which require detailed logging for audit and compliance purposes."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall automatically update the available quantity of each medicine after a sale is completed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must accurately update the available quantity of each medicine in the inventory after each sale, reflecting the exact number of units sold.",
+        "justification": "The FR requires the system to maintain accurate inventory levels, which is essential for inventory management and order fulfillment."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the available quantity is never negative and that the inventory is updated within 1 second of a sale being completed.",
+        "justification": "The FR implies the need for real-time and accurate inventory updates to prevent over-selling and stock discrepancies."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must update the inventory within 1 second of a sale being completed, ensuring that the latest inventory status is available to all users.",
+        "justification": "The FR involves real-time inventory updates, which are critical for maintaining up-to-date information for all users."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 50 MB of memory per inventory update to ensure efficient resource use.",
+        "justification": "Efficient resource use is important for handling multiple inventory updates without impacting system performance."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must be able to handle concurrent sales and inventory updates without data corruption or loss, using transactional integrity mechanisms.",
+        "justification": "The FR requires a reliable system that can handle multiple sales simultaneously without errors, ensuring data integrity."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must log all inventory updates and provide a mechanism to roll back changes in case of errors or system failures.",
+        "justification": "The FR requires a system that can recover from errors and maintain accurate inventory data, ensuring business continuity."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must use checksums or hash functions to verify the integrity of inventory data before and after updates.",
+        "justification": "The FR involves critical business data, which must be protected against corruption or tampering."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Accountability: The system must log all inventory updates with detailed audit trails, including the user who initiated the sale and the time of the update, to ensure traceability and compliance.",
+        "justification": "The FR requires detailed logging for audit and compliance purposes, especially for inventory management."
+      }
+    ]
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "functionalRequirement": "Customers shall be able to search for new products in the database by entering item names, and upon successful search, view detailed product information.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support search functionality for 100% of the products listed in the database, ensuring that all products are searchable by item name.",
+        "justification": "The FR requires the system to search for products by name, necessitating complete coverage of the product database."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must return accurate and complete product information for 99.9% of search queries, matching the entered item name exactly or through relevant synonyms.",
+        "justification": "The FR implies the need for correct and detailed product information post-search."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must return search results within 2 seconds for 95% of queries, regardless of the number of products in the database.",
+        "justification": "The FR involves real-time search functionality, requiring quick response times for user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process a search query and display product information.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on searching a potentially large product database."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The search interface must allow users to input item names with auto-suggest functionality, displaying suggestions within 500 milliseconds of typing.",
+        "justification": "The FR requires interaction with the search functionality, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages and suggestions for correction if a search query yields no results, helping users refine their search.",
+        "justification": "The FR involves user interaction with the system, necessitating support to minimize user errors during searches."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to perform product searches and display product information for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the product database, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all search queries and product information during transmission using TLS 1.3.",
+        "justification": "The FR involves accessing product information, which may contain sensitive data requiring protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for the addition or modification of product search algorithms without affecting the overall system performance, with changes deployable within 1 hour.",
+        "justification": "The FR implies the need for ongoing updates to the product database and search functionality."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to search for suggested doctors for consultation based on their symptoms or predicted diseases.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support search functionality for 100% of the doctors listed in the database, ensuring that all doctors are searchable by symptoms or predicted diseases.",
+        "justification": "The FR requires the system to search for doctors based on user input, necessitating complete coverage of the doctor database."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must return accurate and relevant doctor suggestions for 99% of search queries, matching the entered symptoms or predicted diseases.",
+        "justification": "The FR implies the need for correct and relevant doctor suggestions post-search."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must return search results within 3 seconds for 95% of queries, regardless of the number of doctors in the database.",
+        "justification": "The FR involves real-time search functionality, requiring quick response times for user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 150 MB of memory to process a search query and display doctor suggestions.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on searching a potentially large doctor database."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The search interface must allow users to input symptoms or predicted diseases with auto-suggest functionality, displaying suggestions within 500 milliseconds of typing.",
+        "justification": "The FR requires interaction with the search functionality, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages and suggestions for correction if a search query yields no results, helping users refine their search.",
+        "justification": "The FR involves user interaction with the system, necessitating support to minimize user errors during searches."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to perform doctor searches and display suggestions for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the doctor database, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all search queries and doctor information during transmission using TLS 1.3.",
+        "justification": "The FR involves accessing sensitive health-related information, requiring protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for the addition or modification of doctor search algorithms without affecting the overall system performance, with changes deployable within 1 hour.",
+        "justification": "The FR implies the need for ongoing updates to the doctor database and search functionality."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The system must ensure that doctor suggestions are based on verified medical data and comply with healthcare regulations.",
+        "justification": "The FR involves health-related services, necessitating adherence to safety standards and regulations."
+      }
+    ]
+  }
+]

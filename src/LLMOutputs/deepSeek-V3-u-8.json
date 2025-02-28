@@ -1,0 +1,82 @@
+[
+  {
+    "functionalRequirement": "The system shall provide a calendar view of available appointment slots for each healthcare provider",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display all available appointment slots for each healthcare provider, including date, time, and duration, for 100% of specified use cases.",
+        "justification": "The FR requires a complete view of available appointment slots, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately reflect the availability of appointment slots, with no discrepancies between the calendar view and the actual schedule for 99.9% of cases.",
+        "justification": "The FR implies the need for precise and correct representation of appointment slots."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must load the calendar view of available appointment slots in less than 500 milliseconds for up to 1,000 concurrent users.",
+        "justification": "The FR involves real-time access to appointment data, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to load and display the calendar view for a single user session.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple users and providers."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an intuitive and user-friendly interface for navigating the calendar view, including clear labels and easy-to-use controls for selecting dates and times.",
+        "justification": "The FR requires interaction with appointment data, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to display the calendar view of available appointment slots for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to appointment services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that appointment data is accessible only to authorized users, using role-based access control (RBAC).",
+        "justification": "The FR involves accessing sensitive appointment data, which requires protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to search for properties based on specific criteria such as location, area, and number of bedrooms.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support searching for properties based on all specified criteria (location, area, number of bedrooms) for 100% of specified use cases.",
+        "justification": "The FR requires a complete search functionality, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must return accurate search results that match the specified criteria (location, area, number of bedrooms) for 99.9% of valid inputs.",
+        "justification": "The FR implies the need for precise and correct search results based on user criteria."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must return search results in less than 1 second for up to 10,000 concurrent searches.",
+        "justification": "The FR involves real-time access to property data, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 200 MB of memory to process and return search results for a single query.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple searches."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and user-friendly search interface, including intuitive filters for location, area, and number of bedrooms.",
+        "justification": "The FR requires interaction with property search data, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to perform property searches for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to property search services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that property search data is accessible only to authorized users, using role-based access control (RBAC).",
+        "justification": "The FR involves accessing sensitive property data, which requires protection against unauthorized access."
+      }
+    ]
+  }
+]

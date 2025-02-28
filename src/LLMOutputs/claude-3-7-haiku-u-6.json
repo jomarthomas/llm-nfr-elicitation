@@ -1,0 +1,87 @@
+[
+  {
+    "functionalRequirement": "User shall be able to choose payment methods such as PayPal balance, debit or credit card, and transfer funds by entering recipient's email ID or name, and making the payment.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The system must support 100% of the specified payment methods (PayPal balance, debit card, credit card) without errors during transaction processing.",
+        "justification": "The FR explicitly requires multiple payment methods, necessitating complete implementation of all specified options."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The payment processing system must complete transactions within 3 seconds for 95% of payment attempts under normal operating conditions.",
+        "justification": "Payment processing requires efficient time behavior to ensure user satisfaction and prevent abandonment during the payment flow."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "The payment interface must clearly indicate all available payment methods with recognizable icons and labels, with 90% of users able to complete a payment transaction on their first attempt without assistance.",
+        "justification": "The FR focuses on user choice and payment completion, requiring an intuitive interface for payment method selection and recipient identification."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The payment system must maintain 99.9% uptime during business hours and 99.5% during non-business hours, with no more than 5 minutes of consecutive downtime.",
+        "justification": "Payment processing is a critical function requiring high availability to ensure users can complete transactions when needed."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "All payment data must be encrypted using TLS 1.3 during transmission, and credit/debit card information must be tokenized and comply with PCI DSS requirements.",
+        "justification": "The FR involves sensitive financial information requiring strong security measures to protect user payment details."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "The system must implement multi-factor authentication for payments exceeding $1000 and maintain an audit log of all payment transactions for at least 2 years.",
+        "justification": "Financial transactions require accountability and non-repudiation to protect both users and the organization from fraud."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The payment processing module must be implemented as a separate service with well-defined APIs that can be updated independently of other system components.",
+        "justification": "Payment methods and regulations change frequently, requiring a modular design that supports easy modifications and updates."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The payment system must be designed to incorporate new payment methods with no more than 2 weeks of development effort per new payment method.",
+        "justification": "The FR implies a need for multiple payment methods, suggesting adaptability to add new payment options in the future is important."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall automatically update the available quantity of each medicine after a sale is completed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "The inventory system must accurately update medicine quantities for 100% of completed sales with zero discrepancies between recorded sales and inventory changes.",
+        "justification": "The FR requires precise tracking of medicine quantities, necessitating complete accuracy in inventory updates."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "The inventory update must complete within 500 milliseconds after sale confirmation for 99% of transactions.",
+        "justification": "Automatic updates should occur promptly to maintain real-time inventory accuracy and prevent potential overselling."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "The inventory update mechanism must have a failure rate of less than 0.01%, with automatic retry capabilities for failed updates.",
+        "justification": "Inventory accuracy is critical for medicine sales, requiring high reliability to prevent stock discrepancies."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Inventory update operations must be restricted to authenticated sales processes and authorized personnel, with all changes logged for audit purposes.",
+        "justification": "Medicine inventory represents valuable assets requiring protection from unauthorized modifications."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "The inventory update module must include automated tests that verify correct quantity calculations for at least 95% of possible sales scenarios.",
+        "justification": "The automatic nature of updates requires high testability to ensure continued correct operation as the system evolves."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "The inventory system must support batch updates for bulk sales and returns, handling at least 1,000 items in a single transaction without performance degradation.",
+        "justification": "While the FR mentions individual sales, the system should scale to accommodate various sales volumes and scenarios."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "The system must implement concurrency controls to prevent race conditions when multiple sales of the same medicine occur simultaneously, ensuring inventory accuracy is maintained.",
+        "justification": "Medicine inventory requires safe integration with the sales process to prevent critical errors in stock levels that could affect patient care."
+      }
+    ]
+  }
+]
