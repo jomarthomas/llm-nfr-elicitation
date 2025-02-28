@@ -28,6 +28,7 @@ const config = {
 			$stores: 'src/stores',
 			$styles: 'src/styles/routes',
 			$components: 'src/components',
+			$db: "src/db"
 		},
 	},
 	compilerOptions: {

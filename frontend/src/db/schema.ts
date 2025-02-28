@@ -44,9 +44,10 @@ export const nfrTable = sqliteTable('nfrs', {
 	requirement: text('requirement', { length: 2000 }).notNull(), // Long string for requirement
 	justification: text('justification', { length: 2000 }).notNull(), // Long string for justification
 	applicability: integer('applicability').notNull().default(0), // 0-5, starts at 0
-	validity: integer('validity').notNull().default(0) // 0-5, starts at 0
+	validity: integer('validity').notNull().default(0), // 0-5, starts at 0,
+	user: text('user', { length: 20 }).notNull().default('')
 });
 
 // TypeScript types for type safety
-export type FR = typeof frTable.$inferSelect;
-export type NFR = typeof nfrTable.$inferSelect;
+export type FRTable = typeof frTable.$inferSelect;
+export type NFRTable = typeof nfrTable.$inferSelect;

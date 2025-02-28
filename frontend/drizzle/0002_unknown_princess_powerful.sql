@@ -1,0 +1,1 @@
+ALTER TABLE `nfrs` ADD `user` text(20) DEFAULT '' NOT NULL;

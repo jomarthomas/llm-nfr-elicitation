@@ -103,4 +103,33 @@
 			color: var(--subFg-2);
 		}
 	}
+
+	&[data-horizontal='true'] {
+		tr {
+			& > th {
+				font-weight: 700;
+			}
+			& > th,
+			& > td {
+				border-bottom: none;
+				border-radius: 0;
+				border-top: 1px solid var(--t-crp-border);
+				padding: 10px 20px 10px 20px;
+			}
+			&:first-child {
+				& > th {
+					border-top-left-radius: 6px;
+				}
+				& > td {
+					border-top-right-radius: 6px;
+				}
+			}
+			&:last-child {
+				& > th {
+					border-bottom-left-radius: 6px;
+					border-bottom: 1px solid var(--t-crp-border);
+				}
+			}
+		}
+	}
 }

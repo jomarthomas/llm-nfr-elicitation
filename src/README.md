@@ -78,4 +78,33 @@ Use `deno task test` and tests from `./src/main.test.ts` will be ran.
 
 
 ### 24 Feb 2025
-- 
+
+
+Ordinal Classification
+Why:
+Preserves the 1-5 scale’s ordinal nature without assuming continuous intervals.
+Weighted Kappa and MAE are intuitive yet rigorous, balancing granularity and research credibility.
+Lets you train a model on 160 NFRs and predict scores for all 2240, enabling full-set analysis.
+Implementation:
+Train an ordinal classifier on the 160 human-scored NFRs.
+Report accuracy (exact matches), weighted Kappa (agreement), and MAE (average error).
+Break down by LLM and attribute (e.g., "LLM A’s Security NFRs: Kappa = 0.75").
+Presentation:
+Table: Metrics per LLM.
+Graph: Distribution of predicted scores (e.g., histogram of 1s, 2s, etc.).
+Examples: Show an NFR with predicted 4 vs. actual 5 to illustrate “near misses.”
+Why Not Others?:
+Regression: Too continuous for subjective scores; less familiar metrics.
+Multi-Threshold: Insightful but bulky for a paper.
+Descriptive Stats: Limits scope to 160 NFRs.
+Hybrid: Overcomplicates unless you need both lenses.
+
+Attribute applicability (1-5 scale: 1 = irrelevant, 5 = highly relevant).
+NFR validity (1-5 scale: 1 = incoherent, 5 = fully valid).
+
+
+### Feb 27
+- For Form 1: 3 FRs from each of 8 LLMs
+- For Form 2: 
+  - Each NFR can have 1 attribute
+  - 

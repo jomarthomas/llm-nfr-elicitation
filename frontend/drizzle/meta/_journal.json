@@ -15,6 +15,13 @@
       "when": 1740689690116,
       "tag": "0001_bitter_warlock",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1740690958338,
+      "tag": "0002_unknown_princess_powerful",
+      "breakpoints": true
     }
   ]
 }

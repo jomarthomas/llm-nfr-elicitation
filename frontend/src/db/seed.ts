@@ -1,5 +1,5 @@
 import { db } from '.';
-import { frTable, nfrTable, type NFR } from './schema';
+import { frTable, nfrTable, type NFRTable } from './schema';
 
 import { eq } from 'drizzle-orm';
 
@@ -50,12 +50,12 @@ async function seed() {
 				nfrInserts.push({
 					id: crypto.randomUUID(), // Generate random ID
 					frId,
-					attribute: nfr.attribute as NFR['attribute'],
+					attribute: nfr.attribute as NFRTable['attribute'],
 					requirement: nfr.requirement,
 					justification: nfr.justification,
 					applicability: 0,
 					validity: 0,
-					llm: llm as NFR['llm']
+					llm: llm as NFRTable['llm']
 				});
 			}
 		}
