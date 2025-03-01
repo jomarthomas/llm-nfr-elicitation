@@ -55,72 +55,62 @@
     ]
   },
   {
-    "functionalRequirement": "The system shall generate reports on storage consumption by financial contact.",
+    "functionalRequirement": "User shall/will be able to open various types of accounts like savings, fixed deposit, etc.",
     "identifiedNFRs": [
       {
         "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must generate comprehensive storage consumption reports that include 100% of relevant financial contact data points.",
-        "justification": "Ensures the report generation covers all necessary information for complete storage analysis."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Reports must be generated within 5 seconds for financial contacts with up to 10,000 storage entries.",
-        "justification": "Provides a reasonable response time for generating storage consumption reports."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Assistance: Reports must include clear legends, color-coded visualizations, and tooltips explaining storage consumption metrics.",
-        "justification": "Enhances user understanding of complex storage consumption data."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Recoverability: The system must maintain a 99.9% data accuracy rate in storage consumption reporting, with automatic error logging and recovery mechanisms.",
-        "justification": "Ensures reliable and trustworthy reporting of storage consumption data."
+        "requirement": "Functional Completeness: The system must support opening at least 5 different types of bank accounts with all standard required fields for each account type.",
+        "justification": "Ensures comprehensive coverage of account types mentioned in the functional requirement."
       },
       {
         "attribute": "Security",
-        "requirement": "Confidentiality: All financial contact storage reports must be encrypted at rest and in transit using AES-256 encryption.",
-        "justification": "Protects sensitive financial contact information during report generation and storage."
+        "requirement": "Authenticity: The system must implement multi-factor authentication for account creation, including government-issued ID verification and biometric or two-factor authentication.",
+        "justification": "Protects against fraudulent account openings and ensures secure account creation process."
       },
       {
-        "attribute": "Maintainability",
-        "requirement": "Analysability: Reports must be generated in standardized formats (PDF, CSV) with consistent structure for easy analysis and integration.",
-        "justification": "Facilitates further data analysis and system interoperability."
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide real-time validation for all account opening fields, with clear error messages for incorrect or incomplete information.",
+        "justification": "Helps users complete account creation process accurately and efficiently."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The account opening system must have 99.99% uptime during business hours (8 AM to 8 PM, 7 days a week).",
+        "justification": "Ensures users can open accounts consistently without service interruptions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The entire account creation process must be completed within 10 minutes, with each validation step taking no more than 2 seconds.",
+        "justification": "Provides a quick and responsive account opening experience for users."
       }
     ]
   },
   {
-    "functionalRequirement": "The system shall be able to generate a series of multiple-choice fraction questions that form a cohesive storyline to introduce a specific topic.",
+    "functionalRequirement": "The system shall allow users to add expenses with details including amount, date, payer, and optional split among participants.",
     "identifiedNFRs": [
       {
         "attribute": "Functional Suitability",
-        "requirement": "Functional Correctness: The system must generate mathematically accurate fraction questions with 100% computational precision.",
-        "justification": "Ensures the educational content is mathematically sound and error-free."
+        "requirement": "Functional Correctness: The system must accurately calculate expense splits with 100% mathematical precision, supporting up to 10 participants per expense.",
+        "justification": "Ensures accurate financial calculations for expense tracking."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Question series generation must complete within 2 seconds for a set of 10 multiple-choice fraction questions.",
-        "justification": "Provides quick question generation to maintain user engagement."
+        "requirement": "Time Behavior: Expense entry and split calculation must be completed within 500 milliseconds for single entries.",
+        "justification": "Provides responsive expense tracking with minimal user waiting time."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All expense data must be encrypted at rest using AES-256 encryption and transmitted using TLS 1.3 protocol.",
+        "justification": "Protects sensitive financial information from unauthorized access."
       },
       {
         "attribute": "Usability",
-        "requirement": "Learnability: Questions must progressively increase in difficulty and maintain a clear, coherent narrative structure.",
-        "justification": "Supports effective learning progression and maintains student interest."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: The system must provide immediate, constructive feedback for incorrect answers, explaining the correct solution.",
-        "justification": "Enhances learning experience by guiding students through their mistakes."
+        "requirement": "User Assistance: The system must provide inline tooltips and auto-complete suggestions for common expense categories and payer names.",
+        "justification": "Simplifies expense entry process and reduces user input errors."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Faultlessness: The question generation algorithm must maintain a 99.5% reliability rate in creating logically connected and mathematically correct question series.",
-        "justification": "Ensures consistent and high-quality educational content generation."
-      },
-      {
-        "attribute": "Flexibility",
-        "requirement": "Adaptability: The system must support dynamic topic selection and difficulty level adjustment for question series generation.",
-        "justification": "Allows customization of educational content for different learning needs."
+        "requirement": "Recoverability: The system must implement automatic backup of expense data every 5 minutes and support full data restoration within 15 minutes in case of system failure.",
+        "justification": "Ensures no loss of critical financial tracking information."
       }
     ]
   },
@@ -360,32 +350,32 @@
     ]
   },
   {
-    "functionalRequirement": "System shall read initialization data to derive definitions of heating and cooling units.",
+    "functionalRequirement": "Faculties shall be able to upload and download assignments, college notices, student notices, journals, and videos.",
     "identifiedNFRs": [
       {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Correctness: The system must accurately interpret 100% of initialization data for heating and cooling unit definitions.",
-        "justification": "Ensures precise derivation of unit specifications from initialization data"
-      },
-      {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Initialization data reading and unit definition derivation must complete within 2 seconds for standard configuration sets.",
-        "justification": "Provides efficient processing of initialization data for quick system startup"
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must handle incomplete or partially corrupted initialization data by providing clear error messages and fallback to default configurations.",
-        "justification": "Ensures system stability when encountering imperfect initialization data"
-      },
-      {
-        "attribute": "Maintainability",
-        "requirement": "Modularity: The initialization data parsing mechanism must be designed as a separate, configurable module that can be easily updated or replaced.",
-        "justification": "Allows for flexible modifications to data interpretation logic"
+        "requirement": "Time Behavior: File uploads and downloads must complete within 30 seconds for files up to 500 MB, with bandwidth support of at least 10 Mbps.",
+        "justification": "Ensures efficient handling of various document and media types."
       },
       {
         "attribute": "Compatibility",
-        "requirement": "Interoperability: The system must support multiple standard initialization data formats (XML, JSON, CSV) for heating and cooling unit definitions.",
-        "justification": "Enables integration with various data sources and configuration systems"
+        "requirement": "Interoperability: The system must support file uploads and downloads for at least 20 different file formats including .docx, .pdf, .jpg, .mp4, .xlsx, and .ppt.",
+        "justification": "Provides flexibility for different types of academic documents and media."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement role-based access control ensuring only authorized faculty members can upload or download specific types of documents.",
+        "justification": "Protects sensitive academic materials from unauthorized access."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Provide file type and size validation with clear error messages, preventing uploads of unsupported or oversized files.",
+        "justification": "Guides users to upload appropriate files and prevents system overload."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Maintain 99.95% uptime for document management system during academic working hours.",
+        "justification": "Ensures consistent access to critical academic resources."
       }
     ]
   },
@@ -460,87 +450,87 @@
     ]
   },
   {
-    "functionalRequirement": "System shall set over temperature values to prevent temperature deviations beyond 3 degrees Fahrenheit.",
+    "functionalRequirement": "System shall allow users to rate and review services by providing comments on tour plans or services, with comments stored in the database and a thank you message displayed.",
     "identifiedNFRs": [
       {
-        "attribute": "Safety",
-        "requirement": "Operational Constraint: The system must implement automatic shutdown or warning mechanisms if temperature exceeds the 3-degree Fahrenheit deviation threshold.",
-        "justification": "Prevents potential equipment damage or safety risks from temperature fluctuations."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must maintain temperature monitoring accuracy within ±0.5 degrees Fahrenheit under varying environmental conditions.",
-        "justification": "Ensures precise temperature control and deviation detection."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Temperature monitoring and deviation detection must occur with a maximum latency of 100 milliseconds.",
-        "justification": "Rapid response is critical for preventing temperature-related issues."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: Support rating system with 5-star scale and ability to submit text comments of up to 500 characters.",
+        "justification": "Provides comprehensive feedback mechanism for users."
       },
       {
         "attribute": "Security",
-        "requirement": "Authenticity: The system must log all temperature override attempts with user credentials and timestamp.",
-        "justification": "Provides accountability for temperature control interventions."
+        "requirement": "Integrity: Implement content filtering to prevent offensive or inappropriate comments before database storage.",
+        "justification": "Ensures clean and appropriate user-generated content."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Comment submission and thank you message display must occur within 200 milliseconds.",
+        "justification": "Provides immediate feedback to enhance user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: Provide optional fields for detailed feedback and suggestions to improve services.",
+        "justification": "Encourages more comprehensive user input and service improvement."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: Implement automatic backup of all user reviews and ratings every hour, with ability to restore within 10 minutes.",
+        "justification": "Ensures preservation of valuable user feedback data."
       }
     ]
   },
   {
-    "functionalRequirement": "System shall show the first lines of news articles based on the titles on the title screen.",
+    "functionalRequirement": "Customers shall be able to search for new products in the database by entering item names, and upon successful search, view detailed product information.",
     "identifiedNFRs": [
       {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The search functionality must support 100% of product types in the database, including exact and partial name matches.",
+        "justification": "Ensures comprehensive search capability for all products in the system."
+      },
+      {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: News article preview lines must load within 2 seconds for up to 10 concurrent article titles.",
-        "justification": "Ensures quick and responsive display of news previews."
+        "requirement": "Time Behavior: Search results must be returned within 500 milliseconds for databases containing up to 100,000 product entries.",
+        "justification": "Provides quick response times for user product searches to maintain a smooth user experience."
       },
       {
         "attribute": "Usability",
-        "requirement": "User Error Protection: Implement graceful handling for articles with no preview text, displaying a default 'No preview available' message.",
-        "justification": "Provides clear user feedback for incomplete article information."
+        "requirement": "User Error Protection: The search function must provide autocorrect suggestions for misspelled product names and handle case-insensitive searches.",
+        "justification": "Helps users find products even with minor input errors or variations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The search interface must display clear error messages if no products are found, with suggestions for alternative search terms.",
+        "justification": "Guides users when their initial search does not yield results."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: Search queries and product view history must be encrypted and not stored longer than 30 days.",
+        "justification": "Protects user search privacy and prevents unauthorized tracking of search behaviors."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall provide a calendar view of available appointment slots for each healthcare provider",
+    "identifiedNFRs": [
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The calendar view must load and update available appointment slots within 2 seconds for each healthcare provider, supporting real-time availability tracking.",
+        "justification": "Quick loading of appointment slots is crucial for user experience and efficient scheduling."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Interface Clarity: The calendar view must be intuitive, with color-coded availability status, clear time slots, and responsive design compatible with desktop and mobile devices.",
+        "justification": "Ensures easy interpretation of appointment availability across different devices."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Data Consistency: The system must maintain 99.9% accuracy in displaying real-time appointment availability, with immediate updates when slots are booked or cancelled.",
+        "justification": "Prevents scheduling conflicts and ensures users see the most current appointment information."
       },
       {
         "attribute": "Compatibility",
-        "requirement": "Interoperability: The system must support retrieving preview text from at least three different news source APIs or RSS feeds.",
-        "justification": "Ensures flexibility in news content sourcing."
-      },
-      {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: Preview text must accurately represent the first 100 characters of the article content, preserving full words.",
-        "justification": "Provides meaningful and coherent article previews."
-      }
-    ]
-  },
-  {
-    "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
-    "identifiedNFRs": [
-      {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must support capturing and validating all required personal details (name, gender, password, mobile number, location) for account creation with 100% field coverage.",
-        "justification": "Ensures all specified personal information can be fully entered during account registration process."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Authenticity: Implement multi-factor authentication during account creation, requiring email or SMS verification of the mobile number provided.",
-        "justification": "Verifies the legitimacy of the user and protects against fraudulent account creation."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Confidentiality: Encrypt all personal details using AES-256 encryption at rest and in transit, with no plain-text storage of sensitive information.",
-        "justification": "Protects user's personal information from unauthorized access or data breaches."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: Implement real-time validation with clear, specific error messages for each input field (e.g., password strength requirements, valid mobile number format).",
-        "justification": "Guides users through account creation process and prevents incorrect data entry."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Availability: Maintain 99.9% uptime for the account creation service, with automatic failover and retry mechanisms.",
-        "justification": "Ensures users can create accounts consistently without service interruptions."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete the entire account creation process in less than 2 minutes, with individual field validations occurring in under 500 milliseconds.",
-        "justification": "Provides a quick and responsive account registration experience."
+        "requirement": "Interoperability: The calendar system must support standard calendar formats (iCal, Google Calendar) for easy integration and synchronization.",
+        "justification": "Allows users to integrate healthcare appointments with personal scheduling systems."
       }
     ]
   },
@@ -695,32 +685,32 @@
     ]
   },
   {
-    "functionalRequirement": "User shall be able to sign up and validate credentials, leading to access to the Snap camera screen.",
+    "functionalRequirement": "The system shall allow users to search for suggested doctors for consultation based on their symptoms or predicted diseases.",
     "identifiedNFRs": [
       {
-        "attribute": "Security",
-        "requirement": "Authentication: Implement multi-factor authentication with at least two verification methods (e.g., password + SMS code or biometric).",
-        "justification": "Enhances account security during the sign-up and credential validation process."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: Provide real-time password strength feedback during account creation, requiring a minimum of 12 characters with mixed character types.",
-        "justification": "Guides users to create strong, secure credentials while improving the sign-up experience."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Availability: Maintain a 99.9% uptime for the authentication and credential validation system.",
-        "justification": "Ensures users can consistently access the Snap camera screen without prolonged login interruptions."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The doctor suggestion algorithm must match symptoms/diseases to specialties with 95% accuracy based on medical knowledge databases.",
+        "justification": "Ensures reliable and medically appropriate doctor recommendations."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: Complete credential validation and Snap camera screen access within 2 seconds of successful authentication.",
-        "justification": "Provides a quick and responsive login experience for users."
+        "requirement": "Time Behavior: Doctor recommendations must be generated within 2 seconds of symptom input.",
+        "justification": "Provides quick response for users seeking medical consultation."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The doctor suggestion system must be operational 99.9% of the time, with automatic failover mechanisms.",
+        "justification": "Critical for providing consistent medical consultation support."
       },
       {
         "attribute": "Security",
-        "requirement": "Confidentiality: Store user credentials using salted bcrypt hashing with a minimum work factor of 12.",
-        "justification": "Protects user credentials from potential security breaches through advanced password storage techniques."
+        "requirement": "Confidentiality: All symptom and disease information must be encrypted using HIPAA-compliant encryption standards during transmission and storage.",
+        "justification": "Protects sensitive medical information and ensures patient privacy."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The system must provide clear explanations for doctor recommendations, including specialty relevance and matching criteria.",
+        "justification": "Helps users understand the basis of doctor suggestions."
       }
     ]
   },
@@ -785,37 +775,37 @@
     ]
   },
   {
-    "functionalRequirement": "The system shall allow prospective applicants to research requirements and select relevant services or applications to initiate online.",
+    "functionalRequirement": "User shall be able to choose payment methods such as PayPal balance, debit or credit card, and transfer funds by entering recipient's email ID or name, and making the payment.",
     "identifiedNFRs": [
       {
-        "attribute": "Usability",
-        "requirement": "The system must provide a clear, intuitive navigation interface for requirements research with no more than 3 clicks to access any service or application information.",
-        "justification": "Ensures ease of use for prospective applicants who may not be familiar with the system."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "The system must support responsive design to be fully functional on desktop, tablet, and mobile devices with screen sizes ranging from 320px to 1920px width.",
-        "justification": "Enables access for applicants using various devices and screen sizes."
-      },
-      {
-        "attribute": "Performance Efficiency",
-        "requirement": "The system must load service and application information pages within 2 seconds for 95% of user requests, with a maximum page load time of 3 seconds.",
-        "justification": "Prevents user frustration and ensures quick access to critical information."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all specified payment methods (PayPal, debit card, credit card) with full transaction capabilities.",
+        "justification": "Ensures users can use their preferred payment method."
       },
       {
         "attribute": "Security",
-        "requirement": "The system must implement HTTPS encryption and protect against common web vulnerabilities (OWASP Top 10) for all information research and selection processes.",
-        "justification": "Protects applicant data and ensures secure browsing of system information."
+        "requirement": "Integrity: Implement PCI DSS Level 1 compliance for all payment transactions, with real-time fraud detection algorithms.",
+        "justification": "Protects financial transactions from unauthorized access or manipulation."
       },
       {
-        "attribute": "Compatibility",
-        "requirement": "The system must be compatible with the latest versions of Chrome, Firefox, Safari, and Edge browsers, supporting at least 99% of current web standards.",
-        "justification": "Ensures widespread accessibility across different web browsers."
+        "attribute": "Security",
+        "requirement": "Authenticity: Implement multi-factor authentication for all fund transfer operations, including one-time PIN or biometric verification.",
+        "justification": "Ensures that only authorized users can perform financial transactions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Complete payment processing and fund transfer within 3 seconds for 99% of transactions.",
+        "justification": "Provides quick and responsive payment experience."
       },
       {
         "attribute": "Reliability",
-        "requirement": "The system must maintain 99.9% uptime during peak application research and selection periods, with automatic error logging and recovery mechanisms.",
-        "justification": "Provides consistent availability for prospective applicants accessing system information."
+        "requirement": "Fault Tolerance: Implement automatic transaction rollback mechanism if any payment step fails, with comprehensive error logging.",
+        "justification": "Prevents partial or failed transactions and ensures financial data integrity."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: Provide real-time validation for recipient email/name and payment method before transaction confirmation.",
+        "justification": "Prevents user errors during fund transfer process."
       }
     ]
   },
@@ -890,37 +880,32 @@
     ]
   },
   {
-    "functionalRequirement": "System shall ensure that dataset instances of a type created during app deployment start using the new code when a new version of the dataset type is deployed.",
+    "functionalRequirement": "System shall automatically update the available quantity of each medicine after a sale is completed.",
     "identifiedNFRs": [
       {
-        "attribute": "Flexibility",
-        "requirement": "Adaptability: The system must support seamless data migration and version compatibility for dataset types, allowing zero-downtime updates.",
-        "justification": "Enables smooth transition between different versions of dataset types."
-      },
-      {
-        "attribute": "Maintainability",
-        "requirement": "Modularity: The dataset type versioning mechanism must support independent deployment and rollback of dataset type implementations without affecting existing data instances.",
-        "justification": "Ensures clean and manageable code updates for dataset types."
-      },
-      {
-        "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must implement a rollback mechanism that can revert to the previous dataset type version if critical errors are detected during the new version deployment.",
-        "justification": "Provides a safety net for potential issues during dataset type updates."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: Inventory quantity must be updated with 100% accuracy immediately after each sale transaction.",
+        "justification": "Ensures precise tracking of medicine inventory levels."
       },
       {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The transition to a new dataset type version must be completed within 30 seconds for datasets up to 1 GB in size.",
-        "justification": "Ensures minimal disruption during dataset type version updates."
+        "requirement": "Time Behavior: Inventory update must be completed within 100 milliseconds of sale transaction completion.",
+        "justification": "Provides real-time inventory tracking with minimal system overhead."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: Inventory management system must maintain 99.99% uptime with automatic data synchronization.",
+        "justification": "Critical for maintaining accurate stock levels across sales channels."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: Implement a separate, loosely coupled inventory management module that can be independently updated or replaced.",
+        "justification": "Allows for future enhancements or modifications to inventory tracking system."
       },
       {
         "attribute": "Security",
-        "requirement": "Integrity: The system must maintain a complete audit log of all dataset type version changes, including timestamp, user, and specific modifications.",
-        "justification": "Provides traceability and security for dataset type versioning process."
-      },
-      {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The versioning mechanism must support 100% of existing dataset instances without data loss or corruption during type updates.",
-        "justification": "Ensures comprehensive support for dataset type version transitions."
+        "requirement": "Integrity: Implement audit logging for all inventory updates with immutable transaction records.",
+        "justification": "Provides traceability and prevents unauthorized inventory manipulations."
       }
     ]
   },
@@ -995,37 +980,27 @@
     ]
   },
   {
-    "functionalRequirement": "A surface app page shall provide a customer with all customer system functionality.",
+    "functionalRequirement": "User shall be able to search for properties based on specific criteria such as location, area, and number of bedrooms",
     "identifiedNFRs": [
       {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The surface app page must expose 100% of customer system features with no hidden or inaccessible functionality.",
-        "justification": "The FR specifies providing ALL customer system functionality in a single page, requiring comprehensive feature coverage."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Interface Comprehensiveness: The surface app page must organize all system functionalities into logically grouped, easily navigable sections with clear labeling and intuitive layout.",
-        "justification": "With multiple functionalities on a single page, clear organization and navigation are critical for user understanding."
-      },
-      {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: The surface app page must implement context-sensitive help tooltips for each functionality to guide users and prevent incorrect interactions.",
-        "justification": "Comprehensive functionality increases complexity, necessitating built-in user guidance mechanisms."
-      },
-      {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The surface app page must load and render all system functionalities within 2 seconds, even with complex feature sets.",
-        "justification": "A page containing all system functionalities requires optimized loading to maintain user engagement."
+        "requirement": "Time Behavior: Search results must be returned within 3 seconds for up to 500 property listings, with pagination support for large result sets.",
+        "justification": "Ensures quick and responsive property search functionality."
       },
       {
-        "attribute": "Maintainability",
-        "requirement": "Modularity: The surface app page's code must be structured using component-based architecture, allowing independent updates to individual functionalities without affecting the entire page.",
-        "justification": "With comprehensive functionality, a modular design ensures easier future modifications and feature additions."
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The search interface must provide clear input validation, suggesting corrections for invalid search criteria and offering helpful error messages.",
+        "justification": "Helps users refine their search and prevents frustration with unclear search parameters."
       },
       {
-        "attribute": "Flexibility",
-        "requirement": "Adaptability: The surface app page must support responsive design, maintaining full functionality across desktop, tablet, and mobile device screen sizes.",
-        "justification": "Comprehensive functionality requires consistent user experience across different device types."
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The search system must support all specified search criteria (location, area, bedrooms) with precise filtering and sorting options.",
+        "justification": "Ensures comprehensive property search capabilities matching user requirements."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: User search history and preferences must be encrypted and stored securely, with options to clear search history.",
+        "justification": "Protects user privacy and search-related personal information."
       }
     ]
   },
@@ -1065,52 +1040,52 @@
     ]
   },
   {
-    "functionalRequirement": "If the validation fails, system shall prompt \"Wrong OTP\".",
+    "functionalRequirement": "System shall calculate modification charges based on modifying time, date, route, availability, display new fares, and process payments through the payment gateway",
     "identifiedNFRs": [
       {
-        "attribute": "Usability",
-        "requirement": "User Error Protection: The system must display the OTP error message in a clear, readable font with high contrast (minimum WCAG 2.1 AA color contrast ratio of 4.5:1) within 0.5 seconds of validation failure.",
-        "justification": "Ensures users can quickly and clearly understand the reason for OTP validation failure."
-      },
-      {
-        "attribute": "Security",
-        "requirement": "Authenticity: The system must limit OTP validation attempts to a maximum of 3 consecutive tries before temporarily blocking the account for 15 minutes.",
-        "justification": "Prevents brute force attacks and protects user accounts from unauthorized access attempts."
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: Modification charge calculations must be completed and displayed within 1 second, with real-time fare updates.",
+        "justification": "Ensures quick and responsive pricing modifications for users."
       },
       {
         "attribute": "Reliability",
-        "requirement": "Fault Tolerance: The system must log all OTP validation failures with timestamp, user ID, and error type for security audit purposes.",
-        "justification": "Enables tracking and investigation of potential security incidents or system anomalies."
+        "requirement": "Faultlessness: The modification and pricing calculation system must maintain 99.99% accuracy in fare computations across all modification scenarios.",
+        "justification": "Critical for maintaining trust and preventing pricing errors."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: All payment transactions must be processed using PCI DSS compliant encryption, with secure tokenization of payment information.",
+        "justification": "Protects financial transactions and user payment details."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The modification interface must clearly display all price changes, additional charges, and provide a step-by-step confirmation process.",
+        "justification": "Ensures transparency in pricing modifications and user understanding."
       }
     ]
   },
   {
-    "functionalRequirement": "Information on remaining job posting time and CV access shall be reportable",
+    "functionalRequirement": "The system shall generate a PDF report of all transactions and send a copy to the customer's email address and another copy to the system database for monthly transaction calculation",
     "identifiedNFRs": [
       {
-        "attribute": "Functional Suitability",
-        "requirement": "Functional Completeness: The system must provide 100% accurate reporting of remaining job posting time and CV access status for all active job postings.",
-        "justification": "Ensures comprehensive and reliable reporting of critical job posting information."
-      },
-      {
         "attribute": "Performance Efficiency",
-        "requirement": "Time Behavior: The system must generate reports on job posting time and CV access within 2 seconds for up to 100 concurrent report requests.",
-        "justification": "Provides timely access to important job posting information without significant delay."
+        "requirement": "Time Behavior: PDF report generation must be completed within 5 seconds for up to 1,000 transactions, with efficient background processing.",
+        "justification": "Ensures quick report generation without system performance degradation."
       },
       {
-        "attribute": "Usability",
-        "requirement": "User Assistance: The system must display remaining job posting time in a human-readable format (e.g., 'X days, Y hours remaining') with clear visual indicators of time progression.",
-        "justification": "Helps users easily understand and interpret the remaining time for job postings."
+        "attribute": "Reliability",
+        "requirement": "Availability: The transaction reporting system must maintain 99.95% uptime, with automatic retry mechanisms for failed email or database transmissions.",
+        "justification": "Ensures consistent and reliable transaction record-keeping."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: PDF reports must be encrypted using AES-256, with access controls limiting visibility to authorized personnel only.",
+        "justification": "Protects sensitive transaction information from unauthorized access."
       },
       {
         "attribute": "Maintainability",
-        "requirement": "Modularity: The reporting feature must be implemented as a separate, independent module with well-defined interfaces for future enhancements or integrations.",
-        "justification": "Allows for easier future modifications and extensions of the reporting functionality."
-      },
-      {
-        "attribute": "Compatibility",
-        "requirement": "Interoperability: The job posting and CV access reports must be exportable in standard formats (CSV, JSON, PDF) to enable integration with external systems.",
-        "justification": "Facilitates data sharing and compatibility with other job management or reporting tools."
+        "requirement": "Analysability: Transaction reports must be generated in a standardized, machine-readable format supporting easy data extraction and analysis.",
+        "justification": "Facilitates future reporting, auditing, and business intelligence processes."
       }
     ]
   }
