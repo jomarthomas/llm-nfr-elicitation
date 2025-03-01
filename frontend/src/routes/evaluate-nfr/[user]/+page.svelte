@@ -2,6 +2,7 @@
 	import Grade from '$components/Grade.svelte';
 	import { addToast } from '$stores/ToastStore';
 	import { page } from '$app/state';
+	import { invalidate } from '$app/navigation';
 
 	// TODO: the type is already in nfrSchema but that doesn't have "id" and
 	// I can't add it dynamically here

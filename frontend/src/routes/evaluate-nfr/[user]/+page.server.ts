@@ -44,7 +44,6 @@ export const load: PageServerLoad = async ({ params }) => {
 				eq(frTable.id, nfrTable.frId)
 			)
 		);
-	console.log(unevaluatedUserFRs);
 	const result = unevaluatedUserFRs.reduce(
 		(
 			acc: { id: number; functionalRequirement: string; identifiedNFRs: any[] }[],
