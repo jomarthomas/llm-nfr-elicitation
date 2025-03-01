@@ -485,7 +485,7 @@
     ]
   },
   {
-    "functionalRequirement": "User shall be able to search for properties based on specific criteria such as location, area, and number of bedrooms",
+    "functionalRequirement": "User shall be able to search for properties based on specific criteria such as location, area, and number of bedrooms.",
     "identifiedNFRs": [
       {
         "attribute": "Functional Suitability",

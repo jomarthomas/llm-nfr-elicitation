@@ -1,0 +1,1592 @@
+[
+  {
+    "functionalRequirement": "In the Facebook settings menu, the system shall allow the user to delete their saved username and password for Facebook.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide a feature to delete both the username and password saved for Facebook within the settings menu for 100% of users.",
+        "justification": "The FR specifies the need to delete saved credentials, which must be fully supported for all users."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that upon deletion, the username and password are completely removed from the system without any residual data remaining.",
+        "justification": "The FR implies that the deletion must be thorough and accurate to maintain user privacy and data integrity."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must present the delete option with clear labels and intuitive navigation within the settings menu, accessible within 3 clicks from the main settings page.",
+        "justification": "The FR requires user interaction to delete credentials, which should be straightforward and user-friendly."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must prompt the user for confirmation before deleting the saved credentials, with a clear warning message about the consequences of deletion.",
+        "justification": "The FR involves a critical action that could lead to loss of access, necessitating protective measures against unintended deletions."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must allow users to recover their deleted credentials within 30 days of deletion, provided they can verify their identity.",
+        "justification": "The FR implies a need for data management, and recoverability is important for user convenience and data integrity."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must ensure that the deletion process does not expose the credentials to unauthorized parties, using secure deletion methods such as overwriting data.",
+        "justification": "The FR involves sensitive user data, and its deletion must be handled securely to protect user privacy."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall request a deposit of Rs. 5000 upon entry of valid customer information and update it temporarily in the customer database.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must request a deposit of Rs. 5000 and update the customer database with this information for 100% of valid customer entries.",
+        "justification": "The FR requires the system to handle deposits and database updates, necessitating full coverage of these functions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately update the customer database with the deposit amount of Rs. 5000, ensuring no discrepancies in the recorded amount.",
+        "justification": "The FR implies the need for precise and correct handling of financial transactions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process the deposit request and update the customer database within 5 seconds for 99% of transactions.",
+        "justification": "The FR involves real-time financial transactions, requiring timely processing for user satisfaction."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process deposit requests and update the customer database for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the system for financial transactions, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that the deposit amount and customer information are not altered during transmission or storage, using checksums or similar integrity checks.",
+        "justification": "The FR involves financial data, which must be protected against unauthorized changes."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt customer information and deposit amounts using AES-256 encryption during storage and transmission.",
+        "justification": "The FR involves sensitive financial data, requiring protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall display a confirmation popup after the user fills out the form and clicks the submit button, saving the information to the database for further processing.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display a confirmation popup for 100% of form submissions where the submit button is clicked, ensuring all required fields are filled out before saving to the database.",
+        "justification": "The FR requires the system to display a confirmation popup and save data, necessitating complete coverage of these actions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately save 100% of the form data to the database without loss or corruption upon confirmation.",
+        "justification": "The FR implies the need for correct data storage following user confirmation."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must display the confirmation popup within 500 milliseconds of the submit button being clicked.",
+        "justification": "The FR involves user interaction, requiring timely feedback to enhance user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The confirmation popup must include clear and concise text (no more than 20 words) and a prominent 'Confirm' button (minimum size of 44x44 pixels).",
+        "justification": "The FR requires user interaction with the confirmation popup, which should be easy to operate."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate all form fields before displaying the confirmation popup, preventing submission of incomplete or invalid data.",
+        "justification": "The FR involves form submission, necessitating protection against user errors."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to display the confirmation popup and save data to the database for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous availability for form processing and data storage."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all form data using AES-256 encryption before storing it in the database.",
+        "justification": "The FR involves saving user data, which requires protection against unauthorized access."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User will choose from options including searching for their issue, chatting with customer support, asking the community, emailing customer support, or calling customer support.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must present all five options (searching for issue, chatting, asking community, emailing, calling) to the user 100% of the time when accessing the support interface.",
+        "justification": "The FR requires the system to provide a complete set of support options to the user."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Appropriateness Recognizability: The system must clearly label each support option with a descriptive icon and text (no more than 10 words per option) to ensure users can easily recognize and select the appropriate method.",
+        "justification": "The FR involves user interaction with support options, requiring clear and recognizable presentation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must allow users to select a support option within 3 seconds of accessing the support interface, with each option being selectable via a single click or tap.",
+        "justification": "The FR requires user interaction with support options, necessitating ease of operation."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must provide immediate feedback (within 100 milliseconds) upon selection of a support option, such as a visual or auditory cue.",
+        "justification": "The FR involves user interaction with support options, requiring engagement to enhance user experience."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to present the support options for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous availability for accessing support options."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall be able to grant edit permissions for assets to departmental administrators, inventory users, faculty users, and university users based on their department affiliation and authorization level.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must grant edit permissions to all specified user types (departmental administrators, inventory users, faculty users, university users) based on their department affiliation and authorization level for 100% of valid requests.",
+        "justification": "The FR requires the system to grant permissions to all specified user types, necessitating complete coverage of these actions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately assign edit permissions to users based on their department affiliation and authorization level for 100% of valid requests.",
+        "justification": "The FR implies the need for correct permission assignment based on user attributes."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must grant or deny edit permissions within 500 milliseconds of a user's request.",
+        "justification": "The FR involves user interaction, requiring timely feedback to enhance user experience."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that edit permissions cannot be altered or bypassed by unauthorized users or processes.",
+        "justification": "The FR involves granting permissions, which requires protection against unauthorized changes."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Accountability: The system must log all permission grant and denial actions, including the user ID, timestamp, and the specific permission granted or denied.",
+        "justification": "The FR involves granting permissions, necessitating accountability for auditing and security purposes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The system must implement permission management as a separate module, allowing for easy updates and maintenance without affecting other system components.",
+        "justification": "The FR involves a specific functionality (permission management) that should be modular for ease of maintenance."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Texts sent to that number will be sent to the API, then the system will reply to the user with the answer as another text message.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must process 100% of incoming text messages sent to the specified number and reply with an answer via text message.",
+        "justification": "The FR requires the system to handle all incoming texts and provide a response, necessitating complete coverage of these actions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process incoming text messages and send a reply within 5 seconds of receipt.",
+        "justification": "The FR involves real-time text message processing, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process and respond to a single text message.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling text messages."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process and respond to text messages for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous availability for text message processing and response."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all text messages using TLS 1.3 during transmission between the user and the API.",
+        "justification": "The FR involves handling user text messages, which are sensitive data requiring protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that text messages are not altered or tampered with during transmission or processing.",
+        "justification": "The FR involves handling user text messages, necessitating protection against unauthorized changes."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "After adding a transportation route, the user shall be able to retrieve transportation requests from other users.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the retrieval of all transportation requests from other users after a new route is added, covering 100% of the specified use cases.",
+        "justification": "The FR requires the system to retrieve transportation requests, necessitating full coverage of this core functionality."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that retrieved transportation requests match the criteria of the added route with 100% accuracy.",
+        "justification": "The FR implies the need for accurate retrieval of transportation requests based on the route added."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must retrieve transportation requests within 2 seconds for up to 1,000 concurrent users.",
+        "justification": "The FR involves real-time retrieval of requests, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process and retrieve transportation requests for a single user session.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple users and requests."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive user interface for adding routes and retrieving transportation requests, with consistent terminology and navigation.",
+        "justification": "The FR requires interaction with the system, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to retrieve transportation requests for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the transportation request system, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt transportation request data using TLS 1.3 during transmission.",
+        "justification": "The FR involves accessing user data, which is sensitive and requires protection."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The Disputes System shall allow users to create charge back requests, prompting for required information and resulting in printed notifications sent to merchants if proof of disputed transactions is not provided.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the creation of charge back requests, prompting for all required information and sending printed notifications to merchants in 100% of applicable cases.",
+        "justification": "The FR requires the system to handle charge back requests comprehensively, including all necessary steps."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that charge back requests are processed correctly, with 100% accuracy in prompting for required information and sending notifications.",
+        "justification": "The FR implies the need for precise and correct handling of charge back requests."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process a charge back request within 5 seconds for up to 500 concurrent users.",
+        "justification": "The FR involves real-time processing of requests, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 50 MB of memory to process a single charge back request.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple requests."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages and validation checks to prevent incorrect submission of charge back requests.",
+        "justification": "The FR requires user interaction, which should be protected against errors to ensure correct usage."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process charge back requests for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the disputes system, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that charge back requests and associated data are not altered during processing or transmission.",
+        "justification": "The FR involves sensitive transaction data, which must be protected against unauthorized changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for updates to the required information for charge back requests without affecting the core functionality.",
+        "justification": "The FR may require changes over time, necessitating easy modification of the system."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "For any systematic action, such as disputes aging process, a case activity will be generated, and the user who initiated the dispute case must be notified upon next logon.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate a case activity for every systematic action, such as disputes aging, and notify the initiating user upon their next logon in 100% of cases.",
+        "justification": "The FR requires the system to generate activities and notifications for all systematic actions."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the generated case activities and notifications are accurate and relevant to the systematic action, with 100% accuracy.",
+        "justification": "The FR implies the need for precise and correct generation of activities and notifications."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate a case activity and prepare a notification within 1 second for up to 1,000 concurrent users.",
+        "justification": "The FR involves real-time generation of activities and notifications, requiring timely responses."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 20 MB of memory to generate a single case activity and notification.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple systematic actions."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The system must provide clear and concise notifications to users upon logon, with an option to view detailed case activities.",
+        "justification": "The FR requires user interaction, which should be supported by clear and helpful notifications."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to generate case activities and notifications for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the system for generating activities and notifications, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt case activity and notification data using TLS 1.3 during transmission.",
+        "justification": "The FR involves accessing user data, which is sensitive and requires protection."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The website shall provide forms for certificates so users can request certificates online.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The website must include all necessary fields for certificate requests, covering 100% of the required information as specified in the certificate application process.",
+        "justification": "The FR requires a complete form for certificate requests, ensuring all necessary data is captured."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The website must validate all form inputs according to predefined rules, ensuring 99.9% accuracy in data entry for certificate requests.",
+        "justification": "The FR implies the need for correct and accurate data submission for certificate requests."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The website must process certificate request submissions within 2 seconds for 95% of requests.",
+        "justification": "The FR involves user interaction, requiring quick processing to maintain a positive user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The certificate request form must be accessible via a clear and prominent link on the website's main navigation, with intuitive field labels and instructions.",
+        "justification": "The FR requires user interaction with forms, which should be easy to navigate and use."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The website must provide real-time validation and error messages for incorrect or missing form inputs, preventing submission of incomplete certificate requests.",
+        "justification": "The FR involves form submission, which should minimize user errors through immediate feedback."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The website must be available for certificate requests 99.9% of the time during operational hours.",
+        "justification": "The FR assumes continuous access to the certificate request service, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All data entered into the certificate request form must be encrypted using HTTPS with TLS 1.2 or higher.",
+        "justification": "The FR involves handling sensitive user data, which requires protection during transmission."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The website must ensure that certificate request data is not altered during transmission or storage, using SHA-256 checksums.",
+        "justification": "The FR involves critical data that must remain unaltered for the certificate process."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to manage privacy settings such as who can view their profile, connections, and sharing data with third parties.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide options for managing all specified privacy settings, covering 100% of the privacy aspects mentioned in the FR.",
+        "justification": "The FR requires comprehensive privacy management options for users."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must correctly apply privacy settings as selected by the user, ensuring 99.9% accuracy in privacy setting enforcement.",
+        "justification": "The FR implies the need for accurate implementation of user-selected privacy settings."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The privacy settings interface must be accessible via a clear and prominent link in the user's profile settings, with intuitive controls and clear labels.",
+        "justification": "The FR involves user interaction with privacy settings, which should be easy to navigate and use."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide immediate feedback and confirmation for changes to privacy settings, preventing unintended modifications.",
+        "justification": "The FR involves user settings, which should minimize errors through immediate feedback."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The privacy settings management feature must be available 99.9% of the time during operational hours.",
+        "justification": "The FR assumes continuous access to privacy settings, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All privacy settings and associated data must be encrypted using AES-256 at rest and TLS 1.2 or higher during transmission.",
+        "justification": "The FR involves handling sensitive user data, which requires protection at rest and during transmission."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that privacy settings data is not altered during transmission or storage, using SHA-256 checksums.",
+        "justification": "The FR involves critical data that must remain unaltered for privacy management."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to import and manage various data formats like images, videos, and audio files within presentations.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support importing and managing at least the following file formats: JPEG, PNG, MP4, MOV, MP3, and WAV, covering 100% of the specified data types.",
+        "justification": "The FR requires the system to handle various data formats, necessitating full coverage of these formats."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must correctly process and render 99.9% of valid file inputs without data loss or corruption.",
+        "justification": "The FR implies the need for accurate processing of different file types."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must import and render files within 5 seconds for files up to 100 MB in size.",
+        "justification": "The FR involves user interaction with media files, requiring timely processing for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 1 GB of memory to process a single file import or management operation.",
+        "justification": "Efficient resource use is critical for handling multiple files and maintaining system performance."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user-friendly interface for importing and managing files, with drag-and-drop functionality and clear visual feedback on file status.",
+        "justification": "The FR requires ease of use for importing and managing various file types."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate file types before import and provide clear error messages for unsupported formats, reducing user errors by at least 75%.",
+        "justification": "The FR involves user input, which can benefit from error prevention and correction mechanisms."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must gracefully handle file import failures without crashing, with a recovery mechanism to retry failed imports.",
+        "justification": "The FR assumes continuous operation, requiring fault tolerance for file handling."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must use checksums to verify the integrity of files during import and management operations.",
+        "justification": "The FR involves managing user files, requiring protection against data corruption."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The file import and management module must be designed so that new file formats can be added within 4 hours of development time.",
+        "justification": "The FR may need updates to support additional file formats, requiring a maintainable design."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to set the price, quantity, upload pictures, and add details when listing an item.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must allow users to set price, quantity, upload pictures, and add details for item listings, ensuring 100% of these functionalities are available.",
+        "justification": "The FR specifies the need to include all these features for item listing."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must validate the format and range of price and quantity inputs with a 99.9% accuracy rate.",
+        "justification": "The FR implies the need for accurate data validation to ensure the integrity of item listings."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The item listing process must complete within 3 seconds for 95% of users.",
+        "justification": "The FR involves user interaction, and quick processing enhances user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for setting item details, with visual feedback on input validation.",
+        "justification": "The FR requires ease of use for listing items."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide real-time feedback on input errors for price, quantity, and other details, reducing user errors by at least 50%.",
+        "justification": "The FR involves user input, which can benefit from error prevention and correction mechanisms."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The item listing service must be available 99.9% of the time.",
+        "justification": "The FR assumes continuous availability of the item listing feature."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All user data entered during item listing must be encrypted using AES-256 at rest and TLS 1.3 in transit.",
+        "justification": "The FR involves collecting sensitive user information, requiring strong encryption for data protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The item listing module must be designed so that changes to the required fields or validation rules can be implemented within 2 hours of development time.",
+        "justification": "The FR may need updates over time, requiring a maintainable design."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Doctors shall be able to log in to check patient information, answer patient queries, perform daily activities, set reminders, and communicate with their staff.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide functionalities for doctors to log in, check patient information, answer queries, perform daily activities, set reminders, and communicate with staff, covering 100% of these features.",
+        "justification": "The FR specifies the need to include all these features for doctors' use."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately retrieve and display patient information with a 99.9% accuracy rate.",
+        "justification": "The FR implies the need for precise and correct handling of patient data."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must load patient information and perform other operations within 2 seconds for 95% of requests.",
+        "justification": "The FR involves real-time access to patient data and other functionalities, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user-friendly interface for doctors to navigate between different functionalities, with clear labels and intuitive design.",
+        "justification": "The FR requires ease of use for doctors to perform various tasks."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate user inputs and provide clear error messages, reducing user errors by at least 50%.",
+        "justification": "The FR involves user input, which can benefit from error prevention and correction mechanisms."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to doctors 99.99% of the time.",
+        "justification": "The FR assumes continuous access to critical medical functionalities."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: All patient data must be encrypted using AES-256 at rest and TLS 1.3 in transit.",
+        "justification": "The FR involves handling sensitive patient information, requiring strong encryption for data protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must use checksums or digital signatures to ensure the integrity of patient data during retrieval and storage.",
+        "justification": "The FR requires the protection of patient data from unauthorized changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The doctors' module must be designed so that changes to functionalities or data fields can be implemented within 4 hours of development time.",
+        "justification": "The FR may need updates over time, requiring a maintainable design."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The system must ensure that only authorized doctors can access patient information, with multi-factor authentication in place.",
+        "justification": "The FR involves handling sensitive medical data, requiring strict access controls to ensure patient safety."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to share files, screen share, conduct group screen sharing, and send contacts.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support file sharing, screen sharing, group screen sharing, and contact sending functionalities for 100% of the specified use cases.",
+        "justification": "The FR requires the system to provide multiple communication features, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must initiate file sharing, screen sharing, group screen sharing, and contact sending within 2 seconds for 95% of requests.",
+        "justification": "The FR implies the need for quick initiation of communication features to enhance user experience."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 1 GB of memory per active user session during file and screen sharing activities.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple users and communication types."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide intuitive user interfaces for initiating file sharing, screen sharing, group screen sharing, and contact sending, with clear visual cues and tooltips.",
+        "justification": "The FR requires user interaction with various communication features, which should be easy to operate."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must include confirmation dialogs before initiating file sharing, screen sharing, or sending contacts to prevent accidental actions.",
+        "justification": "The FR involves actions that could lead to unintended data sharing, requiring protective measures."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to facilitate file sharing, screen sharing, group screen sharing, and contact sending for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to communication features, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all shared files, screen sharing data, and contact information using AES-256 encryption during transmission and storage.",
+        "justification": "The FR involves sharing sensitive data, which requires strong encryption for protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that shared files and contact information remain unaltered during transmission and storage, using SHA-256 checksums for verification.",
+        "justification": "The FR requires the integrity of shared data to be maintained to prevent unauthorized modifications."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The system must be designed with separate modules for file sharing, screen sharing, group screen sharing, and contact sending, allowing for independent updates and maintenance.",
+        "justification": "The FR involves multiple features that should be maintainable independently to facilitate updates and improvements."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall provide an interface for Application Administrators to reset user passwords.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must provide a complete interface for Application Administrators to reset user passwords for 100% of the specified use cases.",
+        "justification": "The FR requires the system to provide a full-featured password reset interface for administrators, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process a password reset request within 3 seconds for 95% of requests.",
+        "justification": "The FR implies the need for quick processing of password reset requests to enhance administrator efficiency."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive interface for Application Administrators to reset user passwords, with consistent terminology and visual cues.",
+        "justification": "The FR requires administrator interaction with the password reset feature, which should be easy to operate."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must include confirmation dialogs before resetting user passwords to prevent accidental actions.",
+        "justification": "The FR involves actions that could lead to unintended password changes, requiring protective measures."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to facilitate password reset requests for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the password reset feature, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user passwords using bcrypt with a work factor of 12 during storage and transmission.",
+        "justification": "The FR involves handling sensitive user passwords, which requires strong encryption for protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that user passwords remain unaltered during transmission and storage, using HMAC-SHA-256 for verification.",
+        "justification": "The FR requires the integrity of user passwords to be maintained to prevent unauthorized modifications."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Accountability: The system must log all password reset actions performed by Application Administrators, including timestamp, user ID, and administrator ID, for audit purposes.",
+        "justification": "The FR involves administrative actions that should be traceable for security and compliance reasons."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for easy updates to the password reset interface without affecting other system components, with changes taking effect within 1 hour of deployment.",
+        "justification": "The FR involves a critical administrative function that may need frequent updates, requiring a modifiable design."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall be able to perform distance calculations and access geo-location information for the user, sites, and nearby sites.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must accurately calculate distances between user, sites, and nearby sites using all required geo-location data types (e.g., latitude, longitude) for 100% of specified use cases.",
+        "justification": "The FR requires the system to perform distance calculations and access geo-location information, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must provide distance calculations with an accuracy of within 1 meter for 99.9% of valid inputs.",
+        "justification": "The FR implies the need for precise and correct distance calculations based on geo-location data."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must calculate distances between user, sites, and nearby sites in less than 100 milliseconds for up to 1,000 concurrent requests.",
+        "justification": "The FR involves real-time access to geo-location data and calculations, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 50 MB of memory to process geo-location data and distance calculations for a single request.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple sites and users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear API or interface for accessing distance calculations and geo-location data, with consistent parameter naming (e.g., lat, lon) across all endpoints.",
+        "justification": "The FR requires interaction with geo-location data, which should be easy to operate for developers or users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to perform distance calculations and geo-location retrievals for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to geo-location services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user geo-location data using TLS 1.3 during transmission.",
+        "justification": "The FR involves accessing user location, which is sensitive data requiring protection."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow staff members to develop staff reports for publication and distribution.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the creation, editing, and formatting of staff reports with all necessary features (e.g., text editing, image insertion, data tables).",
+        "justification": "The FR requires a complete set of tools for report development."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 200 MB of memory when processing and generating a staff report.",
+        "justification": "The FR involves report generation, which should be efficient in resource usage."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user-friendly interface for report development, with drag-and-drop functionality for elements like images and tables.",
+        "justification": "The FR requires staff members to interact with the system, necessitating easy operability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Assistance: The system must offer contextual help or tooltips for all report development features, accessible within one click.",
+        "justification": "The FR involves complex tasks, which should be supported by user assistance."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must automatically save report drafts every 5 minutes and allow staff members to recover the last saved version in case of system failure.",
+        "justification": "The FR involves data entry, which should be safeguarded against loss."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that staff reports are not altered during transmission or storage, using checksums or digital signatures.",
+        "justification": "The FR involves the creation of reports, which must maintain integrity."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for the addition of new report templates or modification of existing ones without affecting other system functionalities.",
+        "justification": "The FR involves report development, which may require updates and modifications."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be guided to a login page after successfully registering, where they can enter their credentials to access the application.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must automatically redirect the user to the login page upon successful registration 100% of the time.",
+        "justification": "The FR requires a complete user journey from registration to login."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must complete the redirection to the login page within 1 second after successful registration.",
+        "justification": "The FR involves user navigation, requiring quick response times."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The login page must have clear labels and instructions for entering credentials, with a maximum of three fields (username, password, submit).",
+        "justification": "The FR involves user interaction with the login page, necessitating clear operability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide real-time validation of entered credentials on the login page, with error messages displayed within 500 milliseconds of incorrect input.",
+        "justification": "The FR involves user input, which should be protected against errors."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The login page must be available 99.99% of the time during operational hours.",
+        "justification": "The FR assumes continuous access to the login page for users."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user credentials using AES-256 encryption during transmission and storage.",
+        "justification": "The FR involves sensitive user data, which requires protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Authenticity: The system must implement multi-factor authentication (MFA) for user login to ensure the authenticity of the user.",
+        "justification": "The FR involves user authentication, which should be secured with MFA."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow site administrators to create news articles with designated publishing dates and expiry dates.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the creation of news articles with fields for title, content, publishing date, and expiry date for 100% of specified use cases.",
+        "justification": "The FR requires the system to handle all aspects of news article creation, including date management."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must correctly store and display the publishing and expiry dates of news articles, ensuring no more than 0.1% error rate in date handling.",
+        "justification": "The FR implies the need for accurate date management for news articles."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process the creation of a news article in less than 2 seconds for up to 100 concurrent requests.",
+        "justification": "The FR involves real-time creation of news articles, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process the creation of a single news article.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple news articles."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an intuitive user interface for site administrators to create news articles, with clear labels for publishing and expiry dates, and tooltips explaining their use.",
+        "justification": "The FR requires interaction with date fields, which should be easy to operate for administrators."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate the publishing and expiry dates to prevent invalid entries, with clear error messages and suggestions for correction.",
+        "justification": "The FR involves date entry, which could lead to user errors if not properly managed."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for news article creation for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the news article creation feature, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that news articles cannot be altered after publishing by unauthorized users, using digital signatures or similar mechanisms.",
+        "justification": "The FR involves sensitive content management, requiring protection against unauthorized changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for easy updates to the news article creation process, with a modular design that allows changes to be implemented within 2 hours of development time.",
+        "justification": "The FR may require future enhancements or changes to the news article creation process."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to create a Gmail account by providing personal details like name, gender, password, mobile number, and location.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must allow users to input all required personal details (name, gender, password, mobile number, location) for 100% of specified use cases.",
+        "justification": "The FR requires the system to handle all aspects of account creation, including various personal details."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must correctly validate and store user-provided personal details, ensuring no more than 0.1% error rate in data handling.",
+        "justification": "The FR implies the need for accurate handling of user data during account creation."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process the creation of a Gmail account in less than 5 seconds for up to 1,000 concurrent requests.",
+        "justification": "The FR involves real-time account creation, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 50 MB of memory to process the creation of a single Gmail account.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple account creations."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an intuitive user interface for account creation, with clear labels for each field and tooltips explaining their use.",
+        "justification": "The FR requires interaction with various personal details, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate user input for each field to prevent invalid entries, with clear error messages and suggestions for correction.",
+        "justification": "The FR involves user data entry, which could lead to errors if not properly managed."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for account creation for 99.99% of the operational time.",
+        "justification": "The FR assumes continuous access to the account creation feature, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user personal details using AES-256 encryption during storage and transmission.",
+        "justification": "The FR involves sensitive personal data, requiring protection during storage and transmission."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that user personal details cannot be altered by unauthorized users, using digital signatures or similar mechanisms.",
+        "justification": "The FR involves sensitive personal data, requiring protection against unauthorized changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for easy updates to the account creation process, with a modular design that allows changes to be implemented within 2 hours of development time.",
+        "justification": "The FR may require future enhancements or changes to the account creation process."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall display information and settings related to the required setting based on user input.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display all relevant information and settings based on user input for 100% of specified use cases.",
+        "justification": "The FR requires the system to handle all aspects of displaying information and settings based on user input."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must correctly display the information and settings based on user input, ensuring no more than 0.1% error rate in data display.",
+        "justification": "The FR implies the need for accurate display of information and settings."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must display information and settings based on user input in less than 1 second for up to 500 concurrent requests.",
+        "justification": "The FR involves real-time display of information and settings, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to display information and settings for a single user request.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple user requests."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide an intuitive user interface for displaying information and settings, with clear labels and tooltips explaining their use.",
+        "justification": "The FR requires interaction with information and settings, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate user inputs to prevent invalid entries, with clear error messages and suggestions for correction.",
+        "justification": "The FR involves user data entry, which could lead to errors if not properly managed."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to display information and settings for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the information and settings display feature, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user input data using TLS 1.3 during transmission.",
+        "justification": "The FR involves user input data, requiring protection during transmission."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for easy updates to the information and settings display process, with a modular design that allows changes to be implemented within 2 hours of development time.",
+        "justification": "The FR may require future enhancements or changes to the information and settings display process."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall/will be able to open various types of accounts like savings, fixed deposit, etc.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the creation of all specified account types (savings, fixed deposit, etc.) with all necessary attributes and functionalities for 100% of the account types mentioned.",
+        "justification": "The FR requires the system to handle different account types, necessitating full coverage of these account functionalities."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must correctly apply account-specific rules and calculations (e.g., interest rates, withdrawal limits) for each account type with an accuracy of 100%.",
+        "justification": "The FR implies the need for precise and correct handling of different account types and their associated rules."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process account opening requests within 5 seconds for 95% of transactions.",
+        "justification": "The FR involves account creation, which should be processed quickly to enhance user experience."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide clear instructions and tooltips for opening different types of accounts, achieving a user satisfaction score of at least 4 out of 5 in usability tests.",
+        "justification": "The FR requires users to interact with the system to open accounts, necessitating ease of learning."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must allow users to open accounts through an intuitive user interface, with a maximum of 3 clicks from the main menu to account creation.",
+        "justification": "The FR involves user interaction for account creation, which should be straightforward and efficient."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process account opening requests for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to account creation services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all account-related data using AES-256 encryption at rest and TLS 1.3 during transmission.",
+        "justification": "The FR involves handling sensitive financial data, which requires strong encryption for protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must implement checksums or digital signatures to ensure the integrity of account data during transactions.",
+        "justification": "The FR involves financial data that must be protected against unauthorized changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The system must be designed with separate modules for each account type, allowing for independent updates and maintenance.",
+        "justification": "The FR requires handling different account types, which should be modular for easier maintenance."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to add expenses with details including amount, date, payer, and optional split among participants.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must allow users to input all specified expense details (amount, date, payer, optional split) for 100% of expense entries.",
+        "justification": "The FR requires the system to handle all specified expense details, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately calculate and record the split of expenses among participants with an accuracy of 100%.",
+        "justification": "The FR implies the need for precise and correct handling of expense splits."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process expense entries within 2 seconds for 95% of transactions.",
+        "justification": "The FR involves real-time expense entry, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Learnability: The system must provide clear instructions and examples for adding expenses, achieving a user satisfaction score of at least 4 out of 5 in usability tests.",
+        "justification": "The FR requires users to interact with the system to add expenses, necessitating ease of learning."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must allow users to add expenses through an intuitive user interface, with a maximum of 3 clicks from the main menu to expense entry.",
+        "justification": "The FR involves user interaction for expense entry, which should be straightforward and efficient."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process expense entries for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to expense entry services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all expense data using AES-256 encryption at rest and TLS 1.3 during transmission.",
+        "justification": "The FR involves handling sensitive financial data, which requires strong encryption for protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must implement checksums or digital signatures to ensure the integrity of expense data during transactions.",
+        "justification": "The FR involves financial data that must be protected against unauthorized changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The system must be designed with separate modules for expense entry and split calculations, allowing for independent updates and maintenance.",
+        "justification": "The FR requires handling different aspects of expense entry, which should be modular for easier maintenance."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Faculties shall be able to upload and download assignments, college notices, student notices, journals, and videos.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the upload and download of all specified document types (assignments, college notices, student notices, journals, videos) with 100% coverage of these functionalities.",
+        "justification": "The FR requires the system to handle various types of documents, necessitating full support for all mentioned types."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that uploaded files are stored and retrieved without corruption or alteration for 99.99% of operations.",
+        "justification": "The FR implies the need for accurate handling of files to maintain their integrity throughout the upload and download process."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must complete the upload of a 100 MB file within 60 seconds and the download within 30 seconds for 95% of operations.",
+        "justification": "The FR involves file transfers, which should be completed in a reasonable time to ensure user satisfaction and efficiency."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 200 MB of memory to handle the upload and download of a single file.",
+        "justification": "Efficient resource use is crucial for handling multiple file operations concurrently as implied by the FR."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user interface for uploading and downloading files with clear labels and instructions, achieving a user satisfaction score of at least 4 out of 5 in usability tests.",
+        "justification": "The FR requires interaction with the system for file management, which should be straightforward and user-friendly."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must prevent users from uploading files exceeding 2 GB in size and provide clear error messages for such attempts.",
+        "justification": "The FR involves file uploads, and protecting users from common errors (e.g., uploading excessively large files) enhances usability."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for file upload and download operations for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to file management services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all files during transmission using TLS 1.3 and store them encrypted using AES-256.",
+        "justification": "The FR involves handling potentially sensitive documents, requiring protection during transmission and storage."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must implement checksums to verify the integrity of files during upload and download, ensuring no data corruption for 99.99% of operations.",
+        "justification": "The FR requires file management, and ensuring the integrity of files is crucial for maintaining the trustworthiness of the system."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The file management system must be designed as a separate module that can be updated independently without affecting other system functionalities.",
+        "justification": "The FR involves a specific functionality (file management) that should be modular to facilitate maintenance and updates."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Scalability: The system must handle a 20% increase in file upload and download requests per month without performance degradation.",
+        "justification": "The FR implies a need for scalability to accommodate potential growth in user base and file operations."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall allow users to rate and review services by providing comments on tour plans or services, with comments stored in the database and a thank you message displayed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support the full process of rating, reviewing, and commenting on services, including storage in the database and displaying a thank you message, with 100% coverage of these functionalities.",
+        "justification": "The FR requires the system to handle all aspects of user feedback, necessitating complete coverage of these functionalities."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately store and retrieve user ratings, reviews, and comments without loss or alteration for 99.99% of operations.",
+        "justification": "The FR implies the need for precise handling of user feedback to ensure data integrity."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must process a user's rating and review submission within 2 seconds for 95% of operations.",
+        "justification": "The FR involves real-time interaction with the system, requiring timely responses for user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 50 MB of memory to process a single rating and review submission.",
+        "justification": "Efficient resource use is critical for handling multiple user interactions concurrently as implied by the FR."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user interface for rating and reviewing services with clear labels and instructions, achieving a user satisfaction score of at least 4 out of 5 in usability tests.",
+        "justification": "The FR requires interaction with the system for feedback, which should be straightforward and user-friendly."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Engagement: The system must display the thank you message within 1 second after a user submits a rating or review, enhancing user engagement.",
+        "justification": "The FR includes displaying a thank you message, which should be immediate to keep users engaged."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available for rating and reviewing services for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the rating and review system, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt user comments during transmission using TLS 1.3 and store them encrypted using AES-256.",
+        "justification": "The FR involves handling user comments, which may contain sensitive information requiring protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must implement checksums to verify the integrity of user ratings, reviews, and comments during storage and retrieval, ensuring no data corruption for 99.99% of operations.",
+        "justification": "The FR requires handling user feedback, and ensuring the integrity of this data is crucial for maintaining the trustworthiness of the system."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The rating and review system must be designed as a separate module that can be updated independently without affecting other system functionalities.",
+        "justification": "The FR involves a specific functionality (rating and reviewing) that should be modular to facilitate maintenance and updates."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Scalability: The system must handle a 20% increase in rating and review submissions per month without performance degradation.",
+        "justification": "The FR implies a need for scalability to accommodate potential growth in user feedback."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "Customers shall be able to search for new products in the database by entering item names, and upon successful search, view detailed product information.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support search functionality for 100% of the products listed in the database, ensuring that all products are searchable by item name.",
+        "justification": "The FR requires the system to search for products by name, necessitating complete coverage of the product database."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must return accurate and complete product information for 99.9% of search queries, matching the entered item name exactly or through relevant synonyms.",
+        "justification": "The FR implies the need for correct and detailed product information post-search."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must return search results within 2 seconds for 95% of queries, regardless of the number of products in the database.",
+        "justification": "The FR involves real-time search functionality, requiring quick response times for user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process a search query and display product information.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on searching a potentially large product database."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The search interface must allow users to input item names with auto-suggest functionality, displaying suggestions within 500 milliseconds of typing.",
+        "justification": "The FR requires interaction with the search functionality, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages and suggestions for correction if a search query yields no results, helping users refine their search.",
+        "justification": "The FR involves user interaction with the system, necessitating support to minimize user errors during searches."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to perform product searches and display product information for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the product database, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all search queries and product information during transmission using TLS 1.3.",
+        "justification": "The FR involves accessing product information, which may contain sensitive data requiring protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for the addition or modification of product search algorithms without affecting the overall system performance, with changes deployable within 1 hour.",
+        "justification": "The FR implies the need for ongoing updates to the product database and search functionality."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall allow users to search for suggested doctors for consultation based on their symptoms or predicted diseases.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support search functionality for 100% of the doctors listed in the database, ensuring that all doctors are searchable by symptoms or predicted diseases.",
+        "justification": "The FR requires the system to search for doctors based on user input, necessitating complete coverage of the doctor database."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must return accurate and relevant doctor suggestions for 99% of search queries, matching the entered symptoms or predicted diseases.",
+        "justification": "The FR implies the need for correct and relevant doctor suggestions post-search."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must return search results within 3 seconds for 95% of queries, regardless of the number of doctors in the database.",
+        "justification": "The FR involves real-time search functionality, requiring quick response times for user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 150 MB of memory to process a search query and display doctor suggestions.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on searching a potentially large doctor database."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The search interface must allow users to input symptoms or predicted diseases with auto-suggest functionality, displaying suggestions within 500 milliseconds of typing.",
+        "justification": "The FR requires interaction with the search functionality, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must provide clear error messages and suggestions for correction if a search query yields no results, helping users refine their search.",
+        "justification": "The FR involves user interaction with the system, necessitating support to minimize user errors during searches."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to perform doctor searches and display suggestions for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the doctor database, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all search queries and doctor information during transmission using TLS 1.3.",
+        "justification": "The FR involves accessing sensitive health-related information, requiring protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for the addition or modification of doctor search algorithms without affecting the overall system performance, with changes deployable within 1 hour.",
+        "justification": "The FR implies the need for ongoing updates to the doctor database and search functionality."
+      },
+      {
+        "attribute": "Safety",
+        "requirement": "Operational Constraint: The system must ensure that doctor suggestions are based on verified medical data and comply with healthcare regulations.",
+        "justification": "The FR involves health-related services, necessitating adherence to safety standards and regulations."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to choose payment methods such as PayPal balance, debit or credit card, and transfer funds by entering recipient's email ID or name, and making the payment.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must support all specified payment methods (PayPal balance, debit or credit card) and allow fund transfers via email ID or name for 100% of transactions.",
+        "justification": "The FR requires the system to handle multiple payment methods and recipient identifiers, necessitating full coverage of these core functionalities."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that 99.9% of payments are processed correctly, with the correct amount transferred to the intended recipient.",
+        "justification": "The FR implies the need for accurate transaction processing to ensure users' funds are handled correctly."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must complete a payment transaction within 5 seconds for 95% of transactions.",
+        "justification": "The FR involves real-time payment processing, requiring timely responses to maintain user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process a single payment transaction.",
+        "justification": "Efficient resource use is crucial for scalability, given the FR’s focus on handling multiple payment methods and transactions."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user interface with clear labels and instructions for selecting payment methods and entering recipient details, achieving a user satisfaction score of at least 4 out of 5.",
+        "justification": "The FR requires user interaction with payment options, which should be easy to operate and understand."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate user input for payment method selection and recipient details, preventing errors in 99% of cases.",
+        "justification": "The FR involves user input, which should be validated to prevent errors and ensure smooth transaction processing."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to process payments for 99.99% of the operational time.",
+        "justification": "The FR assumes continuous access to payment processing services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all payment data using AES-256 encryption during transmission and storage.",
+        "justification": "The FR involves handling sensitive payment information, which requires protection against unauthorized access."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must implement checksums or digital signatures to ensure the integrity of payment data during transactions.",
+        "justification": "The FR requires secure handling of payment data to prevent tampering or unauthorized modifications."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The payment processing module must be designed as a separate component that can be updated independently without affecting other system functionalities.",
+        "justification": "The FR involves payment processing, which should be modular to facilitate maintenance and updates."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Adaptability: The system must be capable of integrating new payment methods with less than 2 hours of downtime per integration.",
+        "justification": "The FR specifies multiple payment methods, and the system should be adaptable to include future payment options."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall automatically update the available quantity of each medicine after a sale is completed.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must update the quantity of all medicines affected by a sale for 100% of transactions.",
+        "justification": "The FR requires the system to handle inventory updates for all medicines involved in a sale."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that 99.99% of inventory updates are accurate, reflecting the exact quantity sold.",
+        "justification": "The FR implies the need for precise inventory management to maintain accurate stock levels."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must update the inventory within 1 second after a sale is completed for 99% of transactions.",
+        "justification": "The FR involves real-time inventory updates, requiring timely responses to maintain accurate stock levels."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 50 MB of memory to process a single inventory update.",
+        "justification": "Efficient resource use is crucial for scalability, given the FR’s focus on handling multiple sales and inventory updates."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Fault Tolerance: The system must continue to update inventory even if a single component fails, with a backup mechanism in place.",
+        "justification": "The FR involves critical inventory management, which should be fault-tolerant to ensure continuous operation."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Recoverability: The system must be able to recover and apply any missed inventory updates within 5 minutes of system restoration.",
+        "justification": "The FR requires the system to maintain accurate inventory, which should be recoverable in case of system failures."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must implement transaction logging and checksums to ensure the integrity of inventory data during updates.",
+        "justification": "The FR involves critical inventory data, which requires protection against unauthorized modifications."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Testability: The system must include automated tests that can verify the correctness of inventory updates with a coverage of at least 90%.",
+        "justification": "The FR involves inventory management, which should be testable to ensure accuracy and reliability."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Scalability: The system must handle inventory updates for up to 10,000 sales per hour without performance degradation.",
+        "justification": "The FR specifies automatic updates, and the system should be scalable to handle high volumes of sales."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall provide a calendar view of available appointment slots for each healthcare provider",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must display all available appointment slots for each healthcare provider on the calendar view, covering 100% of the time slots within the specified date range.",
+        "justification": "The FR requires a comprehensive view of all available slots, ensuring no slots are omitted."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must accurately reflect the availability status of each slot, with a 99.9% accuracy rate when compared to the actual availability data.",
+        "justification": "The FR implies the need for precise and correct representation of appointment availability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must load the calendar view with all available slots within 2 seconds for up to 500 concurrent users.",
+        "justification": "The FR involves real-time display of appointment slots, requiring quick loading times for user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to display the calendar view for a single user session.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on displaying multiple slots."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide intuitive navigation controls (e.g., next/previous month, day/week/month views) with clear labels and tooltips explaining their functions.",
+        "justification": "The FR requires interaction with the calendar view, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must prevent users from booking slots that are already taken or outside the provider's availability, with error messages displayed within 1 second of the user's action.",
+        "justification": "The FR implies the need to protect users from making erroneous bookings."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to display the calendar view for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the calendar view, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all appointment data using AES-256 encryption when stored in the database.",
+        "justification": "The FR involves handling sensitive appointment data, which requires protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The calendar view functionality must be implemented as a separate module that can be updated independently without affecting other parts of the system.",
+        "justification": "The FR requires a specific feature that should be maintainable without impacting the entire system."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "User shall be able to search for properties based on specific criteria such as location, area, and number of bedrooms.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must allow users to search for properties using all specified criteria (location, area, number of bedrooms) and return results for 100% of valid search queries.",
+        "justification": "The FR requires comprehensive search capabilities covering all mentioned criteria."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must return search results that accurately match the specified criteria with a 99.9% accuracy rate.",
+        "justification": "The FR implies the need for precise and correct search results based on user input."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must return search results within 1 second for up to 1,000 concurrent searches.",
+        "justification": "The FR involves real-time search functionality, requiring quick response times for user satisfaction."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 200 MB of memory to process a single search query.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple search queries."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and intuitive search interface with labeled fields for each criterion (location, area, number of bedrooms) and a prominent search button.",
+        "justification": "The FR requires interaction with the search functionality, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "User Error Protection: The system must validate user input for search criteria and display error messages within 500 milliseconds if invalid inputs are provided.",
+        "justification": "The FR implies the need to protect users from making erroneous searches."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to perform property searches for 99.95% of the operational time.",
+        "justification": "The FR assumes continuous access to the search functionality, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all user search queries using TLS 1.3 during transmission.",
+        "justification": "The FR involves handling user input, which may contain sensitive information requiring protection."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modularity: The search functionality must be implemented as a separate module that can be updated independently without affecting other parts of the system.",
+        "justification": "The FR requires a specific feature that should be maintainable without impacting the entire system."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "System shall calculate modification charges based on modifying time, date, route, availability, display new fares, and process payments through the payment gateway.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must calculate modification charges accurately considering all specified factors (time, date, route, availability) and display new fares for 100% of modification requests.",
+        "justification": "The FR requires comprehensive calculation of modification charges and display of new fares, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the calculated modification charges and displayed new fares are correct for 99.9% of modification requests.",
+        "justification": "The FR implies the need for precise and correct calculation of charges and fares based on multiple factors."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must calculate modification charges and display new fares within 2 seconds for 95% of modification requests.",
+        "justification": "The FR involves real-time calculation and display of charges and fares, requiring timely responses for usability."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 100 MB of memory to process a single modification request.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling multiple modification requests."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a user-friendly interface for inputting modification details and displaying new charges and fares, with clear labels and instructions.",
+        "justification": "The FR requires user interaction for modifications, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to calculate modification charges and process payments for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the modification and payment services, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt all payment data using AES-256 encryption during transmission and storage.",
+        "justification": "The FR involves processing payments, which is sensitive data requiring protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that modification charges and new fares are not tampered with during calculation and display.",
+        "justification": "The FR involves financial calculations, which must be protected against unauthorized changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for updates to the charge calculation algorithm without affecting the overall system functionality.",
+        "justification": "The FR involves complex calculations that may need to be updated over time, requiring ease of modification."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Scalability: The system must handle up to 10,000 concurrent modification requests without performance degradation.",
+        "justification": "The FR implies potential for high usage, necessitating the system to scale effectively."
+      }
+    ]
+  },
+  {
+    "functionalRequirement": "The system shall generate a PDF report of all transactions and send a copy to the customer's email address and another copy to the system database for monthly transaction calculation.",
+    "identifiedNFRs": [
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Completeness: The system must generate a PDF report that includes all transactions and send it to both the customer's email and the system database for 100% of monthly transaction calculations.",
+        "justification": "The FR requires comprehensive reporting and distribution of transaction data, necessitating full coverage of these core functional aspects."
+      },
+      {
+        "attribute": "Functional Suitability",
+        "requirement": "Functional Correctness: The system must ensure that the generated PDF report accurately reflects all transactions for 99.9% of monthly transaction calculations.",
+        "justification": "The FR implies the need for precise and correct reporting of transactions."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Time Behavior: The system must generate and send the PDF report within 5 minutes of the end of the monthly transaction period for 95% of monthly calculations.",
+        "justification": "The FR involves timely generation and distribution of reports, requiring efficient processing."
+      },
+      {
+        "attribute": "Performance Efficiency",
+        "requirement": "Resource Utilization: The system must use no more than 200 MB of memory to generate and send a single PDF report.",
+        "justification": "Efficient resource use is critical for scalability, given the FR’s focus on handling monthly transaction data."
+      },
+      {
+        "attribute": "Usability",
+        "requirement": "Operability: The system must provide a clear and user-friendly interface for accessing the PDF report, with easy navigation and clear labels.",
+        "justification": "The FR requires user interaction for accessing reports, which should be easy to operate for users."
+      },
+      {
+        "attribute": "Reliability",
+        "requirement": "Availability: The system must be available to generate and send PDF reports for 99.9% of the operational time.",
+        "justification": "The FR assumes continuous access to the reporting service, necessitating high availability."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Confidentiality: The system must encrypt the PDF report using AES-256 encryption during transmission and storage.",
+        "justification": "The FR involves sending transaction data, which is sensitive data requiring protection."
+      },
+      {
+        "attribute": "Security",
+        "requirement": "Integrity: The system must ensure that the PDF report is not tampered with during generation and transmission.",
+        "justification": "The FR involves financial data, which must be protected against unauthorized changes."
+      },
+      {
+        "attribute": "Maintainability",
+        "requirement": "Modifiability: The system must allow for updates to the PDF generation and distribution process without affecting the overall system functionality.",
+        "justification": "The FR involves complex reporting that may need to be updated over time, requiring ease of modification."
+      },
+      {
+        "attribute": "Flexibility",
+        "requirement": "Scalability: The system must handle up to 100,000 transactions per month without performance degradation in report generation and distribution.",
+        "justification": "The FR implies potential for high transaction volumes, necessitating the system to scale effectively."
+      }
+    ]
+  }
+]

@@ -250,7 +250,7 @@
     ]
   },
   {
-    "functionalRequirement": "The system shall provide a calendar view of available appointment slots for each healthcare provider.",
+    "functionalRequirement": "The system shall provide a calendar view of available appointment slots for each healthcare provider",
     "identifiedNFRs": [
       {
         "attribute": "Functional Suitability",

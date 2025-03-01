@@ -1105,7 +1105,7 @@
     ]
   },
   {
-    "functionalRequirement": "Information on remaining job posting time and CV access shall be reportable.",
+    "functionalRequirement": "Information on remaining job posting time and CV access shall be reportable",
     "identifiedNFRs": [
       {
         "attribute": "Functional Suitability",
