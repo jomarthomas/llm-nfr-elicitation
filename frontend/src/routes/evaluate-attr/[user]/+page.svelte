@@ -3,6 +3,49 @@
 	import Attributes from '$components/Attributes.svelte';
 	import { addToast } from '$stores/ToastStore';
 
+	const subDef = [
+		'Functional Completeness',
+		'Functional Correctness',
+		'Functional Appropriateness',
+		'Time Behavior',
+		'Resource Utilization',
+		'Capacity',
+		'Co-existence',
+		'Interoperability',
+		'Appropriateness Recognizability',
+		'Learnability',
+		'Operability',
+		'User Error Protection',
+		'User Engagement',
+		'Inclusivity',
+		'User Assistance',
+		'Self-descriptiveness',
+		'Faultlessness',
+		'Availability',
+		'Fault Tolerance',
+		'Recoverability',
+		'Confidentiality',
+		'Integrity',
+		'Non-repudiation',
+		'Accountability',
+		'Authenticity',
+		'Resistance',
+		'Modularity',
+		'Reusability',
+		'Analysability',
+		'Modifiability',
+		'Testability',
+		'Adaptability',
+		'Scalability',
+		'Installability',
+		'Replaceability',
+		'Operational constraint',
+		'Risk Identification',
+		'Fail Safe',
+		'Hazard warning',
+		'Safe Integration'
+	];
+
 	interface FRWithNFRs {
 		id: number;
 		functionalRequirement: string;
@@ -77,6 +120,27 @@
 			: null
 	);
 
+	const allAttrs = {
+		'Functional Suitability':
+			'Capability of a product to provide functions that meet stated and implied needs of intended users when used under specified conditions.',
+		'Performance Efficiency':
+			'Capability of a product to perform functions within specified time and throughput parameters and be efficient in resource use.',
+		Compatibility:
+			'Capability of a product to exchange information with other products and perform functions while sharing environment and resources.',
+		Usability:
+			'Ensures ease of use and user experience. Includes learnability, operability, and user error protection.',
+		Reliability:
+			'Ensures the system remains operational over time. Includes fault tolerance, recoverability, and availability.',
+		Security:
+			'Ensures data protection and resistance to malicious actions. Includes confidentiality, integrity, authentication, and non-repudiation.',
+		Maintainability:
+			'Ensures the system can be efficiently modified and tested. Includes modularity, modifiability, and testability.',
+		Flexibility:
+			'Ensures the system can adapt to increased load or environmental changes. Includes adaptability and scalability.',
+		Safety:
+			'Ensures the system prevents harm to users, data, or the environment. Includes fail-safe mechanisms and risk identification.'
+	};
+
 	async function handleSubmit(event: Event) {
 		event.preventDefault();
 
@@ -120,6 +184,26 @@
 </script>
 
 <form class="fr-evaluation" onsubmit={handleSubmit}>
+	<div class="fr-evaluation__header">
+		<h1 class="fr-evaluation__title">Attribute Definitions</h1>
+	</div>
+
+	<table class="CrispTable">
+		<thead>
+			<tr>
+				<th>Attribute</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			{#each Object.entries(allAttrs) as [attr, description]}
+				<tr>
+					<td>{attr}</td>
+					<td>{description}</td>
+				</tr>
+			{/each}
+		</tbody>
+	</table>
 	{#if NFR.nfr && NFR.nfr.length > 0}
 		<div class="fr-evaluation__header">
 			<h1 class="fr-evaluation__title">Non Functional Requirement</h1>
@@ -139,7 +223,7 @@
 							<tr>
 								<th>NFR</th>
 								<td class="requirement Row--a-start gap-15">
-									{nfr.requirement}
+									{nfr.requirement.replace(new RegExp(`^(${subDef.join('|')}):\\s*`, 'i'), '')}
 								</td>
 							</tr>
 							<tr>

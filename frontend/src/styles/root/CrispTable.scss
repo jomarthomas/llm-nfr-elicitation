@@ -82,8 +82,18 @@
 			}
 		}
 
-		&:last-child > td {
-			border-bottom: 0;
+		&:last-child {
+			td {
+
+				&:first-child {
+					// border-bottom: 0;
+					border-bottom-left-radius: 6px;
+				}
+				&:last-child {
+					// border-bottom: 0;
+					border-bottom-right-radius: 6px;
+				}
+			}
 		}
 	}
 
