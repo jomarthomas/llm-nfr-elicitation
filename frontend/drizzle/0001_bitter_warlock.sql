@@ -1,1 +1,0 @@
-ALTER TABLE `nfrs` ADD `llm` text NOT NULL;

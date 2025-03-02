@@ -5,36 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1740689237530,
-      "tag": "0000_nice_spirit",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1740689690116,
-      "tag": "0001_bitter_warlock",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "6",
-      "when": 1740690958338,
-      "tag": "0002_unknown_princess_powerful",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "6",
-      "when": 1740862075294,
-      "tag": "0003_majestic_expediter",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "6",
-      "when": 1740872417540,
-      "tag": "0004_groovy_mephistopheles",
+      "when": 1740884131325,
+      "tag": "0000_demonic_hairball",
       "breakpoints": true
     }
   ]

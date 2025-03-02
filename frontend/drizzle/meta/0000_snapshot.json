@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "92c5c20b-2adf-492f-9382-6af7c40cb52f",
+  "id": "83ffa8d6-d767-41e2-85b0-1d9d91bfd5dd",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "frs": {
@@ -52,6 +52,13 @@
           "notNull": true,
           "autoincrement": false
         },
+        "llm": {
+          "name": "llm",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
         "requirement": {
           "name": "requirement",
           "type": "text(2000)",
@@ -81,6 +88,30 @@
           "notNull": true,
           "autoincrement": false,
           "default": 0
+        },
+        "nfrUser": {
+          "name": "nfrUser",
+          "type": "text(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "''"
+        },
+        "humanAttr": {
+          "name": "humanAttr",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "''"
+        },
+        "attrUser": {
+          "name": "attrUser",
+          "type": "text(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "''"
         }
       },
       "indexes": {},
