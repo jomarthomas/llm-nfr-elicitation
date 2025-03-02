@@ -59,7 +59,7 @@ export const load: PageServerLoad = async ({ params }) => {
 					justification: nfrs!.justification,
 					applicability: nfrs!.applicability,
 					validity: nfrs!.validity,
-					user: nfrs!.user
+					nfrUser: nfrs!.nfrUser
 				};
 
 				if (existingFR) {

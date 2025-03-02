@@ -1,0 +1,1 @@
+ALTER TABLE `nfrs` ADD `humanAttr` text DEFAULT '' NOT NULL;

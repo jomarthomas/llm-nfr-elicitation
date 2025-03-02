@@ -32,7 +32,55 @@ export const load: PageServerLoad = async ({ params }) => {
 		throw redirect(307, '/?error=Unauthorized');
 	}
 
-	
+	const unevaluatedNFRs = await db
+		.select()
+		.from(nfrTable)
+		.where(
+			and(
+				inArray(nfrTable.frId, validUsers[userName].FR),
+				eq(nfrTable.humanAttr, ''),
+				eq(nfrTable.llm, validUsers[userName].model)
+			)
+		)
+		.leftJoin(frTable, eq(nfrTable.frId, frTable.id));
 
-	return {};
+	// console.log(unevaluatedNFRs)
+
+	const result = unevaluatedNFRs.reduce(
+		(
+			acc: { id: number; functionalRequirement: string; identifiedNFRs: any[] }[],
+			{ frs, nfrs }
+		) => {
+			const existingFR = acc.find((item) => item.id === frs?.id);
+			if (nfrs) {
+				const nfrData = {
+					id: nfrs!.id,
+					attribute: nfrs!.attribute,
+					llm: nfrs!.llm,
+					requirement: nfrs!.requirement,
+					justification: nfrs!.justification,
+					applicability: nfrs!.applicability,
+					validity: nfrs!.validity,
+					nfrUser: nfrs!.nfrUser
+				};
+
+				if (existingFR) {
+					existingFR.identifiedNFRs.push(nfrData);
+				} else {
+					acc.push({
+						id: frs?.id!,
+						functionalRequirement: frs?.requirement!,
+						identifiedNFRs: [nfrData]
+					});
+				}
+			}
+
+			return acc;
+		},
+		[]
+	);
+	return {
+		// nfr: result.length > 0 ? result[Math.floor(Math.random() * result.length)] : null
+		nfr: result
+	};
 };

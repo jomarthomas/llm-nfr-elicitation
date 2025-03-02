@@ -22,6 +22,20 @@
       "when": 1740690958338,
       "tag": "0002_unknown_princess_powerful",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1740862075294,
+      "tag": "0003_majestic_expediter",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1740872417540,
+      "tag": "0004_groovy_mephistopheles",
+      "breakpoints": true
     }
   ]
 }

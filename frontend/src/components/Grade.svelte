@@ -63,9 +63,11 @@
 
 			&[data-selected='true'] {
 				&:hover {
-					background-color: aquamarine;
+					background-color: #0969da;
+					color: white;
 				}
-				background-color: aquamarine;
+				background-color: #0969da;
+				color: white;
 			}
 
 			input[type='radio'] {

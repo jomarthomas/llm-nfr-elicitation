@@ -1,5 +1,4 @@
-import { sqliteTable, integer, text, foreignKey } from 'drizzle-orm/sqlite-core';
-import { sql } from 'drizzle-orm';
+import { sqliteTable, integer, text } from 'drizzle-orm/sqlite-core';
 
 // FR Table
 export const frTable = sqliteTable('frs', {
@@ -45,8 +44,33 @@ export const nfrTable = sqliteTable('nfrs', {
 	justification: text('justification', { length: 2000 }).notNull(), // Long string for justification
 	applicability: integer('applicability').notNull().default(0), // 0-5, starts at 0
 	validity: integer('validity').notNull().default(0), // 0-5, starts at 0,
-	user: text('user', { length: 20 }).notNull().default('')
+	nfrUser: text('nfrUser', { length: 20 }).notNull().default(''),
+	humanAttr: text('humanAttr', {
+		enum: [
+			'',
+			'Functional Suitability',
+			'Performance Efficiency',
+			'Compatibility',
+			'Usability',
+			'Reliability',
+			'Security',
+			'Maintainability',
+			'Flexibility',
+			'Safety'
+		]
+	})
+		.notNull()
+		.default(''),
+	attrUser: text('attrUser', { length: 20 }).notNull().default('')
 });
+
+/**
+ * Need
+ * {
+ * 	NFR: string
+ *
+ * }
+ */
 
 // TypeScript types for type safety
 export type FRTable = typeof frTable.$inferSelect;

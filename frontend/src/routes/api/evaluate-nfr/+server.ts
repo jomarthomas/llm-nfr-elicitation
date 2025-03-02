@@ -33,7 +33,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		);
 
 		updates.push(
-			await db.update(nfrTable).set({ user: payload.user }).where(eq(nfrTable.id, element.id))
+			await db.update(nfrTable).set({ nfrUser: payload.user }).where(eq(nfrTable.id, element.id))
 		);
 	}
 	await Promise.all(updates);
