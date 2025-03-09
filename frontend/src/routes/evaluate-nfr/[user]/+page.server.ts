@@ -22,7 +22,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		alejandra: { FR: [29, 17, 10], model: 'gemini-1.5-pro' },
 		yang: { FR: [8, 32, 14], model: 'gpt-4o-mini' },
 		stephanie: { FR: [4, 13, 18], model: 'claude-3-5-haiku' },
-		aadil: { FR: [21, 27, 6], model: 'claude-3-5-haiku' },
+		jared: { FR: [21, 27, 6], model: 'claude-3-5-haiku' },
 		ariela: { FR: [24, 15, 19], model: 'deepSeek-V3' },
 		diana: { FR: [2, 28, 26], model: 'claude-3-7-sonnet' },
 		felix: { FR: [30, 22, 16], model: 'lama-3.3-70B' }
