@@ -56,42 +56,43 @@ async function createDumpDb() {
   console.log("Database created from dump.sql and saved to dump.db");
 }
 
-// Open database
-const db = new DB("analysis/syntheticData/dump.db");
+async function generateCSV() {
+  // Open database
+  const db = new DB("analysis/syntheticData/dump.db");
 
-// Interface for FRWithNFRs
-interface FRWithNFRs {
-  id: number;
-  functionalRequirement: string;
-  identifiedNFRs: {
-    id: string;
-    attribute:
-      | "Functional Suitability"
-      | "Performance Efficiency"
-      | "Compatibility"
-      | "Usability"
-      | "Reliability"
-      | "Security"
-      | "Maintainability"
-      | "Flexibility"
-      | "Safety";
-    requirement: string;
-    justification: string;
-    validity?: number;
-    applicability?: number;
-    humanAttr?: string;
-    llm?: string;
-    assignedFor?: "nfr" | "attr";
-    user?: string;
-    nfrUser?: string;
-    attrUser?: string;
-  }[];
-}
+  // Interface for FRWithNFRs
+  interface FRWithNFRs {
+    id: number;
+    functionalRequirement: string;
+    identifiedNFRs: {
+      id: string;
+      attribute:
+        | "Functional Suitability"
+        | "Performance Efficiency"
+        | "Compatibility"
+        | "Usability"
+        | "Reliability"
+        | "Security"
+        | "Maintainability"
+        | "Flexibility"
+        | "Safety";
+      requirement: string;
+      justification: string;
+      validity?: number;
+      applicability?: number;
+      humanAttr?: string;
+      llm?: string;
+      assignedFor?: "nfr" | "attr";
+      user?: string;
+      nfrUser?: string;
+      attrUser?: string;
+    }[];
+  }
 
-// Function to fetch NFRs
-function fetchNFRs(frIds: number[], llm?: string): FRWithNFRs[] {
-  const placeholders = frIds.map(() => "?").join(",");
-  let query = `
+  // Function to fetch NFRs
+  function fetchNFRs(frIds: number[], llm?: string): FRWithNFRs[] {
+    const placeholders = frIds.map(() => "?").join(",");
+    let query = `
     SELECT f.id, f.requirement AS fr_requirement,
            n.id AS nfr_id, n.attribute, n.requirement AS nfr_requirement,
            n.justification, n.llm, n.applicability, n.validity, n.nfrUser, n.humanAttr, n.attrUser
@@ -99,134 +100,138 @@ function fetchNFRs(frIds: number[], llm?: string): FRWithNFRs[] {
     LEFT JOIN nfrs n ON f.id = n.fr_id
     WHERE f.id IN (${placeholders})
   `;
-  const params: any[] = frIds;
-  if (llm) {
-    query += " AND n.llm = ?";
-    params.push(llm);
-  }
-
-  const result = db.query(query, params);
-  const frMap: { [key: number]: FRWithNFRs } = {};
-
-  for (const row of result) {
-    // console.log(row);
-    const [
-      frId,
-      frReq,
-      nfrId,
-      attr,
-      nfrReq,
-      just,
-      llm,
-      applicability,
-      validity,
-      nfrUser,
-      humanAttr,
-      attrUser,
-    ] = row as [
-      number,
-      string,
-      string | null,
-      string | null,
-      string | null,
-      string | null,
-      string | null,
-      number,
-      number,
-      string | null,
-      string | null,
-      string | null
-    ];
-    if (!frMap[frId]) {
-      frMap[frId] = {
-        id: frId,
-        functionalRequirement: frReq,
-        identifiedNFRs: [],
-      };
+    const params: any[] = frIds;
+    if (llm) {
+      query += " AND n.llm = ?";
+      params.push(llm);
     }
-    if (nfrId) {
-      frMap[frId].identifiedNFRs.push({
-        id: nfrId,
-        attribute: attr as any,
-        requirement: nfrReq!,
-        justification: just!,
+
+    const result = db.query(query, params);
+    const frMap: { [key: number]: FRWithNFRs } = {};
+
+    for (const row of result) {
+      // console.log(row);
+      const [
+        frId,
+        frReq,
+        nfrId,
+        attr,
+        nfrReq,
+        just,
+        llm,
         applicability,
         validity,
-        nfrUser: nfrUser!,
-        humanAttr: humanAttr!,
-        attrUser: attrUser!,
-        llm: llm!,
+        nfrUser,
+        humanAttr,
+        attrUser,
+      ] = row as [
+        number,
+        string,
+        string | null,
+        string | null,
+        string | null,
+        string | null,
+        string | null,
+        number,
+        number,
+        string | null,
+        string | null,
+        string | null
+      ];
+      if (!frMap[frId]) {
+        frMap[frId] = {
+          id: frId,
+          functionalRequirement: frReq,
+          identifiedNFRs: [],
+        };
+      }
+      if (nfrId) {
+        frMap[frId].identifiedNFRs.push({
+          id: nfrId,
+          attribute: attr as any,
+          requirement: nfrReq!,
+          justification: just!,
+          applicability,
+          validity,
+          nfrUser: nfrUser!,
+          humanAttr: humanAttr!,
+          attrUser: attrUser!,
+          llm: llm!,
+        });
+      }
+    }
+    return Object.values(frMap);
+  }
+
+  // Process NFR assignments
+  const nfrData: FRWithNFRs[] = [];
+  for (const [user, { FR, model }] of Object.entries(nfrAssignments)) {
+    const frsWithNfrs = fetchNFRs(FR, model);
+    frsWithNfrs.forEach((fr) => {
+      fr.identifiedNFRs.forEach((nfr) => {
+        // console.log(nfr);
+        // nfr.validity = nfr.validity;
+        // nfr.applicability = nfr.applicability;
+        nfr.assignedFor = "nfr";
+        nfr.user = user;
       });
+      nfrData.push(fr);
+    });
+  }
+
+  // Process attribute assignments
+  const attrData: FRWithNFRs[] = [];
+  for (const [user, { FR }] of Object.entries(attrAssignments)) {
+    const frsWithNfrs = fetchNFRs(FR);
+    frsWithNfrs.forEach((fr) => {
+      fr.identifiedNFRs.forEach((nfr) => {
+        // nfr.humanAttr = attributes[Math.floor(Math.random() * attributes.length)];
+        // nfr.humanAttr = nfr.humanAttr;
+        nfr.assignedFor = "attr";
+        nfr.user = user;
+      });
+      attrData.push(fr);
+    });
+  }
+
+  // Combine data
+  const allData = [...nfrData, ...attrData];
+
+  // Flatten for CSV
+  const csvRows = [
+    "fr_id,fr_requirement,nfr_id,llm,attribute,requirement,justification,validity,applicability,humanAttr,assignedFor,user",
+  ];
+  for (const fr of allData) {
+    for (const nfr of fr.identifiedNFRs) {
+      const row = [
+        fr.id,
+        `"${fr.functionalRequirement.replace(/"/g, '""')}"`,
+        nfr.id,
+        nfr.llm || "",
+        nfr.attribute,
+        `"${nfr.requirement.replace(/"/g, '""')}"`,
+        `"${nfr.justification.replace(/"/g, '""')}"`,
+        nfr.validity || "",
+        nfr.applicability || "",
+        nfr.humanAttr || "",
+        nfr.assignedFor || "",
+        nfr.user || "",
+      ].join(",");
+      csvRows.push(row);
     }
   }
-  return Object.values(frMap);
+
+  // Write to CSV
+  Deno.writeTextFileSync(
+    "analysis/syntheticData/dump_nfr_data.csv",
+    csvRows.join("\n")
+  );
+
+  // Close database
+  db.close();
+
+  console.log("Synthetic dataset saved to synthetic_nfr_data.csv");
 }
 
-// Process NFR assignments
-const nfrData: FRWithNFRs[] = [];
-for (const [user, { FR, model }] of Object.entries(nfrAssignments)) {
-  const frsWithNfrs = fetchNFRs(FR, model);
-  frsWithNfrs.forEach((fr) => {
-    fr.identifiedNFRs.forEach((nfr) => {
-      // console.log(nfr);
-      // nfr.validity = nfr.validity;
-      // nfr.applicability = nfr.applicability;
-      nfr.assignedFor = "nfr";
-      nfr.user = user;
-    });
-    nfrData.push(fr);
-  });
-}
-
-// Process attribute assignments
-const attrData: FRWithNFRs[] = [];
-for (const [user, { FR }] of Object.entries(attrAssignments)) {
-  const frsWithNfrs = fetchNFRs(FR);
-  frsWithNfrs.forEach((fr) => {
-    fr.identifiedNFRs.forEach((nfr) => {
-      // nfr.humanAttr = attributes[Math.floor(Math.random() * attributes.length)];
-      // nfr.humanAttr = nfr.humanAttr;
-      nfr.assignedFor = "attr";
-      nfr.user = user;
-    });
-    attrData.push(fr);
-  });
-}
-
-// Combine data
-const allData = [...nfrData, ...attrData];
-
-// Flatten for CSV
-const csvRows = [
-  "fr_id,fr_requirement,nfr_id,llm,attribute,requirement,justification,validity,applicability,humanAttr,assignedFor,user",
-];
-for (const fr of allData) {
-  for (const nfr of fr.identifiedNFRs) {
-    const row = [
-      fr.id,
-      `"${fr.functionalRequirement.replace(/"/g, '""')}"`,
-      nfr.id,
-      nfr.llm || "",
-      nfr.attribute,
-      `"${nfr.requirement.replace(/"/g, '""')}"`,
-      `"${nfr.justification.replace(/"/g, '""')}"`,
-      nfr.validity || "",
-      nfr.applicability || "",
-      nfr.humanAttr || "",
-      nfr.assignedFor || "",
-      nfr.user || "",
-    ].join(",");
-    csvRows.push(row);
-  }
-}
-
-// Write to CSV
-Deno.writeTextFileSync(
-  "analysis/syntheticData/dump_nfr_data.csv",
-  csvRows.join("\n")
-);
-
-// Close database
-db.close();
-
-console.log("Synthetic dataset saved to synthetic_nfr_data.csv");
+await createDumpDb();
+await generateCSV();
