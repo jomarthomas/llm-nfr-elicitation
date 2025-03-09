@@ -41,8 +41,23 @@ const attributes = [
   "Safety",
 ];
 
+async function createDumpDb() {
+  // Read SQL dump file
+  const sqlDump = await Deno.readTextFile("analysis/syntheticData/dump.sql");
+
+  // Create a new SQLite database
+  const newDb = new DB("analysis/syntheticData/dump.db");
+
+  // Execute SQL dump
+  newDb.execute(sqlDump);
+
+  // Close the new database
+  newDb.close();
+  console.log("Database created from dump.sql and saved to dump.db");
+}
+
 // Open database
-const db = new DB("./src/syntheticData/.dev.db");
+const db = new DB("analysis/syntheticData/dump.db");
 
 // Interface for FRWithNFRs
 interface FRWithNFRs {
@@ -68,6 +83,8 @@ interface FRWithNFRs {
     llm?: string;
     assignedFor?: "nfr" | "attr";
     user?: string;
+    nfrUser?: string;
+    attrUser?: string;
   }[];
 }
 
@@ -75,9 +92,9 @@ interface FRWithNFRs {
 function fetchNFRs(frIds: number[], llm?: string): FRWithNFRs[] {
   const placeholders = frIds.map(() => "?").join(",");
   let query = `
-    SELECT f.id, f.requirement AS fr_requirement, 
-           n.id AS nfr_id, n.attribute, n.requirement AS nfr_requirement, 
-           n.justification, n.llm
+    SELECT f.id, f.requirement AS fr_requirement,
+           n.id AS nfr_id, n.attribute, n.requirement AS nfr_requirement,
+           n.justification, n.llm, n.applicability, n.validity, n.nfrUser, n.humanAttr, n.attrUser
     FROM frs f
     LEFT JOIN nfrs n ON f.id = n.fr_id
     WHERE f.id IN (${placeholders})
@@ -92,11 +109,30 @@ function fetchNFRs(frIds: number[], llm?: string): FRWithNFRs[] {
   const frMap: { [key: number]: FRWithNFRs } = {};
 
   for (const row of result) {
-    const [frId, frReq, nfrId, attr, nfrReq, just, llm] = row as [
+    // console.log(row);
+    const [
+      frId,
+      frReq,
+      nfrId,
+      attr,
+      nfrReq,
+      just,
+      llm,
+      applicability,
+      validity,
+      nfrUser,
+      humanAttr,
+      attrUser,
+    ] = row as [
       number,
       string,
       string | null,
       string | null,
+      string | null,
+      string | null,
+      string | null,
+      number,
+      number,
       string | null,
       string | null,
       string | null
@@ -114,6 +150,11 @@ function fetchNFRs(frIds: number[], llm?: string): FRWithNFRs[] {
         attribute: attr as any,
         requirement: nfrReq!,
         justification: just!,
+        applicability,
+        validity,
+        nfrUser: nfrUser!,
+        humanAttr: humanAttr!,
+        attrUser: attrUser!,
         llm: llm!,
       });
     }
@@ -127,8 +168,9 @@ for (const [user, { FR, model }] of Object.entries(nfrAssignments)) {
   const frsWithNfrs = fetchNFRs(FR, model);
   frsWithNfrs.forEach((fr) => {
     fr.identifiedNFRs.forEach((nfr) => {
-      nfr.validity = Math.floor(Math.random() * 4) + 2; // 2-5
-      nfr.applicability = Math.floor(Math.random() * 4) + 2; // 2-5
+      // console.log(nfr);
+      // nfr.validity = nfr.validity;
+      // nfr.applicability = nfr.applicability;
       nfr.assignedFor = "nfr";
       nfr.user = user;
     });
@@ -142,7 +184,8 @@ for (const [user, { FR }] of Object.entries(attrAssignments)) {
   const frsWithNfrs = fetchNFRs(FR);
   frsWithNfrs.forEach((fr) => {
     fr.identifiedNFRs.forEach((nfr) => {
-      nfr.humanAttr = attributes[Math.floor(Math.random() * attributes.length)];
+      // nfr.humanAttr = attributes[Math.floor(Math.random() * attributes.length)];
+      // nfr.humanAttr = nfr.humanAttr;
       nfr.assignedFor = "attr";
       nfr.user = user;
     });
@@ -178,7 +221,10 @@ for (const fr of allData) {
 }
 
 // Write to CSV
-Deno.writeTextFileSync("synthetic_nfr_data.csv", csvRows.join("\n"));
+Deno.writeTextFileSync(
+  "analysis/syntheticData/dump_nfr_data.csv",
+  csvRows.join("\n")
+);
 
 // Close database
 db.close();
