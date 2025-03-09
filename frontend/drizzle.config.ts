@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-const isProduction = true// process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 const dbCredentials = isProduction
 	? {
 			url: process.env.PROD_TURSO_DATABASE_URL!,

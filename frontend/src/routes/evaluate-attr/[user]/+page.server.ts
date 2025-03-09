@@ -44,7 +44,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		)
 		.leftJoin(frTable, eq(nfrTable.frId, frTable.id));
 
-	// console.log(unevaluatedNFRs)
+	console.log(unevaluatedNFRs)
 
 	const result = unevaluatedNFRs.reduce(
 		(

@@ -16,7 +16,7 @@ import { drizzle } from 'drizzle-orm/libsql';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const isProduction = true//process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 const turso = createClient({
 	url: isProduction ? process.env.PROD_TURSO_DATABASE_URL! : process.env.TURSO_DATABASE_URL!,
 	authToken: isProduction ? process.env.PROD_TURSO_AUTH_TOKEN : process.env.TURSO_AUTH_TOKEN
