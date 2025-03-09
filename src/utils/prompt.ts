@@ -9,7 +9,7 @@ const promptAccessories = {
 };
 
 const prompt = `
-${Deno.readTextFileSync("./data/prompt tests/Advanced")}
+${Deno.readTextFileSync("./data/prompt_tests/Advanced")}
 {Given_FR}
 `
 

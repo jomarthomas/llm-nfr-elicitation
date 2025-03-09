@@ -151,7 +151,7 @@ export class AnthropicHandler extends LLMHandler<ChatAnthropic> {
           content: [
             {
               type: "text",
-              text: `${Deno.readTextFileSync("./data/prompt tests/Advanced")}
+              text: `${Deno.readTextFileSync("./data/prompt_tests/Advanced")}
               You must always return valid JSON fenced by a markdown code block. Do not return any additional text.`,
               // Tell Anthropic to cache this block
               cache_control: { type: "ephemeral" },
