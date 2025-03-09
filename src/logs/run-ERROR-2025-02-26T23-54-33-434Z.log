@@ -1,9 +1,0 @@
-[ERROR] undefined-Handler query failed [
-  {
-    "code": "invalid_type",
-    "expected": "object",
-    "received": "array",
-    "path": [],
-    "message": "Expected object, received array"
-  }
-]

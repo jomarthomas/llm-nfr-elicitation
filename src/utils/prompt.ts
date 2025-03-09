@@ -1,18 +1,14 @@
 import { z } from "npm:zod";
 
-const promptAccessories = {
-  batchStart: `You are given a list of Functional Requirements (FR), return a list of JSON objects identifying all the relevant Non-Functional Requirements (NFRs), that aligns with the standard, based on the FR's characteristics. `,
-  batchEnd: `Given list of functional requirements: {Given_FR}`,
-  singleStart: `You are given a Functional Requirement (FR), return a JSON object identifying all the relevant Non-Functional Requirements (NFRs), that aligns with the standard, based on the FR's characteristics. `,
-  singleEnd: `Given functional requirement: {Given_FR}
-`,
-};
-
-const prompt = `
-${Deno.readTextFileSync("./data/prompt_tests/Advanced")}
-{Given_FR}
-`
-
+/**
+ * Schema for validating a single NFR (Non-Functional Requirement) object.
+ *
+ * @property {string} functionalRequirement - The given functional requirement.
+ * @property {Array<Object>} identifiedNFRs - A list of relevant NFRs for the given FR.
+ * @property {string} identifiedNFRs[].attribute - The identified NFR category.
+ * @property {string} identifiedNFRs[].requirement - An NFR that satisfies the given FR based on the selected attribute.
+ * @property {string} identifiedNFRs[].justification - Explanation based on FR characteristics.
+ */
 export const nfrSchema = z.object({
   functionalRequirement: z
     .string()
@@ -46,20 +42,36 @@ export const nfrSchema = z.object({
     .describe("A list of relevant NFRs for the given FR."),
 });
 
+/**
+ * Schema for validating a batch of NFR objects.
+ *
+ * @property {Array<Object>} items - List of NFR objects.
+ */
 export const nfrBatchSchema = z.object({
   items: z.array(nfrSchema.describe("List of NFR objects")),
 });
 
-export function generatePrompt(req: string) {
-  return prompt
-    .replace("{Start}", promptAccessories.singleStart)
-    .replace("{End}", promptAccessories.singleEnd)
-    .replace("{Given_FR}", req);
+const prompt = `
+${Deno.readTextFileSync("./data/prompt_tests/AdvancedPrompt.txt")}
+{Given_FR}
+`;
+
+/**
+ * Generates a prompt by replacing the placeholder with the given functional requirement.
+ *
+ * @param {string} req - The given functional requirement.
+ * @returns {string} - The generated prompt.
+ */
+export function generatePrompt(req: string): string {
+  return prompt.replace("{Given_FR}", req);
 }
 
-export function generateBatchPrompt(reqs: string) {
-  return prompt
-    .replace("{Start}", promptAccessories.batchStart)
-    .replace("{End}", promptAccessories.batchEnd)
-    .replace("{Given_FR}", reqs);
+/**
+ * Generates a batch prompt by replacing the placeholder with the given functional requirements.
+ *
+ * @param {string} reqs - The given functional requirements.
+ * @returns {string} - The generated batch prompt.
+ */
+export function generateBatchPrompt(reqs: string): string {
+  return prompt.replace("{Given_FR}", reqs);
 }

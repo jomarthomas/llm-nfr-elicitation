@@ -1,3 +1,5 @@
+You are given a list of Functional Requirements (FR), return a list of JSON objects identifying all the relevant Non-Functional Requirements (NFRs), that aligns with the standard, based on the FR's characteristics. 
+
 1. Functional Suitability: Capability of a product to provide functions that meet stated and implied needs of intended users when it is used under specified conditions.
 1.1 Functional Completeness: Capability of a product to provide a set of functions that covers all the specified tasks and intended users' objectives
 Measure: What proportion of the specified functions has been implemented?
@@ -182,3 +184,5 @@ EXAMPLE: A traffic light that reverts to blinking red in all directions when nor
 9.4 Hazard warning: Capability of a product to provide warnings of unacceptable risks to operations or internal controls so that they can react in sufficient time to sustain safe operations
 EXAMPLE: A pedestrian traffic light gives a warning sign, such as showing the remaining seconds, before reverting from green to yellow or red.
 9.5 Safe Integration: Capability of a product to maintain safety (9) during and after integration with one or more components
+
+Given list of functional requirements: {Given_FR}

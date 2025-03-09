@@ -43,10 +43,10 @@ const attributes = [
 
 async function createDumpDb() {
   // Read SQL dump file
-  const sqlDump = await Deno.readTextFile("analysis/syntheticData/dump.sql");
+  const sqlDump = await Deno.readTextFile("analysis/dump.sql");
 
   // Create a new SQLite database
-  const newDb = new DB("analysis/syntheticData/dump.db");
+  const newDb = new DB("analysis/dump.db");
 
   // Execute SQL dump
   newDb.execute(sqlDump);
@@ -58,7 +58,7 @@ async function createDumpDb() {
 
 async function generateCSV() {
   // Open database
-  const db = new DB("analysis/syntheticData/dump.db");
+  const db = new DB("analysis/dump.db");
 
   // Interface for FRWithNFRs
   interface FRWithNFRs {
@@ -223,7 +223,7 @@ async function generateCSV() {
 
   // Write to CSV
   Deno.writeTextFileSync(
-    "analysis/syntheticData/dump_nfr_data.csv",
+    "analysis/dump_nfr_data.csv",
     csvRows.join("\n")
   );
 

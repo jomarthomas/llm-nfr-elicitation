@@ -1,182 +1,110 @@
-import Papa from "npm:papaparse";
 import {
+  AnthropicHandler,
   GeminiHandler,
+  GrokAIHandler,
   OpenAIHandler,
   TogetherAIHandler,
-  AnthropicHandler,
-  GrokAIHandler,
-} from "./utils/llm.ts";
-import { join } from "https://deno.land/std/path/mod.ts";
-
-// const NFRFR = await Deno.readTextFile("./data/FR_NFR.tsv");
-// const FRs = (
-//   Papa.parse(NFRFR, { delimiter: "\t", header: false }).data as string[][]
-// )
-//   .filter((item: string[]) => item[1] === "FR")
-//   .map((item: string[]) => item[0]) as string[];
-// Deno.writeTextFileSync("./data/FR.tsv", FRs.join("\n"));
-
-const text = await Deno.readTextFile("./data/FR_34.tsv");
-const FR = Papa.parse(text, { delimiter: "\t", header: false }).data.map(
-  (item: string[]) => item[0]
-) as string[];
-
-async function batchedCalls({
-  model,
-  batchSize = 5,
-  FRStart = 0,
-  FREnd = FR.length,
-  sleep = 5000,
-  fileName,
-}: {
-  model:
-    | GeminiHandler
-    | OpenAIHandler
-    | TogetherAIHandler
-    | AnthropicHandler
-    | GrokAIHandler;
-  batchSize?: number;
-  FRStart?: number;
-  FREnd?: number;
-  sleep?: number;
-  fileName: string;
-}) {
-  console.log(`Starting LLM ${model.modelName}`);
-  // We are batching these calls because some models like Gemini can
-  // process all the 34 NFRs along with the long, advanced prompt in one go
-  // but other models quickly hits the ceiling and crashes after 8 minutes
-  // while also using up the credits. So its better we chunk the NFRs
-  for (let i = FRStart; i < FREnd; i += batchSize) {
-    console.log(`⇒ Starting batch: ${i}`);
-    const batch = FR.slice(i, i + batchSize);
-    const batchInputs = JSON.stringify(batch);
-    const batchOutput = await model.batchQuery(batchInputs);
-    Deno.writeTextFileSync(
-      `./LLMOutputs/${fileName}-${i}.json`,
-      JSON.stringify(
-        batchOutput.map((item) => item.parsed),
-        null,
-        2
-      )
-    );
-    console.log(`⇒ Sleeping for ${sleep / 1000} seconds`);
-    await new Promise((resolve) => setTimeout(resolve, sleep));
-  }
-}
-
-async function combineOutputs(filePrefix: string) {
-  const dir = "./LLMOutputs";
-  const files = [];
-  for await (const dirEntry of Deno.readDir(dir)) {
-    if (dirEntry.isFile && dirEntry.name.startsWith(filePrefix)) {
-      files.push(dirEntry.name);
-    }
-  }
-  files.sort((a, b) => {
-    const getNumber = (fileName: string) => {
-      const match = fileName.match(/-(\d+)\.json$/);
-      return match ? parseInt(match[1], 10) : 0;
-    };
-    return getNumber(a) - getNumber(b);
-  });
-  const combinedOutput = [];
-  for await (const file of files) {
-    const content = await Deno.readTextFile(join(dir, file));
-    const jsonContent = JSON.parse(content);
-    combinedOutput.push(...jsonContent);
-  }
-
-  await Deno.writeTextFile(
-    join(dir, `${filePrefix}.json`),
-    JSON.stringify(combinedOutput, null, 2)
-  );
-}
-
+} from "./utils/llms/index.ts";
+import { batchedCalls, combineOutputs } from "./utils/outputProcessing.ts";
 
 if (import.meta.main) {
-  // const gemini = new GeminiHandler({
-  //   apiKey: Deno.env.get("GOOGLE_API_KEY") ?? "",
-  //   modelName: "gemini-1.5-pro",
-  //   temperature: 0.4,
-  // });
-  // const openai = new OpenAIHandler({
-  //   apiKey: Deno.env.get("OPENAI_API_KEY") ?? "",
-  //   modelName: "gpt-4o-mini",
-  //   temperature: 0.4,
-  // });
-  // const deepseek = new TogetherAIHandler({
-  //   apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
-  //   modelName: "deepseek-ai/DeepSeek-V3",
-  //   temperature: 0.4,
-  // });
-  // const llama = new TogetherAIHandler({
-  //   apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
-  //   modelName: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
-  //   temperature: 0.4,
-  // });
-  // const qwen = new TogetherAIHandler({
-  //   apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
-  //   modelName: "Qwen/Qwen2.5-72B-Instruct-Turbo",
-  //   temperature: 0.4,
-  // });
-  // const claude37 = new AnthropicHandler({
-  //   apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
-  //   modelName: "claude-3-7-sonnet-20250219",
-  //   temperature: 0.4,
-  // });
-  // const grok = new GrokAIHandler({
-  //   apiKey: Deno.env.get("GROK_API_KEY") ?? "",
-  //   modelName: "grok-2-1212",
-  //   temperature: 0.4,
-  // });
-  // const claude35 = new AnthropicHandler({
-  //   apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
-  //   modelName: "claude-3-5-haiku-20241022",
-  //   temperature: 0.4,
-  // });
+  const gemini = new GeminiHandler({
+    apiKey: Deno.env.get("GOOGLE_API_KEY") ?? "",
+    modelName: "gemini-1.5-pro",
+    temperature: 0.4,
+  });
+  const openai = new OpenAIHandler({
+    apiKey: Deno.env.get("OPENAI_API_KEY") ?? "",
+    modelName: "gpt-4o-mini",
+    temperature: 0.4,
+  });
+  const deepseek = new TogetherAIHandler({
+    apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
+    modelName: "deepseek-ai/DeepSeek-V3",
+    temperature: 0.4,
+  });
+  const llama = new TogetherAIHandler({
+    apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
+    modelName: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+    temperature: 0.4,
+  });
+  const qwen = new TogetherAIHandler({
+    apiKey: Deno.env.get("TOGETH_API_KEY") ?? "",
+    modelName: "Qwen/Qwen2.5-72B-Instruct-Turbo",
+    temperature: 0.4,
+  });
+  const claude37 = new AnthropicHandler({
+    apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
+    modelName: "claude-3-7-sonnet-20250219",
+    temperature: 0.4,
+  });
+  const grok = new GrokAIHandler({
+    apiKey: Deno.env.get("GROK_API_KEY") ?? "",
+    modelName: "grok-2-1212",
+    temperature: 0.4,
+  });
+  const claude35 = new AnthropicHandler({
+    apiKey: Deno.env.get("CLAUDE_API_KEY") ?? "",
+    modelName: "claude-3-5-haiku-20241022",
+    temperature: 0.4,
+  });
 
-  // const reqs = Promise.all([
-  //   await batchedCalls({
-  //     model: claude37,
-  //     batchSize: 2,
-  //     fileName: "claude-3-7-haiku-u",
-  //   }).then(async () => {
-  //     await combineOutputs("claude-3-7-haiku-u");
-  //   }),
-  //   await batchedCalls({
-  //     model: deepseek,
-  //     batchSize: 2,
-  //     fileName: "deepSeek-V3-u",
-  //   }).then(async () => {
-  //     await combineOutputs("deepSeek-V3-u");
-  //   }),
-  //   await batchedCalls({
-  //     model: openai,
-  //     batchSize: 2,
-  //     fileName: "gpt-4o-mini-u",
-  //   }).then(async () => {
-  //     await combineOutputs("gpt-4o-mini-u");
-  //   }),
-  //   await batchedCalls({
-  //     model: grok,
-  //     batchSize: 2,
-  //     fileName: "grok-2-u",
-  //   }).then(async () => {
-  //     await combineOutputs("grok-2-u");
-  //   }),
-  //   await batchedCalls({
-  //     model: llama,
-  //     batchSize: 2,
-  //     fileName: "lama-3.3-70B-u",
-  //   }).then(async () => {
-  //     await combineOutputs("lama-3.3-70B-u");
-  //   }),
-  //   await batchedCalls({
-  //     model: qwen,
-  //     batchSize: 2,
-  //     fileName: "Qwen2.5-72B-u",
-  //   }).then(async () => {
-  //     await combineOutputs("Qwen2.5-72B-u");
-  //   }),
-  // ]);
+  const reqs = Promise.all([
+    await batchedCalls({
+      model: gemini,
+      batchSize: 2,
+      fileName: "gemini-1.5-pro",
+    }).then(async () => {
+      await combineOutputs("gemini-1.5-pro");
+    }),
+    await batchedCalls({
+      model: claude37,
+      batchSize: 2,
+      fileName: "claude-3-7-sonnet",
+    }).then(async () => {
+      await combineOutputs("claude-3-7-sonnet");
+    }),
+    await batchedCalls({
+      model: claude35,
+      batchSize: 2,
+      fileName: "claude-3-5-haiku",
+    }).then(async () => {
+      await combineOutputs("claude-3-5-haiku");
+    }),
+    await batchedCalls({
+      model: deepseek,
+      batchSize: 2,
+      fileName: "deepSeek-V3",
+    }).then(async () => {
+      await combineOutputs("deepSeek-V3");
+    }),
+    await batchedCalls({
+      model: openai,
+      batchSize: 2,
+      fileName: "gpt-4o-mini",
+    }).then(async () => {
+      await combineOutputs("gpt-4o-mini");
+    }),
+    await batchedCalls({
+      model: grok,
+      batchSize: 2,
+      fileName: "grok-2",
+    }).then(async () => {
+      await combineOutputs("grok-2");
+    }),
+    await batchedCalls({
+      model: llama,
+      batchSize: 2,
+      fileName: "lama-3.3-70B",
+    }).then(async () => {
+      await combineOutputs("lama-3.3-70B");
+    }),
+    await batchedCalls({
+      model: qwen,
+      batchSize: 2,
+      fileName: "Qwen2.5-72B",
+    }).then(async () => {
+      await combineOutputs("Qwen2.5-72B");
+    }),
+  ]);
 }

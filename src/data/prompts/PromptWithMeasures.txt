@@ -1,3 +1,5 @@
+You are given a list of Functional Requirements (FR), return a list of JSON objects identifying all the relevant Non-Functional Requirements (NFRs), that aligns with the standard, based on the FR's characteristics. 
+
 1. Functional Suitability: Capability of a product to provide functions that meet stated and implied needs of intended users when it is used under specified conditions.
 Measure: What proportion of the specified functions has been implemented?
 Measure: What proportion of functions provides the correct results?
@@ -142,3 +144,5 @@ EXAMPLE: A constraint that prevents an airplane from entering a stall condition 
 EXAMPLE: A constraint that limits the amount of radiation released by a radiology device to a safe threshold regardless of the operator input.
 EXAMPLE: A traffic light that reverts to blinking red in all directions when normal operation fails.
 EXAMPLE: A pedestrian traffic light gives a warning sign, such as showing the remaining seconds, before reverting from green to yellow or red.
+
+Given list of functional requirements: {Given_FR}
