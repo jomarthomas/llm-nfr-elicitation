@@ -1,4 +1,7 @@
 {
+  "tasks": {
+    "dumpDB": "deno --allow-all './analysis/generateData.ts'"
+  },
   "imports": {
     "@libsql/client": "npm:@libsql/client@^0.14.0"
   }
