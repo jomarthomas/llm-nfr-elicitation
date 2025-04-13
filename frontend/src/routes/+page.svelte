@@ -42,9 +42,9 @@
 </script>
 
 <main class="Home">
-	<h2>LLM Based NFR Elicitation</h2>
+	<h2>LLM-Based NFR Elicitation</h2>
 	<p>
-		Generate Non-Functional Requirements with Large Language Models with just Functional requirement
+		Generate Non-Functional Requirements from Functional Requirements using Large Language Models
 	</p>
 
 	<form
